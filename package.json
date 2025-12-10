@@ -1,0 +1,22 @@
+{
+  "name": "united-we-care-automation",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "node -r dotenv/config ./node_modules/playwright/cli.js test",
+    "test:headed": "npx playwright test --headed",
+    "report:show": "npx playwright show-report reports/html-report",
+    "cron:start": "node scheduler/cron.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "google-auth-library": "^10.5.0",
+    "google-spreadsheet": "^4.0.0",
+    "googleapis": "^166.0.0",
+    "node-cron": "^3.0.2",
+    "nodemailer": "^6.9.4"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  }
+}

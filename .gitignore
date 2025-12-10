@@ -1,0 +1,19 @@
+# Node dependencies
+node_modules/
+
+# Environment and local config
+.env
+.env.*.local
+
+# Playwright artifacts and reports
+test-results/
+playwright-report/
+reports/
+
+# Local uploads and generated files
+uploads/
+
+# macOS and editor noise
+.DS_Store
+.idea/
+.vscode/
