@@ -1,0 +1,13 @@
+{
+    "baseUrl": "https://asksam.com.au/",
+    "clinicalHome": "https://copilot.asksam.com.au/clinical/home",
+    "email": "testing_clinician_aus+clerk_test@tmail.com",
+    "otp": "424242",
+    "uploadFile": "Yamini_Pal_Health_Summary.pdf",
+    "patientPriority": [
+      "Yamini Singh 191",
+      "Ganesh Test 123",
+      "Yamini Singh 185"
+    ]
+  }
+  

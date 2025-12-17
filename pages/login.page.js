@@ -1,0 +1,30 @@
+import { safeClick } from "../helpers/wait.js";
+
+export class LoginPage {
+  constructor(page) {
+    this.page = page;
+
+    this.emailInput = page.getByRole('textbox', { name: 'Email address' });
+    this.otpInput = page.getByRole('textbox', { name: 'Enter verification code' });
+    this.continueBtn = page.getByRole('button', { name: 'Continue' });
+  }
+
+  async loginAsClinician() {
+    await this.page.goto('https://asksam.com.au/');
+
+    await this.page.locator('img').nth(4).click();
+    await this.page.getByRole('link', { name: 'Sign up / Log in', exact: true }).click();
+    await this.page.getByRole('button', { name: 'Log in here' }).click();
+    await this.page.getByText('Clinician').click();
+    await this.continueBtn.click();
+
+    await this.emailInput.fill('testing_clinician_aus+clerk_test@tmail.com');
+    await this.continueBtn.click();
+
+    // OTP – always same as per your requirement
+    await this.otpInput.fill('424242');
+
+    // ✅ IMPORTANT: wait for backend + redirect
+    await this.page.waitForURL('**/clinical/home', { timeout: 30000 });
+  }
+}

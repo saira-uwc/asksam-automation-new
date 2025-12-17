@@ -1,9 +1,8 @@
-# Expert Dashboard — Playwright End-to-End Automation Framework
+# Playwright Automation V1.1 (JS)
 
-This is a complete Playwright automation framework scaffolded for the Expert Dashboard web app.
-
-How to use:
-1. Copy `.env.sample` to `.env` and update credentials.
-2. Run `npm install`
-3. Run `npx playwright install`
-4. Run `npm test` or `npm run test:headed`
+## Setup
+1. Copy `.env.sample` -> `.env` and fill values.
+2. Install deps:
+   ```bash
+   npm install
+   npm run install:browsers

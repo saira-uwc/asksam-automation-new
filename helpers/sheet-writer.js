@@ -3,11 +3,13 @@ dotenv.config();
 
 import { google } from "googleapis";
 import fs from "fs";
+import path from "path";
 
-console.log("🌍 ENV inside sheet-writer → DRIVE_FOLDER =", process.env.DRIVE_FOLDER_ID);
-console.log("🌍 ENV inside sheet-writer → SHEET_ID =", process.env.SHEET_ID);
+const SHEET_TAB = process.env.SHEET_TAB || "Sheet1";
 
-const privateKey = process.env.G_PRIVATE_KEY?.replace(/\\n/g, "\n") || "";
+const privateKey = process.env.G_PRIVATE_KEY
+  ? process.env.G_PRIVATE_KEY.replace(/\\n/g, "\n")
+  : "";
 
 async function getAuth() {
   const auth = new google.auth.GoogleAuth({
@@ -20,19 +22,22 @@ async function getAuth() {
       "https://www.googleapis.com/auth/drive"
     ]
   });
-
   return auth.getClient();
 }
 
+/**
+ * Upload only for FAILED / TIMEDOUT
+ */
 async function uploadToDrive(auth, filePath) {
   try {
-    if (!filePath || !fs.existsSync(filePath)) return "";
+    if (!filePath) return "";
+    if (!fs.existsSync(filePath)) return "";
 
     const drive = google.drive({ version: "v3", auth });
 
     const response = await drive.files.create({
       requestBody: {
-        name: filePath.split("/").pop(),
+        name: path.basename(filePath),
         parents: [process.env.DRIVE_FOLDER_ID]
       },
       media: {
@@ -49,9 +54,8 @@ async function uploadToDrive(auth, filePath) {
     });
 
     return `https://drive.google.com/uc?id=${fileId}`;
-
   } catch (err) {
-    console.log("⚠ Upload failed, but continuing:", err.message);
+    console.log("⚠ Drive upload failed:", err.message);
     return "";
   }
 }
@@ -61,36 +65,44 @@ export async function writeToSheet({
   testName,
   status,
   screenshotPath,
-  videoPath
+  videoPath,
+  htmlReportLink
 }) {
   try {
-    const auth = await getAuth();
-    const sheets = google.sheets({ version: "v4", auth });
+    const authClient = await getAuth();
+    const sheets = google.sheets({ version: "v4", auth: authClient });
 
-    const screenshotURL = await uploadToDrive(auth, screenshotPath);
-    const videoURL = await uploadToDrive(auth, videoPath);
+    const finalStatus = status?.toUpperCase() || "UNKNOWN";
+
+    let screenshotURL = "";
+    let videoURL = "";
+
+    // 🔥 IMPORTANT LOGIC
+    // Upload evidence ONLY for FAILED / TIMEDOUT
+    if (finalStatus === "FAILED" || finalStatus === "TIMEDOUT") {
+      screenshotURL = await uploadToDrive(authClient, screenshotPath);
+      videoURL = await uploadToDrive(authClient, videoPath);
+    }
 
     const row = [
       new Date().toISOString(),
-      moduleName,
-      testName,
-      status,
+      moduleName || "Unknown",
+      testName || "Unknown",
+      finalStatus,
       screenshotURL,
-      videoURL
+      videoURL,
+      htmlReportLink || ""
     ];
-
-    console.log("📝 Writing row to sheet:", row);
 
     await sheets.spreadsheets.values.append({
       spreadsheetId: process.env.SHEET_ID,
-      range: "asksam!A:F",   
+      range: `${SHEET_TAB}!A:G`,
       valueInputOption: "USER_ENTERED",
-      requestBody: { values: [row] }   // <—— FIXED
+      requestBody: { values: [row] }
     });
 
-    console.log("✔ Sheet update SUCCESS:", row);
-
+    console.log("✅ Sheet updated:", testName, finalStatus);
   } catch (err) {
-    console.log("❌ Sheet Update Failed:", err.message);
+    console.log("❌ Sheet update failed (ignored):", err.message);
   }
 }
