@@ -27,4 +27,9 @@ export class LoginPage {
     // ✅ IMPORTANT: wait for backend + redirect
     await this.page.waitForURL('**/clinical/home', { timeout: 30000 });
   }
+  async logout() {
+    await this.page.getByRole('button', { name: 'Open user menu' }).click();
+    await this.page.getByRole('menuitem', { name: 'Sign out' }).click();
+    await this.page.waitForURL(/sign-in/, { timeout: 15000 });
+  }
 }

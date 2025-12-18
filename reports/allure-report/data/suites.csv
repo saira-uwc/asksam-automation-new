@@ -1,3 +1,0 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","106135","Expert Dashboard | Appointment booking (dynamic slots)","","2025-12-17","passed","2025-12-17","","Expert-Dashboard/appointment-booking.spec.js","",""
-"","75454","Create clinical note with document upload & transcription","","2025-12-17","passed","2025-12-17","","CCOP/clinical-note.spec.js","",""
