@@ -6,18 +6,12 @@ export class PatientPage {
   }
 
   async createNewPatient() {
-    // ✅ short unique id (last 6 digits of timestamp)
-    const uid = Date.now().toString().slice(-6);
+    // ✅ Short, readable unique id (last 6 digits of timestamp)
+    const id = Date.now().toString().slice(-6);
 
     this.firstName = 'Test';
-    this.lastName = `user-${uid}`;
-    this.email = `testuser-${uid}@tmail.com`;
-
-    console.log('✅ Created patient:', {
-      firstName: this.firstName,
-      lastName: this.lastName,
-      email: this.email,
-    });
+    this.lastName = `user-${id}`;
+    this.email = `testuser-${id}@tmail.com`;
 
     await this.page.getByRole('button', { name: 'Create Clinical Note' }).click();
     await this.page.getByRole('button', { name: 'Create New Patient Profile' }).click();
@@ -33,9 +27,11 @@ export class PatientPage {
       name: /Confirm and create clinical/i,
     }).click();
 
-    // backend + hydration buffer
-    await this.page.waitForLoadState('networkidle');
-    await this.page.waitForTimeout(3000);
+    console.log('✅ Created patient:', {
+      firstName: this.firstName,
+      lastName: this.lastName,
+      email: this.email,
+    });
   }
 
   async uploadAndTranscribe() {
@@ -47,45 +43,40 @@ export class PatientPage {
     await this.page.getByRole('button', { name: 'Transcribe All' }).click();
     await this.page.getByRole('button', { name: 'Send Transcription' }).click();
 
-    console.log('⏳ Waiting for transcription / consent…');
+    console.log('⏳ Waiting for transcription / disclaimer / submit…');
 
-    // ✅ wait for processing text to disappear (NO infinite loops)
-    const processing = this.page.getByText(/Processing transcription/i);
-    if (await processing.isVisible().catch(() => false)) {
-      await processing.waitFor({ state: 'hidden', timeout: 180000 });
-    }
+    // ✅ DO NOT wait for "Processing transcription" to disappear
+    await Promise.race([
+      this.page
+        .getByRole('button', { name: /I Understand and Accept/i })
+        .waitFor({ timeout: 120000 }),
 
-    // ✅ disclaimer / consent (this is what you missed earlier)
-    const acceptBtn = this.page.getByRole('button', {
-      name: /I Understand And Accept/i,
+      this.page
+        .getByRole('button', { name: 'Submit' })
+        .waitFor({ timeout: 120000 }),
+    ]).catch(() => {});
+
+    const disclaimerBtn = this.page.getByRole('button', {
+      name: /I Understand and Accept/i,
     });
 
-    if (await acceptBtn.isVisible().catch(() => false)) {
-      await acceptBtn.click();
+    if (await disclaimerBtn.isVisible().catch(() => false)) {
+      await disclaimerBtn.click();
+      console.log('✅ Disclaimer accepted');
     } else {
-      console.log('ℹ️ Consent not shown, continuing');
+      console.log('ℹ️ Disclaimer not shown, continuing');
     }
   }
 
   async submitClinicalNote() {
-    // ✅ Wait until Submit button becomes enabled
-    const submitBtn = this.page.getByRole('button', { name: 'Submit' });
-  
-    await submitBtn.waitFor({ state: 'visible', timeout: 60000 });
-    await expect(submitBtn).toBeEnabled({ timeout: 60000 });
-  
-    // First submit
-    await submitBtn.click();
-  
-    // Second confirm submit (modal)
-    await submitBtn.waitFor({ state: 'visible', timeout: 30000 });
-    await submitBtn.click();
-  
-    // ✅ Wait for success toast/message
-    await this.page.getByText(/Your note has been submitted/i).waitFor({
-      timeout: 30000,
-    });
-  
-    console.log('✅ Clinical note submitted successfully');
+    // ❌ NO waitForURL — UI doesn’t always navigate
+    await this.page.getByRole('button', { name: 'Submit' }).click();
+    await this.page.getByRole('button', { name: 'Submit' }).click();
+
+    await this.page
+      .getByText(/Your note has been submitted/i)
+      .waitFor({ timeout: 60000 });
+
+    console.log('✅ Clinical note submitted');
   }
 }

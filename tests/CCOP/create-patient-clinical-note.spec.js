@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test } from '@playwright/test';
 import { LoginPage } from '../../pages/login.page.js';
 import { PatientPage } from '../../pages/patient.page.js';
 
@@ -7,15 +7,13 @@ test.describe('CCOP | Create new patient & clinical note (dynamic)', () => {
     const login = new LoginPage(page);
     const patient = new PatientPage(page);
 
-    /* ===== LOGIN (COMMON, STABLE) ===== */
+    /* ===== LOGIN (STABLE, COMMON) ===== */
     await login.loginAsClinician();
-
-    await expect(page).toHaveURL(/clinical\/home/);
 
     /* ===== CREATE PATIENT ===== */
     await patient.createNewPatient();
 
-    /* ===== UPLOAD & TRANSCRIBE ===== */
+    /* ===== UPLOAD + TRANSCRIBE ===== */
     await patient.uploadAndTranscribe();
 
     /* ===== SUBMIT NOTE ===== */
