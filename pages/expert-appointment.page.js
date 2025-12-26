@@ -236,4 +236,89 @@ export class ExpertAppointmentPage {
     // 6️⃣ Success toast
     await this.page.getByRole('alert').waitFor({ timeout: 30000 });
   }
+
+  /* ===============================
+   CANCEL APPOINTMENT (FINAL & STABLE)
+=============================== */
+async cancelAppointment() {
+  // 1️⃣ Click Cancel button
+  const cancelBtn = this.page.getByRole('button', { name: /^Cancel$/i });
+  await cancelBtn.waitFor({ state: 'visible', timeout: 20000 });
+  await cancelBtn.click();
+
+  // 2️⃣ Confirm modal
+  const confirmCancelBtn = this.page.getByRole('button', {
+    name: /Yes, Cancel it/i,
+  });
+
+  await confirmCancelBtn.waitFor({ state: 'visible', timeout: 20000 });
+  await confirmCancelBtn.click();
+
+  // 3️⃣ Success toast
+  await this.page
+    .getByText(/Appointment cancelled/i)
+    .waitFor({ timeout: 30000 });
+
+  // 4️⃣ Close Appointment Details panel (same as recording)
+  const closeBtn = this.page
+    .locator('div')
+    .filter({ hasText: /^Appointment Details$/ })
+    .getByRole('button');
+
+  await closeBtn.waitFor({ timeout: 20000 });
+  await closeBtn.click();
+}
+
+/* ===============================
+   OPEN & CANCEL FIRST NON-CANCELLED APPOINTMENT
+=============================== */
+async openAndCancelNonCancelledAppointment() {
+  const cards = this.page.locator('.MuiCard-root');
+
+  const count = await cards.count();
+  if (count === 0) {
+    throw new Error('No appointment cards found');
+  }
+
+  for (let i = 0; i < count; i++) {
+    const card = cards.nth(i);
+
+    // 🔎 Check status text inside card
+    const statusText = await card.textContent();
+
+    // ❌ Skip already cancelled appointments
+    if (statusText?.includes('Cancelled')) {
+      continue;
+    }
+
+    // ✅ Open View Details for valid appointment
+    const viewDetailsBtn = card.getByRole('button', {
+      name: /View Details/i,
+    });
+
+    await viewDetailsBtn.waitFor({ timeout: 15000 });
+    await viewDetailsBtn.click();
+
+    // ✅ Cancel flow
+    const cancelBtn = this.page.getByRole('button', { name: /^Cancel$/i });
+    await cancelBtn.waitFor({ timeout: 15000 });
+    await cancelBtn.click();
+
+    const confirmBtn = this.page.getByRole('button', {
+      name: /Yes, Cancel it/i,
+    });
+    await confirmBtn.waitFor({ timeout: 15000 });
+    await confirmBtn.click();
+
+    // ✅ Success toast
+    await this.page
+      .getByText(/Appointment cancelled/i)
+      .waitFor({ timeout: 30000 });
+
+    // 🎯 Exit after first successful cancellation
+    return;
+  }
+
+  throw new Error('No non-cancelled appointment found to cancel');
+}
 }
