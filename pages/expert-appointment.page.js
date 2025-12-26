@@ -410,4 +410,73 @@ async openAndCloseSessionDetails() {
 
   await this.page.getByRole('button', { name: 'close' }).click();
 }
+
+/* ===============================
+   OPEN PATIENTS MODULE
+=============================== */
+async openPatients() {
+  await this.page.getByRole('link', { name: 'Patients' }).click();
+  await this.page.waitForURL(/expert\/patients/, { timeout: 30000 });
+}
+
+/* ===============================
+   CREATE PATIENT (PATIENTS MODULE)
+=============================== */
+async createPatientFromPatientsModule() {
+  const uniq = Math.floor(100000 + Math.random() * 900000);
+
+  const patient = {
+    firstName: 'test',
+    lastName: `autouser-${uniq}`,
+    email: `testautouser-${uniq}@tmail.com`,
+  };
+
+  // Open Patients → Create Patient
+  await this.page.getByRole('button', { name: 'Create Patient' }).click();
+
+  // ✅ REAL WAIT (not dialog)
+  await this.page
+    .getByRole('textbox', { name: 'First Name' })
+    .waitFor({ state: 'visible', timeout: 20000 });
+
+  await this.page.getByRole('textbox', { name: 'First Name' }).fill(patient.firstName);
+  await this.page.getByRole('textbox', { name: 'Last Name' }).fill(patient.lastName);
+  await this.page.getByRole('textbox', { name: 'Email' }).fill(patient.email);
+
+  await this.page.getByRole('combobox', { name: 'Gender' }).click();
+  await this.page.getByRole('option', { name: 'Male', exact: true }).click();
+
+  await this.page.getByRole('textbox', { name: 'Date of Birth' }).fill('04/02/2001');
+
+  await this.page.getByRole('button', { name: 'Create Patient' }).click();
+
+  await this.page
+    .getByText('Patient registered')
+    .waitFor({ timeout: 30000 });
+
+  return patient;
+}
+
+/* ===============================
+   SEARCH & OPEN PATIENT
+=============================== */
+async searchAndOpenPatient(email) {
+  const searchBox = this.page.getByRole('textbox', {
+    name: 'Search patients...',
+  });
+
+  await searchBox.fill(email);
+  await this.page.getByRole('button', { name: 'Search' }).click();
+
+  // locate the patient row using unique email
+  const patientRow = this.page
+    .locator('tr')
+    .filter({ hasText: email })
+    .first();
+
+  await patientRow.waitFor({ timeout: 30000 });
+
+  // click profile / first column (safe & stable)
+  await patientRow.locator('td').first().click();
+}
 }
