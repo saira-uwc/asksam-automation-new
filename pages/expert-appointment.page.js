@@ -240,34 +240,34 @@ export class ExpertAppointmentPage {
   /* ===============================
    CANCEL APPOINTMENT (FINAL & STABLE)
 =============================== */
-async cancelAppointment() {
-  // 1️⃣ Click Cancel button
-  const cancelBtn = this.page.getByRole('button', { name: /^Cancel$/i });
-  await cancelBtn.waitFor({ state: 'visible', timeout: 20000 });
-  await cancelBtn.click();
+// async cancelAppointment() {
+//   // 1️⃣ Click Cancel button
+//   const cancelBtn = this.page.getByRole('button', { name: /^Cancel$/i });
+//   await cancelBtn.waitFor({ state: 'visible', timeout: 20000 });
+//   await cancelBtn.click();
 
-  // 2️⃣ Confirm modal
-  const confirmCancelBtn = this.page.getByRole('button', {
-    name: /Yes, Cancel it/i,
-  });
+//   // 2️⃣ Confirm modal
+//   const confirmCancelBtn = this.page.getByRole('button', {
+//     name: /Yes, Cancel it/i,
+//   });
 
-  await confirmCancelBtn.waitFor({ state: 'visible', timeout: 20000 });
-  await confirmCancelBtn.click();
+//   await confirmCancelBtn.waitFor({ state: 'visible', timeout: 20000 });
+//   await confirmCancelBtn.click();
 
-  // 3️⃣ Success toast
-  await this.page
-    .getByText(/Appointment cancelled/i)
-    .waitFor({ timeout: 30000 });
+//   // 3️⃣ Success toast
+//   await this.page
+//     .getByText(/Appointment cancelled/i)
+//     .waitFor({ timeout: 30000 });
 
-  // 4️⃣ Close Appointment Details panel (same as recording)
-  const closeBtn = this.page
-    .locator('div')
-    .filter({ hasText: /^Appointment Details$/ })
-    .getByRole('button');
+//   // 4️⃣ Close Appointment Details panel (same as recording)
+//   const closeBtn = this.page
+//     .locator('div')
+//     .filter({ hasText: /^Appointment Details$/ })
+//     .getByRole('button');
 
-  await closeBtn.waitFor({ timeout: 20000 });
-  await closeBtn.click();
-}
+//   await closeBtn.waitFor({ timeout: 20000 });
+//   await closeBtn.click();
+// }
 
 /* ===============================
    OPEN & CANCEL FIRST NON-CANCELLED APPOINTMENT
@@ -320,5 +320,94 @@ async openAndCancelNonCancelledAppointment() {
   }
 
   throw new Error('No non-cancelled appointment found to cancel');
+}
+
+/* ===============================
+   OPEN SESSION MANAGEMENT (FIXED)
+=============================== */
+/* ===============================
+   OPEN SESSION MANAGEMENT (STRICT SAFE)
+=============================== */
+async openSessionManagement() {
+  await this.page.getByRole('link', {
+    name: 'Session Management',
+    exact: true,
+  }).click();
+
+  // ✅ Correct URL
+  await this.page.waitForURL(/sessionmanagement/, { timeout: 30000 });
+
+  // ✅ Wait ONLY for page heading (unique)
+  await this.page
+    .getByRole('heading', { name: 'Session Management' })
+    .waitFor({ timeout: 30000 });
+}
+
+/* ===============================
+   CLICK FIRST AVAILABLE MARK SESSION
+=============================== */
+async clickFirstMarkSession() {
+  const markButtons = this.page.getByRole('button', {
+    name: /Mark Session/i,
+  });
+
+  await markButtons.first().waitFor({ timeout: 20000 });
+  await markButtons.first().click();
+}
+
+/* ===============================
+   SUBMIT SESSION NOTE
+=============================== */
+async submitSession(note = 'test completed') {
+  const noteBox = this.page.getByRole('textbox', {
+    name: /Note \(Optional\)/i,
+  });
+
+  await noteBox.waitFor({ timeout: 20000 });
+  await noteBox.fill(note);
+
+  await this.page.getByRole('button', { name: 'Submit' }).click();
+
+  await this.page
+    .getByText(/Form submitted Successfully/i)
+    .waitFor({ timeout: 30000 });
+}
+
+/* ===============================
+   SWITCH SESSION TAB (ROBUST)
+=============================== */
+async switchSessionTab(tabName) {
+  const tab = this.page.getByText(tabName, { exact: true });
+
+  await tab.waitFor({ timeout: 15000 });
+  await tab.click();
+}
+
+/* ===============================
+   MARK NOT COMPLETED
+=============================== */
+async markNotCompleted() {
+  await this.page
+    .getByRole('button', { name: 'Not Completed' })
+    .waitFor({ timeout: 15000 });
+
+  await this.page
+    .getByRole('button', { name: 'Not Completed' })
+    .click();
+}
+
+/* ===============================
+   OPEN & CLOSE SESSION DETAILS
+=============================== */
+async openAndCloseSessionDetails() {
+  const viewBtn = this.page
+    .locator('button')
+    .filter({ hasText: /View/i })
+    .first();
+
+  await viewBtn.waitFor({ timeout: 15000 });
+  await viewBtn.click();
+
+  await this.page.getByRole('button', { name: 'close' }).click();
 }
 }
