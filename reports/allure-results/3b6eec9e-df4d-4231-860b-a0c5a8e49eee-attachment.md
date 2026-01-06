@@ -1,0 +1,218 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e4]:
+      - button "Close user menu" [expanded] [ref=e11] [cursor=pointer]:
+        - img "Anthony Smith's logo" [ref=e14]
+    - generic [ref=e18]:
+      - generic [ref=e20]:
+        - link [ref=e21] [cursor=pointer]:
+          - /url: /clinical/home
+          - img [ref=e22]
+          - paragraph [ref=e24]: Home
+        - link [ref=e25] [cursor=pointer]:
+          - /url: /clinical/patients
+          - img [ref=e26]
+          - paragraph [ref=e28]: Patients
+        - link [ref=e29] [cursor=pointer]:
+          - /url: /clinical/expert-dashboard
+          - img [ref=e30]
+          - paragraph [ref=e32]: Appointment Dashboard
+        - link [ref=e33] [cursor=pointer]:
+          - /url: /clinical/help-center
+          - img [ref=e34]
+          - paragraph [ref=e36]: Help Center
+        - link [ref=e37] [cursor=pointer]:
+          - /url: /clinical/settings
+          - img [ref=e38]
+          - paragraph [ref=e40]: Settings
+      - generic [ref=e41]:
+        - generic [ref=e42]:
+          - generic [ref=e44]:
+            - navigation [ref=e45]:
+              - list [ref=e46]:
+                - listitem [ref=e47]:
+                  - button [ref=e48]: Clinical Co-Pilot
+                - listitem [ref=e49]: /
+                - listitem [ref=e50]:
+                  - paragraph [ref=e51]: Test user-413967
+            - button [ref=e53] [cursor=pointer]:
+              - text: Actions
+              - img [ref=e54]
+          - generic [ref=e56]:
+            - generic [ref=e57]:
+              - generic [ref=e60]:
+                - generic [ref=e61]:
+                  - heading [level=4] [ref=e62]: Test user-413967
+                  - paragraph [ref=e63]: Female
+                - generic [ref=e64]:
+                  - generic [ref=e65]:
+                    - img [ref=e66]
+                    - paragraph [ref=e67]: 06th January 2026
+                  - generic [ref=e68]:
+                    - img [ref=e69]
+                    - paragraph [ref=e70]: testuser-413967@tmail.com
+              - generic [ref=e72]:
+                - heading [level=6] [ref=e73]: Expert Details
+                - paragraph [ref=e74]: Anthony Smith
+                - generic [ref=e75]:
+                  - generic [ref=e76]:
+                    - img [ref=e77]
+                    - paragraph [ref=e79]: e.cliniciantestuser@asksam.com.au
+                  - generic [ref=e80]:
+                    - img [ref=e81]
+                    - paragraph [ref=e83]: "+61413801384"
+            - paragraph [ref=e86]: Summary
+            - img [ref=e91] [cursor=pointer]
+            - generic [ref=e93]:
+              - generic [ref=e95]:
+                - generic:
+                  - img
+                - tablist [ref=e98]:
+                  - tab [selected] [ref=e99] [cursor=pointer]: Clinical Advice
+                  - tab [ref=e100] [cursor=pointer]: Clinical Examination
+                  - tab [ref=e101] [cursor=pointer]: Follow-Up Note
+                  - tab [ref=e102] [cursor=pointer]: Case History
+                - generic:
+                  - img
+              - tabpanel [ref=e104]:
+                - generic [ref=e106]:
+                  - generic [ref=e108]:
+                    - generic [ref=e111]:
+                      - generic [ref=e112]:
+                        - heading [level=6] [ref=e113]: Chief Complaint (CC)
+                        - img [ref=e114]
+                      - textbox [ref=e136]:
+                        - list [ref=e138]:
+                          - listitem [ref=e139]:
+                            - generic [ref=e141]: Patient reports worsening symptoms of depression and anxiety.
+                          - listitem [ref=e142]:
+                            - generic [ref=e144]: Patient describes severe insomnia.
+                          - listitem [ref=e145]:
+                            - generic [ref=e147]: Patient states loss of appetite and weight loss.
+                          - listitem [ref=e148]:
+                            - generic [ref=e150]: Patient expresses pervasive feelings of hopelessness.
+                          - listitem [ref=e151]:
+                            - generic [ref=e153]: Patient experiences frequent panic attacks.
+                    - generic [ref=e154]:
+                      - generic [ref=e157]:
+                        - generic [ref=e158]:
+                          - heading [level=6] [ref=e159]: History of Present Illness (HPI)
+                          - img [ref=e160]
+                        - textbox [ref=e182]:
+                          - list [ref=e184]:
+                            - listitem [ref=e185]:
+                              - generic [ref=e187]: 2020 - Patient reports severe depression following the sudden death of a brother, resulting in hospitalization for six weeks, prescribed Fluoxetine and Olanzapine, and initiated grief counseling.
+                            - listitem [ref=e188]:
+                              - generic [ref=e190]: 2016 - Patient experienced a manic episode characterized by excessive energy, decreased need for sleep, and impulsive decision-making, leading to a three-week hospitalization and a diagnosis of Bipolar Disorder, treated with Lithium and Valproate.
+                            - listitem [ref=e191]:
+                              - generic [ref=e193]: 2015 - Patient had a major depressive episode triggered by the anniversary of a brother's death, resulting in hospitalization for four weeks, medication adjustments, intensive psychotherapy, and a brief course of inpatient Electroconvulsive Therapy.
+                            - listitem [ref=e194]:
+                              - generic [ref=e196]: Unknown - Patient currently reports worsening symptoms of depression and anxiety, severe insomnia, loss of appetite, weight loss, pervasive feelings of hopelessness, and frequent panic attacks, leading to a recent suicide attempt involving an overdose of prescribed medications.
+                            - listitem [ref=e197]:
+                              - generic [ref=e199]: Current - Patient is hospitalized for the third week in a psychiatric unit for management of these symptoms.
+                      - generic [ref=e202]:
+                        - generic [ref=e203]:
+                          - heading [level=6] [ref=e204]: Session Summary
+                          - img [ref=e205]
+                        - textbox [ref=e227]:
+                          - list [ref=e229]:
+                            - listitem [ref=e230]:
+                              - generic [ref=e232]: No information available.
+                    - generic [ref=e233]:
+                      - generic [ref=e236]:
+                        - generic [ref=e237]:
+                          - heading [level=6] [ref=e238]: Advice
+                          - img [ref=e239]
+                        - textbox [ref=e261]
+                      - generic [ref=e267]:
+                        - generic [ref=e268]:
+                          - heading [level=6] [ref=e269]: Future Treatment Plan
+                          - img [ref=e270]
+                        - textbox [ref=e292]:
+                          - list [ref=e294]:
+                            - listitem [ref=e295]:
+                              - generic [ref=e297]: "Continuation of current medications: Fluoxetine, Sertraline, Lithium, Valproate, Olanzapine, and Lorazepam."
+                            - listitem [ref=e298]:
+                              - generic [ref=e300]: Intensive Cognitive Behavioral Therapy (CBT).
+                            - listitem [ref=e301]:
+                              - generic [ref=e303]: Mindfulness-Based Stress Reduction (MBSR).
+                            - listitem [ref=e304]:
+                              - generic [ref=e306]: Individual psychotherapy sessions once a week.
+                            - listitem [ref=e307]:
+                              - generic [ref=e309]: Occupational Therapy.
+                            - listitem [ref=e310]:
+                              - generic [ref=e312]: Regular follow-ups to monitor mood stabilization and medication adherence.
+                            - listitem [ref=e313]:
+                              - generic [ref=e315]: Development of a structured reintegration plan for daily life and work.
+                            - listitem [ref=e316]:
+                              - generic [ref=e318]: Encouragement to engage in hobbies and interests to enhance overall well-being.
+                    - generic [ref=e320]:
+                      - heading [level=6] [ref=e321]: Medications to be Prescribed
+                      - img [ref=e322]
+                    - generic [ref=e325]:
+                      - generic [ref=e327]:
+                        - heading [level=6] [ref=e328]: Lab Test
+                        - img [ref=e329]
+                      - button [ref=e333] [cursor=pointer]:
+                        - img [ref=e335]
+                        - text: Add Lab Test
+                  - generic [ref=e337]:
+                    - generic [ref=e340]:
+                      - generic [ref=e341]:
+                        - heading [level=6] [ref=e342]: Recommend Expert
+                        - img [ref=e343]
+                      - button [ref=e346] [cursor=pointer]:
+                        - img [ref=e348]
+                        - text: History
+                    - generic [ref=e352]:
+                      - generic [ref=e353]:
+                        - heading [level=6] [ref=e354]: Recommend Program
+                        - img [ref=e355]
+                      - button [ref=e358] [cursor=pointer]:
+                        - img [ref=e360]
+                        - text: History
+                    - generic [ref=e363]:
+                      - generic [ref=e364]:
+                        - heading [level=6] [ref=e365]: Recommend Assessment
+                        - img [ref=e366]
+                      - button [ref=e369] [cursor=pointer]:
+                        - img [ref=e371]
+                        - text: History
+                    - generic [ref=e374]:
+                      - generic [ref=e375]:
+                        - heading [level=6] [ref=e376]: Recommend Content
+                        - img [ref=e377]
+                      - button [ref=e380] [cursor=pointer]:
+                        - img [ref=e382]
+                        - text: History
+        - contentinfo [ref=e385]:
+          - paragraph [ref=e387]: asksam does not provide medical advice, diagnosis, or treatment recommendations. Output must be reviewed by a qualified clinician. asksam is not designed to replace clinical reasoning or provide medical decision guidance.
+    - alert [ref=e391]:
+      - generic [ref=e392]:
+        - img [ref=e393]
+        - text: Your note has been submitted successfully
+      - button [ref=e396] [cursor=pointer]:
+        - img [ref=e397]
+  - dialog "User button popover" [ref=e400]:
+    - generic [ref=e401]:
+      - generic [ref=e402]:
+        - img "Anthony Smith's logo" [ref=e405]
+        - generic [ref=e407]:
+          - generic [ref=e409]: Anthony Smith
+          - generic [ref=e410]: e.cliniciantestuser@asksam.com.au
+      - menu [ref=e411]:
+        - menuitem "Settings" [disabled]:
+          - generic:
+            - generic:
+              - img
+          - text: Settings
+        - menuitem "Sign out" [disabled]: Sign out
+    - generic [ref=e416]:
+      - paragraph [ref=e417]: Secured by
+      - link "Clerk logo" [ref=e418] [cursor=pointer]:
+        - /url: https://go.clerk.com/components
+        - img [ref=e419]
+```
