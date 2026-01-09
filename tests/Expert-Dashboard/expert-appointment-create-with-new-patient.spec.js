@@ -6,7 +6,7 @@ test('Expert Dashboard | Create patient & book appointment', async ({ page }) =>
   const login = new LoginPage(page);
   const appointment = new ExpertAppointmentPage(page);
 
-  /* ===== LOGIN (REUSE EXISTING METHOD) ===== */
+  /* ===== LOGIN ===== */
   await login.loginAsClinician();
 
   /* ===== GO TO EXPERT DASHBOARD ===== */
@@ -19,7 +19,11 @@ test('Expert Dashboard | Create patient & book appointment', async ({ page }) =>
   const patient = await appointment.createPatient();
   console.log('✅ Created patient:', patient);
 
-  await appointment.selectPatient(patient);
+  // ✅ FIXED LINE
+  await appointment.selectExistingPatient(
+    `${patient.firstName} ${patient.lastName}`
+  );
+
   await appointment.selectExpert();
   await appointment.bookAppointment();
 

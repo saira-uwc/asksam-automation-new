@@ -1,0 +1,186 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e5]:
+      - link [ref=e8] [cursor=pointer]:
+        - /url: https://www.asksam.com.au/
+      - generic [ref=e9]:
+        - link "appointments" [ref=e10] [cursor=pointer]:
+          - /url: /expert/appointments
+          - img [ref=e11]
+        - link "chat" [ref=e13] [cursor=pointer]:
+          - /url: /expert/chat
+          - img [ref=e14]
+        - link "notifications" [ref=e16] [cursor=pointer]:
+          - /url: /expert/notifications
+          - img [ref=e17]
+        - button "Open user menu" [ref=e20] [cursor=pointer]:
+          - img "Anthony Smith's logo" [ref=e23]
+  - generic [ref=e26]:
+    - list [ref=e28]:
+      - link "Dashboard" [ref=e29] [cursor=pointer]:
+        - /url: /expert/dashboard
+        - img [ref=e31]
+        - generic [ref=e34]: Dashboard
+      - link "Appointments" [ref=e35] [cursor=pointer]:
+        - /url: /expert/appointments
+        - img [ref=e37]
+        - generic [ref=e40]: Appointments
+      - link "Session Management" [ref=e41] [cursor=pointer]:
+        - /url: /expert/sessionmanagement
+        - img [ref=e43]
+        - generic [ref=e46]: Session Management
+      - link "Patients" [ref=e47] [cursor=pointer]:
+        - /url: /expert/patients
+        - img [ref=e49]
+        - generic [ref=e52]: Patients
+      - link "Chat" [active] [ref=e53] [cursor=pointer]:
+        - /url: /expert/chat
+        - img [ref=e55]
+        - generic [ref=e58]: Chat
+      - link "Notifications" [ref=e59] [cursor=pointer]:
+        - /url: /expert/notifications
+        - img [ref=e61]
+        - generic [ref=e64]: Notifications
+      - link "Help Center" [ref=e65] [cursor=pointer]:
+        - /url: /expert/help-center
+        - img [ref=e67]
+        - generic [ref=e70]: Help Center
+      - link "Payouts" [ref=e71] [cursor=pointer]:
+        - /url: /expert/payouts
+        - img [ref=e73]
+        - generic [ref=e76]: Payouts
+      - link "Settings" [ref=e77] [cursor=pointer]:
+        - /url: /expert/settings
+        - img [ref=e79]
+        - generic [ref=e82]: Settings
+    - generic [ref=e84]:
+      - generic [ref=e85]:
+        - heading "Patients" [level=6] [ref=e86]
+        - list [ref=e87]:
+          - listitem [ref=e88]:
+            - img "Testt The Sairaa" [ref=e90]
+            - generic [ref=e91]:
+              - heading "Testt The Sairaa" [level=6] [ref=e92]
+              - paragraph [ref=e93]: testsaira@tmail.in
+          - listitem [ref=e94]:
+            - img "Yamini 130" [ref=e96]
+            - generic [ref=e97]:
+              - heading "Yamini 130" [level=6] [ref=e98]
+              - paragraph [ref=e99]: ys130_aus+clerk_test@tmail.com
+          - listitem [ref=e100]:
+            - img "Yamini Singh" [ref=e102]
+            - generic [ref=e103]:
+              - heading "Yamini Singh" [level=6] [ref=e104]
+              - paragraph [ref=e105]: ys139_aus+clerk_test@tmail.com
+          - listitem [ref=e106]:
+            - img "Yamini Pal Singh" [ref=e108]
+            - generic [ref=e109]:
+              - heading "Yamini Pal Singh" [level=6] [ref=e110]
+              - paragraph [ref=e111]: +1 2125550192
+          - listitem [ref=e112]:
+            - img "Yamini Pal Singh" [ref=e114]
+            - generic [ref=e115]:
+              - heading "Yamini Pal Singh" [level=6] [ref=e116]
+              - paragraph [ref=e117]: ys138_aus+clerk_test@tmail.com
+          - listitem [ref=e118]:
+            - img "Yamini 135" [ref=e120]
+            - generic [ref=e121]:
+              - heading "Yamini 135" [level=6] [ref=e122]
+              - paragraph [ref=e123]: ys135_aus+clerk_test@tmail.com
+          - listitem [ref=e124]:
+            - img "Yamini 0199" [ref=e126]
+            - generic [ref=e127]:
+              - heading "Yamini 0199" [level=6] [ref=e128]
+              - paragraph [ref=e129]: Ysys133_aus+clerk_test@tmail.com
+          - listitem [ref=e130]:
+            - img "Melanie" [ref=e132]
+            - generic [ref=e133]:
+              - heading "Melanie" [level=6] [ref=e134]
+              - paragraph [ref=e135]: mel+clerk_test@tmail.com
+          - listitem [ref=e136]:
+            - img "Yamini" [ref=e138]
+            - generic [ref=e139]:
+              - heading "Yamini" [level=6] [ref=e140]
+              - paragraph [ref=e141]: ys125_aus+clerk_test@tmail.com
+          - listitem [ref=e142]:
+            - img "Guest" [ref=e144]
+            - generic [ref=e145]:
+              - heading "Guest" [level=6] [ref=e146]
+              - paragraph [ref=e147]: ys121_aus+clerk_test@tmail.com
+          - listitem [ref=e148]:
+            - generic [ref=e149]: A
+            - generic [ref=e150]:
+              - heading "Ankit Pandey" [level=6] [ref=e151]
+              - paragraph [ref=e152]: deleted_502022_ankit1_aus+clerk_test@tmail.com
+          - listitem [ref=e153]:
+            - img "John Smith" [ref=e155]
+            - generic [ref=e156]:
+              - heading "John Smith" [level=6] [ref=e157]
+              - paragraph [ref=e158]: ys110_aus+clerk_test@tmail.com
+          - listitem [ref=e159]:
+            - img "John 100" [ref=e161]
+            - generic [ref=e162]:
+              - heading "John 100" [level=6] [ref=e163]
+              - paragraph [ref=e164]: ys100_aus+clerk_test@tmail.com
+          - listitem [ref=e165]:
+            - generic [ref=e166]: "Y"
+            - generic [ref=e167]:
+              - heading "Yamini" [level=6] [ref=e168]
+              - paragraph [ref=e169]: ys97_aus+clerk_test@tmail.com
+          - listitem [ref=e170]:
+            - generic [ref=e171]: J
+            - generic [ref=e172]:
+              - heading "John 93" [level=6] [ref=e173]
+              - paragraph [ref=e174]: ys93_aus+clerk_test@tmail.com
+          - listitem [ref=e175]:
+            - img "John 25" [ref=e177]
+            - generic [ref=e178]:
+              - heading "John 25" [level=6] [ref=e179]
+              - paragraph [ref=e180]: ys83_aus+clerk_test@tmail.com
+          - listitem [ref=e181]:
+            - img "Mary" [ref=e183]
+            - generic [ref=e184]:
+              - heading "Mary" [level=6] [ref=e185]
+              - paragraph [ref=e186]: australia.emailer@yopmail.com
+          - listitem [ref=e187]:
+            - img "Steve Maiden Jr" [ref=e189]
+            - generic [ref=e190]:
+              - heading "Steve Maiden Jr" [level=6] [ref=e191]
+              - paragraph [ref=e192]: yaboyav355@acedby.com
+          - listitem [ref=e193]:
+            - img "Yugal" [ref=e195]
+            - generic [ref=e196]:
+              - heading "Yugal" [level=6] [ref=e197]
+              - paragraph [ref=e198]: ys43_aus+clerk_test@tmail.com
+          - listitem [ref=e199]:
+            - img "Elyaana" [ref=e201]
+            - generic [ref=e202]:
+              - heading "Elyaana" [level=6] [ref=e203]
+              - paragraph [ref=e204]: nilat63872@bamsrad.com
+          - listitem [ref=e205]:
+            - img "Dipanjan Australia" [ref=e207]
+            - generic [ref=e208]:
+              - heading "Dipanjan Australia" [level=6] [ref=e209]
+              - paragraph [ref=e210]: dip1.aussy@yopmail.com
+          - listitem [ref=e211]:
+            - img "Yasmine khan" [ref=e213]
+            - generic [ref=e214]:
+              - heading "Yasmine khan" [level=6] [ref=e215]
+              - paragraph [ref=e216]: ys33_aus+clerk_test@tmail.com
+          - listitem [ref=e217]:
+            - img "Sammy Anderson" [ref=e219]
+            - generic [ref=e220]:
+              - heading "Sammy Anderson" [level=6] [ref=e221]
+              - paragraph [ref=e222]: ys30_aus+clerk_test@tmail.com
+          - listitem [ref=e223]:
+            - img "Sam" [ref=e225]
+            - generic [ref=e226]:
+              - heading "Sam" [level=6] [ref=e227]
+              - paragraph [ref=e228]: ys29_aus+clerk_test@tmail.com
+      - generic [ref=e231]:
+        - img [ref=e232]
+        - paragraph [ref=e315]: Select a Patient to Start Chat
+```

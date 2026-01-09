@@ -1,0 +1,11 @@
+📅 Trying date: 01/09/2026
+❌ No slots on 01/09/2026
+📅 Trying date: 01/10/2026
+❌ No slots on 01/10/2026
+📅 Trying date: 01/11/2026
+❌ No slots on 01/11/2026
+📅 Trying date: 01/12/2026
+❌ No slots on 01/12/2026
+📅 Trying date: 01/13/2026
+❌ No slots on 01/13/2026
+📅 Trying date: 01/14/2026

@@ -4,15 +4,15 @@
   "description": "",
   "main": "index.js",
 "scripts": {
-  "publish:html": "rm -rf docs && mkdir docs && cp -r reports/html-report/* docs/",
+  "test": "npx playwright test",
+  "test:headed": "npx playwright test --headed",
+  "publish": "bash scripts/publish-pages.sh",
+  "report": "npx playwright show-report reports/html-report",
   "clean:allure": "rm -rf reports/allure-results reports/allure-report",
-  "test": "npm run clean:allure && node -r dotenv/config ./node_modules/playwright/cli.js test",
-  "test:headed": "npm run clean:allure && node -r dotenv/config ./node_modules/playwright/cli.js test --headed",
   "allure:generate": "allure generate reports/allure-results --clean -o reports/allure-report",
   "allure:open": "allure open reports/allure-report",
-  "test:file:publish": "npx playwright test && npm run publish:pages",
-  "publish:pages": "bash scripts/publish-pages.sh",
-  "test:publish": "npm run test && npm run publish:pages"
+  "test:file": "node -r dotenv/config ./node_modules/playwright/cli.js test",
+  "publish:pages": "bash scripts/publish-pages.sh"
 },
   "keywords": [],
   "author": "",

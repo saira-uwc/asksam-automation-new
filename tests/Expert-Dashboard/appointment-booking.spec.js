@@ -1,40 +1,24 @@
-import { test } from '@playwright/test';
-import { AppointmentPage } from '../../pages/appointment.page';
+import { test, expect } from '@playwright/test';
+import { LoginPage } from '../../pages/login.page.js';
+import { ExpertAppointmentPage } from '../../pages/expert-appointment.page.js';
 
 test('Expert Dashboard | Appointment booking (dynamic slots)', async ({ page }) => {
-  // ===== LOGIN =====
-  await page.goto('https://dashboard.asksam.com.au/sign-in');
+  const login = new LoginPage(page);
+  const appointment = new ExpertAppointmentPage(page);
 
-  await page.getByRole('textbox', { name: 'Email address' }).fill(
-    'testing_clinician_aus+clerk_test@tmail.com'
-  );
-  await page.getByRole('button', { name: 'Continue' }).click();
+  /* ===== LOGIN ===== */
+  await login.loginAsClinician();
 
-  await page.getByRole('textbox', { name: 'Enter verification code' }).fill(
-    '424242'
-  );
-
-  // wait after OTP (VERY IMPORTANT)
-  await page.waitForTimeout(6000);
-
-  // ===== DASHBOARD =====
+  /* ===== DASHBOARD ===== */
   await page.goto('https://dashboard.asksam.com.au/expert/dashboard');
-  await page.waitForLoadState('networkidle');
+  await expect(page).toHaveURL(/expert\/dashboard/);
 
-  await page.getByRole('link', { name: 'Appointments', exact: true }).click();
-  await page.getByRole('button', { name: 'Book new appointment' }).click();
+  /* ===== BOOK APPOINTMENT ===== */
+  await appointment.openAppointments();
+  await appointment.selectExistingPatient('testsaira');
+  await appointment.selectExpert();
+  await appointment.bookAppointment();
+    /* ===== LOGOUT ===== */
+    await login.logout();
 
-  const appointment = new AppointmentPage(page);
-
-  await appointment.selectUser('testsaira');
-  await appointment.selectExpert('Anthony');
-  await appointment.selectConsult('Natural Medicine', 'Follow up Consult');
-
-  await appointment.findFirstAvailableSlot(30);
-  await appointment.selectPayment('Complimentary');
-  await appointment.book();
-
-  // ===== LOGOUT =====
-  await page.getByRole('button', { name: 'Open user menu' }).click();
-  await page.getByRole('menuitem', { name: 'Sign out' }).click();
 });

@@ -1,0 +1,100 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - banner [ref=e4]:
+    - button "Open user menu" [ref=e11] [cursor=pointer]:
+      - img "test autouser331996's logo" [ref=e14]
+  - generic [ref=e17]:
+    - generic [ref=e19]:
+      - link "Home" [ref=e20] [cursor=pointer]:
+        - /url: /clinical/home
+        - img [ref=e21]
+        - paragraph [ref=e23]: Home
+      - link "Patients" [ref=e24] [cursor=pointer]:
+        - /url: /clinical/patients
+        - img [ref=e25]
+        - paragraph [ref=e27]: Patients
+      - link "Help Center" [ref=e28] [cursor=pointer]:
+        - /url: /clinical/help-center
+        - img [ref=e29]
+        - paragraph [ref=e31]: Help Center
+      - link "Settings" [ref=e32] [cursor=pointer]:
+        - /url: /clinical/settings
+        - img [ref=e33]
+        - paragraph [ref=e35]: Settings
+    - generic [ref=e36]:
+      - generic [ref=e37]:
+        - navigation "breadcrumb" [ref=e39]:
+          - list [ref=e40]:
+            - listitem [ref=e41]:
+              - generic [ref=e42] [cursor=pointer]: Settings
+            - listitem [ref=e43]: /
+            - listitem [ref=e44]: Plans & Billing
+        - generic [ref=e46]:
+          - button "Edit Profile" [ref=e47] [cursor=pointer]
+          - button "Plans & Billing" [ref=e48] [cursor=pointer]
+        - generic [ref=e51]:
+          - heading "Our Plans" [level=3] [ref=e52]
+          - generic [ref=e53]:
+            - generic [ref=e55] [cursor=pointer]:
+              - generic [ref=e56]:
+                - generic [ref=e57]:
+                  - heading "Free" [level=4] [ref=e58]
+                  - paragraph [ref=e59]: Free for Everyone*
+                - generic [ref=e60]:
+                  - generic [ref=e61]: $0/month
+                  - generic [ref=e62]:
+                    - generic [ref=e63]:
+                      - img [ref=e64]
+                      - paragraph [ref=e66]: You can create up to 30 Clinical Notes every month.
+                    - generic [ref=e67]:
+                      - img [ref=e68]
+                      - paragraph [ref=e70]: You can use up to 10 Letter Templates Per Month.
+                    - generic [ref=e71]:
+                      - img [ref=e72]
+                      - paragraph [ref=e74]: 10 asksam Interactions Per Month
+                    - generic [ref=e75]:
+                      - img [ref=e76]
+                      - paragraph [ref=e78]: Download Clinical Notes as PDFs
+                    - generic [ref=e79]:
+                      - img [ref=e80]
+                      - paragraph [ref=e82]: Basic Customer Support
+                  - generic [ref=e83]: "*No credit card required."
+              - button "Try for Free" [active] [ref=e85]: Try for Free
+            - generic [ref=e87] [cursor=pointer]:
+              - generic [ref=e88]:
+                - generic [ref=e89]:
+                  - heading "Pro" [level=4] [ref=e90]
+                  - paragraph [ref=e91]: Full Suite
+                - generic [ref=e92]:
+                  - generic [ref=e93]: $99/month
+                  - generic [ref=e94]:
+                    - generic [ref=e95]:
+                      - img [ref=e96]
+                      - paragraph [ref=e98]: Download Clinical Notes as PDFs
+                    - generic [ref=e99]:
+                      - img [ref=e100]
+                      - paragraph [ref=e102]: Unlimited Access to Clinical Notes
+                    - generic [ref=e103]:
+                      - img [ref=e104]
+                      - paragraph [ref=e106]: Unlimited Letter Templates Access
+                    - generic [ref=e107]:
+                      - img [ref=e108]
+                      - paragraph [ref=e110]: Unlimited asksam Interactions
+                    - generic [ref=e111]:
+                      - img [ref=e112]
+                      - paragraph [ref=e114]: Drug-Drug Interaction Alerts
+                    - generic [ref=e115]:
+                      - img [ref=e116]
+                      - paragraph [ref=e118]: Lab Test & Medication Suggestions
+                    - generic [ref=e119]:
+                      - img [ref=e120]
+                      - paragraph [ref=e122]: Clinical Knowledge Graph
+                    - generic [ref=e123]:
+                      - img [ref=e124]
+                      - paragraph [ref=e126]: Prioritised Customer Support
+              - button "Subscribe Now" [ref=e128]: Subscribe Now
+      - contentinfo [ref=e129]:
+        - paragraph [ref=e131]: asksam does not provide medical advice, diagnosis, or treatment recommendations. Output must be reviewed by a qualified clinician. asksam is not designed to replace clinical reasoning or provide medical decision guidance.
+```
