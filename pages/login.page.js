@@ -10,10 +10,9 @@ export class LoginPage {
   }
 
   async loginAsClinician() {
-    await this.page.goto('https://asksam.com.au/');
+    // Navigate directly to the registration/login page
+    await this.page.goto('https://account.asksam.com.au/register');
 
-    await this.page.locator('img').nth(4).click();
-    await this.page.getByRole('link', { name: 'Sign up / Log in', exact: true }).click();
     await this.page.getByRole('button', { name: 'Log in here' }).click();
     await this.page.getByText('Clinician').click();
     await this.continueBtn.click();

@@ -3,12 +3,10 @@ export class CCOPClinicianSignupPage {
       this.page = page;
     }
   
-    /* ================= SIGNUP ================= */
-    async signup(user) {
-      await this.page.goto('https://asksam.com.au/', { waitUntil: 'load' });
-  
-      await this.page.locator('img').nth(4).click();
-      await this.page.getByRole('link', { name: 'Sign up / Log in', exact: true }).click();
+  /* ================= SIGNUP ================= */
+  async signup(user) {
+    // Navigate directly to the registration page
+    await this.page.goto('https://account.asksam.com.au/register', { waitUntil: 'load' });
   
       await this.page.getByText('Clinician').click();
       await this.page.getByRole('button', { name: "Let's get started" }).click();

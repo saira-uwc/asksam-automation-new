@@ -1,0 +1,157 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#content"
+  - banner:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - link [ref=e7] [cursor=pointer]:
+          - /url: https://asksam.com.au
+        - list [ref=e9]:
+          - listitem [ref=e10]:
+            - link "Clinicians" [ref=e11] [cursor=pointer]:
+              - /url: https://asksam.com.au/clinicians/
+              - generic [ref=e12]: Clinicians
+          - listitem [ref=e13]:
+            - link "Patients" [ref=e14] [cursor=pointer]:
+              - /url: https://asksam.com.au/patients/
+              - generic [ref=e15]: Patients
+          - listitem [ref=e16]:
+            - link "Education" [ref=e17] [cursor=pointer]:
+              - /url: https://asksam.com.au/education/
+              - generic [ref=e18]: Education
+          - listitem [ref=e19]:
+            - link "Evidence" [ref=e20] [cursor=pointer]:
+              - /url: https://asksam.com.au/resource/
+              - generic [ref=e21]: Evidence
+          - listitem [ref=e22]:
+            - link "News" [ref=e23] [cursor=pointer]:
+              - /url: https://asksam.com.au/news/
+              - generic [ref=e24]: News
+          - listitem [ref=e25]:
+            - link "Contact" [ref=e26] [cursor=pointer]:
+              - /url: https://asksam.com.au/contact-us/
+              - generic [ref=e27]: Contact
+      - generic [ref=e28]:
+        - link "Sign up / Log in" [ref=e30] [cursor=pointer]:
+          - /url: https://account.asksam.com.au/register
+          - generic [ref=e32]: Sign up / Log in
+        - link "Try – it’s free" [ref=e34] [cursor=pointer]:
+          - /url: https://account.asksam.com.au/register
+          - generic [ref=e36]: Try – it’s free
+  - main [ref=e37]:
+    - generic [ref=e39]:
+      - generic [ref=e43]:
+        - heading "asksam™ - Trusted AI powered care" [level=2] [ref=e45]
+        - paragraph [ref=e47]: Connecting clinicians and patients beyond the consultation
+        - generic [ref=e48]:
+          - link "For patients" [ref=e49] [cursor=pointer]:
+            - /url: https://asksam.com.au/patients/
+            - paragraph [ref=e51]: For patients
+          - link "For clinicians" [ref=e52] [cursor=pointer]:
+            - /url: https://asksam.com.au/clinicians/
+            - paragraph [ref=e54]: For clinicians
+      - generic [ref=e56]:
+        - generic [ref=e59]: Trusted by 2M+ users across the globe
+        - region "Image Carousel" [ref=e62]:
+          - generic [ref=e63]:
+            - group [ref=e64]:
+              - figure [ref=e65]:
+                - img [ref=e66]
+            - group [ref=e67]:
+              - figure [ref=e68]:
+                - img [ref=e69]
+            - group [ref=e70]:
+              - figure [ref=e71]:
+                - img [ref=e72]
+            - group [ref=e73]:
+              - figure [ref=e74]:
+                - img [ref=e75]
+            - group [ref=e76]:
+              - figure [ref=e77]:
+                - img [ref=e78]
+            - group "2 / 4" [ref=e79]:
+              - figure [ref=e80]:
+                - img "02.svg" [ref=e81]
+            - group "3 / 4" [ref=e82]:
+              - figure [ref=e83]:
+                - img "03.svg" [ref=e84]
+            - group "4 / 4" [ref=e85]:
+              - figure [ref=e86]:
+                - img "04.svg" [ref=e87]
+            - group "1 / 4" [ref=e88]:
+              - figure [ref=e89]:
+                - img "01.svg" [ref=e90]
+            - group [ref=e91]:
+              - figure [ref=e92]:
+                - img [ref=e93]
+            - group [ref=e94]:
+              - figure [ref=e95]:
+                - img [ref=e96]
+            - group [ref=e97]:
+              - figure [ref=e98]:
+                - img [ref=e99]
+  - contentinfo [ref=e100]:
+    - generic [ref=e102]:
+      - generic [ref=e103]:
+        - generic [ref=e106]:
+          - heading "Quick Links" [level=2] [ref=e108]
+          - navigation "Menu" [ref=e110]:
+            - list [ref=e111]:
+              - listitem [ref=e112]:
+                - link "Patients" [ref=e113] [cursor=pointer]:
+                  - /url: https://asksam.com.au/patients/
+              - listitem [ref=e114]:
+                - link "Education" [ref=e115] [cursor=pointer]:
+                  - /url: https://asksam.com.au/education/
+              - listitem [ref=e116]:
+                - link "Evidence" [ref=e117] [cursor=pointer]:
+                  - /url: https://asksam.com.au/resource/
+              - listitem [ref=e118]:
+                - link "Contact Us" [ref=e119] [cursor=pointer]:
+                  - /url: https://asksam.com.au/contact-us/
+              - listitem [ref=e120]:
+                - link "News" [ref=e121] [cursor=pointer]:
+                  - /url: https://asksam.com.au/news/
+              - listitem [ref=e122]:
+                - link "Sign Up / Log In" [ref=e123] [cursor=pointer]:
+                  - /url: https://account.asksam.com.au/register
+              - listitem [ref=e124]:
+                - link "Try For Free" [ref=e125] [cursor=pointer]:
+                  - /url: https://account.asksam.com.au/register
+        - generic [ref=e126]:
+          - heading "Important Notice" [level=2] [ref=e128]
+          - paragraph [ref=e130]: asksam© operates solely as an administrative and information-support platform. It does not analyse clinical inputs, interpret symptoms, identify conditions, monitor patient status, or offer diagnostic, therapeutic, or prognostic advice. The system supports clinicians through workflow efficiency and information organisation while ensuring that clinical judgement remains entirely with the healthcare provider.
+      - generic [ref=e131]:
+        - list [ref=e133]:
+          - listitem [ref=e134]:
+            - link "Facebook" [ref=e135] [cursor=pointer]:
+              - /url: https://www.facebook.com/p/Ask-Sam-AI-61574273091294/
+              - generic [ref=e136]: Facebook
+              - img [ref=e137]
+          - listitem [ref=e139]:
+            - link "Linkedin" [ref=e140] [cursor=pointer]:
+              - /url: https://au.linkedin.com/company/asksamclinicalcopilot
+              - generic [ref=e141]: Linkedin
+              - img [ref=e142]
+          - listitem [ref=e144]:
+            - link "Instagram" [ref=e145] [cursor=pointer]:
+              - /url: https://www.instagram.com/asksamai/
+              - generic [ref=e146]: Instagram
+              - img [ref=e147]
+          - listitem [ref=e149]:
+            - link "Youtube" [ref=e150] [cursor=pointer]:
+              - /url: https://www.youtube.com/@AskSam_clinicalcopilot
+              - generic [ref=e151]: Youtube
+              - img [ref=e152]
+        - generic [ref=e154]:
+          - text: asksam© 2026 All Rights Reserved
+          - link "Privacy Policy" [ref=e156] [cursor=pointer]:
+            - /url: https://legal.asksam.com.au/au/privacy-policy
+          - text: "|"
+          - link "FAQ" [ref=e158] [cursor=pointer]:
+            - /url: https://asksam.com.au/faq/
+  - generic [ref=e159]: desktop
+```
