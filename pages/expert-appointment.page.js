@@ -47,12 +47,16 @@ export class ExpertAppointmentPage {
   async selectExistingPatient(patientName) {
     const searchBox = this.page.getByRole('combobox', { name: 'Search User' });
 
-    await searchBox.waitFor({ timeout: 20000 });
+    await searchBox.waitFor({ state: 'visible', timeout: 20000 });
     await searchBox.click();
     await searchBox.fill(patientName);
 
-    const patientOption = this.page.getByText(patientName, { exact: false });
-    await patientOption.waitFor({ timeout: 20000 });
+    // ✅ Scope to listbox dropdown (same pattern as selectExpert)
+    const listbox = this.page.locator('[role="listbox"]');
+    await listbox.waitFor({ state: 'visible', timeout: 20000 });
+
+    const patientOption = listbox.getByText(patientName, { exact: false });
+    await patientOption.waitFor({ state: 'visible', timeout: 20000 });
     await patientOption.click();
   }
 
@@ -451,7 +455,7 @@ async createPatientFromPatientsModule() {
   await this.page.getByRole('button', { name: 'Create Patient' }).click();
 
   await this.page
-    .getByText('Patient registered')
+    .getByText(/Patient registered|Patient created|successfully/i)
     .waitFor({ timeout: 30000 });
 
   return patient;

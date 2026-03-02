@@ -50,7 +50,7 @@ export class CCOPClinicianSignupPage {
     async completeTours(popup) {
       // HOME
       await popup.getByRole('link', { name: 'Home' }).click();
-      await popup.waitForLoadState('networkidle');
+      await popup.waitForLoadState('domcontentloaded');
   
       // HOME TOUR
       await popup.getByRole('button', { name: 'Start tour' }).click();
@@ -64,7 +64,7 @@ export class CCOPClinicianSignupPage {
   
       // HELP CENTER TOUR
       await popup.getByRole('link', { name: 'Help Center' }).click();
-      await popup.waitForLoadState('networkidle');
+      await popup.waitForLoadState('domcontentloaded');
   
       await popup.getByRole('button', { name: 'Next →' }).click();
       await popup.waitForTimeout(500);
@@ -74,7 +74,7 @@ export class CCOPClinicianSignupPage {
   
       // BACK HOME
       await popup.getByRole('link', { name: 'Home' }).click();
-      await popup.waitForLoadState('networkidle');
+      await popup.waitForLoadState('domcontentloaded');
   
       // FIRST CLINICAL
       await popup.getByRole('button', { name: 'Create Your First Clinical' }).click();
