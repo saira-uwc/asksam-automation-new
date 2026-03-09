@@ -1,5 +1,3 @@
-import { safeClick } from "../helpers/wait.js";
-
 export class LoginPage {
   constructor(page) {
     this.page = page;
@@ -23,8 +21,8 @@ export class LoginPage {
     // OTP – always same as per your requirement
     await this.otpInput.fill('424242');
 
-    // ✅ IMPORTANT: wait for backend + redirect
-    await this.page.waitForURL('**/clinical/home', { timeout: 30000 });
+    // ✅ IMPORTANT: wait for backend + redirect (60s for full suite runs - auth can be throttled)
+    await this.page.waitForURL('**/clinical/home', { timeout: 60000 });
   }
   async logout() {
     await this.page.getByRole('button', { name: 'Open user menu' }).click();

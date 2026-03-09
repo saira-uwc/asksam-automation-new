@@ -1,0 +1,3 @@
+🔍 Searching patient: Yamini Singh 191
+🔍 Searching patient: Ganesh Test 123
+✅ Selected patient (search): Ganesh Test 123

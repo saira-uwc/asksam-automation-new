@@ -1,0 +1,5 @@
+✅ Created patient: {
+  firstName: 'Test',
+  lastName: 'user-234130',
+  email: 'testuser-234130@tmail.com'
+}

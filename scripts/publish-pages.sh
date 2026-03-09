@@ -2,7 +2,7 @@
 set -e
 
 REPORT_REPO="$HOME/Documents/Saira Automation/Test Run Reports/asksam-playwright-reports"
-AUTOMATION_REPO="$HOME/Documents/Saira Automation/Playwright Automation V1.1"
+AUTOMATION_REPO="$HOME/Documents/automation"
 
 echo "🧹 Cleaning old report..."
 rm -rf "$REPORT_REPO/docs"

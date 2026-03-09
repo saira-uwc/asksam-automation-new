@@ -101,7 +101,8 @@ export class ExpertAppointmentPage {
     const dateInput = this.page.getByRole('textbox', { name: 'Appointment Date' });
     const findSlotsBtn = this.page.getByRole('button', { name: 'Find Slots' });
 
-    for (let i = 0; i < 7; i++) {
+    // 14 days instead of 7 — prevents slot depletion when full suite runs back-to-back
+    for (let i = 0; i < 14; i++) {
       const date = new Date();
       date.setDate(date.getDate() + i + 1);
 

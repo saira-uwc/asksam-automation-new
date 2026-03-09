@@ -1,0 +1,265 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e4]:
+      - button [ref=e11] [cursor=pointer]:
+        - img [ref=e14]
+    - generic [ref=e17]:
+      - generic [ref=e19]:
+        - link [ref=e20] [cursor=pointer]:
+          - /url: /clinical/home
+          - img [ref=e21]
+          - paragraph [ref=e23]: Home
+        - link [ref=e24] [cursor=pointer]:
+          - /url: /clinical/patients
+          - img [ref=e25]
+          - paragraph [ref=e27]: Patients
+        - link [ref=e28] [cursor=pointer]:
+          - /url: /clinical/expert-dashboard
+          - img [ref=e29]
+          - paragraph [ref=e31]: Appointment Dashboard
+        - link [ref=e32] [cursor=pointer]:
+          - /url: /clinical/help-center
+          - img [ref=e33]
+          - paragraph [ref=e35]: Help Center
+        - link [ref=e36] [cursor=pointer]:
+          - /url: /clinical/settings
+          - img [ref=e37]
+          - paragraph [ref=e39]: Settings
+      - generic [ref=e40]:
+        - generic [ref=e41]:
+          - button [ref=e44]: Clinical Assistant
+          - generic [ref=e45]:
+            - generic [ref=e46]:
+              - generic [ref=e48]:
+                - button [ref=e49] [cursor=pointer]: In Progress
+                - button [ref=e50] [cursor=pointer]: Completed
+                - button [ref=e51] [cursor=pointer]: All
+              - button [ref=e54] [cursor=pointer]:
+                - img [ref=e56]
+                - generic [ref=e58]: Create Clinical Note
+            - generic [ref=e59]:
+              - generic [ref=e61]:
+                - generic [ref=e64]:
+                  - generic [ref=e65]:
+                    - generic [ref=e66]:
+                      - img [ref=e68]
+                      - generic [ref=e70]:
+                        - heading [level=6] [ref=e71]: Test user-737161
+                        - paragraph [ref=e72]: New
+                    - button [ref=e73] [cursor=pointer]:
+                      - img [ref=e74]
+                  - paragraph [ref=e78]:
+                    - text: "Consultation Date:"
+                    - generic [ref=e79]: 02 Mar, 26
+                  - button [ref=e81] [cursor=pointer]:
+                    - img [ref=e83]
+                    - text: Edit Draft
+                - generic [ref=e87]:
+                  - generic [ref=e88]:
+                    - generic [ref=e89]:
+                      - img [ref=e91]
+                      - generic [ref=e93]:
+                        - heading [level=6] [ref=e94]: Yamini Singh 200
+                        - paragraph [ref=e95]: Follow-up
+                    - button [ref=e96] [cursor=pointer]:
+                      - img [ref=e97]
+                  - paragraph [ref=e101]:
+                    - text: "Consultation Date:"
+                    - generic [ref=e102]: 27 Feb, 26
+                  - button [ref=e104] [cursor=pointer]:
+                    - img [ref=e106]
+                    - text: Edit Draft
+                - generic [ref=e110]:
+                  - generic [ref=e111]:
+                    - generic [ref=e112]:
+                      - img [ref=e114]
+                      - generic [ref=e116]:
+                        - heading [level=6] [ref=e117]: Yamini Singh 200
+                        - paragraph [ref=e118]: Follow-up
+                    - button [ref=e119] [cursor=pointer]:
+                      - img [ref=e120]
+                  - paragraph [ref=e124]:
+                    - text: "Consultation Date:"
+                    - generic [ref=e125]: 27 Feb, 26
+                  - button [ref=e127] [cursor=pointer]:
+                    - img [ref=e129]
+                    - text: Edit Draft
+                - generic [ref=e133]:
+                  - generic [ref=e134]:
+                    - generic [ref=e135]:
+                      - img [ref=e137]
+                      - generic [ref=e139]:
+                        - heading [level=6] [ref=e140]: Yamini Singh 200
+                        - paragraph [ref=e141]: Follow-up
+                    - button [ref=e142] [cursor=pointer]:
+                      - img [ref=e143]
+                  - paragraph [ref=e147]:
+                    - text: "Consultation Date:"
+                    - generic [ref=e148]: 27 Feb, 26
+                  - button [ref=e150] [cursor=pointer]:
+                    - img [ref=e152]
+                    - text: Edit Draft
+                - generic [ref=e156]:
+                  - generic [ref=e157]:
+                    - generic [ref=e158]:
+                      - img [ref=e160]
+                      - generic [ref=e162]:
+                        - heading [level=6] [ref=e163]: Yamini Singh 200
+                        - paragraph [ref=e164]: Follow-up
+                    - button [ref=e165] [cursor=pointer]:
+                      - img [ref=e166]
+                  - paragraph [ref=e170]:
+                    - text: "Consultation Date:"
+                    - generic [ref=e171]: 27 Feb, 26
+                  - button [ref=e173] [cursor=pointer]:
+                    - img [ref=e175]
+                    - text: Edit Draft
+                - generic [ref=e179]:
+                  - generic [ref=e180]:
+                    - generic [ref=e181]:
+                      - img [ref=e183]
+                      - generic [ref=e185]:
+                        - heading [level=6] [ref=e186]: Yamini Singh 200
+                        - paragraph [ref=e187]: Follow-up
+                    - button [ref=e188] [cursor=pointer]:
+                      - img [ref=e189]
+                  - paragraph [ref=e193]:
+                    - text: "Consultation Date:"
+                    - generic [ref=e194]: 27 Feb, 26
+                  - button [ref=e196] [cursor=pointer]:
+                    - img [ref=e198]
+                    - text: Edit Draft
+                - generic [ref=e202]:
+                  - generic [ref=e203]:
+                    - generic [ref=e204]:
+                      - img [ref=e206]
+                      - generic [ref=e208]:
+                        - heading [level=6] [ref=e209]: Yamini Singh 200
+                        - paragraph [ref=e210]: Follow-up
+                    - button [ref=e211] [cursor=pointer]:
+                      - img [ref=e212]
+                  - paragraph [ref=e216]:
+                    - text: "Consultation Date:"
+                    - generic [ref=e217]: 27 Feb, 26
+                  - button [ref=e219] [cursor=pointer]:
+                    - img [ref=e221]
+                    - text: Edit Draft
+                - generic [ref=e225]:
+                  - generic [ref=e226]:
+                    - generic [ref=e227]:
+                      - img [ref=e229]
+                      - generic [ref=e231]:
+                        - heading [level=6] [ref=e232]: Yamini Singh 200
+                        - paragraph [ref=e233]: Follow-up
+                    - button [ref=e234] [cursor=pointer]:
+                      - img [ref=e235]
+                  - paragraph [ref=e239]:
+                    - text: "Consultation Date:"
+                    - generic [ref=e240]: 27 Feb, 26
+                  - button [ref=e242] [cursor=pointer]:
+                    - img [ref=e244]
+                    - text: Edit Draft
+              - navigation [ref=e248]:
+                - list [ref=e249]:
+                  - listitem [ref=e250]:
+                    - button [disabled]:
+                      - img
+                  - listitem [ref=e251]:
+                    - button [ref=e252] [cursor=pointer]: "1"
+                  - listitem [ref=e253]:
+                    - button [ref=e254] [cursor=pointer]: "2"
+                  - listitem [ref=e255]:
+                    - button [ref=e256] [cursor=pointer]: "3"
+                  - listitem [ref=e257]:
+                    - button [ref=e258] [cursor=pointer]: "4"
+                  - listitem [ref=e259]:
+                    - button [ref=e260] [cursor=pointer]: "5"
+                  - listitem [ref=e261]:
+                    - generic [ref=e262]: …
+                  - listitem [ref=e263]:
+                    - button [ref=e264] [cursor=pointer]: "67"
+                  - listitem [ref=e265]:
+                    - button [ref=e266] [cursor=pointer]:
+                      - img [ref=e267]
+        - contentinfo [ref=e269]:
+          - paragraph [ref=e271]: asksam does not provide medical advice, diagnosis, or treatment recommendations. Output must be reviewed by a qualified clinician. asksam is not designed to replace clinical reasoning or provide medical decision guidance.
+  - dialog [ref=e275]:
+    - heading [level=2] [ref=e276]:
+      - heading [level=6] [ref=e277]: Search Patient
+      - button [ref=e278] [cursor=pointer]:
+        - img [ref=e279]
+    - generic [ref=e282]:
+      - img [ref=e283]
+      - textbox [ref=e286]:
+        - /placeholder: Search by name or email...
+        - text: Yamini Singh 185
+    - generic [ref=e288]:
+      - generic [ref=e289] [cursor=pointer]:
+        - generic [ref=e291]:
+          - paragraph [ref=e292]: Yamini Singh 185
+          - generic [ref=e293]:
+            - paragraph [ref=e294]:
+              - img [ref=e295]
+              - generic [ref=e297]: ys185_aus+clerk_test@tmail.com
+            - generic [ref=e298]:
+              - img [ref=e299]
+              - generic [ref=e302]: +1 2125550145
+        - img [ref=e303]
+      - generic [ref=e305] [cursor=pointer]:
+        - generic [ref=e307]:
+          - paragraph [ref=e308]: Yamini Singh 185
+          - generic [ref=e309]:
+            - paragraph [ref=e310]:
+              - img [ref=e311]
+              - generic [ref=e313]: ys185_aus@yopmail.com
+            - generic [ref=e314]:
+              - img [ref=e315]
+              - generic [ref=e318]: ys185_aus@yopmail.com
+        - img [ref=e319]
+    - button [ref=e322] [cursor=pointer]:
+      - img [ref=e324]
+      - text: Create New Patient Profile
+  - dialog "Voice and Document Transcriptions Upload History Send Transcription" [ref=e328]:
+    - generic [ref=e329]:
+      - generic [ref=e330]: Voice and Document Transcriptions
+      - generic [ref=e331]:
+        - button "Upload" [ref=e332] [cursor=pointer]:
+          - img [ref=e333]
+          - text: Upload
+        - button "History" [ref=e335] [cursor=pointer]: History
+        - button "Send Transcription" [active] [ref=e336] [cursor=pointer]:
+          - img [ref=e337]
+          - text: Send Transcription
+        - button [ref=e340] [cursor=pointer]:
+          - img [ref=e341]
+    - generic [ref=e343]:
+      - generic [ref=e346]:
+        - textbox "Start Typing..." [ref=e347]: "Name: Yamini Singh Age: 33 years old Occupation: Unemployed, was previously attached in a MNC Company Sales Team Marital Status: Separated, Divorced Family: Father (deceased, alcoholic), Sister (deceased), Mother(schizophrenia, liver cirrhosis) Education: Bachelor's Degree in Computer Science from a prestigious university Residence: Lives alone in a duplex apartment in a metropolitan city Yamini mentioned in her early discussion, that she had bad some major episodes on, 2020: Severe depression following the sudden death of her brother. She was hospitalised for six weeks and prescribed Fluoxetine (Prozac) and Olanzapine (Zyprexa). During this time, she also began seeing a therapist for grief counselling. 2016: Experienced a manic episode characterised by excessive energy, decreased need for sleep, and impulsive decision-making. Hospitalised for three weeks and diagnosed with Bipolar Disorder. Treated with Lithium and Valproate. 2015: Another major depressive episode triggered by the anniversary of her brother's death. She was hospitalised for four weeks, during which her medications were adjusted, and she received intensive psychotherapy. Her treatment included a brief course of inpatient Electroconvulsive Therapy (ECT). Current Hospitalisation: Reason for Admission: Yamini was admitted following a suicide attempt involving an overdose of her prescribed medications. She has been experiencing worsening symptoms of depression and anxiety, including severe insomnia, loss of appetite, weight loss, pervasive feelings of hopelessness, and frequent panic attacks. Length of Stay: Currently in her third week of hospitalisation in a psychiatric unit. Current Medications: Fluoxetine (Prozac), Sertraline (Zoloft) Oral, after food twice daily for 6 months Lithium, Valproate Oral, with milk once daily for 6 months Olanzapine (Zyprexa) Oral, after food Once daily for 20 days Lorazepam (Ativan) Oral, after food twice daily for 1 year Medication on 2020: Aripiprazole (Abilify) 5 mg daily oral once after food Zolpidem (Ambien) 5 mg as needed once everyday, with milk orally Medication on 2017: Escitalopram (Lexapro) 20 mg daily Oral, after food Once daily for 10 days Lamotrigine (Lamictal) 200 mg daily Oral, after food once a week for 3 weeks Medication on 2015: Aripiprazole (Abilify) 10 mg daily oral for 30 days Clonazepam (Klonopin) 0.5 mg oral once in a week after food Zolpidem (Ambien) 10 mg once everyday, with milk orally for 3 months Past Therapies: 2017 Cognitive Behavioural Therapy (CBT) focusing on managing depressive and anxious thoughts 2016-2017 Dialectical Behaviour Therapy (DBT) for emotion regulation and distress tolerance 2020 Group Therapy sessions for social support and shared experiences Grief counselling after her brother's death Current Therapies: Intensive CBT focusing on restructuring negative thought patterns and developing coping skills Mindfulness-Based Stress Reduction (MBSR) to manage stress and anxiety Individual Psychotherapy sessions once a week with a focus on processing grief and trauma Occupational Therapy to improve daily functioning and work- life balance Father: Alcoholic, passed away at age 45 from liver cirrhosis. His alcoholism led to an unstable and abusive home environment during Yamini's childhood, contributing to Yamini's early experiences with anxiety and depression. Brother: Died in a car accident when Yamini was 18. The loss was a significant traumatic event that triggered Yamini's first major depressive episode. Psychosocial Factors: Social Support: Has a close-knit group of friends and colleagues, but her relationships are often strained due to her mental health issues and demanding work schedule. She finds it difficult to open up about her struggles. Hobbies and Interests: Enjoys reading, playing the guitar, and hiking. However, she has neglected these activities over the past year due to her deteriorating mental health. Substance Use: Occasionally consumes alcohol socially, but has avoided excessive drinking due to her father's history of alcoholism. Current Treatment Goals: Stabilise Mood: Achieve mood stabilisation through a combination of medication and psychotherapy. Reduce Symptoms: Alleviate symptoms of depression and anxiety to improve daily functioning. Improve Sleep: Address insomnia through medication and behavioural interventions. Enhance Coping Mechanisms: Develop healthier coping strategies to manage stress and emotional triggers. Improve Work-Life Balance: Encourage a healthier balance between work and personal life to reduce burnout. Family Therapy: Consider family therapy sessions to address unresolved issues related to her father and brother's deaths. Reintegration Plan: Develop a structured plan for reintegration into her daily life and work, ensuring support systems are in place to prevent relapse. Prognosis: Yamini's prognosis is cautiously optimistic. She adheres to treatment and actively engages in therapeutic interventions. Regular follow-ups, a robust support system, and a balanced approach to work and self-care are essential for sustained improvement. Current Vitals: Vitals: Height: 5 feet 10 inches (178 cm) Weight: 150 pounds (68 kg) Body Mass Index (BMI): 21.5 (Normal weight) Blood Pressure: 130/85 mmHg (Slightly elevated) Heart Rate: 78 beats per minute (Normal) Respiratory Rate: 16 breaths per minute (Normal) Temperature: 98.6°F (37°C) (Normal) Oxygen Saturation: 98% on room air (Normal) Laboratory Results: Current Lab Tests: Complete Blood Count (CBC): Within normal limits Liver Function Tests (LFTs): Slightly elevated ALT (likely due to medication) Renal Function: Normal Thyroid Function Tests: Normal Electrolytes: Within normal limits Lipid Profile: Slightly elevated LDL cholesterol Psychiatric Assessment: Current Mental Status Exam: Appearance: Well-groomed but appearing fatigued Behaviour: Cooperative but exhibits psychomotor retardation Speech: Slow and soft Mood: Depressed Affect: Constricted Thought Process: Logical but slowed Thought Content: Expresses feelings of hopelessness and worthlessness, denies current suicidal ideation Cognition: Intact orientation to time, place, and person; attention and concentration mildly impaired Insight and Judgment: Good insight into her condition, judgment intact but affected by mood Interventions for Yamini Singh Medication Management: Fluoxetine (Prozac) Sertraline (Zoloft) Lithium Valproate Olanzapine (Zyprexa) Lorazepam (Ativan) Escitalopram (Lexapro) Lamotrigine (Lamictal) Aripiprazole (Abilify) Clonazepam (Klonopin) Zolpidem (Ambien) Psychotherapy: Intensive Cognitive Behavioural Therapy (CBT) Dialectical Behaviour Therapy (DBT) Individual Psychotherapy Group Therapy Grief Counseling Behavioural Interventions: Mindfulness-Based Stress Reduction (MBSR) Occupational Therapy Electroconvulsive Therapy (ECT): Brief inpatient course during a major depressive episode in 2015 Hospitalisation: Multiple admissions for severe depressive and manic episodes Current hospitalisation following a suicide attempt Supportive Therapies: Family Therapy (consideration for future intervention) Lifestyle and Daily Functioning: Developing a structured plan for reintegration into daily life and work Encouragement of hobbies and interests (reading, playing guitar, hiking) as part of a balanced lifestyle"
+        - generic [ref=e348]:
+          - button [ref=e349] [cursor=pointer]:
+            - img [ref=e350]
+          - button [ref=e352] [cursor=pointer]:
+            - img [ref=e353]
+      - generic [ref=e357]:
+        - generic [ref=e359]:
+          - generic "Select Language for Speech Recognition" [ref=e360]:
+            - generic [ref=e361]:
+              - combobox [ref=e362] [cursor=pointer]:
+                - generic [ref=e363]:
+                  - img [ref=e364]
+                  - generic [ref=e366]: English
+              - textbox: en
+              - img
+              - group
+          - button "For best results, please use voice dictation in the selected language." [ref=e367] [cursor=pointer]:
+            - img [ref=e368]
+        - button [ref=e377] [cursor=pointer]:
+          - img [ref=e378]
+      - generic [ref=e383]:
+        - progressbar [ref=e384]:
+          - img [ref=e385]
+        - paragraph [ref=e387]: Processing transcription...
+```

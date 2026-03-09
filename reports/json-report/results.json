@@ -1,0 +1,145 @@
+{
+  "config": {
+    "configFile": "/Users/user/Documents/automation/playwright.config.js",
+    "rootDir": "/Users/user/Documents/automation/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "line",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "reports/html-report",
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/json-report/results.json"
+        }
+      ],
+      [
+        "/Users/user/Documents/automation/node_modules/allure-playwright/dist/cjs/index.js",
+        {
+          "resultsDir": "reports/allure-results"
+        }
+      ],
+      [
+        "/Users/user/Documents/automation/reporters/sheet-reporter.js",
+        null
+      ],
+      [
+        "/Users/user/Documents/automation/helpers/failure-reporter.js",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/user/Documents/automation/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/user/Documents/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 120000
+      }
+    ],
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.57.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "Expert-Dashboard/expert-helpcenter-ticket.spec.js",
+      "file": "Expert-Dashboard/expert-helpcenter-ticket.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Expert Dashboard | Help Center raise & reply ticket",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 72730,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-02T09:48:54.387Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/user/Documents/automation/test-results/Expert-Dashboard-expert-he-63b9d-p-Center-raise-reply-ticket/test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/user/Documents/automation/test-results/Expert-Dashboard-expert-he-63b9d-p-Center-raise-reply-ticket/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "dde1d994f6eaccf85f1d-1ac6d2037fefa8d78f8b",
+          "file": "Expert-Dashboard/expert-helpcenter-ticket.spec.js",
+          "line": 4,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-03-02T09:48:53.770Z",
+    "duration": 73981.982,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

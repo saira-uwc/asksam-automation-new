@@ -19,6 +19,7 @@ export default defineConfig({
   reporter: [
     ["line"],
     ["html", { outputFolder: "reports/html-report", open: "never" }],
+    ["json", { outputFile: "reports/json-report/results.json" }],
     ["allure-playwright", { resultsDir: "reports/allure-results" }],
     ["./reporters/sheet-reporter.js"],
     ["./helpers/failure-reporter.js"]
