@@ -22,6 +22,7 @@ export default defineConfig({
     ["json", { outputFile: "reports/json-report/results.json" }],
     ["allure-playwright", { resultsDir: "reports/allure-results" }],
     ["./reporters/sheet-reporter.js"],
+    ["./reporters/google-sheets-reporter.js"],
     ["./helpers/failure-reporter.js"]
   ],
 

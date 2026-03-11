@@ -2,17 +2,33 @@ name: Run Playwright Tests
 
 on:
   schedule:
-    # Run daily at 6 AM UTC
-    - cron: '0 6 * * *'
+    # Run daily at 6 AM IST (12:30 AM UTC) and 6 PM IST (12:30 PM UTC)
+    - cron: '30 0 * * *'
+    - cron: '30 12 * * *'
+
+  # Allow Google Apps Script scheduler to trigger via repository_dispatch
+  repository_dispatch:
+    types: [run-tests, send-email]
+
   workflow_dispatch:
     inputs:
       test_filter:
         description: 'Test filter (e.g., CCOP, Expert-Dashboard, or leave empty for all)'
         required: false
         default: ''
+      send_email:
+        description: 'Send email report after tests'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
 
 jobs:
   test:
+    # Skip test job if this is a send-email-only dispatch
+    if: github.event.action != 'send-email'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -39,10 +55,11 @@ jobs:
           fi
         env:
           CI: true
+          GOOGLE_APPS_SCRIPT_URL: ${{ secrets.GOOGLE_SHEETS_WEB_APP_URL }}
 
-      - name: Update dashboard
+      - name: Generate dashboard data
         if: always()
-        run: node scripts/update-dashboard.js
+        run: node scripts/generate-dashboard.js
 
       - name: Commit and push dashboard updates
         if: always()
@@ -50,8 +67,28 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add docs/
-          git diff --staged --quiet || git commit -m "Update test dashboard [skip ci]"
+          git diff --staged --quiet || git commit -m "Update dashboard data [skip ci]"
           git push
+
+      - name: Push dashboard to GitHub Pages repo
+        if: always()
+        run: |
+          git clone https://x-access-token:${{ secrets.DASHBOARD_PAT }}@github.com/saira-uwc/asksam-playwright-reports.git /tmp/dashboard-repo
+          cp docs/test-results.json /tmp/dashboard-repo/test-results.json
+          cd /tmp/dashboard-repo
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git add test-results.json
+          git diff --staged --quiet || git commit -m "Update dashboard data [skip ci]"
+          git push
+
+      - name: Send email report
+        if: always() && (github.event.action == 'run-tests' || github.event.inputs.send_email == 'true' || github.event_name == 'schedule')
+        run: node scripts/send-email-report.js
+        env:
+          EMAIL_WEB_APP_URL: ${{ secrets.EMAIL_WEB_APP_URL }}
+          REPORT_RECIPIENTS: ${{ secrets.REPORT_RECIPIENTS }}
+          GOOGLE_SHEETS_URL: ${{ secrets.GOOGLE_SHEETS_URL }}
 
       - name: Upload test results
         if: always()
@@ -62,3 +99,27 @@ jobs:
             reports/
             test-results/
           retention-days: 30
+
+  # Standalone email job — triggered by "send-email" dispatch
+  send-email:
+    if: github.event.action == 'send-email'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Send email report
+        run: node scripts/send-email-report.js
+        env:
+          EMAIL_WEB_APP_URL: ${{ secrets.EMAIL_WEB_APP_URL }}
+          REPORT_RECIPIENTS: ${{ secrets.REPORT_RECIPIENTS }}
+          GOOGLE_SHEETS_URL: ${{ secrets.GOOGLE_SHEETS_URL }}
