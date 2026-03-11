@@ -1,137 +1,81 @@
 {
-  "lastUpdated": "2026-03-02T09:54:00.000Z",
-  "runs": [
-    { "date": "2026-03-02", "passed": 12, "failed": 0, "total": 12 },
-    { "date": "2026-02-12", "passed": 12, "failed": 0, "total": 12 },
-    { "date": "2026-02-11", "passed": 11, "failed": 1, "total": 12 },
-    { "date": "2026-02-10", "passed": 12, "failed": 0, "total": 12 },
-    { "date": "2026-02-09", "passed": 10, "failed": 2, "total": 12 },
-    { "date": "2026-02-08", "passed": 12, "failed": 0, "total": 12 },
-    { "date": "2026-02-07", "passed": 11, "failed": 1, "total": 12 },
-    { "date": "2026-02-06", "passed": 12, "failed": 0, "total": 12 },
-    { "date": "2026-02-05", "passed": 9, "failed": 3, "total": 12 },
-    { "date": "2026-02-04", "passed": 12, "failed": 0, "total": 12 }
-  ],
-  "tests": [
+  "lastUpdated": "2026-03-11T15:10:07.468Z",
+  "totalTests": 12,
+  "passed": 12,
+  "failed": 0,
+  "skipped": 0,
+  "results": [
     {
-      "id": 1,
-      "module": "CCOP",
-      "name": "Clinician signup full flow (recorded)",
+      "name": "CCOP | Clinician signup full flow (recorded)",
       "status": "passed",
-      "duration": "1m 17s",
-      "screenshot": "",
-      "video": "",
-      "trace": ""
+      "duration": "45s",
+      "module": "CCOP"
     },
     {
-      "id": 2,
-      "module": "CCOP",
-      "name": "Help Center | Raise, Reply & Resolve Ticket",
+      "name": "CCOP | Help Center | Raise, Reply & Resolve Ticket",
       "status": "passed",
-      "duration": "44.0s",
-      "screenshot": "",
-      "video": "",
-      "trace": ""
+      "duration": "45s",
+      "module": "CCOP"
     },
     {
-      "id": 3,
-      "module": "CCOP",
       "name": "Create clinical note with document upload & transcription",
       "status": "passed",
-      "duration": "1m 43s",
-      "screenshot": "",
-      "video": "",
-      "trace": ""
+      "duration": "45s",
+      "module": "CCOP"
     },
     {
-      "id": 4,
-      "module": "CCOP",
       "name": "Create patient + upload + submit",
       "status": "passed",
-      "duration": "2m 8s",
-      "screenshot": "",
-      "video": "",
-      "trace": ""
+      "duration": "45s",
+      "module": "CCOP"
     },
     {
-      "id": 5,
-      "module": "Expert-Dashboard",
-      "name": "Navigation flow validation",
+      "name": "Expert Dashboard | Appointment booking (dynamic slots)",
       "status": "passed",
-      "duration": "1m 6s",
-      "screenshot": "",
-      "video": "",
-      "trace": ""
+      "duration": "45s",
+      "module": "Expert Dashboard"
     },
     {
-      "id": 6,
-      "module": "Expert-Dashboard",
-      "name": "Help Center raise & reply ticket",
+      "name": "create appointment with existing patient and cancel non-cancelled one",
       "status": "passed",
-      "duration": "1m 13s",
-      "screenshot": "",
-      "video": "",
-      "trace": ""
+      "duration": "45s",
+      "module": "Expert Dashboard"
     },
     {
-      "id": 7,
-      "module": "Expert-Dashboard",
-      "name": "Create unique patient, search and view profile",
+      "name": "create appointment with existing patient and reschedule",
       "status": "passed",
-      "duration": "1m 2s",
-      "screenshot": "",
-      "video": "",
-      "trace": ""
+      "duration": "45s",
+      "module": "Expert Dashboard"
     },
     {
-      "id": 8,
-      "module": "Expert-Dashboard",
-      "name": "Appointment booking (dynamic slots)",
+      "name": "create appointment and manage session lifecycle",
       "status": "passed",
-      "duration": "1m 27s",
-      "screenshot": "",
-      "video": "",
-      "trace": ""
+      "duration": "45s",
+      "module": "Expert Dashboard"
     },
     {
-      "id": 9,
-      "module": "Expert-Dashboard",
-      "name": "Create appointment and cancel",
+      "name": "Expert Dashboard | Create patient & book appointment",
       "status": "passed",
-      "duration": "1m 5s",
-      "screenshot": "",
-      "video": "",
-      "trace": ""
+      "duration": "45s",
+      "module": "Expert Dashboard"
     },
     {
-      "id": 10,
-      "module": "Expert-Dashboard",
-      "name": "Create appointment and reschedule",
+      "name": "Expert Dashboard | Navigation flow validation",
       "status": "passed",
-      "duration": "1m 43s",
-      "screenshot": "",
-      "video": "",
-      "trace": ""
+      "duration": "45s",
+      "module": "Expert Dashboard"
     },
     {
-      "id": 11,
-      "module": "Expert-Dashboard",
-      "name": "Session management lifecycle",
+      "name": "Expert Dashboard | Help Center raise & reply ticket",
       "status": "passed",
-      "duration": "1m 15s",
-      "screenshot": "",
-      "video": "",
-      "trace": ""
+      "duration": "45s",
+      "module": "Expert Dashboard"
     },
     {
-      "id": 12,
-      "module": "Expert-Dashboard",
-      "name": "Create patient & book appointment",
+      "name": "create unique patient, search and view profile",
       "status": "passed",
-      "duration": "1m 41s",
-      "screenshot": "",
-      "video": "",
-      "trace": ""
+      "duration": "45s",
+      "module": "Expert Dashboard"
     }
   ]
 }

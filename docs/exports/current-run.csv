@@ -1,0 +1,13 @@
+Test Name,Status,Duration (s),Module,File
+CCOP | Clinician signup full flow (recorded),passed,73.5,CCOP,CCOP/ccop-clinician-signup.spec.js
+CCOP | Help Center | Raise, Reply & Resolve Ticket,passed,64.4,CCOP,CCOP/ccop-helpcenter-ticket.spec.js
+Create clinical note with document upload & transcription,passed,72.0,CCOP,CCOP/clinical-note.spec.js
+Create patient + upload + submit,passed,70.6,CCOP,CCOP/create-patient-clinical-note.spec.js
+Expert Dashboard | Appointment booking (dynamic slots),passed,74.8,Expert Dashboard,Expert-Dashboard/appointment-booking.spec.js
+create appointment with existing patient and cancel non-cancelled one,passed,71.5,Expert Dashboard,Expert-Dashboard/appointment-create-and-cancel.spec.js
+create appointment with existing patient and reschedule,passed,63.6,Expert Dashboard,Expert-Dashboard/appointment-create-and-reschedule.spec.js
+create appointment and manage session lifecycle,passed,48.3,Expert Dashboard,Expert-Dashboard/appointment-session-management.spec.js
+Expert Dashboard | Create patient & book appointment,passed,51.3,Expert Dashboard,Expert-Dashboard/expert-appointment-create-with-new-patient.spec.js
+Expert Dashboard | Navigation flow validation,passed,71.0,Expert Dashboard,Expert-Dashboard/expert-dashboard-navigation.spec.js
+Expert Dashboard | Help Center raise & reply ticket,passed,61.1,Expert Dashboard,Expert-Dashboard/expert-helpcenter-ticket.spec.js
+create unique patient, search and view profile,passed,53.9,Expert Dashboard,Expert-Dashboard/patient-create-and-view.spec.js
