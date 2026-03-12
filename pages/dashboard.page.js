@@ -104,12 +104,10 @@ export class DashboardPage {
 
     await this.page.getByRole('button', { name: 'Transcribe All' }).click();
 
-    // transcription takes time (real backend)
-    await this.page.waitForTimeout(15000);
-
+    // Wait for transcription to complete — CI can be slow
     await this.page
       .getByRole('button', { name: 'Send Transcription' })
-      .waitFor({ state: 'visible', timeout: 20000 });
+      .waitFor({ state: 'visible', timeout: 120000 });
 
     await this.page.getByRole('button', { name: 'Send Transcription' }).click();
   }

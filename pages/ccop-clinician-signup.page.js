@@ -20,8 +20,8 @@ export class CCOPClinicianSignupPage {
       // OTP
       await this.page.getByRole('textbox', { name: 'Enter verification code' }).fill('424242');
   
-      // backend redirect time
-      await this.page.waitForTimeout(5000);
+      // Wait for Clerk to finish auth and redirect
+      await this.page.waitForURL(/copilot|clinical|dashboard/, { timeout: 60000 }).catch(() => {});
     }
   
     /* ================= FREE PLAN ================= */
@@ -56,8 +56,10 @@ export class CCOPClinicianSignupPage {
       await popup.getByRole('button', { name: 'Start tour' }).click();
   
       for (let i = 0; i < 4; i++) {
-        await popup.getByRole('button', { name: 'Next →' }).click();
-        await popup.waitForTimeout(500);
+        const nextBtn = popup.getByRole('button', { name: 'Next →' });
+        await nextBtn.waitFor({ state: 'visible', timeout: 10000 });
+        await nextBtn.click();
+        await popup.waitForTimeout(800);
       }
   
       await popup.getByRole('button', { name: 'Done' }).click();

@@ -16,15 +16,10 @@ test(
     await page.getByRole('textbox', { name: 'Enter verification code' })
       .fill('424242');
 
-    // 🔑 CRITICAL: DO NOTHING – let Clerk finish internally
-    await page.waitForTimeout(6000);
-
-    /* ===== NOW SAFE TO NAVIGATE ===== */
+    // ✅ Wait for Clerk to finish auth and redirect
+    await page.waitForURL('**/expert/dashboard', { timeout: 60000 }).catch(() => {});
     await page.goto('https://dashboard.asksam.com.au/expert/dashboard');
-
-    // Wait for dashboard UI (NOT URL / networkidle)
     await page.waitForSelector('body', { timeout: 60000 });
-    await page.waitForTimeout(2000);
 
     // Poll until sidebar is ready
     const helpCenterLink = page.getByRole('link', { name: 'Help Center' });

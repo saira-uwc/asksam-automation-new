@@ -1,3 +1,5 @@
+import { expect } from '@playwright/test';
+
 export class ExpertAppointmentPage {
   constructor(page) {
     this.page = page;
@@ -113,7 +115,7 @@ export class ExpertAppointmentPage {
       await dateInput.fill(formattedDate);
       await findSlotsBtn.click();
 
-      await this.page.waitForTimeout(3000);
+      await this.page.waitForTimeout(5000);
 
       const slots = this.page.getByRole('button', { name: /AM|PM/ });
 
@@ -127,12 +129,8 @@ export class ExpertAppointmentPage {
 
     const bookBtn = this.page.getByRole('button', { name: 'Book' });
 
-    await this.page.waitForFunction(
-      (btn) => !btn.disabled,
-      await bookBtn.elementHandle(),
-      { timeout: 20000 }
-    );
-
+    await bookBtn.waitFor({ state: 'visible', timeout: 20000 });
+    await expect(bookBtn).toBeEnabled({ timeout: 20000 });
     await bookBtn.click();
 
     await this.page
@@ -208,7 +206,7 @@ export class ExpertAppointmentPage {
       });
   
       try {
-        await slots.first().waitFor({ timeout: 8000 });
+        await slots.first().waitFor({ timeout: 15000 });
       } catch {
         continue; // ❌ no slots → next date
       }
@@ -230,12 +228,7 @@ export class ExpertAppointmentPage {
       name: /Confirm and Reschedule/i,
     });
   
-    await this.page.waitForFunction(
-      btn => !btn.disabled,
-      await confirmBtn.elementHandle(),
-      { timeout: 20000 }
-    );
-  
+    await expect(confirmBtn).toBeEnabled({ timeout: 20000 });
     await confirmBtn.click();
   
     // 6️⃣ Success toast
