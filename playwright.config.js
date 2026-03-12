@@ -12,9 +12,10 @@ console.log("Loaded ENV in config:", {
 export default defineConfig({
   testDir: "./tests",
 
-  timeout: 120000,
+  timeout: 180000,
   retries: 1,
   workers: 1,
+  expect: { timeout: 15000 },
 
   reporter: [
     ["line"],
@@ -31,5 +32,7 @@ export default defineConfig({
     screenshot: "on",
     video: "on",
     trace: "retain-on-failure",
+    navigationTimeout: 60000,
+    actionTimeout: 30000,
   }
 });

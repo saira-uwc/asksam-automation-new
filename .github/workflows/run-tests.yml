@@ -2,8 +2,9 @@ name: Run Playwright Tests
 
 on:
   schedule:
-    # Run daily at 6 AM IST (12:30 AM UTC) and 6 PM IST (12:30 PM UTC)
+    # Run daily at 6 AM IST (12:30 AM UTC) — tests only, NO email
     - cron: '30 0 * * *'
+    # Run daily at 6 PM IST (12:30 PM UTC) — tests + email report
     - cron: '30 12 * * *'
 
   # Allow Google Apps Script scheduler to trigger via repository_dispatch
@@ -83,7 +84,7 @@ jobs:
           git push
 
       - name: Send email report
-        if: always() && (github.event.action == 'run-tests' || github.event.inputs.send_email == 'true' || github.event_name == 'schedule')
+        if: always() && (github.event.action == 'run-tests' || github.event.inputs.send_email == 'true' || (github.event_name == 'schedule' && github.event.schedule == '30 12 * * *'))
         run: node scripts/send-email-report.js
         env:
           EMAIL_WEB_APP_URL: ${{ secrets.EMAIL_WEB_APP_URL }}
