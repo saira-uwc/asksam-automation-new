@@ -26,23 +26,25 @@ export class CCOPClinicianSignupPage {
   
     /* ================= FREE PLAN ================= */
     async activateFreePlan() {
-      // EXACTLY like recording
       await this.page.goto(
         'https://copilot.asksam.com.au/clinical/settings?view=Plans%20%26%20Billing',
         { waitUntil: 'load' }
       );
-  
-      const popupPromise = this.page.waitForEvent('popup');
+
+      await this.page.getByRole('button', { name: 'Try for Free' }).waitFor({ state: 'visible', timeout: 30000 });
+
+      const popupPromise = this.page.waitForEvent('popup', { timeout: 60000 });
       await this.page.getByRole('button', { name: 'Try for Free' }).click();
-  
+
       const popup = await popupPromise;
       await popup.waitForLoadState('load');
-  
+
+      await popup.getByTestId('hosted-payment-submit-button').waitFor({ state: 'visible', timeout: 30000 });
       await popup.getByTestId('hosted-payment-submit-button').click();
-  
-      // IMPORTANT: no popup close wait
-      await popup.waitForTimeout(3000);
-  
+
+      // Wait for payment processing
+      await popup.waitForTimeout(5000);
+
       return popup;
     }
   

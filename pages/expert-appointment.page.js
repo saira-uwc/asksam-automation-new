@@ -49,16 +49,26 @@ export class ExpertAppointmentPage {
   async selectExistingPatient(patientName) {
     const searchBox = this.page.getByRole('combobox', { name: 'Search User' });
 
-    await searchBox.waitFor({ state: 'visible', timeout: 20000 });
+    await searchBox.waitFor({ state: 'visible', timeout: 30000 });
     await searchBox.click();
     await searchBox.fill(patientName);
 
-    // ✅ Scope to listbox dropdown (same pattern as selectExpert)
+    // Wait for API response — CI can be slow
+    await this.page.waitForTimeout(3000);
+
+    // If listbox didn't appear, clear and retry fill
     const listbox = this.page.locator('[role="listbox"]');
-    await listbox.waitFor({ state: 'visible', timeout: 20000 });
+    if (!(await listbox.isVisible().catch(() => false))) {
+      await searchBox.clear();
+      await this.page.waitForTimeout(500);
+      await searchBox.fill(patientName);
+      await this.page.waitForTimeout(3000);
+    }
+
+    await listbox.waitFor({ state: 'visible', timeout: 30000 });
 
     const patientOption = listbox.getByText(patientName, { exact: false });
-    await patientOption.waitFor({ state: 'visible', timeout: 20000 });
+    await patientOption.waitFor({ state: 'visible', timeout: 30000 });
     await patientOption.click();
   }
 

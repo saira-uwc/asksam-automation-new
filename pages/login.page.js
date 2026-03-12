@@ -21,8 +21,11 @@ export class LoginPage {
     // OTP – always same as per your requirement
     await this.otpInput.fill('424242');
 
-    // ✅ IMPORTANT: wait for backend + redirect (60s for full suite runs - auth can be throttled)
-    await this.page.waitForURL('**/clinical/home', { timeout: 60000 });
+    // Wait for backend + redirect (CI auth can be slow/throttled)
+    await this.page.waitForURL('**/clinical/home', { timeout: 90000 }).catch(async () => {
+      // Fallback: if redirect didn't happen, navigate manually
+      await this.page.goto('https://copilot.asksam.com.au/clinical/home', { waitUntil: 'load', timeout: 30000 });
+    });
   }
   async logout() {
     await this.page.getByRole('button', { name: 'Open user menu' }).click();

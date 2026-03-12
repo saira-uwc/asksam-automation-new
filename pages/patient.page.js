@@ -37,6 +37,7 @@ export class PatientPage {
   async uploadAndTranscribe() {
     const filePath = path.resolve('uploads/Yamini_Pal_Health_Summary.pdf');
 
+    await this.page.getByRole('button', { name: 'Upload' }).waitFor({ state: 'visible', timeout: 60000 });
     await this.page.getByRole('button', { name: 'Upload' }).click();
     await this.page.getByRole('button', { name: 'Choose File' }).setInputFiles(filePath);
 
