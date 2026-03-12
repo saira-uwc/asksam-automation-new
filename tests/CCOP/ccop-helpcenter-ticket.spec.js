@@ -1,13 +1,11 @@
 import { test, expect } from '@playwright/test';
-import { LoginPage } from '../../pages/login.page.js';
 import { CCOPHelpCenterPage } from '../../pages/ccop-help-center.page.js';
 
 test('CCOP | Help Center | Raise, Reply & Resolve Ticket', async ({ page }) => {
-  const login = new LoginPage(page);
   const helpCenter = new CCOPHelpCenterPage(page);
 
-  /* ===== LOGIN ===== */
-  await login.loginAsClinician();
+  /* ===== GO TO COPILOT (auth loaded via storageState) ===== */
+  await page.goto('https://copilot.asksam.com.au/clinical/home');
   await expect(page).toHaveURL(/clinical\/home/);
 
   /* ===== HELP CENTER ===== */
@@ -29,7 +27,4 @@ test('CCOP | Help Center | Raise, Reply & Resolve Ticket', async ({ page }) => {
 
   /* ===== RESOLVE ===== */
   await helpCenter.markAsResolved();
-
-  /* ===== LOGOUT ===== */
-  await login.logout();
 });

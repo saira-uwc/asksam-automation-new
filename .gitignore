@@ -20,6 +20,9 @@ yarn-error.log*
 pnpm-debug.log*
 *.log
 
+# Auth state (Playwright storageState)
+.auth/
+
 # OS / IDE
 .DS_Store
 *.swp

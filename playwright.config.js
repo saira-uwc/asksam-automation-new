@@ -34,5 +34,33 @@ export default defineConfig({
     trace: "retain-on-failure",
     navigationTimeout: 60000,
     actionTimeout: 30000,
-  }
+  },
+
+  /* ===== PROJECTS: login once, reuse auth for all tests ===== */
+  projects: [
+    {
+      name: 'auth-setup',
+      testMatch: /auth\.setup\.js/,
+    },
+    {
+      name: 'expert-dashboard',
+      testMatch: /Expert-Dashboard\/.*\.spec\.js/,
+      dependencies: ['auth-setup'],
+      use: {
+        storageState: 'tests/Expert-Dashboard/.auth/user.json',
+      },
+    },
+    {
+      name: 'ccop',
+      testMatch: /CCOP\/(?!ccop-clinician-signup).*\.spec\.js/,
+      dependencies: ['auth-setup'],
+      use: {
+        storageState: 'tests/Expert-Dashboard/.auth/user.json',
+      },
+    },
+    {
+      name: 'ccop-signup',
+      testMatch: /CCOP\/ccop-clinician-signup\.spec\.js/,
+    },
+  ],
 });

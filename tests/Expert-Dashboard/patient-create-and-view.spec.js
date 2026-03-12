@@ -1,16 +1,11 @@
 import { test, expect } from '@playwright/test';
-import { LoginPage } from '../../pages/login.page.js';
 import { ExpertAppointmentPage } from '../../pages/expert-appointment.page.js';
 
 test.describe('Expert Dashboard | Create Patient & View Profile', () => {
   test('create unique patient, search and view profile', async ({ page }) => {
-    const login = new LoginPage(page);
     const patientPage = new ExpertAppointmentPage(page);
 
-    /* ===== LOGIN ===== */
-    await login.loginAsClinician();
-
-    /* ===== DASHBOARD ===== */
+    /* ===== DASHBOARD (auth loaded via storageState) ===== */
     await page.goto('https://dashboard.asksam.com.au/expert/dashboard');
     await expect(page).toHaveURL(/expert\/dashboard/);
 
@@ -25,8 +20,5 @@ test.describe('Expert Dashboard | Create Patient & View Profile', () => {
 
     /* ===== SEARCH & VIEW ===== */
     await patientPage.searchAndOpenPatient(patient.email);
-
-    /* ===== LOGOUT ===== */
-    await login.logout();
   });
 });

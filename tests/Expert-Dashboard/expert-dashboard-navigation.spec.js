@@ -1,16 +1,10 @@
 import { test } from '@playwright/test';
-import { LoginPage } from '../../pages/login.page.js';
 import { ExpertDashboardPage } from '../../pages/expert-dashboard.page.js';
 
 test('Expert Dashboard | Navigation flow validation', async ({ page }) => {
-  const login = new LoginPage(page);
   const dashboard = new ExpertDashboardPage(page);
 
-  await login.loginAsClinician(
-    'testing_clinician_aus+clerk_test@tmail.com',
-    '424242'
-  );
-
+  /* ===== DASHBOARD (auth loaded via storageState) ===== */
   await dashboard.gotoDashboard();
 
   await dashboard.openAppointments();
@@ -27,6 +21,4 @@ test('Expert Dashboard | Navigation flow validation', async ({ page }) => {
 
   await dashboard.openSessionManagement();
   await dashboard.gotoDashboard();
-
-  await login.logout();
 });

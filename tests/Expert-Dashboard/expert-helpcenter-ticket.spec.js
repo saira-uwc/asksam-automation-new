@@ -5,19 +5,7 @@ test(
   'Expert Dashboard | Help Center raise & reply ticket',
   async ({ page }) => {
 
-    /* ===== LOGIN (SAME LEVEL AS APPOINTMENT FLOW) ===== */
-    await page.goto('https://dashboard.asksam.com.au/sign-in');
-
-    await page.getByRole('textbox', { name: 'Email address' }).fill(
-      'testing_clinician_aus+clerk_test@tmail.com'
-    );
-    await page.getByRole('button', { name: 'Continue' }).click();
-
-    await page.getByRole('textbox', { name: 'Enter verification code' })
-      .fill('424242');
-
-    // ✅ Wait for Clerk to finish auth and redirect
-    await page.waitForURL('**/expert/dashboard', { timeout: 60000 }).catch(() => {});
+    /* ===== DASHBOARD (auth loaded via storageState) ===== */
     await page.goto('https://dashboard.asksam.com.au/expert/dashboard');
     await page.waitForSelector('body', { timeout: 60000 });
 
@@ -41,10 +29,6 @@ test(
 
     await helpCenter.openLatestTicket();
     await helpCenter.replyToTicket('test');
-    // / * ✅ CLOSE TICKET POPUP (MANDATORY) */
     await helpCenter.closeTicketPopup();
-    /* ===== LOGOUT ===== */
-    await page.getByRole('button', { name: 'Open user menu' }).click();
-    await page.getByRole('menuitem', { name: 'Sign out' }).click();
   }
 );
