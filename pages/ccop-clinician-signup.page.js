@@ -76,8 +76,12 @@ export class CCOPClinicianSignupPage {
       await popup.getByRole('link', { name: 'Home' }).click();
       await popup.waitForLoadState('domcontentloaded');
   
+      // Wait for tour overlay to disappear before clicking
+      await popup.locator('#clinical-tour-overlay, #clinical-tour-loading-overlay')
+        .waitFor({ state: 'hidden', timeout: 30000 }).catch(() => {});
+
       // FIRST CLINICAL
-      await popup.getByRole('button', { name: 'Create Your First Clinical' }).click();
+      await popup.getByRole('button', { name: 'Create Your First Clinical' }).click({ force: true });
       await popup.getByRole('button', { name: 'Done' }).click();
       await popup.getByRole('button', { name: 'close' }).click();
     }
