@@ -224,60 +224,53 @@ export class ExpertAppointmentPage {
       .getByRole('dialog')
       .filter({ hasText: 'Reschedule Appointment' })
       .first();
-  
+
     await modal.waitFor({ state: 'visible', timeout: 20000 });
-  
-    const calendarBtn = modal.getByRole('button', {
-      name: /Choose date, selected date is/i,
+
+    // Slot elements are styled divs, not buttons — match "08:00 AM", "01:30 PM" etc.
+    const slots = modal.locator('div').filter({
+      hasText: /^\d{1,2}:\d{2}\s*(AM|PM)$/,
     });
-  
+
     let slotPicked = false;
-  
-    for (let dayOffset = 1; dayOffset <= 14; dayOffset++) {
-      // 1️⃣ Open calendar
-      await calendarBtn.click();
-  
-      const d = new Date();
-      d.setDate(d.getDate() + dayOffset);
-      const day = String(d.getDate());
-  
-      // 2️⃣ Pick date
-      const dateCell = this.page.getByRole('gridcell', { name: day });
-      if (!(await dateCell.isVisible().catch(() => false))) continue;
-      await dateCell.click();
-  
-      // 3️⃣ WAIT for slots to load (IMPORTANT)
-      const slots = modal.locator('div').filter({
-        hasText: /(AM|PM)$/,
-      });
-  
-      try {
-        await slots.first().waitFor({ timeout: 15000 });
-      } catch {
-        continue; // ❌ no slots → next date
-      }
-  
-      // 4️⃣ CLICK FIRST SLOT (REAL USER CLICK)
-      await slots.first().scrollIntoViewIfNeeded();
+
+    // First try: slots on the default date
+    try {
+      await slots.first().waitFor({ state: 'visible', timeout: 10000 });
       await slots.first().click();
-  
       slotPicked = true;
-      break;
+    } catch {
+      // Try different dates via the date input
+      const dateInput = modal.locator('input');
+      for (let dayOffset = 1; dayOffset <= 14; dayOffset++) {
+        const d = new Date();
+        d.setDate(d.getDate() + dayOffset);
+        const formatted = `${String(d.getDate()).padStart(2, '0')}/${String(d.getMonth() + 1).padStart(2, '0')}/${d.getFullYear()}`;
+
+        await dateInput.fill(formatted);
+        await this.page.waitForTimeout(2000);
+
+        if (await slots.first().isVisible().catch(() => false)) {
+          await slots.first().click();
+          slotPicked = true;
+          break;
+        }
+      }
     }
-  
+
     if (!slotPicked) {
       throw new Error('No available slot found for reschedule');
     }
-  
-    // 5️⃣ Confirm
+
+    // Confirm
     const confirmBtn = modal.getByRole('button', {
       name: /Confirm and Reschedule/i,
     });
-  
+
     await expect(confirmBtn).toBeEnabled({ timeout: 20000 });
     await confirmBtn.click();
-  
-    // 6️⃣ Success toast
+
+    // Success toast
     await this.page.getByRole('alert').waitFor({ timeout: 30000 });
   }
 
