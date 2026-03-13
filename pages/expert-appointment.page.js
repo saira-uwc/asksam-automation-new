@@ -48,25 +48,44 @@ export class ExpertAppointmentPage {
   =============================== */
   async selectExistingPatient(patientName) {
     const searchBox = this.page.getByRole('combobox', { name: 'Search User' });
-
     await searchBox.waitFor({ state: 'visible', timeout: 30000 });
-    await searchBox.click();
-    await searchBox.fill(patientName);
 
-    // Wait for API response — CI can be slow
-    await this.page.waitForTimeout(3000);
-
-    // If listbox didn't appear, clear and retry fill
     const listbox = this.page.locator('[role="listbox"]');
-    if (!(await listbox.isVisible().catch(() => false))) {
+
+    // Retry up to 3 times — MUI autocomplete can be flaky in headless
+    for (let attempt = 1; attempt <= 3; attempt++) {
+      await searchBox.click();
       await searchBox.clear();
       await this.page.waitForTimeout(500);
-      await searchBox.fill(patientName);
-      await this.page.waitForTimeout(3000);
+
+      // Type with keystroke events for MUI autocomplete API trigger
+      await searchBox.pressSequentially(patientName, { delay: 150 });
+
+      // Wait for debounce + API response
+      await this.page.waitForTimeout(2000);
+
+      // Check if listbox appeared with actual results (not "No patients found")
+      if (await listbox.isVisible().catch(() => false)) {
+        const patientOption = listbox.getByText(patientName, { exact: false });
+        if (await patientOption.isVisible().catch(() => false)) {
+          await patientOption.click();
+          return;
+        }
+      }
+
+      // Retry: clear, blur, refocus
+      await searchBox.clear();
+      await searchBox.blur();
+      await this.page.waitForTimeout(1000);
     }
 
-    await listbox.waitFor({ state: 'visible', timeout: 30000 });
+    // Final attempt: use fill() + dispatch input event
+    await searchBox.click();
+    await searchBox.fill(patientName);
+    await searchBox.dispatchEvent('input');
+    await this.page.waitForTimeout(2000);
 
+    await listbox.waitFor({ state: 'visible', timeout: 30000 });
     const patientOption = listbox.getByText(patientName, { exact: false });
     await patientOption.waitFor({ state: 'visible', timeout: 30000 });
     await patientOption.click();
@@ -164,6 +183,23 @@ export class ExpertAppointmentPage {
      OPEN FIRST APPOINTMENT
   =============================== */
   async openFirstAppointment() {
+    // Find the first non-cancelled appointment card
+    const cards = this.page.locator('.MuiCard-root');
+    const count = await cards.count();
+
+    for (let i = 0; i < count; i++) {
+      const card = cards.nth(i);
+      const text = await card.textContent();
+      if (text?.includes('Cancelled')) continue;
+
+      const viewBtn = card.getByRole('button', { name: /View Details/i });
+      if (await viewBtn.isVisible().catch(() => false)) {
+        await viewBtn.click();
+        return;
+      }
+    }
+
+    // Fallback: click the first one
     await this.page.getByRole('button', { name: 'View Details' }).first().click();
   }
   async openReschedule() {

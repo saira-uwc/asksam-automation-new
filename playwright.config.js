@@ -34,6 +34,8 @@ export default defineConfig({
     trace: "retain-on-failure",
     navigationTimeout: 60000,
     actionTimeout: 30000,
+    // Real user-agent — some APIs block HeadlessChrome
+    userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
   },
 
   /* ===== PROJECTS: login once, reuse auth for all tests ===== */
