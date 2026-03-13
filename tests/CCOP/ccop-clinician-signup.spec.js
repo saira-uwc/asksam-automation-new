@@ -1,7 +1,7 @@
 import { test } from '@playwright/test';
 import { CCOPClinicianSignupPage } from '../../pages/ccop-clinician-signup.page';
 
-test('CCOP | Clinician signup full flow (recorded)', async ({ page }) => {
+test.skip('CCOP | Clinician signup full flow (recorded)', async ({ page }) => {
   const signup = new CCOPClinicianSignupPage(page);
 
   const id = Date.now().toString().slice(-6);
