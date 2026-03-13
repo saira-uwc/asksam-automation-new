@@ -3,12 +3,6 @@ dotenv.config();
 
 import { defineConfig } from "@playwright/test";
 
-console.log("Loaded ENV in config:", {
-  sheet: process.env.SHEET_ID,
-  folder: process.env.DRIVE_FOLDER_ID,
-  tab: process.env.SHEET_TAB
-});
-
 export default defineConfig({
   testDir: "./tests",
 
@@ -22,7 +16,6 @@ export default defineConfig({
     ["html", { outputFolder: "reports/html-report", open: "never" }],
     ["json", { outputFile: "reports/json-report/results.json" }],
     ["allure-playwright", { resultsDir: "reports/allure-results" }],
-    ["./reporters/sheet-reporter.js"],
     ["./reporters/google-sheets-reporter.js"],
     ["./helpers/failure-reporter.js"]
   ],
