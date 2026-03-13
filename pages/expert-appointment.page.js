@@ -220,10 +220,9 @@ export class ExpertAppointmentPage {
      RESCHEDULE APPOINTMENT (DYNAMIC – FINAL)
   =============================== */
   async rescheduleAppointment() {
-    const modal = this.page
-      .getByRole('dialog')
-      .filter({ hasText: 'Reschedule Appointment' })
-      .first();
+    // Use locator instead of getByRole to avoid strict mode violation
+    // MUI renders multiple [role="dialog"] elements (backdrop + content)
+    const modal = this.page.locator('[role="dialog"]').last();
 
     await modal.waitFor({ state: 'visible', timeout: 20000 });
 
