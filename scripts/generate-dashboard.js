@@ -123,7 +123,8 @@ function main() {
   const skipped = tests.filter(t => t.status === 'skipped').length;
   const timedOut = tests.filter(t => t.status === 'timedOut').length;
   const total = tests.length;
-  const passRate = total > 0 ? Math.round((passed / total) * 100) : 0;
+  const activeTotal = total - skipped;
+  const passRate = activeTotal > 0 ? Math.round((passed / activeTotal) * 100) : 0;
 
   // Compute per-module stats
   const modules = {};
@@ -242,10 +243,11 @@ function updateLegacyDashboard(tests, startedAt) {
   }
 
   const passedCount = tests.filter(t => t.status === 'passed').length;
-  const failedCount = tests.filter(t => t.status !== 'passed').length;
+  const failedCount = tests.filter(t => t.status === 'failed' || t.status === 'timedOut').length;
   const today = new Date(startedAt).toISOString().split('T')[0];
 
-  const newRun = { date: today, passed: passedCount, failed: failedCount, total: tests.length };
+  const activeTests = tests.filter(t => t.status !== 'skipped');
+  const newRun = { date: today, passed: passedCount, failed: failedCount, total: activeTests.length };
   const todayIdx = existingData.runs.findIndex(r => r.date === today);
   if (todayIdx >= 0) {
     existingData.runs[todayIdx] = newRun;
@@ -254,7 +256,7 @@ function updateLegacyDashboard(tests, startedAt) {
   }
   existingData.runs = existingData.runs.slice(0, 10);
 
-  existingData.tests = tests.map((t, i) => ({
+  existingData.tests = tests.filter(t => t.status !== 'skipped').map((t, i) => ({
     id: i + 1,
     module: t.module,
     name: t.title,
