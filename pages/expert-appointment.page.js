@@ -240,7 +240,7 @@ export class ExpertAppointmentPage {
       slotPicked = true;
     } catch {
       // Try different dates via the date input
-      const dateInput = modal.locator('input');
+      const dateInput = modal.locator('input[placeholder="DD/MM/YYYY"]');
       for (let dayOffset = 1; dayOffset <= 14; dayOffset++) {
         const d = new Date();
         d.setDate(d.getDate() + dayOffset);
