@@ -5,7 +5,9 @@
       "Bash(grep -r \"floating\\\\|fab\\\\|Fab\\\\|speed-dial\\\\|action.*button\\\\|microphone\\\\|share.*button\" c:/Users/Asus/Documents/UWC/playwrite/tests --include=*.js --include=*.ts)",
       "Bash(grep -r \"MuiFab\\\\|Fab\\\\|FloatingActionButton\\\\|\\\\[role.*fab\\\\|\\\\.fab\\\\|floating-action\" c:/Users/Asus/Documents/UWC/playwrite --include=*.js --include=*.ts)",
       "Bash(grep -B5 -A5 'getByRole.*button.*filter.*hasText.*\\\\^\\\\$' c:/Users/Asus/Documents/UWC/playwrite/pages/expert-appointment.page.js)",
-      "Bash(grep -r \"button.*hasText.*\\\\^$\\\\|empty.*button\\\\|icon.*button\\\\|circular.*button\" c:/Users/Asus/Documents/UWC/playwrite --include=\"*.js\" --include=\"*.ts\")"
+      "Bash(grep -r \"button.*hasText.*\\\\^$\\\\|empty.*button\\\\|icon.*button\\\\|circular.*button\" c:/Users/Asus/Documents/UWC/playwrite --include=\"*.js\" --include=\"*.ts\")",
+      "Bash(node scripts/generate-dashboard.js)",
+      "Bash(start \"\" \"c:\\\\Users\\\\Asus\\\\Documents\\\\UWC\\\\playwrite\\\\docs\\\\index.html\")"
     ]
   }
 }

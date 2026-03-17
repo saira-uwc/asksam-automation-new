@@ -1,7 +1,7 @@
 {
   "config": {
-    "configFile": "/Users/user/Documents/automation/playwright.config.js",
-    "rootDir": "/Users/user/Documents/automation/tests",
+    "configFile": "c:\\Users\\Asus\\Documents\\UWC\\playwrite\\playwright.config.js",
+    "rootDir": "c:/Users/Asus/Documents/UWC/playwrite/tests",
     "forbidOnly": false,
     "fullyParallel": false,
     "globalSetup": null,
@@ -33,17 +33,17 @@
         }
       ],
       [
-        "/Users/user/Documents/automation/node_modules/allure-playwright/dist/cjs/index.js",
+        "c:\\Users\\Asus\\Documents\\UWC\\playwrite\\node_modules\\allure-playwright\\dist\\cjs\\index.js",
         {
           "resultsDir": "reports/allure-results"
         }
       ],
       [
-        "/Users/user/Documents/automation/reporters/sheet-reporter.js",
+        "c:\\Users\\Asus\\Documents\\UWC\\playwrite\\reporters\\google-sheets-reporter.js",
         null
       ],
       [
-        "/Users/user/Documents/automation/helpers/failure-reporter.js",
+        "c:\\Users\\Asus\\Documents\\UWC\\playwrite\\helpers\\failure-reporter.js",
         null
       ]
     ],
@@ -54,20 +54,68 @@
     "quiet": false,
     "projects": [
       {
-        "outputDir": "/Users/user/Documents/automation/test-results",
+        "outputDir": "c:/Users/Asus/Documents/UWC/playwrite/test-results",
         "repeatEach": 1,
         "retries": 1,
         "metadata": {
           "actualWorkers": 1
         },
-        "id": "",
-        "name": "",
-        "testDir": "/Users/user/Documents/automation/tests",
+        "id": "auth-setup",
+        "name": "auth-setup",
+        "testDir": "c:/Users/Asus/Documents/UWC/playwrite/tests",
         "testIgnore": [],
         "testMatch": [
-          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+          "/auth\\.setup\\.js/"
         ],
-        "timeout": 120000
+        "timeout": 180000
+      },
+      {
+        "outputDir": "c:/Users/Asus/Documents/UWC/playwrite/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "expert-dashboard",
+        "name": "expert-dashboard",
+        "testDir": "c:/Users/Asus/Documents/UWC/playwrite/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/Expert-Dashboard\\/.*\\.spec\\.js/"
+        ],
+        "timeout": 180000
+      },
+      {
+        "outputDir": "c:/Users/Asus/Documents/UWC/playwrite/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "ccop",
+        "name": "ccop",
+        "testDir": "c:/Users/Asus/Documents/UWC/playwrite/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/CCOP\\/(?!ccop-clinician-signup).*\\.spec\\.js/"
+        ],
+        "timeout": 180000
+      },
+      {
+        "outputDir": "c:/Users/Asus/Documents/UWC/playwrite/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "ccop-signup",
+        "name": "ccop-signup",
+        "testDir": "c:/Users/Asus/Documents/UWC/playwrite/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/CCOP\\/ccop-clinician-signup\\.spec\\.js/"
+        ],
+        "timeout": 180000
       }
     ],
     "shard": null,
@@ -80,44 +128,44 @@
   },
   "suites": [
     {
-      "title": "Expert-Dashboard/expert-helpcenter-ticket.spec.js",
-      "file": "Expert-Dashboard/expert-helpcenter-ticket.spec.js",
+      "title": "Expert-Dashboard\\auth.setup.js",
+      "file": "Expert-Dashboard/auth.setup.js",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Expert Dashboard | Help Center raise & reply ticket",
+          "title": "authenticate",
           "ok": true,
           "tags": [],
           "tests": [
             {
-              "timeout": 120000,
+              "timeout": 180000,
               "annotations": [],
               "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
+              "projectId": "auth-setup",
+              "projectName": "auth-setup",
               "results": [
                 {
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 72730,
+                  "duration": 14196,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-03-02T09:48:54.387Z",
+                  "startTime": "2026-03-17T07:11:44.562Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "/Users/user/Documents/automation/test-results/Expert-Dashboard-expert-he-63b9d-p-Center-raise-reply-ticket/test-finished-1.png"
+                      "path": "c:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-auth.setup.js-authenticate-auth-setup\\test-finished-1.png"
                     },
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "/Users/user/Documents/automation/test-results/Expert-Dashboard-expert-he-63b9d-p-Center-raise-reply-ticket/video.webm"
+                      "path": "c:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-auth.setup.js-authenticate-auth-setup\\video.webm"
                     }
                   ]
                 }
@@ -125,9 +173,507 @@
               "status": "expected"
             }
           ],
-          "id": "dde1d994f6eaccf85f1d-1ac6d2037fefa8d78f8b",
-          "file": "Expert-Dashboard/expert-helpcenter-ticket.spec.js",
+          "id": "4dc28c93cf580b2db4ca-ab6423eebf243e2c834a",
+          "file": "Expert-Dashboard/auth.setup.js",
+          "line": 6,
+          "column": 6
+        }
+      ]
+    },
+    {
+      "title": "CCOP\\ai-assistant-panel.spec.js",
+      "file": "CCOP/ai-assistant-panel.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "AI panel — Graph tab: knowledge graph, zoom controls, node properties, legends",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ccop",
+              "projectName": "ccop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 28965,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "✅ Clicked View Clinical Note\n"
+                    },
+                    {
+                      "text": "✅ Note page loaded — Actions button visible\n"
+                    },
+                    {
+                      "text": "✅ Clicked at position (1390, 230) for floating button\n"
+                    },
+                    {
+                      "text": "✅ Disclaimer dialog detected\n"
+                    },
+                    {
+                      "text": "✅ Clicked I Understand button\n"
+                    },
+                    {
+                      "text": "✅ AI Assistant panel opened\n"
+                    },
+                    {
+                      "text": "✅ Clicked Graph tab\n"
+                    },
+                    {
+                      "text": "✅ Knowledge graph canvas is visible\n"
+                    },
+                    {
+                      "text": "✅ Node Properties dropdown is visible\n"
+                    },
+                    {
+                      "text": "✅ Reset button is visible\n"
+                    },
+                    {
+                      "text": "✅ Legends bar is visible\n"
+                    },
+                    {
+                      "text": "  ✅ Legend: User\n"
+                    },
+                    {
+                      "text": "  ✅ Legend: Timeline\n"
+                    },
+                    {
+                      "text": "  ✅ Legend: Gene\n"
+                    },
+                    {
+                      "text": "  ✅ Legend: Medicine\n"
+                    },
+                    {
+                      "text": "  ✅ Legend: Disease\n"
+                    },
+                    {
+                      "text": "  ✅ Legend: Diagnostics\n"
+                    },
+                    {
+                      "text": "  ✅ Legend: Nutrient\n"
+                    },
+                    {
+                      "text": "  ✅ Legend: Brand\n"
+                    },
+                    {
+                      "text": "⚠ ISSUE: Graph only shows User node — no clinical information (medicines, diseases, diagnostics) displayed\n"
+                    },
+                    {
+                      "text": "✅ Clicked Node Properties dropdown\n"
+                    },
+                    {
+                      "text": "✅ Clicked Reset to restore default view\n"
+                    },
+                    {
+                      "text": "✅ Closed AI Assistant panel\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T07:12:00.844Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "c:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-ai-assistant-panel-AI-6337d-ols-node-properties-legends-ccop\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "c:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-ai-assistant-panel-AI-6337d-ols-node-properties-legends-ccop\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f60a71b365b1473d495e-38773f04c55628f17677",
+          "file": "CCOP/ai-assistant-panel.spec.js",
+          "line": 7,
+          "column": 5
+        },
+        {
+          "title": "AI panel — Assistant tab: associations, medication & comorbidity sub-tabs",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ccop",
+              "projectName": "ccop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 33071,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "✅ Clicked View Clinical Note\n"
+                    },
+                    {
+                      "text": "✅ Note page loaded — Actions button visible\n"
+                    },
+                    {
+                      "text": "✅ Clicked at position (1390, 230) for floating button\n"
+                    },
+                    {
+                      "text": "✅ Disclaimer dialog detected\n"
+                    },
+                    {
+                      "text": "✅ Clicked I Understand button\n"
+                    },
+                    {
+                      "text": "✅ AI Assistant panel opened\n"
+                    },
+                    {
+                      "text": "✅ Clicked Assistant tab\n"
+                    },
+                    {
+                      "text": "✅ Associations sub-tab is visible\n"
+                    },
+                    {
+                      "text": "✅ Medication Associations sub-tab is visible\n"
+                    },
+                    {
+                      "text": "✅ Comorbidity Associations sub-tab is visible\n"
+                    },
+                    {
+                      "text": "✅ No Alerts message displayed (default state)\n"
+                    },
+                    {
+                      "text": "✅ Clicked Medication Associations sub-tab\n"
+                    },
+                    {
+                      "text": "✅ Medication Associations — empty state verified\n"
+                    },
+                    {
+                      "text": "✅ Clicked Comorbidity Associations sub-tab\n"
+                    },
+                    {
+                      "text": "✅ Comorbidity Associations — empty state verified\n"
+                    },
+                    {
+                      "text": "✅ Switched back to Associations sub-tab\n"
+                    },
+                    {
+                      "text": "✅ Closed AI Assistant panel\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T07:12:29.947Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "c:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-ai-assistant-panel-AI-59ffe-cation-comorbidity-sub-tabs-ccop\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "c:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-ai-assistant-panel-AI-59ffe-cation-comorbidity-sub-tabs-ccop\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f60a71b365b1473d495e-6c2f64cfd53c9138645d",
+          "file": "CCOP/ai-assistant-panel.spec.js",
+          "line": 16,
+          "column": 5
+        },
+        {
+          "title": "AI panel — asksam tab: chat input, send message, disclaimer",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ccop",
+              "projectName": "ccop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 39025,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "✅ Clicked View Clinical Note\n"
+                    },
+                    {
+                      "text": "✅ Note page loaded — Actions button visible\n"
+                    },
+                    {
+                      "text": "✅ Clicked at position (1390, 230) for floating button\n"
+                    },
+                    {
+                      "text": "✅ Disclaimer dialog detected\n"
+                    },
+                    {
+                      "text": "✅ Clicked I Understand button\n"
+                    },
+                    {
+                      "text": "✅ AI Assistant panel opened\n"
+                    },
+                    {
+                      "text": "✅ Clicked asksam tab\n"
+                    },
+                    {
+                      "text": "✅ asksam welcome heading is visible\n"
+                    },
+                    {
+                      "text": "✅ Welcome description text is visible\n"
+                    },
+                    {
+                      "text": "✅ 'Save the clinical note' instruction is visible\n"
+                    },
+                    {
+                      "text": "✅ Chat input 'asksam Anything...' is visible\n"
+                    },
+                    {
+                      "text": "✅ Attachment (clip) icon is visible\n"
+                    },
+                    {
+                      "text": "✅ Disclaimer link is visible\n"
+                    },
+                    {
+                      "text": "✅ Typed question in chat input\n"
+                    },
+                    {
+                      "text": "✅ Clicked send button\n"
+                    },
+                    {
+                      "text": "✅ Chat response received from AI\n"
+                    },
+                    {
+                      "text": "✅ Clicked Disclaimer\n"
+                    },
+                    {
+                      "text": "✅ Disclaimer dialog detected\n"
+                    },
+                    {
+                      "text": "✅ Clicked I Understand button\n"
+                    },
+                    {
+                      "text": "✅ Closed AI Assistant panel\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T07:13:03.032Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "c:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-ai-assistant-panel-AI-35e70-put-send-message-disclaimer-ccop\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "c:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-ai-assistant-panel-AI-35e70-put-send-message-disclaimer-ccop\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f60a71b365b1473d495e-97f0105c179f34eb9522",
+          "file": "CCOP/ai-assistant-panel.spec.js",
+          "line": 25,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "CCOP\\letter-template.spec.js",
+      "file": "CCOP/letter-template.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Open letter template from Actions dropdown, select type and verify preview",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ccop",
+              "projectName": "ccop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 16430,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "✅ Clicked View Clinical Note\n"
+                    },
+                    {
+                      "text": "✅ Note page loaded — Actions button visible\n"
+                    },
+                    {
+                      "text": "✅ Letter Templates page loaded\n"
+                    },
+                    {
+                      "text": "✅ Selected letter type: Referral Letter\n"
+                    },
+                    {
+                      "text": "✅ Template loaded — Letter Preview visible\n"
+                    },
+                    {
+                      "text": "✅ Template Name: Referral Letter\n"
+                    },
+                    {
+                      "text": "✅ Available Fields section is visible\n"
+                    },
+                    {
+                      "text": "✅ Letter Preview section is visible\n"
+                    },
+                    {
+                      "text": "✅ Download Template button is visible\n"
+                    },
+                    {
+                      "text": "✅ Update Template button is visible\n"
+                    },
+                    {
+                      "text": "✅ Clicked Download Template\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T07:13:42.083Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "c:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-letter-template-Open--55b94-ect-type-and-verify-preview-ccop\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "c:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-letter-template-Open--55b94-ect-type-and-verify-preview-ccop\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5364fc6acfa9e0f0a48c-aac1a1dbb04d1873021d",
+          "file": "CCOP/letter-template.spec.js",
           "line": 4,
+          "column": 5
+        },
+        {
+          "title": "Create a new letter template from Actions dropdown",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ccop",
+              "projectName": "ccop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 29803,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "✅ Clicked View Clinical Note\n"
+                    },
+                    {
+                      "text": "✅ Note page loaded — Actions button visible\n"
+                    },
+                    {
+                      "text": "✅ Letter Templates page loaded\n"
+                    },
+                    {
+                      "text": "✅ Clicked + Create Template\n"
+                    },
+                    {
+                      "text": "✅ Create Letter Template form loaded\n"
+                    },
+                    {
+                      "text": "✅ Filled Template Name: Test Template 638690\n"
+                    },
+                    {
+                      "text": "✅ Filled Letter Body\n"
+                    },
+                    {
+                      "text": "✅ Clinical Content section already expanded\n"
+                    },
+                    {
+                      "text": "✅ Expanded Clinical Notes dropdown\n"
+                    },
+                    {
+                      "text": "✅ Added field: Chief Complaint (CC)\n"
+                    },
+                    {
+                      "text": "✅ Added field: History of Present Illness (HPI)\n"
+                    },
+                    {
+                      "text": "✅ Clicked Save Template\n"
+                    },
+                    {
+                      "text": "✅ Template save confirmed\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-03-17T07:13:58.523Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "c:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-letter-template-Creat-6b938-plate-from-Actions-dropdown-ccop\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "c:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-letter-template-Creat-6b938-plate-from-Actions-dropdown-ccop\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5364fc6acfa9e0f0a48c-5ae0f052fd92c2a96cbf",
+          "file": "CCOP/letter-template.spec.js",
+          "line": 25,
           "column": 5
         }
       ]
@@ -135,9 +681,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-03-02T09:48:53.770Z",
-    "duration": 73981.982,
-    "expected": 1,
+    "startTime": "2026-03-17T07:11:43.365Z",
+    "duration": 166075.55,
+    "expected": 6,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
