@@ -325,8 +325,8 @@ async openAndCancelNonCancelledAppointment() {
     // 🔎 Check status text inside card
     const statusText = await card.textContent();
 
-    // ❌ Skip already cancelled appointments
-    if (statusText?.includes('Cancelled')) {
+    // ❌ Skip cancelled or completed appointments
+    if (statusText?.includes('Cancelled') || statusText?.includes('Completed')) {
       continue;
     }
 
