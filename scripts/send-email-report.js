@@ -111,7 +111,7 @@ function buildEmailHTML(data) {
   // Build failed tests section
   let failedSection = '';
   if (failCount > 0 && data.tests) {
-    const failedTests = data.tests.filter(t => t.status !== 'passed');
+    const failedTests = data.tests.filter(t => t.status === 'failed' || t.status === 'timedOut');
     const failedRows = failedTests.map(t => `
       <tr>
         <td style="padding:8px 14px;border-bottom:1px solid #f0f0f0;font-size:13px;color:#333">${t.title}</td>
