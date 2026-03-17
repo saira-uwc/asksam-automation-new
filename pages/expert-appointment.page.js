@@ -40,6 +40,9 @@ export class ExpertAppointmentPage {
     await this.page.getByRole('textbox', { name: 'Date of Birth' }).fill('01/01/1995');
     await this.page.getByRole('button', { name: 'Create Patient' }).click();
 
+    // Wait for the create patient modal to close
+    await this.page.getByRole('textbox', { name: 'First Name' }).waitFor({ state: 'hidden', timeout: 30000 });
+
     return patient;
   }
 
@@ -190,7 +193,7 @@ export class ExpertAppointmentPage {
     for (let i = 0; i < count; i++) {
       const card = cards.nth(i);
       const text = await card.textContent();
-      if (text?.includes('Cancelled')) continue;
+      if (text?.includes('Cancelled') || text?.includes('Completed')) continue;
 
       const viewBtn = card.getByRole('button', { name: /View Details/i });
       if (await viewBtn.isVisible().catch(() => false)) {

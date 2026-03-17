@@ -1,30 +1,30 @@
 {
-  "id": "937b117c-a661-45dc-bd92-2a2645b367ad",
-  "startedAt": "2026-03-17T07:11:43.365Z",
-  "durationMs": 166075.55,
+  "id": "fbb4d57d-b8aa-4cc7-acd6-2cc04d6e0809",
+  "startedAt": "2026-03-17T08:37:09.228Z",
+  "durationMs": 784755.266,
   "summary": {
-    "total": 6,
-    "passed": 6,
-    "failed": 0,
-    "skipped": 0,
+    "total": 18,
+    "passed": 14,
+    "failed": 3,
+    "skipped": 1,
     "timedOut": 0
   },
-  "passRate": 100,
+  "passRate": 82,
   "modules": {
     "Expert-Dashboard": {
       "label": "Expert Dashboard",
-      "total": 1,
-      "passed": 1,
-      "failed": 0,
+      "total": 9,
+      "passed": 6,
+      "failed": 3,
       "skipped": 0,
       "timedOut": 0
     },
     "CCOP": {
       "label": "CCOP",
-      "total": 5,
-      "passed": 5,
+      "total": 9,
+      "passed": 8,
       "failed": 0,
-      "skipped": 0,
+      "skipped": 1,
       "timedOut": 0
     }
   },
@@ -32,8 +32,218 @@
     {
       "title": "authenticate",
       "status": "passed",
-      "durationMs": 14196,
+      "durationMs": 22404,
       "file": "Expert-Dashboard/auth.setup.js",
+      "module": "Expert-Dashboard",
+      "moduleLabel": "Expert Dashboard",
+      "attachments": [
+        {
+          "name": "screenshot",
+          "path": "test-finished-1.png",
+          "contentType": "image/png"
+        },
+        {
+          "name": "video",
+          "path": "video.webm",
+          "contentType": "video/webm"
+        }
+      ],
+      "error": ""
+    },
+    {
+      "title": "Expert Dashboard | Appointment booking (dynamic slots)",
+      "status": "passed",
+      "durationMs": 26533,
+      "file": "Expert-Dashboard/appointment-booking.spec.js",
+      "module": "Expert-Dashboard",
+      "moduleLabel": "Expert Dashboard",
+      "attachments": [
+        {
+          "name": "screenshot",
+          "path": "test-finished-1.png",
+          "contentType": "image/png"
+        },
+        {
+          "name": "video",
+          "path": "video.webm",
+          "contentType": "video/webm"
+        }
+      ],
+      "error": ""
+    },
+    {
+      "title": "create appointment with existing patient and reschedule",
+      "status": "failed",
+      "durationMs": 47045,
+      "file": "Expert-Dashboard/appointment-create-and-reschedule.spec.js",
+      "module": "Expert-Dashboard",
+      "moduleLabel": "Expert Dashboard",
+      "attachments": [
+        {
+          "name": "screenshot",
+          "path": "test-failed-1.png",
+          "contentType": "image/png",
+          "webPath": "./artifacts/create_appointment_with_existing_patient_and_resch-screenshot.png"
+        },
+        {
+          "name": "video",
+          "path": "video.webm",
+          "contentType": "video/webm",
+          "webPath": "./artifacts/create_appointment_with_existing_patient_and_resch-video.webm"
+        },
+        {
+          "name": "error-context",
+          "path": "error-context.md",
+          "contentType": "text/markdown",
+          "webPath": "./artifacts/create_appointment_with_existing_patient_and_resch-error-context.md"
+        },
+        {
+          "name": "trace",
+          "path": "trace.zip",
+          "contentType": "application/zip",
+          "webPath": "./artifacts/create_appointment_with_existing_patient_and_resch-trace.zip"
+        }
+      ],
+      "error": "TimeoutError: locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /Reschedule/i }) to be visible\u001b[22m\n\n\n   at ../pages/expert-appointment.page.js:210\n\n  208 |     });\n  209 |   \n> 210 |     await rescheduleBtn.waitFor({ state: 'visible', timeout: 20000 });\n      |                         ^\n  211 |     await rescheduleBtn.click();\n  212 |   \n  213 |     // wait till modal header appears\n    at ExpertAppointmentPage.openReschedule (/Users/user/Docum"
+    },
+    {
+      "title": "create appointment and manage session lifecycle",
+      "status": "passed",
+      "durationMs": 33746,
+      "file": "Expert-Dashboard/appointment-session-management.spec.js",
+      "module": "Expert-Dashboard",
+      "moduleLabel": "Expert Dashboard",
+      "attachments": [
+        {
+          "name": "screenshot",
+          "path": "test-finished-1.png",
+          "contentType": "image/png"
+        },
+        {
+          "name": "video",
+          "path": "video.webm",
+          "contentType": "video/webm"
+        }
+      ],
+      "error": ""
+    },
+    {
+      "title": "create appointment with existing patient and cancel non-cancelled one",
+      "status": "failed",
+      "durationMs": 41837,
+      "file": "Expert-Dashboard/appointment-z-cancel.spec.js",
+      "module": "Expert-Dashboard",
+      "moduleLabel": "Expert Dashboard",
+      "attachments": [
+        {
+          "name": "screenshot",
+          "path": "test-failed-1.png",
+          "contentType": "image/png",
+          "webPath": "./artifacts/create_appointment_with_existing_patient_and_cance-screenshot.png"
+        },
+        {
+          "name": "video",
+          "path": "video.webm",
+          "contentType": "video/webm",
+          "webPath": "./artifacts/create_appointment_with_existing_patient_and_cance-video.webm"
+        },
+        {
+          "name": "error-context",
+          "path": "error-context.md",
+          "contentType": "text/markdown",
+          "webPath": "./artifacts/create_appointment_with_existing_patient_and_cance-error-context.md"
+        },
+        {
+          "name": "trace",
+          "path": "trace.zip",
+          "contentType": "application/zip",
+          "webPath": "./artifacts/create_appointment_with_existing_patient_and_cance-trace.zip"
+        }
+      ],
+      "error": "TimeoutError: locator.waitFor: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^Cancel$/i }) to be visible\u001b[22m\n\n\n   at ../pages/expert-appointment.page.js:340\n\n  338 |     // ✅ Cancel flow\n  339 |     const cancelBtn = this.page.getByRole('button', { name: /^Cancel$/i });\n> 340 |     await cancelBtn.waitFor({ timeout: 15000 });\n      |                     ^\n  341 |     await cancelBtn.click();\n  342 |\n  343 |     const confirmBtn = this.page.getByRole('butto"
+    },
+    {
+      "title": "Expert Dashboard | Create patient & book appointment",
+      "status": "failed",
+      "durationMs": 38115,
+      "file": "Expert-Dashboard/expert-appointment-create-with-new-patient.spec.js",
+      "module": "Expert-Dashboard",
+      "moduleLabel": "Expert Dashboard",
+      "attachments": [
+        {
+          "name": "screenshot",
+          "path": "test-failed-1.png",
+          "contentType": "image/png",
+          "webPath": "./artifacts/expert_dashboard___create_patient___book_appointme-screenshot.png"
+        },
+        {
+          "name": "video",
+          "path": "video.webm",
+          "contentType": "video/webm",
+          "webPath": "./artifacts/expert_dashboard___create_patient___book_appointme-video.webm"
+        },
+        {
+          "name": "error-context",
+          "path": "error-context.md",
+          "contentType": "text/markdown",
+          "webPath": "./artifacts/expert_dashboard___create_patient___book_appointme-error-context.md"
+        },
+        {
+          "name": "trace",
+          "path": "trace.zip",
+          "contentType": "application/zip",
+          "webPath": "./artifacts/expert_dashboard___create_patient___book_appointme-trace.zip"
+        }
+      ],
+      "error": "TimeoutError: locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('combobox', { name: 'Search User' }) to be visible\u001b[22m\n\n\n   at ../pages/expert-appointment.page.js:51\n\n  49 |   async selectExistingPatient(patientName) {\n  50 |     const searchBox = this.page.getByRole('combobox', { name: 'Search User' });\n> 51 |     await searchBox.waitFor({ state: 'visible', timeout: 30000 });\n     |                     ^\n  52 |\n  53 |     const listbox = this.page.locator('[rol"
+    },
+    {
+      "title": "Expert Dashboard | Navigation flow validation",
+      "status": "passed",
+      "durationMs": 17782,
+      "file": "Expert-Dashboard/expert-dashboard-navigation.spec.js",
+      "module": "Expert-Dashboard",
+      "moduleLabel": "Expert Dashboard",
+      "attachments": [
+        {
+          "name": "screenshot",
+          "path": "test-finished-1.png",
+          "contentType": "image/png"
+        },
+        {
+          "name": "video",
+          "path": "video.webm",
+          "contentType": "video/webm"
+        }
+      ],
+      "error": ""
+    },
+    {
+      "title": "Expert Dashboard | Help Center raise & reply ticket",
+      "status": "passed",
+      "durationMs": 18580,
+      "file": "Expert-Dashboard/expert-helpcenter-ticket.spec.js",
+      "module": "Expert-Dashboard",
+      "moduleLabel": "Expert Dashboard",
+      "attachments": [
+        {
+          "name": "screenshot",
+          "path": "test-finished-1.png",
+          "contentType": "image/png"
+        },
+        {
+          "name": "video",
+          "path": "video.webm",
+          "contentType": "video/webm"
+        }
+      ],
+      "error": ""
+    },
+    {
+      "title": "create unique patient, search and view profile",
+      "status": "passed",
+      "durationMs": 31304,
+      "file": "Expert-Dashboard/patient-create-and-view.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
       "attachments": [
@@ -53,7 +263,7 @@
     {
       "title": "AI panel — Graph tab: knowledge graph, zoom controls, node properties, legends",
       "status": "passed",
-      "durationMs": 28965,
+      "durationMs": 31105,
       "file": "CCOP/ai-assistant-panel.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -74,7 +284,7 @@
     {
       "title": "AI panel — Assistant tab: associations, medication & comorbidity sub-tabs",
       "status": "passed",
-      "durationMs": 33071,
+      "durationMs": 36699,
       "file": "CCOP/ai-assistant-panel.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -95,8 +305,71 @@
     {
       "title": "AI panel — asksam tab: chat input, send message, disclaimer",
       "status": "passed",
-      "durationMs": 39025,
+      "durationMs": 42155,
       "file": "CCOP/ai-assistant-panel.spec.js",
+      "module": "CCOP",
+      "moduleLabel": "CCOP",
+      "attachments": [
+        {
+          "name": "screenshot",
+          "path": "test-finished-1.png",
+          "contentType": "image/png"
+        },
+        {
+          "name": "video",
+          "path": "video.webm",
+          "contentType": "video/webm"
+        }
+      ],
+      "error": ""
+    },
+    {
+      "title": "CCOP | Help Center | Raise, Reply & Resolve Ticket",
+      "status": "passed",
+      "durationMs": 18381,
+      "file": "CCOP/ccop-helpcenter-ticket.spec.js",
+      "module": "CCOP",
+      "moduleLabel": "CCOP",
+      "attachments": [
+        {
+          "name": "screenshot",
+          "path": "test-finished-1.png",
+          "contentType": "image/png"
+        },
+        {
+          "name": "video",
+          "path": "video.webm",
+          "contentType": "video/webm"
+        }
+      ],
+      "error": ""
+    },
+    {
+      "title": "Create clinical note with document upload & transcription",
+      "status": "passed",
+      "durationMs": 73853,
+      "file": "CCOP/clinical-note.spec.js",
+      "module": "CCOP",
+      "moduleLabel": "CCOP",
+      "attachments": [
+        {
+          "name": "screenshot",
+          "path": "test-finished-1.png",
+          "contentType": "image/png"
+        },
+        {
+          "name": "video",
+          "path": "video.webm",
+          "contentType": "video/webm"
+        }
+      ],
+      "error": ""
+    },
+    {
+      "title": "Create patient + upload + submit",
+      "status": "passed",
+      "durationMs": 77412,
+      "file": "CCOP/create-patient-clinical-note.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
       "attachments": [
@@ -116,7 +389,7 @@
     {
       "title": "Open letter template from Actions dropdown, select type and verify preview",
       "status": "passed",
-      "durationMs": 16430,
+      "durationMs": 23925,
       "file": "CCOP/letter-template.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -137,7 +410,7 @@
     {
       "title": "Create a new letter template from Actions dropdown",
       "status": "passed",
-      "durationMs": 29803,
+      "durationMs": 32726,
       "file": "CCOP/letter-template.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -153,6 +426,16 @@
           "contentType": "video/webm"
         }
       ],
+      "error": ""
+    },
+    {
+      "title": "CCOP | Clinician signup full flow (recorded)",
+      "status": "skipped",
+      "durationMs": 0,
+      "file": "CCOP/ccop-clinician-signup.spec.js",
+      "module": "CCOP",
+      "moduleLabel": "CCOP",
+      "attachments": [],
       "error": ""
     }
   ]
