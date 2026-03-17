@@ -86,12 +86,24 @@ jobs:
         continue-on-error: true
         run: |
           git clone https://x-access-token:${{ secrets.DASHBOARD_PAT }}@github.com/saira-uwc/asksam-playwright-reports.git /tmp/dashboard-repo
+
+          # Sync all dashboard files (HTML, JSON data, history, artifacts, exports)
+          cp docs/index.html /tmp/dashboard-repo/index.html
+          cp docs/.nojekyll /tmp/dashboard-repo/.nojekyll 2>/dev/null || true
           cp docs/test-results.json /tmp/dashboard-repo/test-results.json
+
+          # Sync data, history, exports, and artifacts directories
+          mkdir -p /tmp/dashboard-repo/data /tmp/dashboard-repo/history /tmp/dashboard-repo/exports /tmp/dashboard-repo/artifacts
+          cp -r docs/data/* /tmp/dashboard-repo/data/ 2>/dev/null || true
+          cp -r docs/history/* /tmp/dashboard-repo/history/ 2>/dev/null || true
+          cp -r docs/exports/* /tmp/dashboard-repo/exports/ 2>/dev/null || true
+          cp -r docs/artifacts/* /tmp/dashboard-repo/artifacts/ 2>/dev/null || true
+
           cd /tmp/dashboard-repo
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
-          git add test-results.json
-          git diff --staged --quiet || git commit -m "Update dashboard data [skip ci]"
+          git add -A
+          git diff --staged --quiet || git commit -m "Update dashboard — $(date -u '+%Y-%m-%d %H:%M UTC') [skip ci]"
           git push
 
       - name: Send email report
