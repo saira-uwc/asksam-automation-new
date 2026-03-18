@@ -24,14 +24,22 @@ export class LetterTemplatePage {
     const editDraftBtn = this.page.getByRole("button", { name: "Edit Draft" }).first();
     const viewNoteBtn = this.page.getByRole("button", { name: "View Clinical Note" }).first();
 
-    if (await editDraftBtn.isVisible({ timeout: 20000 }).catch(() => false)) {
+    if (await editDraftBtn.isVisible({ timeout: 10000 }).catch(() => false)) {
       await editDraftBtn.click();
       console.log("✅ Clicked Edit Draft");
     } else {
       // Switch to Completed tab
       await this.page.getByRole("button", { name: "Completed" }).click();
-      await this.page.waitForTimeout(3000);
-      await viewNoteBtn.waitFor({ state: "visible", timeout: 20000 });
+      console.log("✅ Switched to Completed tab");
+
+      // Wait for skeleton loaders to clear after tab switch
+      await this.page
+        .locator(".MuiSkeleton-root")
+        .first()
+        .waitFor({ state: "detached", timeout: 30000 })
+        .catch(() => {});
+
+      await viewNoteBtn.waitFor({ state: "visible", timeout: 30000 });
       await viewNoteBtn.click();
       console.log("✅ Clicked View Clinical Note");
     }

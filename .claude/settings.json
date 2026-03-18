@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -r \"View\" /c/Users/Asus/Documents/UWC/playwrite/pages/*.page.js)",
+      "Bash(grep -B 2 -A 5 \"getByRole.*button.*View\" /c/Users/Asus/Documents/UWC/playwrite/pages/*.page.js)"
+    ]
+  }
+}
