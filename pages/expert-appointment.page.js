@@ -187,15 +187,31 @@ export class ExpertAppointmentPage {
      OPEN FIRST APPOINTMENT
   =============================== */
   async openFirstAppointment() {
-    // Wait for appointment cards to load
-    await this.page.locator('.MuiCard-root').first().waitFor({ timeout: 20000 });
+    // Wait for appointment cards to load fully
+    await this.page.waitForTimeout(3000);
+    await this.page.locator('.MuiCard-root').first().waitFor({ timeout: 30000 });
+
+    // Look for "Upcoming" status first (freshly booked appointments)
     const cards = this.page.locator('.MuiCard-root');
     const count = await cards.count();
 
+    // First pass: prefer "Upcoming" appointments
     for (let i = 0; i < count; i++) {
       const card = cards.nth(i);
       const text = await card.textContent();
-      // Skip cancelled, completed, and ongoing appointments — they can't be rescheduled/cancelled
+      if (text?.includes('Upcoming')) {
+        const viewBtn = card.getByRole('button', { name: /View Details/i });
+        if (await viewBtn.isVisible().catch(() => false)) {
+          await viewBtn.click();
+          return;
+        }
+      }
+    }
+
+    // Second pass: any non-cancelled/completed/ongoing
+    for (let i = 0; i < count; i++) {
+      const card = cards.nth(i);
+      const text = await card.textContent();
       if (text?.includes('Cancelled') || text?.includes('Completed') || text?.includes('Ongoing')) continue;
 
       const viewBtn = card.getByRole('button', { name: /View Details/i });
@@ -216,17 +232,26 @@ export class ExpertAppointmentPage {
     throw new Error('No active (non-completed, non-cancelled) appointment found');
   }
   async openReschedule() {
-    const rescheduleBtn = this.page.getByRole('button', {
-      name: /Reschedule/i,
-    });
-  
-    await rescheduleBtn.waitFor({ state: 'visible', timeout: 20000 });
-    await rescheduleBtn.click();
-  
+    // Wait for the appointment details panel to fully load
+    await this.page.waitForTimeout(3000);
+
+    // Try button role first, then fall back to text-based locator
+    const rescheduleBtn = this.page.getByRole('button', { name: /Reschedule/i });
+    const rescheduleText = this.page.locator('button, [role="button"], a').filter({ hasText: /Reschedule/i }).first();
+
+    try {
+      await rescheduleBtn.waitFor({ state: 'visible', timeout: 15000 });
+      await rescheduleBtn.click();
+    } catch {
+      // Fallback: some UI renders Reschedule as a link or styled element
+      await rescheduleText.waitFor({ state: 'visible', timeout: 15000 });
+      await rescheduleText.click();
+    }
+
     // wait till modal header appears
     await this.page
       .getByText('Reschedule Appointment')
-      .waitFor({ timeout: 20000 });
+      .waitFor({ timeout: 30000 });
   }
 
   /* ===============================
@@ -254,7 +279,7 @@ export class ExpertAppointmentPage {
     } catch {
       // Try different dates via the date input
       const dateInput = modal.locator('input[placeholder="DD/MM/YYYY"]');
-      for (let dayOffset = 1; dayOffset <= 14; dayOffset++) {
+      for (let dayOffset = 2; dayOffset <= 21; dayOffset++) {
         const d = new Date();
         d.setDate(d.getDate() + dayOffset);
         const formatted = `${String(d.getDate()).padStart(2, '0')}/${String(d.getMonth() + 1).padStart(2, '0')}/${d.getFullYear()}`;
@@ -322,7 +347,8 @@ export class ExpertAppointmentPage {
    OPEN & CANCEL FIRST NON-CANCELLED APPOINTMENT
 =============================== */
 async openAndCancelNonCancelledAppointment() {
-  await this.page.locator('.MuiCard-root').first().waitFor({ timeout: 20000 });
+  await this.page.waitForTimeout(3000);
+  await this.page.locator('.MuiCard-root').first().waitFor({ timeout: 30000 });
   const cards = this.page.locator('.MuiCard-root');
   const count = await cards.count();
 
@@ -330,31 +356,43 @@ async openAndCancelNonCancelledAppointment() {
     throw new Error('No appointment cards found');
   }
 
-  for (let i = 0; i < count; i++) {
-    const card = cards.nth(i);
-    const statusText = await card.textContent();
-
-    // Skip cancelled, completed, or ongoing appointments
-    if (statusText?.includes('Cancelled') || statusText?.includes('Completed') || statusText?.includes('Ongoing')) {
-      continue;
-    }
-
-    // Open View Details for valid appointment
+  // Helper to cancel a card
+  const cancelCard = async (card) => {
     const viewDetailsBtn = card.getByRole('button', { name: /View Details/i });
     await viewDetailsBtn.waitFor({ timeout: 15000 });
     await viewDetailsBtn.click();
 
-    // Cancel flow
+    // Wait for details panel to load
+    await this.page.waitForTimeout(2000);
+
     const cancelBtn = this.page.getByRole('button', { name: /^Cancel$/i });
-    await cancelBtn.waitFor({ timeout: 15000 });
+    await cancelBtn.waitFor({ state: 'visible', timeout: 15000 });
     await cancelBtn.click();
 
     const confirmBtn = this.page.getByRole('button', { name: /Yes, Cancel it/i });
-    await confirmBtn.waitFor({ timeout: 15000 });
+    await confirmBtn.waitFor({ state: 'visible', timeout: 15000 });
     await confirmBtn.click();
 
-    // Success toast
     await this.page.getByText(/Appointment cancelled/i).waitFor({ timeout: 30000 });
+  };
+
+  // First pass: prefer "Upcoming" appointments
+  for (let i = 0; i < count; i++) {
+    const card = cards.nth(i);
+    const text = await card.textContent();
+    if (text?.includes('Upcoming')) {
+      await cancelCard(card);
+      return;
+    }
+  }
+
+  // Second pass: any non-cancelled/completed/ongoing
+  for (let i = 0; i < count; i++) {
+    const card = cards.nth(i);
+    const text = await card.textContent();
+    if (text?.includes('Cancelled') || text?.includes('Completed') || text?.includes('Ongoing')) continue;
+
+    await cancelCard(card);
     return;
   }
 
