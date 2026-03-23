@@ -175,27 +175,45 @@ export class ExpertAppointmentPage {
      SEARCH APPOINTMENT
   =============================== */
   async searchAppointment(keyword) {
+    // Navigate fresh to appointments page to ensure we see the newly booked one
+    await this.page.goto('https://dashboard.asksam.com.au/expert/appointments');
+    await this.page.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => {});
+    await this.page.waitForTimeout(2000);
+
     const searchBox = this.page.getByRole('textbox', {
       name: 'Search appointments...',
     });
 
     await searchBox.waitFor({ timeout: 20000 });
     await searchBox.fill(keyword);
+
+    // Wait for search results to load
+    await this.page.waitForTimeout(3000);
   }
 
   /* ===============================
      OPEN FIRST APPOINTMENT
   =============================== */
-  async openFirstAppointment() {
+  async openFirstAppointment(pagesChecked = 0) {
     // Wait for appointment cards to load fully
     await this.page.waitForTimeout(3000);
+
+    const hasCards = await this.page.locator('.MuiCard-root').first().isVisible().catch(() => false);
+    if (!hasCards) {
+      // No cards visible — reload and retry once
+      if (pagesChecked === 0) {
+        await this.page.reload();
+        await this.page.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => {});
+        await this.page.waitForTimeout(3000);
+      }
+    }
+
     await this.page.locator('.MuiCard-root').first().waitFor({ timeout: 30000 });
 
-    // Look for "Upcoming" status first (freshly booked appointments)
     const cards = this.page.locator('.MuiCard-root');
     const count = await cards.count();
 
-    // First pass: prefer "Upcoming" appointments
+    // First pass: prefer "Upcoming" appointments (just-booked ones)
     for (let i = 0; i < count; i++) {
       const card = cards.nth(i);
       const text = await card.textContent();
@@ -221,12 +239,14 @@ export class ExpertAppointmentPage {
       }
     }
 
-    // If all on this page are Completed/Cancelled, check next pages
-    const nextPageBtn = this.page.getByRole('button', { name: /Go to page 2/i });
-    if (await nextPageBtn.isVisible().catch(() => false)) {
-      await nextPageBtn.click();
-      await this.page.waitForTimeout(2000);
-      return this.openFirstAppointment();
+    // Check next pages (up to 3 pages)
+    if (pagesChecked < 3) {
+      const nextBtn = this.page.locator('button[aria-label*="next"], button[aria-label*="Go to page"]').last();
+      if (await nextBtn.isVisible().catch(() => false)) {
+        await nextBtn.click();
+        await this.page.waitForTimeout(2000);
+        return this.openFirstAppointment(pagesChecked + 1);
+      }
     }
 
     throw new Error('No active (non-completed, non-cancelled) appointment found');
@@ -346,8 +366,16 @@ export class ExpertAppointmentPage {
 /* ===============================
    OPEN & CANCEL FIRST NON-CANCELLED APPOINTMENT
 =============================== */
-async openAndCancelNonCancelledAppointment() {
+async openAndCancelNonCancelledAppointment(pagesChecked = 0) {
   await this.page.waitForTimeout(3000);
+
+  const hasCards = await this.page.locator('.MuiCard-root').first().isVisible().catch(() => false);
+  if (!hasCards && pagesChecked === 0) {
+    await this.page.reload();
+    await this.page.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => {});
+    await this.page.waitForTimeout(3000);
+  }
+
   await this.page.locator('.MuiCard-root').first().waitFor({ timeout: 30000 });
   const cards = this.page.locator('.MuiCard-root');
   const count = await cards.count();
@@ -396,12 +424,14 @@ async openAndCancelNonCancelledAppointment() {
     return;
   }
 
-  // If all on this page are Completed/Cancelled, check next pages
-  const nextPageBtn = this.page.getByRole('button', { name: /Go to page 2/i });
-  if (await nextPageBtn.isVisible().catch(() => false)) {
-    await nextPageBtn.click();
-    await this.page.waitForTimeout(2000);
-    return this.openAndCancelNonCancelledAppointment();
+  // Check next pages (up to 3)
+  if (pagesChecked < 3) {
+    const nextBtn = this.page.locator('button[aria-label*="next"], button[aria-label*="Go to page"]').last();
+    if (await nextBtn.isVisible().catch(() => false)) {
+      await nextBtn.click();
+      await this.page.waitForTimeout(2000);
+      return this.openAndCancelNonCancelledAppointment(pagesChecked + 1);
+    }
   }
 
   throw new Error('No non-cancelled appointment found to cancel');
