@@ -1,5 +1,16 @@
 import { test } from "@playwright/test";
 import { LetterTemplatePage } from "../../pages/letter-template.page";
+import { LoginPage } from "../../pages/login.page";
+
+// Use a separate login for letter-template tests
+test.use({ storageState: { cookies: [], origins: [] } });
+
+const LETTER_TEMPLATE_EMAIL = "ccop22.test+clerk_test@tmail.com";
+
+test.beforeEach(async ({ page }) => {
+  const login = new LoginPage(page);
+  await login.loginAsClinician(LETTER_TEMPLATE_EMAIL);
+});
 
 test("Open letter template from Actions dropdown, select type and verify preview", async ({
   page,

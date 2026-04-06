@@ -7,7 +7,7 @@ export class LoginPage {
     this.continueBtn = page.getByRole('button', { name: 'Continue' });
   }
 
-  async loginAsClinician() {
+  async loginAsClinician(email = 'testing_clinician_aus+clerk_test@tmail.com') {
     // Navigate directly to the registration/login page
     await this.page.goto('https://account.asksam.com.au/register');
 
@@ -15,7 +15,7 @@ export class LoginPage {
     await this.page.getByText('Clinician').click();
     await this.continueBtn.click();
 
-    await this.emailInput.fill('testing_clinician_aus+clerk_test@tmail.com');
+    await this.emailInput.fill(email);
     await this.continueBtn.click();
 
     // OTP – always same as per your requirement
