@@ -42,7 +42,15 @@ export class PatientPage {
     await this.page.getByRole('button', { name: 'Choose File' }).setInputFiles(filePath);
 
     await this.page.getByRole('button', { name: 'Transcribe All' }).click();
-    await this.page.getByRole('button', { name: 'Send Transcription' }).click();
+
+    // Wait for Send Transcription to appear and be enabled
+    const sendBtn = this.page.getByRole('button', { name: 'Send Transcription' });
+    await sendBtn.waitFor({ state: 'visible', timeout: 120000 });
+    await this.page.waitForFunction(
+      () => !document.querySelector('#notetaker_send_transcription')?.disabled,
+      { timeout: 30000 }
+    ).catch(() => {});
+    await sendBtn.click();
 
     console.log('⏳ Waiting for transcription / disclaimer / submit…');
 
