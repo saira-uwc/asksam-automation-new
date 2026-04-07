@@ -48,9 +48,30 @@ export class AIAssistantPanelPage {
   }
 
   /* ===========================
-     OPEN FLOATING PANEL
+     OPEN FLOATING PANEL (with retry)
   ============================ */
   async openFloatingPanel() {
+    const maxAttempts = 3;
+    for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+      console.log(`🔄 Opening floating panel — attempt ${attempt}/${maxAttempts}`);
+      await this._tryClickFloatingButton();
+      await this.page.waitForTimeout(3000);
+      await this._dismissDisclaimer();
+
+      if (await this._isPanelOpen()) {
+        console.log("✅ AI Assistant panel opened");
+        return;
+      }
+      console.log(`⚠ Panel not detected after attempt ${attempt}`);
+      if (attempt < maxAttempts) {
+        await this.page.waitForTimeout(2000);
+      }
+    }
+    // Final fallback: fail with a clear message
+    throw new Error("AI Assistant panel did not open after 3 attempts");
+  }
+
+  async _tryClickFloatingButton() {
     const viewport = this.page.viewportSize();
     const viewportWidth = viewport?.width || 1440;
     const rightEdgeThreshold = viewportWidth * 0.85;
@@ -75,7 +96,6 @@ export class AIAssistantPanelPage {
       const topEl = allImages.nth(rightEdgeElements[0].index);
       await topEl.click();
       console.log(`✅ Clicked floating icon at (${rightEdgeElements[0].box.x}, ${rightEdgeElements[0].box.y})`);
-      await this._waitForPanelOpen();
       return;
     }
 
@@ -100,7 +120,6 @@ export class AIAssistantPanelPage {
       const topBtn = allButtons.nth(rightEdgeButtons[0].index);
       await topBtn.click();
       console.log(`✅ Clicked floating button at (${rightEdgeButtons[0].box.x}, ${rightEdgeButtons[0].box.y})`);
-      await this._waitForPanelOpen();
       return;
     }
 
@@ -109,18 +128,17 @@ export class AIAssistantPanelPage {
     const clickY = 230;
     await this.page.mouse.click(clickX, clickY);
     console.log(`✅ Clicked at position (${clickX}, ${clickY}) for floating button`);
-    await this._waitForPanelOpen();
   }
 
-  async _waitForPanelOpen() {
-    await this.page.waitForTimeout(3000);
-    await this._dismissDisclaimer();
-
-    await this.page
-      .getByText("asksam", { exact: true })
-      .first()
-      .waitFor({ state: "visible", timeout: 20000 });
-    console.log("✅ AI Assistant panel opened");
+  async _isPanelOpen() {
+    // Check if the MUI Dialog panel appeared first (fast structural check)
+    const dialog = this.page.locator('[role="presentation"].MuiDialog-root');
+    if (!(await dialog.isVisible({ timeout: 5000 }).catch(() => false))) {
+      return false;
+    }
+    // Then verify the panel has the expected tab content (case-insensitive)
+    const asksamTab = this.page.getByText(/^asksam$/i).first();
+    return await asksamTab.isVisible({ timeout: 10000 }).catch(() => false);
   }
 
   /* ===========================

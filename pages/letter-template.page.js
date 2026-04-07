@@ -12,36 +12,49 @@ export class LetterTemplatePage {
     await this.page.goto("https://copilot.asksam.com.au/clinical/home");
     await this.page.waitForURL("**/clinical/home");
 
-    // Wait for skeleton loaders to disappear
-    await this.page
-      .locator(".MuiSkeleton-root")
-      .first()
-      .waitFor({ state: "detached", timeout: 30000 })
-      .catch(() => {});
-
-    // Default tab is "In Progress" with "Edit Draft" buttons
-    // "Completed" tab has "View Clinical Note" buttons
+    // Wait for page to fully load — wait until at least one patient card button appears
+    // Try each tab: In Progress (Edit Draft) → Completed (View Clinical Note) → All
     const editDraftBtn = this.page.getByRole("button", { name: "Edit Draft" }).first();
     const viewNoteBtn = this.page.getByRole("button", { name: "View Clinical Note" }).first();
 
-    if (await editDraftBtn.isVisible({ timeout: 10000 }).catch(() => false)) {
+    // Strategy: wait for skeleton loaders to clear, then check for buttons across tabs
+    const waitForSkeletonsClear = async () => {
+      const skeleton = this.page.locator(".MuiSkeleton-root").first();
+      if (await skeleton.isVisible({ timeout: 3000 }).catch(() => false)) {
+        await skeleton.waitFor({ state: "detached", timeout: 30000 }).catch(() => {});
+      }
+    };
+
+    await waitForSkeletonsClear();
+
+    // Tab 1: In Progress (default) — look for "Edit Draft"
+    if (await editDraftBtn.isVisible({ timeout: 15000 }).catch(() => false)) {
       await editDraftBtn.click();
-      console.log("✅ Clicked Edit Draft");
+      console.log("✅ Clicked Edit Draft (In Progress tab)");
     } else {
-      // Switch to Completed tab
-      await this.page.getByRole("button", { name: "Completed" }).click();
+      // Tab 2: Completed — look for "View Clinical Note"
+      const completedTab = this.page.getByRole("button", { name: "Completed" });
+      await completedTab.click();
       console.log("✅ Switched to Completed tab");
+      await waitForSkeletonsClear();
 
-      // Wait for skeleton loaders to clear after tab switch
-      await this.page
-        .locator(".MuiSkeleton-root")
-        .first()
-        .waitFor({ state: "detached", timeout: 30000 })
-        .catch(() => {});
+      if (await viewNoteBtn.isVisible({ timeout: 15000 }).catch(() => false)) {
+        await viewNoteBtn.click();
+        console.log("✅ Clicked View Clinical Note (Completed tab)");
+      } else {
+        // Tab 3: All — look for either button
+        const allTab = this.page.getByRole("button", { name: "All" });
+        await allTab.click();
+        console.log("✅ Switched to All tab");
+        await waitForSkeletonsClear();
 
-      await viewNoteBtn.waitFor({ state: "visible", timeout: 30000 });
-      await viewNoteBtn.click();
-      console.log("✅ Clicked View Clinical Note");
+        const anyBtn = this.page
+          .getByRole("button", { name: /Edit Draft|View Clinical Note/i })
+          .first();
+        await anyBtn.waitFor({ state: "visible", timeout: 30000 });
+        await anyBtn.click();
+        console.log("✅ Clicked patient note button (All tab)");
+      }
     }
 
     // Wait for the note detail page to load
