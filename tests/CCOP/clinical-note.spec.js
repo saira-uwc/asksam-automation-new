@@ -19,5 +19,6 @@ test('Create clinical note with document upload & transcription', async ({ page 
 
   await dashboard.transcribeAndSend();
   await dashboard.acceptDisclaimers();
+  await dashboard.verifyClinicalTabsHaveData();
   await dashboard.saveAndSubmit();
 });

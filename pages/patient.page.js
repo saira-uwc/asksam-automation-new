@@ -69,6 +69,46 @@ export class PatientPage {
     }
   }
 
+  async verifyClinicalTabsHaveData() {
+    const tabs = ['Clinical Advice', 'Clinical Examination', 'Follow-Up Note', 'Case History'];
+    const maxWait = 90000;
+    const startTime = Date.now();
+
+    let dataFound = false;
+    while (Date.now() - startTime < maxWait) {
+      const editables = await this.page.locator('[contenteditable="true"]').allTextContents();
+      const hasContent = editables.some(t => t.trim().length > 10 && !t.includes('No information'));
+      if (hasContent) {
+        dataFound = true;
+        console.log('✅ Clinical Advice tab has transcription data');
+        break;
+      }
+      await this.page.waitForTimeout(3000);
+    }
+
+    if (!dataFound) {
+      throw new Error('Clinical tabs have no data after 90 seconds — transcription may have failed');
+    }
+
+    for (const tabName of tabs) {
+      const tab = this.page.getByRole('tab', { name: tabName });
+      if (await tab.isVisible().catch(() => false)) {
+        await tab.click();
+        await this.page.waitForTimeout(1500);
+
+        const editables = await this.page.locator('[contenteditable="true"]').allTextContents();
+        const content = editables.filter(t => t.trim().length > 0);
+        console.log(`📋 ${tabName}: ${content.length} fields with data`);
+      }
+    }
+
+    const firstTab = this.page.getByRole('tab', { name: 'Clinical Advice' });
+    if (await firstTab.isVisible().catch(() => false)) {
+      await firstTab.click();
+      await this.page.waitForTimeout(1000);
+    }
+  }
+
   async submitClinicalNote() {
     // ❌ NO waitForURL — UI doesn’t always navigate
     await this.page.getByRole('button', { name: 'Submit' }).click();
