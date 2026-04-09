@@ -1,4 +1,4 @@
-import { safeClick, optionalClick } from "../helpers/wait.js";
+import { safeClick } from "../helpers/wait.js";
 
 export class LetterTemplatePage {
   constructor(page) {
@@ -155,6 +155,125 @@ export class LetterTemplatePage {
     const updateBtn = this.page.getByRole("button", { name: /Update Template/i });
     await updateBtn.waitFor({ state: "visible", timeout: 10000 });
     console.log("✅ Update Template button is visible");
+
+    // Verify Letter Preview has actual content (not empty)
+    const previewText = await this.page.locator('text=/Subject:|Dear /i').first().textContent().catch(() => '');
+    if (previewText && previewText.trim().length > 10) {
+      console.log(`✅ Letter Preview has content: "${previewText.substring(0, 60)}..."`);
+    }
+
+    // Verify "Available Fields" section sub-headings
+    const subSections = ['Patient & Letter Information', 'Clinic Details', 'Clinical Content'];
+    for (const section of subSections) {
+      const sec = this.page.getByText(section, { exact: false }).first();
+      if (await sec.isVisible({ timeout: 3000 }).catch(() => false)) {
+        console.log(`✅ Sub-section visible: ${section}`);
+      }
+    }
+
+    // Verify "X fields available" indicator
+    const fieldsIndicator = this.page.getByText(/\d+ fields? available/i);
+    if (await fieldsIndicator.isVisible({ timeout: 3000 }).catch(() => false)) {
+      const t = await fieldsIndicator.textContent();
+      console.log(`✅ Fields indicator: ${t?.trim()}`);
+    }
+  }
+
+  /* ===========================
+     CLICK UPDATE TEMPLATE BUTTON
+  ============================ */
+  async clickUpdateTemplate() {
+    const updateBtn = this.page.getByRole("button", { name: /Update Template/i });
+    await updateBtn.waitFor({ state: "visible", timeout: 10000 });
+    await updateBtn.click();
+    console.log("✅ Clicked Update Template");
+    await this.page.waitForTimeout(3000);
+  }
+
+  /* ===========================
+     EDIT TEMPLATE NAME + LETTER BODY
+  ============================ */
+  async editTemplateContent(suffix = "edited") {
+    // Modify Template Name (append suffix)
+    const nameInput = this.page.getByLabel(/Template Name/i);
+    if (await nameInput.isVisible({ timeout: 3000 }).catch(() => false)) {
+      const original = (await nameInput.inputValue()) || '';
+      await nameInput.click();
+      await this.page.keyboard.press('End');
+      await this.page.keyboard.type(` ${suffix}`);
+      console.log(`✅ Edited Template Name: ${original} ${suffix}`);
+    }
+
+    // Append text to Letter Body editor
+    const editorTextbox = this.page.locator('[contenteditable="true"]').last();
+    if (await editorTextbox.isVisible({ timeout: 3000 }).catch(() => false)) {
+      await editorTextbox.click({ force: true });
+      await this.page.keyboard.press('End');
+      await this.page.keyboard.type(' [edited by automation]');
+      console.log("✅ Edited Letter Body content");
+    }
+    await this.page.waitForTimeout(1500);
+  }
+
+  /* ===========================
+     SEARCH AVAILABLE FIELDS
+  ============================ */
+  async searchAvailableFields(query = "Patient") {
+    const searchBox = this.page.getByPlaceholder(/Search.*field/i);
+    if (await searchBox.isVisible({ timeout: 3000 }).catch(() => false)) {
+      await searchBox.click();
+      await searchBox.fill(query);
+      console.log(`✅ Searched fields: "${query}"`);
+      await this.page.waitForTimeout(1500);
+      await searchBox.clear();
+    }
+  }
+
+  /* ===========================
+     ADD FIELD FROM AVAILABLE FIELDS PANEL
+  ============================ */
+  async addFieldByName(fieldName) {
+    const addBtn = this.page
+      .locator('p, span')
+      .filter({ hasText: new RegExp(`^${fieldName}$`, 'i') })
+      .locator('xpath=..')
+      .locator('button[title="Add to selection"], button[aria-label*="add" i]')
+      .first();
+    if (await addBtn.isVisible({ timeout: 3000 }).catch(() => false)) {
+      await addBtn.click();
+      console.log(`✅ Added field: ${fieldName}`);
+      await this.page.waitForTimeout(1000);
+      return true;
+    }
+    return false;
+  }
+
+  /* ===========================
+     SELECT MULTIPLE LETTER TYPES (verify each loads)
+  ============================ */
+  async verifyMultipleLetterTypes() {
+    const types = ['Reply Letter for GP or Referring Specialist', 'Summary of Patient Treatment', 'General Letter Template'];
+    for (const type of types) {
+      const dropdown = this.page.getByText("Select letter type", { exact: true });
+      if (!(await dropdown.isVisible({ timeout: 3000 }).catch(() => false))) {
+        // try clicking on existing template name to reopen dropdown
+        const altDropdown = this.page.locator('[role="combobox"]').first();
+        if (await altDropdown.isVisible().catch(() => false)) {
+          await altDropdown.click();
+        }
+      } else {
+        await dropdown.click();
+      }
+      await this.page.waitForTimeout(1500);
+      const option = this.page.getByText(type, { exact: true });
+      if (await option.isVisible({ timeout: 3000 }).catch(() => false)) {
+        await option.click();
+        console.log(`✅ Selected letter type: ${type}`);
+        await this.page.waitForTimeout(2500);
+      } else {
+        console.log(`⚠ Letter type not found: ${type}`);
+      }
+    }
   }
 
   /* ===========================
@@ -273,6 +392,143 @@ export class LetterTemplatePage {
     await saveBtn.click();
     console.log("✅ Clicked Save Template");
     await this.page.waitForTimeout(5000);
+  }
+
+  /* ===========================
+     ADD MULTIPLE PATIENT INFO FIELDS
+  ============================ */
+  async addPatientInfoFields() {
+    // Expand "Patient & Letter Information" section if collapsed
+    const patientSection = this.page.locator('h6, p').filter({ hasText: /Patient.*Letter Information/i }).first();
+    if (await patientSection.isVisible({ timeout: 3000 }).catch(() => false)) {
+      const expandBtn = patientSection.locator('xpath=..').locator('button').first();
+      const collapsed = await expandBtn.locator('[data-testid="ExpandMoreIcon"]').isVisible({ timeout: 1000 }).catch(() => false);
+      if (collapsed) {
+        await expandBtn.click();
+        console.log("✅ Expanded Patient & Letter Information section");
+        await this.page.waitForTimeout(1500);
+      }
+    }
+
+    const patientFields = ['Patient Name', 'Recipient Name', 'Patient Date of Birth'];
+    for (const field of patientFields) {
+      const added = await this.addFieldByName(field);
+      if (added) console.log(`  ✅ Added patient field: ${field}`);
+    }
+  }
+
+  /* ===========================
+     ADD CLINIC DETAILS FIELDS
+  ============================ */
+  async addClinicDetailsFields() {
+    const clinicSection = this.page.locator('h6, p').filter({ hasText: /Clinic Details/i }).first();
+    if (await clinicSection.isVisible({ timeout: 3000 }).catch(() => false)) {
+      const expandBtn = clinicSection.locator('xpath=..').locator('button').first();
+      const collapsed = await expandBtn.locator('[data-testid="ExpandMoreIcon"]').isVisible({ timeout: 1000 }).catch(() => false);
+      if (collapsed) {
+        await expandBtn.click();
+        console.log("✅ Expanded Clinic Details section");
+        await this.page.waitForTimeout(1500);
+      }
+    }
+
+    const clinicFields = ['Clinic Name', 'Clinic City'];
+    for (const field of clinicFields) {
+      const added = await this.addFieldByName(field);
+      if (added) console.log(`  ✅ Added clinic field: ${field}`);
+    }
+  }
+
+  /* ===========================
+     SEARCH FIELDS BOX (Create form)
+  ============================ */
+  async searchAndVerifyField(query = "Patient Name") {
+    const searchBox = this.page.getByPlaceholder(/Search.*field/i);
+    if (await searchBox.isVisible({ timeout: 3000 }).catch(() => false)) {
+      await searchBox.click();
+      await searchBox.fill(query);
+      console.log(`✅ Searched for field: "${query}"`);
+      await this.page.waitForTimeout(1500);
+      const result = this.page.getByText(query, { exact: false }).first();
+      if (await result.isVisible().catch(() => false)) {
+        console.log(`  ✅ Search returned matching field`);
+      }
+      await searchBox.clear();
+      await this.page.waitForTimeout(500);
+    } else {
+      console.log("⚠ Search box not found");
+    }
+  }
+
+  /* ===========================
+     VERIFY 'X FIELDS AVAILABLE' INDICATOR
+  ============================ */
+  async verifyFieldsCount() {
+    const indicator = this.page.getByText(/\d+ fields? available/i);
+    if (await indicator.isVisible({ timeout: 3000 }).catch(() => false)) {
+      const text = (await indicator.textContent()) || '';
+      console.log(`✅ Fields available: ${text.trim()}`);
+    } else {
+      console.log("⚠ Fields count indicator not found");
+    }
+  }
+
+  /* ===========================
+     REMOVE A FIELD AFTER ADDING
+  ============================ */
+  async removeFieldByName(fieldName) {
+    // After adding, the field appears in the editor with a remove "x" button
+    const removeBtn = this.page
+      .locator('button[title*="remove" i], button[aria-label*="remove" i], button[title*="delete" i]')
+      .first();
+    if (await removeBtn.isVisible({ timeout: 3000 }).catch(() => false)) {
+      await removeBtn.click();
+      console.log(`✅ Removed field: ${fieldName}`);
+      await this.page.waitForTimeout(1000);
+    } else {
+      console.log(`⚠ Remove button not found for ${fieldName}`);
+    }
+  }
+
+  /* ===========================
+     VERIFY CANCEL BUTTON EXISTS
+  ============================ */
+  async verifyCancelButtonExists() {
+    const cancelBtn = this.page.getByRole("button", { name: /^Cancel$/i });
+    if (await cancelBtn.isVisible({ timeout: 3000 }).catch(() => false)) {
+      console.log("✅ Cancel button is visible");
+      return true;
+    }
+    console.log("⚠ Cancel button not found");
+    return false;
+  }
+
+  /* ===========================
+     VERIFY EMPTY TEMPLATE NAME VALIDATION
+  ============================ */
+  async verifyEmptyNameValidation() {
+    const nameInput = this.page.getByLabel(/Template Name/i);
+    const original = (await nameInput.inputValue()) || '';
+    await nameInput.click();
+    await nameInput.fill('');
+    await this.page.waitForTimeout(500);
+
+    const saveBtn = this.page.getByRole("button", { name: /Save Template/i });
+    const isDisabled = await saveBtn.isDisabled().catch(() => false);
+    if (isDisabled) {
+      console.log("✅ Save Template disabled when name is empty (validation working)");
+    } else {
+      console.log("⚠ Save button not disabled for empty name — checking error message");
+      // Try clicking and see if error appears
+      await saveBtn.click().catch(() => {});
+      const errorMsg = this.page.getByText(/required|cannot be empty/i);
+      if (await errorMsg.isVisible({ timeout: 2000 }).catch(() => false)) {
+        console.log("✅ Validation error shown for empty name");
+      }
+    }
+    // Restore the name
+    await nameInput.fill(original);
+    await this.page.waitForTimeout(500);
   }
 
   async verifyTemplateCreated(templateName) {

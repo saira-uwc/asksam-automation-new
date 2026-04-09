@@ -15,6 +15,7 @@ test.beforeEach(async ({ page }) => {
 test("Open letter template from Actions dropdown, select type and verify preview", async ({
   page,
 }) => {
+  test.setTimeout(300000); // 5 min — extra CTAs added
   const letterTemplate = new LetterTemplatePage(page);
 
   /* ===== STEP 1: Navigate to an existing patient note ===== */
@@ -29,11 +30,21 @@ test("Open letter template from Actions dropdown, select type and verify preview
   /* ===== STEP 4: Verify template content and preview ===== */
   await letterTemplate.verifyTemplateContent();
 
-  /* ===== STEP 5: Download the template ===== */
+  /* ===== STEP 5: Search available fields ===== */
+  await letterTemplate.searchAvailableFields("Patient");
+
+  /* ===== STEP 6: Edit Template Name + Letter Body ===== */
+  await letterTemplate.editTemplateContent();
+
+  /* ===== STEP 7: Click Update Template ===== */
+  await letterTemplate.clickUpdateTemplate();
+
+  /* ===== STEP 8: Download the template ===== */
   await letterTemplate.downloadTemplate();
 });
 
 test("Create a new letter template from Actions dropdown", async ({ page }) => {
+  test.setTimeout(300000); // 5 min — extra CTAs added
   const letterTemplate = new LetterTemplatePage(page);
   const templateName = `Test Template ${Date.now().toString().slice(-6)}`;
 
@@ -46,15 +57,33 @@ test("Create a new letter template from Actions dropdown", async ({ page }) => {
   /* ===== STEP 3: Click + Create Template ===== */
   await letterTemplate.clickCreateTemplate();
 
-  /* ===== STEP 4: Fill new template form ===== */
+  /* ===== STEP 4: Verify Cancel button exists ===== */
+  await letterTemplate.verifyCancelButtonExists();
+
+  /* ===== STEP 5: Verify "X fields available" indicator ===== */
+  await letterTemplate.verifyFieldsCount();
+
+  /* ===== STEP 6: Search fields box ===== */
+  await letterTemplate.searchAndVerifyField("Patient Name");
+
+  /* ===== STEP 7: Fill new template form ===== */
   await letterTemplate.fillNewTemplateForm(templateName);
 
-  /* ===== STEP 5: Select variables from Clinical Notes dropdown ===== */
+  /* ===== STEP 8: Add Patient Information fields ===== */
+  await letterTemplate.addPatientInfoFields();
+
+  /* ===== STEP 9: Add Clinic Details fields ===== */
+  await letterTemplate.addClinicDetailsFields();
+
+  /* ===== STEP 10: Select Clinical Notes fields (CC, HPI) ===== */
   await letterTemplate.selectClinicalNoteFields();
 
-  /* ===== STEP 6: Save the new template ===== */
+  /* ===== STEP 11: Verify empty Template Name validation ===== */
+  await letterTemplate.verifyEmptyNameValidation();
+
+  /* ===== STEP 12: Save the new template ===== */
   await letterTemplate.saveNewTemplate();
 
-  /* ===== STEP 7: Verify template was created ===== */
+  /* ===== STEP 13: Verify template was created ===== */
   await letterTemplate.verifyTemplateCreated(templateName);
 });

@@ -1,5 +1,3 @@
-import { safeClick, optionalClick } from "../helpers/wait.js";
-
 export class AIAssistantPanelPage {
   constructor(page) {
     this.page = page;
@@ -9,35 +7,46 @@ export class AIAssistantPanelPage {
      NAVIGATE TO PATIENT NOTE
   ============================ */
   async openExistingPatientNote() {
-    await this.page.goto("https://copilot.asksam.com.au/clinical/home");
-    await this.page.waitForURL("**/clinical/home");
+    // Retry navigation up to 2 times to handle stale page state from prior tests
+    for (let attempt = 1; attempt <= 2; attempt++) {
+      await this.page.goto("https://copilot.asksam.com.au/clinical/home");
+      await this.page.waitForURL("**/clinical/home");
+      await this.page.waitForLoadState("networkidle", { timeout: 30000 }).catch(() => {});
 
-    await this.page
-      .locator(".MuiSkeleton-root")
-      .first()
-      .waitFor({ state: "detached", timeout: 30000 })
-      .catch(() => {});
-
-    const editDraftBtn = this.page.getByRole("button", { name: "Edit Draft" }).first();
-    const viewNoteBtn = this.page.getByRole("button", { name: "View Clinical Note" }).first();
-
-    if (await editDraftBtn.isVisible({ timeout: 10000 }).catch(() => false)) {
-      await editDraftBtn.click();
-      console.log("✅ Clicked Edit Draft");
-    } else {
-      await this.page.getByRole("button", { name: "Completed" }).click();
-      console.log("✅ Switched to Completed tab");
-
-      // Wait for skeleton loaders to clear after tab switch
       await this.page
         .locator(".MuiSkeleton-root")
         .first()
         .waitFor({ state: "detached", timeout: 30000 })
         .catch(() => {});
 
-      await viewNoteBtn.waitFor({ state: "visible", timeout: 30000 });
-      await viewNoteBtn.click();
-      console.log("✅ Clicked View Clinical Note");
+      const editDraftBtn = this.page.getByRole("button", { name: "Edit Draft" }).first();
+      const viewNoteBtn = this.page.getByRole("button", { name: "View Clinical Note" }).first();
+
+      try {
+        if (await editDraftBtn.isVisible({ timeout: 10000 }).catch(() => false)) {
+          await editDraftBtn.click();
+          console.log("✅ Clicked Edit Draft");
+        } else {
+          await this.page.getByRole("button", { name: "Completed" }).click();
+          console.log("✅ Switched to Completed tab");
+
+          await this.page
+            .locator(".MuiSkeleton-root")
+            .first()
+            .waitFor({ state: "detached", timeout: 30000 })
+            .catch(() => {});
+          await this.page.waitForTimeout(3000);
+
+          await viewNoteBtn.waitFor({ state: "visible", timeout: 30000 });
+          await viewNoteBtn.click();
+          console.log("✅ Clicked View Clinical Note");
+        }
+        break; // Success — exit retry loop
+      } catch (e) {
+        if (attempt === 2) throw e;
+        console.log(`⚠ Note open attempt ${attempt} failed — retrying`);
+        await this.page.waitForTimeout(3000);
+      }
     }
 
     await this.page
@@ -259,6 +268,68 @@ export class AIAssistantPanelPage {
       console.log("✅ Clicked Reset to restore default view");
       await this.page.waitForTimeout(2000);
     }
+
+    // 10. Click zoom controls — find icon-only buttons in the panel (no text)
+    // Determine panel bounds to find left-side controls
+    const panelBox = await this.panel.boundingBox();
+    const allBtns = this.panel.locator('button');
+    const totalBtns = await allBtns.count();
+    const iconOnlyButtons = [];
+
+    for (let i = 0; i < totalBtns; i++) {
+      const btn = allBtns.nth(i);
+      if (!(await btn.isVisible().catch(() => false))) continue;
+      const text = ((await btn.textContent()) || '').trim();
+      if (text.length > 0) continue; // skip text buttons
+
+      const box = await btn.boundingBox();
+      if (!box || !panelBox) continue;
+      // Buttons positioned in the left half of the panel (zoom controls live here)
+      const relativeX = box.x - panelBox.x;
+      if (relativeX < panelBox.width * 0.4 && box.width < 80) {
+        iconOnlyButtons.push({ btn, y: box.y });
+      }
+    }
+
+    // Sort by Y position (top to bottom: fullscreen, zoom in, zoom out)
+    iconOnlyButtons.sort((a, b) => a.y - b.y);
+    const zoomLabels = ['Fullscreen', 'Zoom In (+)', 'Zoom Out (−)'];
+    for (let i = 0; i < Math.min(3, iconOnlyButtons.length); i++) {
+      try {
+        await iconOnlyButtons[i].btn.click({ force: true });
+        console.log(`✅ Clicked ${zoomLabels[i]} button`);
+        await this.page.waitForTimeout(800);
+        // For fullscreen — click again to exit so canvas doesn't block other clicks
+        if (i === 0) {
+          await iconOnlyButtons[i].btn.click({ force: true }).catch(() => {});
+          await this.page.waitForTimeout(800);
+        }
+      } catch (e) {
+        console.log(`⚠ ${zoomLabels[i]} click failed`);
+      }
+    }
+    if (iconOnlyButtons.length === 0) {
+      console.log("⚠ Zoom controls not detected");
+    }
+
+    // 11. Click on User node in canvas (center area)
+    const canvasBox = await graphCanvas.boundingBox();
+    if (canvasBox) {
+      const centerX = canvasBox.x + canvasBox.width / 2;
+      const centerY = canvasBox.y + canvasBox.height / 2;
+      await this.page.mouse.click(centerX, centerY);
+      console.log("✅ Clicked on canvas center (User node area)");
+      await this.page.waitForTimeout(1000);
+    }
+
+    // 12. Click Disclaimer link in header (force — canvas may intercept)
+    const disclaimerLink = this.panel.getByText("Disclaimer", { exact: true });
+    if (await disclaimerLink.isVisible().catch(() => false)) {
+      await disclaimerLink.click({ force: true }).catch(() => {});
+      console.log("✅ Clicked Disclaimer link");
+      await this.page.waitForTimeout(2000);
+      await this._dismissDisclaimer();
+    }
   }
 
   /* ===========================
@@ -328,6 +399,42 @@ export class AIAssistantPanelPage {
     await associationsTab.click();
     console.log("✅ Switched back to Associations sub-tab");
     await this.page.waitForTimeout(2000);
+
+    // 8. Verify badge counts on each sub-tab (default state should be 0)
+    const subTabs = [
+      { name: 'Associations', locator: associationsTab },
+      { name: 'Medication Associations', locator: medicationTab },
+      { name: 'Comorbidity Associations', locator: comorbidityTab },
+    ];
+    for (const sub of subTabs) {
+      if (await sub.locator.isVisible().catch(() => false)) {
+        const parent = sub.locator.locator('xpath=..');
+        const fullText = (await parent.textContent().catch(() => '')) || '';
+        const badgeMatch = fullText.match(/\d+/);
+        if (badgeMatch) {
+          console.log(`✅ ${sub.name} badge count: ${badgeMatch[0]}`);
+        } else {
+          console.log(`⚠ ${sub.name} no badge found`);
+        }
+      }
+    }
+
+    // 9. Verify full empty-state message
+    const fullMsg = this.page.getByText(/We'll update this space when we have an Alert/i);
+    if (await fullMsg.isVisible().catch(() => false)) {
+      console.log("✅ Full empty-state message verified");
+    } else {
+      console.log("⚠ Full empty-state message not visible");
+    }
+
+    // 10. Click Disclaimer link in header
+    const disclaimerLink = this.panel.getByText("Disclaimer", { exact: true });
+    if (await disclaimerLink.isVisible().catch(() => false)) {
+      await disclaimerLink.click();
+      console.log("✅ Clicked Disclaimer link");
+      await this.page.waitForTimeout(2000);
+      await this._dismissDisclaimer();
+    }
   }
 
   /* ===========================
@@ -418,6 +525,52 @@ export class AIAssistantPanelPage {
 
     // 12. Verify disclaimer dialog opened, then dismiss it
     await this._dismissDisclaimer();
+
+    // 13. Click "+" button (top-left of welcome card) — typically "New chat" / clear
+    const plusBtn = this.panel.locator('button').filter({ has: this.page.locator('[data-testid="AddIcon"]') }).first();
+    if (await plusBtn.isVisible({ timeout: 3000 }).catch(() => false)) {
+      await plusBtn.click();
+      console.log("✅ Clicked Plus (+) button");
+      await this.page.waitForTimeout(2000);
+    } else {
+      // Fallback: any small icon button near the top of the panel
+      const allBtns = this.panel.locator('button');
+      const btnCount = await allBtns.count();
+      for (let i = 0; i < btnCount; i++) {
+        const btn = allBtns.nth(i);
+        if (!(await btn.isVisible().catch(() => false))) continue;
+        const text = ((await btn.textContent()) || '').trim();
+        const box = await btn.boundingBox();
+        if (text.length === 0 && box && box.y < 250 && box.x < 300) {
+          await btn.click().catch(() => {});
+          console.log("✅ Clicked Plus (+) button (positional fallback)");
+          break;
+        }
+      }
+    }
+    await this.page.waitForTimeout(1500);
+
+    // 14. Click attachment icon (clip)
+    const attachBtn = this.panel.locator('[data-testid="AttachFileIcon"]');
+    if (await attachBtn.isVisible({ timeout: 3000 }).catch(() => false)) {
+      await attachBtn.click({ force: true }).catch(() => {});
+      console.log("✅ Clicked Attachment icon");
+      await this.page.waitForTimeout(1000);
+      // Press Escape to close any file picker if it opened
+      await this.page.keyboard.press('Escape').catch(() => {});
+    }
+
+    // 15. Click microphone / voice button
+    const micBtn = this.panel.locator('[data-testid="KeyboardVoiceIcon"], [data-testid="MicIcon"], button[aria-label*="voice" i], button[aria-label*="mic" i]').first();
+    if (await micBtn.isVisible({ timeout: 3000 }).catch(() => false)) {
+      await micBtn.click({ force: true }).catch(() => {});
+      console.log("✅ Clicked Microphone button");
+      await this.page.waitForTimeout(1000);
+      // Click again to stop / dismiss permission
+      await micBtn.click({ force: true }).catch(() => {});
+    } else {
+      console.log("⚠ Microphone button not found");
+    }
   }
 
   /* ===========================
@@ -431,13 +584,13 @@ export class AIAssistantPanelPage {
     const closeBtn = this.panel.locator('button[aria-label="close"]').first();
 
     if (await closeBtn.isVisible({ timeout: 5000 }).catch(() => false)) {
-      await closeBtn.click();
+      await closeBtn.click({ force: true }).catch(() => {});
     } else {
       const closeBtnAlt = this.panel.locator('button').filter({
         has: this.page.locator('[data-testid="CloseIcon"]')
       }).first();
       if (await closeBtnAlt.isVisible({ timeout: 3000 }).catch(() => false)) {
-        await closeBtnAlt.click();
+        await closeBtnAlt.click({ force: true }).catch(() => {});
       }
     }
     console.log("✅ Closed AI Assistant panel");

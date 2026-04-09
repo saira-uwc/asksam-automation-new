@@ -5,6 +5,7 @@ import { AIAssistantPanelPage } from "../../pages/ai-assistant-panel.page";
 test.use({ viewport: { width: 1440, height: 900 } });
 
 test("AI panel — Graph tab: knowledge graph, zoom controls, node properties, legends", async ({ page }) => {
+  test.setTimeout(300000); // 5 min — extra CTAs added
   const aiPanel = new AIAssistantPanelPage(page);
 
   await aiPanel.openExistingPatientNote();
@@ -14,6 +15,7 @@ test("AI panel — Graph tab: knowledge graph, zoom controls, node properties, l
 });
 
 test("AI panel — Assistant tab: associations, medication & comorbidity sub-tabs", async ({ page }) => {
+  test.setTimeout(300000);
   const aiPanel = new AIAssistantPanelPage(page);
 
   await aiPanel.openExistingPatientNote();
@@ -23,6 +25,7 @@ test("AI panel — Assistant tab: associations, medication & comorbidity sub-tab
 });
 
 test("AI panel — asksam tab: chat input, send message, disclaimer", async ({ page }) => {
+  test.setTimeout(300000);
   const aiPanel = new AIAssistantPanelPage(page);
 
   await aiPanel.openExistingPatientNote();
