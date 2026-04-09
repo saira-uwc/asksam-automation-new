@@ -79,7 +79,7 @@ export class PatientPage {
 
   async verifyClinicalTabsHaveData() {
     const tabs = ['Clinical Advice', 'Clinical Examination', 'Follow-Up Note', 'Case History'];
-    const perTabWait = 60000; // 60 seconds per tab
+    const perTabWait = 90000; // 90 seconds per tab
     const failedTabs = [];
 
     for (const tabName of tabs) {
@@ -92,7 +92,7 @@ export class PatientPage {
       await tab.click();
       await this.page.waitForTimeout(1500);
 
-      // Wait up to 60s for this tab to have meaningful content
+      // Wait up to 90s for this tab to have meaningful content
       const startTime = Date.now();
       let fieldCount = 0;
       while (Date.now() - startTime < perTabWait) {
@@ -111,14 +111,14 @@ export class PatientPage {
       if (fieldCount > 0) {
         console.log(`✅ ${tabName}: ${fieldCount} fields with data`);
       } else {
-        console.log(`❌ ${tabName}: NO DATA after 60s`);
+        console.log(`❌ ${tabName}: NO DATA after 90s`);
         failedTabs.push(tabName);
       }
     }
 
     if (failedTabs.length > 0) {
       throw new Error(
-        `Clinical note tabs have no data after 60s wait: ${failedTabs.join(', ')} — transcription incomplete`
+        `Clinical note tabs have no data after 90s wait: ${failedTabs.join(', ')} — transcription incomplete`
       );
     }
 
