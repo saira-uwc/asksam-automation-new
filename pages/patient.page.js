@@ -79,35 +79,47 @@ export class PatientPage {
 
   async verifyClinicalTabsHaveData() {
     const tabs = ['Clinical Advice', 'Clinical Examination', 'Follow-Up Note', 'Case History'];
-    const maxWait = 90000;
-    const startTime = Date.now();
-
-    let dataFound = false;
-    while (Date.now() - startTime < maxWait) {
-      const editables = await this.page.locator('[contenteditable="true"]').allTextContents();
-      const hasContent = editables.some(t => t.trim().length > 10 && !t.includes('No information'));
-      if (hasContent) {
-        dataFound = true;
-        console.log('✅ Clinical Advice tab has transcription data');
-        break;
-      }
-      await this.page.waitForTimeout(3000);
-    }
-
-    if (!dataFound) {
-      throw new Error('Clinical tabs have no data after 90 seconds — transcription may have failed');
-    }
+    const perTabWait = 60000; // 60 seconds per tab
+    const failedTabs = [];
 
     for (const tabName of tabs) {
       const tab = this.page.getByRole('tab', { name: tabName });
-      if (await tab.isVisible().catch(() => false)) {
-        await tab.click();
-        await this.page.waitForTimeout(1500);
-
-        const editables = await this.page.locator('[contenteditable="true"]').allTextContents();
-        const content = editables.filter(t => t.trim().length > 0);
-        console.log(`📋 ${tabName}: ${content.length} fields with data`);
+      if (!(await tab.isVisible().catch(() => false))) {
+        console.log(`⚠ ${tabName} tab not found — skipping`);
+        continue;
       }
+
+      await tab.click();
+      await this.page.waitForTimeout(1500);
+
+      // Wait up to 60s for this tab to have meaningful content
+      const startTime = Date.now();
+      let fieldCount = 0;
+      while (Date.now() - startTime < perTabWait) {
+        const editables = await this.page.locator('[contenteditable="true"]').allTextContents();
+        const meaningful = editables.filter(t => {
+          const trimmed = t.trim();
+          return trimmed.length > 5 && !trimmed.includes('No information');
+        });
+        if (meaningful.length > 0) {
+          fieldCount = meaningful.length;
+          break;
+        }
+        await this.page.waitForTimeout(3000);
+      }
+
+      if (fieldCount > 0) {
+        console.log(`✅ ${tabName}: ${fieldCount} fields with data`);
+      } else {
+        console.log(`❌ ${tabName}: NO DATA after 60s`);
+        failedTabs.push(tabName);
+      }
+    }
+
+    if (failedTabs.length > 0) {
+      throw new Error(
+        `Clinical note tabs have no data after 60s wait: ${failedTabs.join(', ')} — transcription incomplete`
+      );
     }
 
     const firstTab = this.page.getByRole('tab', { name: 'Clinical Advice' });
