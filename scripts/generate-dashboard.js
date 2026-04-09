@@ -24,6 +24,7 @@ const CSV_ALL = path.join(ROOT, 'docs', 'exports', 'all-runs-summary.csv');
 const ARTIFACTS_DIR = path.join(ROOT, 'docs', 'artifacts');
 const RESULTS_PATH = path.join(ROOT, 'docs', 'test-results.json');
 const MAX_HISTORY = 100;
+const HISTORY_RETENTION_DAYS = 15;
 
 // Module name mapping
 const MODULE_MAP = {
@@ -203,6 +204,11 @@ function main() {
   };
 
   history.unshift(runSummary);
+
+  // Retention: keep all runs from the last HISTORY_RETENTION_DAYS days,
+  // plus a hard cap of MAX_HISTORY total entries
+  const cutoff = Date.now() - HISTORY_RETENTION_DAYS * 24 * 60 * 60 * 1000;
+  history = history.filter(r => new Date(r.startedAt).getTime() >= cutoff);
   if (history.length > MAX_HISTORY) history = history.slice(0, MAX_HISTORY);
 
   fs.mkdirSync(path.dirname(HISTORY_PATH), { recursive: true });
@@ -254,7 +260,12 @@ function updateLegacyDashboard(tests, startedAt) {
   } else {
     existingData.runs.unshift(newRun);
   }
-  existingData.runs = existingData.runs.slice(0, 10);
+  // Keep last 15 days of daily aggregated runs
+  const legacyCutoff = Date.now() - HISTORY_RETENTION_DAYS * 24 * 60 * 60 * 1000;
+  existingData.runs = existingData.runs.filter(r => {
+    const d = new Date(r.date).getTime();
+    return !isNaN(d) && d >= legacyCutoff;
+  });
 
   existingData.tests = tests.filter(t => t.status !== 'skipped').map((t, i) => ({
     id: i + 1,
