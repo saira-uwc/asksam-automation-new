@@ -19,19 +19,52 @@ export class CCOPClinicianSignupPage {
   
       // OTP
       await this.page.getByRole('textbox', { name: 'Enter verification code' }).fill('424242');
-  
+
       // Wait for Clerk to finish auth and redirect
-      await this.page.waitForURL(/copilot|clinical|dashboard/, { timeout: 60000 }).catch(() => {});
+      // Clerk may land on verify-email page first, then redirect
+      await this.page.waitForTimeout(5000);
+
+      // If stuck on verify page, wait longer for auto-redirect
+      for (let i = 0; i < 6; i++) {
+        const currentUrl = this.page.url();
+        if (/copilot|clinical|dashboard/.test(currentUrl) && !/sign-up|verify/.test(currentUrl)) {
+          console.log('✅ Auth redirect completed:', currentUrl);
+          break;
+        }
+        console.log(`⏳ Waiting for auth redirect... (${currentUrl})`);
+        await this.page.waitForTimeout(5000);
+      }
+
+      // Ensure auth is fully loaded
+      await this.page.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => {});
+      await this.page.waitForTimeout(3000);
     }
   
     /* ================= FREE PLAN ================= */
     async activateFreePlan() {
-      await this.page.goto(
-        'https://copilot.asksam.com.au/clinical/settings?view=Plans%20%26%20Billing',
-        { waitUntil: 'load' }
-      );
+      // Retry navigation to Plans page — CI can be slow with Clerk auth
+      for (let attempt = 1; attempt <= 3; attempt++) {
+        await this.page.goto(
+          'https://copilot.asksam.com.au/clinical/settings?view=Plans%20%26%20Billing',
+          { waitUntil: 'load' }
+        );
+        await this.page.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => {});
+        await this.page.waitForTimeout(5000);
 
-      await this.page.getByRole('button', { name: 'Try for Free' }).waitFor({ state: 'visible', timeout: 30000 });
+        const tryFreeBtn = this.page.getByRole('button', { name: 'Try for Free' });
+        if (await tryFreeBtn.isVisible({ timeout: 15000 }).catch(() => false)) {
+          console.log(`✅ Try for Free visible (attempt ${attempt})`);
+          break;
+        }
+
+        // Might be redirected to login — check URL
+        console.log(`⚠ Try for Free not visible (attempt ${attempt}), URL: ${this.page.url()}`);
+        if (attempt === 3) {
+          await this.page.screenshot({ path: 'test-results/signup-plans-debug.png' });
+          throw new Error('Try for Free button not visible after 3 attempts');
+        }
+        await this.page.waitForTimeout(3000);
+      }
 
       const popupPromise = this.page.waitForEvent('popup', { timeout: 60000 });
       await this.page.getByRole('button', { name: 'Try for Free' }).click();

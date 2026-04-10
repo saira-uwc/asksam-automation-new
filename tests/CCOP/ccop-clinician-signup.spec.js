@@ -2,6 +2,7 @@ import { test } from '@playwright/test';
 import { CCOPClinicianSignupPage } from '../../pages/ccop-clinician-signup.page';
 
 test('CCOP | Clinician signup full flow (recorded)', async ({ page }) => {
+  test.setTimeout(300000); // 5 min — Clerk auth + Stripe popup + tours
   const signup = new CCOPClinicianSignupPage(page);
 
   const id = Date.now().toString().slice(-6);
