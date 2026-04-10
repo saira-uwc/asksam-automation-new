@@ -95,7 +95,64 @@ export class DashboardPage {
   }
 
   /* ===========================
-     TRANSCRIPTION
+     OPEN VOICE MODAL (from note page)
+  ============================ */
+  async openVoiceModal() {
+    // Check if the Voice modal is already open (it auto-opens on new note creation)
+    const modalTitle = this.page.getByText('Voice and Document Transcriptions').first();
+    if (await modalTitle.isVisible({ timeout: 3000 }).catch(() => false)) {
+      console.log('✅ Voice modal already open');
+      return;
+    }
+
+    // Click the headset/mic icon on the right side of the note page
+    const headsetIcon = this.page.locator('svg[data-testid="HeadsetMicOutlinedIcon"]').first();
+    await headsetIcon.waitFor({ state: 'visible', timeout: 15000 });
+    await headsetIcon.click({ force: true });
+    console.log('✅ Clicked headset mic icon');
+
+    await modalTitle.waitFor({ state: 'visible', timeout: 15000 });
+    console.log('✅ Voice and Document Transcriptions modal opened');
+  }
+
+  /* ===========================
+     VOICE RECORD + TRANSCRIBE
+  ============================ */
+  async voiceRecordAndSend() {
+    // 1. Click mic button to start recording
+    const micIcon = this.page.locator('svg[data-testid="MicIcon"]').first();
+    await micIcon.waitFor({ state: 'visible', timeout: 10000 });
+    await micIcon.click({ force: true });
+    console.log('✅ Clicked mic — recording started');
+
+    // 2. Wait for Stop button to appear (confirms recording is active)
+    const stopBtn = this.page.getByRole('button', { name: 'Stop' });
+    await stopBtn.waitFor({ state: 'visible', timeout: 10000 });
+    console.log('✅ Stop button visible — recording in progress');
+
+    // 3. Simulate speaking — wait a few seconds
+    await this.page.waitForTimeout(5000);
+
+    // 4. Click Stop to finish recording
+    await stopBtn.click();
+    console.log('✅ Clicked Stop — recording ended');
+
+    // 5. Wait for transcription to appear in the text area
+    await this.page.waitForTimeout(5000);
+
+    // 6. Click Send Transcription
+    const sendBtn = this.page.getByRole('button', { name: 'Send Transcription' });
+    await sendBtn.waitFor({ state: 'visible', timeout: 30000 });
+    await this.page.waitForFunction(
+      () => !document.querySelector('#notetaker_send_transcription')?.disabled,
+      { timeout: 30000 }
+    ).catch(() => {});
+    await sendBtn.click();
+    console.log('✅ Clicked Send Transcription');
+  }
+
+  /* ===========================
+     TRANSCRIPTION (document upload flow)
   ============================ */
   async transcribeAndSend() {
     await this.page
