@@ -66,6 +66,10 @@ jobs:
         env:
           CI: true
           GOOGLE_APPS_SCRIPT_URL: ${{ secrets.GOOGLE_SHEETS_WEB_APP_URL }}
+          # AU proxy for Stripe geo-restricted signup test (optional)
+          AU_PROXY_SERVER: ${{ secrets.AU_PROXY_SERVER }}
+          AU_PROXY_USERNAME: ${{ secrets.AU_PROXY_USERNAME }}
+          AU_PROXY_PASSWORD: ${{ secrets.AU_PROXY_PASSWORD }}
 
       - name: Generate dashboard data
         if: always()

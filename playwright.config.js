@@ -56,6 +56,18 @@ export default defineConfig({
     {
       name: 'ccop-signup',
       testMatch: /CCOP\/ccop-clinician-signup\.spec\.js/,
+      use: {
+        // Route signup test through AU proxy if AU_PROXY_SERVER is set
+        // (Stripe "Try for Free" is geo-restricted to AU IPs).
+        // If not set, the test gracefully skips the Stripe portion.
+        ...(process.env.AU_PROXY_SERVER && {
+          proxy: {
+            server: process.env.AU_PROXY_SERVER,
+            username: process.env.AU_PROXY_USERNAME || undefined,
+            password: process.env.AU_PROXY_PASSWORD || undefined,
+          },
+        }),
+      },
     },
   ],
 });
