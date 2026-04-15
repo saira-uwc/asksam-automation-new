@@ -46,6 +46,14 @@ function main() {
 
   const data = JSON.parse(fs.readFileSync(LATEST_PATH, 'utf8'));
 
+  // Only send email if there are failed tests (or timeouts)
+  const failCount = (data.summary?.failed || 0) + (data.summary?.timedOut || 0);
+  if (failCount === 0) {
+    console.log(`\n✅ All tests passed (${data.summary?.passed || 0}/${data.summary?.total || 0}) — skipping email notification\n`);
+    return;
+  }
+  console.log(`\n📧 ${failCount} test(s) failed — sending email report`);
+
   let todayRuns = 1;
   if (fs.existsSync(HISTORY_PATH)) {
     try {
