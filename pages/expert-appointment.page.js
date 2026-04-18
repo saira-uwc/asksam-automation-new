@@ -137,7 +137,8 @@ export class ExpertAppointmentPage {
 
     // Start 3 days ahead to ensure appointment stays "Upcoming" status
     // (not "Completed" or "Ongoing") so it can be rescheduled/cancelled
-    for (let i = 2; i < 16; i++) {
+    // Search up to 30 days ahead for an available slot
+    for (let i = 2; i < 31; i++) {
       const date = new Date();
       date.setDate(date.getDate() + i + 1);
 
@@ -299,7 +300,8 @@ export class ExpertAppointmentPage {
     } catch {
       // Try different dates via the date input
       const dateInput = modal.locator('input[placeholder="DD/MM/YYYY"]');
-      for (let dayOffset = 2; dayOffset <= 21; dayOffset++) {
+      // Search up to 30 days ahead for reschedule slot
+      for (let dayOffset = 2; dayOffset <= 31; dayOffset++) {
         const d = new Date();
         d.setDate(d.getDate() + dayOffset);
         const formatted = `${String(d.getDate()).padStart(2, '0')}/${String(d.getMonth() + 1).padStart(2, '0')}/${d.getFullYear()}`;
