@@ -247,10 +247,10 @@ export class ExpertAppointmentPage {
       }
     }
 
-    // Check next pages (up to 3 pages)
-    if (pagesChecked < 3) {
-      const nextBtn = this.page.locator('button[aria-label*="next"], button[aria-label*="Go to page"]').last();
-      if (await nextBtn.isVisible().catch(() => false)) {
+    // Check next pages (up to 15 pages to handle accumulated test data)
+    if (pagesChecked < 15) {
+      const nextBtn = this.page.getByRole('button', { name: 'Go to next page' });
+      if (await nextBtn.isVisible().catch(() => false) && !(await nextBtn.isDisabled().catch(() => true))) {
         await nextBtn.click();
         await this.page.waitForTimeout(2000);
         return this.openFirstAppointment(pagesChecked + 1);
@@ -433,10 +433,10 @@ async openAndCancelNonCancelledAppointment(pagesChecked = 0) {
     return;
   }
 
-  // Check next pages (up to 3)
-  if (pagesChecked < 3) {
-    const nextBtn = this.page.locator('button[aria-label*="next"], button[aria-label*="Go to page"]').last();
-    if (await nextBtn.isVisible().catch(() => false)) {
+  // Check next pages (up to 15 pages to handle accumulated test data)
+  if (pagesChecked < 15) {
+    const nextBtn = this.page.getByRole('button', { name: 'Go to next page' });
+    if (await nextBtn.isVisible().catch(() => false) && !(await nextBtn.isDisabled().catch(() => true))) {
       await nextBtn.click();
       await this.page.waitForTimeout(2000);
       return this.openAndCancelNonCancelledAppointment(pagesChecked + 1);
