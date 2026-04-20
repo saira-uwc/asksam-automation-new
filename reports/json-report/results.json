@@ -1,7 +1,7 @@
 {
   "config": {
-    "configFile": "/Users/user/Documents/automation/playwright.config.js",
-    "rootDir": "/Users/user/Documents/automation/tests",
+    "configFile": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\playwright.config.js",
+    "rootDir": "C:/Users/Asus/Documents/UWC/playwrite/tests",
     "forbidOnly": false,
     "fullyParallel": false,
     "globalSetup": null,
@@ -33,17 +33,17 @@
         }
       ],
       [
-        "/Users/user/Documents/automation/node_modules/allure-playwright/dist/cjs/index.js",
+        "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\node_modules\\allure-playwright\\dist\\cjs\\index.js",
         {
           "resultsDir": "reports/allure-results"
         }
       ],
       [
-        "/Users/user/Documents/automation/reporters/sheet-reporter.js",
+        "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\reporters\\google-sheets-reporter.js",
         null
       ],
       [
-        "/Users/user/Documents/automation/helpers/failure-reporter.js",
+        "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\helpers\\failure-reporter.js",
         null
       ]
     ],
@@ -54,20 +54,68 @@
     "quiet": false,
     "projects": [
       {
-        "outputDir": "/Users/user/Documents/automation/test-results",
+        "outputDir": "C:/Users/Asus/Documents/UWC/playwrite/test-results",
         "repeatEach": 1,
         "retries": 1,
         "metadata": {
           "actualWorkers": 1
         },
-        "id": "",
-        "name": "",
-        "testDir": "/Users/user/Documents/automation/tests",
+        "id": "auth-setup",
+        "name": "auth-setup",
+        "testDir": "C:/Users/Asus/Documents/UWC/playwrite/tests",
         "testIgnore": [],
         "testMatch": [
-          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+          "/auth\\.setup\\.js/"
         ],
-        "timeout": 120000
+        "timeout": 180000
+      },
+      {
+        "outputDir": "C:/Users/Asus/Documents/UWC/playwrite/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "expert-dashboard",
+        "name": "expert-dashboard",
+        "testDir": "C:/Users/Asus/Documents/UWC/playwrite/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/Expert-Dashboard\\/.*\\.spec\\.js/"
+        ],
+        "timeout": 180000
+      },
+      {
+        "outputDir": "C:/Users/Asus/Documents/UWC/playwrite/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "ccop",
+        "name": "ccop",
+        "testDir": "C:/Users/Asus/Documents/UWC/playwrite/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/CCOP\\/(?!ccop-clinician-signup).*\\.spec\\.js/"
+        ],
+        "timeout": 180000
+      },
+      {
+        "outputDir": "C:/Users/Asus/Documents/UWC/playwrite/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "ccop-signup",
+        "name": "ccop-signup",
+        "testDir": "C:/Users/Asus/Documents/UWC/playwrite/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/CCOP\\/ccop-clinician-signup\\.spec\\.js/"
+        ],
+        "timeout": 180000
       }
     ],
     "shard": null,
@@ -80,7 +128,409 @@
   },
   "suites": [
     {
-      "title": "Expert-Dashboard/expert-helpcenter-ticket.spec.js",
+      "title": "Expert-Dashboard\\auth.setup.js",
+      "file": "Expert-Dashboard/auth.setup.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "authenticate",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "auth-setup",
+              "projectName": "auth-setup",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 14348,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-04-06T06:30:13.267Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-auth.setup.js-authenticate-auth-setup\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-auth.setup.js-authenticate-auth-setup\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4dc28c93cf580b2db4ca-ab6423eebf243e2c834a",
+          "file": "Expert-Dashboard/auth.setup.js",
+          "line": 6,
+          "column": 6
+        }
+      ]
+    },
+    {
+      "title": "Expert-Dashboard\\appointment-booking.spec.js",
+      "file": "Expert-Dashboard/appointment-booking.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Expert Dashboard | Appointment booking (dynamic slots)",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "expert-dashboard",
+              "projectName": "expert-dashboard",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 27307,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-04-06T06:30:30.909Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-appointme-1ba22-ment-booking-dynamic-slots--expert-dashboard\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-appointme-1ba22-ment-booking-dynamic-slots--expert-dashboard\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "97e27e62daabc13b2c1f-9f4670c9c8fde8a0787a",
+          "file": "Expert-Dashboard/appointment-booking.spec.js",
+          "line": 4,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "Expert-Dashboard\\appointment-create-and-reschedule.spec.js",
+      "file": "Expert-Dashboard/appointment-create-and-reschedule.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Expert Dashboard | Create & Reschedule Appointment",
+          "file": "Expert-Dashboard/appointment-create-and-reschedule.spec.js",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "create appointment with existing patient and reschedule",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "expert-dashboard",
+                  "projectName": "expert-dashboard",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 93553,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T06:30:58.771Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-appointme-5c574-ting-patient-and-reschedule-expert-dashboard\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-appointme-5c574-ting-patient-and-reschedule-expert-dashboard\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b55c7aa25a484cb248f2-dda9e503c469025324ff",
+              "file": "Expert-Dashboard/appointment-create-and-reschedule.spec.js",
+              "line": 5,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Expert-Dashboard\\appointment-session-management.spec.js",
+      "file": "Expert-Dashboard/appointment-session-management.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Expert Dashboard | Session Management",
+          "file": "Expert-Dashboard/appointment-session-management.spec.js",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "create appointment and manage session lifecycle",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "expert-dashboard",
+                  "projectName": "expert-dashboard",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 35065,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T06:32:32.375Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-appointme-bcc4c-nd-manage-session-lifecycle-expert-dashboard\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-appointme-bcc4c-nd-manage-session-lifecycle-expert-dashboard\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e66a08fc08355c8c2fa1-840b623f5d078004e2fd",
+              "file": "Expert-Dashboard/appointment-session-management.spec.js",
+              "line": 5,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Expert-Dashboard\\appointment-z-cancel.spec.js",
+      "file": "Expert-Dashboard/appointment-z-cancel.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Expert Dashboard | Create & Cancel Appointment",
+          "file": "Expert-Dashboard/appointment-z-cancel.spec.js",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "create appointment with existing patient and cancel non-cancelled one",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "expert-dashboard",
+                  "projectName": "expert-dashboard",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 69750,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T06:33:07.491Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-appointme-f1505-nd-cancel-non-cancelled-one-expert-dashboard\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-appointme-f1505-nd-cancel-non-cancelled-one-expert-dashboard\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "fc191ac8ae9998ee62a0-cd7edad420dd49800c85",
+              "file": "Expert-Dashboard/appointment-z-cancel.spec.js",
+              "line": 5,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Expert-Dashboard\\expert-appointment-create-with-new-patient.spec.js",
+      "file": "Expert-Dashboard/expert-appointment-create-with-new-patient.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Expert Dashboard | Create patient & book appointment",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "expert-dashboard",
+              "projectName": "expert-dashboard",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 46927,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "✅ Created patient: {\n  firstName: \u001b[32m'test'\u001b[39m,\n  lastName: \u001b[32m'user-121367'\u001b[39m,\n  email: \u001b[32m'testuser121367@tmail.com'\u001b[39m\n}\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-04-06T06:34:17.287Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-expert-ap-dd629-te-patient-book-appointment-expert-dashboard\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-expert-ap-dd629-te-patient-book-appointment-expert-dashboard\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7922f029451ff0b5f54b-aa55fae7a8be8695329f",
+          "file": "Expert-Dashboard/expert-appointment-create-with-new-patient.spec.js",
+          "line": 4,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "Expert-Dashboard\\expert-dashboard-navigation.spec.js",
+      "file": "Expert-Dashboard/expert-dashboard-navigation.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Expert Dashboard | Navigation flow validation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "expert-dashboard",
+              "projectName": "expert-dashboard",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 44253,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-04-06T06:35:04.267Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-expert-da-bfe2c--Navigation-flow-validation-expert-dashboard\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-expert-da-bfe2c--Navigation-flow-validation-expert-dashboard\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1a39d4499fad25d7d940-9286401a31b5447bd208",
+          "file": "Expert-Dashboard/expert-dashboard-navigation.spec.js",
+          "line": 4,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "Expert-Dashboard\\expert-helpcenter-ticket.spec.js",
       "file": "Expert-Dashboard/expert-helpcenter-ticket.spec.js",
       "column": 0,
       "line": 0,
@@ -91,33 +541,33 @@
           "tags": [],
           "tests": [
             {
-              "timeout": 120000,
+              "timeout": 180000,
               "annotations": [],
               "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
+              "projectId": "expert-dashboard",
+              "projectName": "expert-dashboard",
               "results": [
                 {
-                  "workerIndex": 0,
+                  "workerIndex": 1,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 72730,
+                  "duration": 15290,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-03-02T09:48:54.387Z",
+                  "startTime": "2026-04-06T06:35:48.576Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "/Users/user/Documents/automation/test-results/Expert-Dashboard-expert-he-63b9d-p-Center-raise-reply-ticket/test-finished-1.png"
+                      "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-expert-he-63b9d-p-Center-raise-reply-ticket-expert-dashboard\\test-finished-1.png"
                     },
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "/Users/user/Documents/automation/test-results/Expert-Dashboard-expert-he-63b9d-p-Center-raise-reply-ticket/video.webm"
+                      "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-expert-he-63b9d-p-Center-raise-reply-ticket-expert-dashboard\\video.webm"
                     }
                   ]
                 }
@@ -125,21 +575,914 @@
               "status": "expected"
             }
           ],
-          "id": "dde1d994f6eaccf85f1d-1ac6d2037fefa8d78f8b",
+          "id": "dde1d994f6eaccf85f1d-8b9310edd90b03c7a486",
           "file": "Expert-Dashboard/expert-helpcenter-ticket.spec.js",
           "line": 4,
           "column": 5
+        }
+      ]
+    },
+    {
+      "title": "Expert-Dashboard\\patient-create-and-view.spec.js",
+      "file": "Expert-Dashboard/patient-create-and-view.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Expert Dashboard | Create Patient & View Profile",
+          "file": "Expert-Dashboard/patient-create-and-view.spec.js",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "create unique patient, search and view profile",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "expert-dashboard",
+                  "projectName": "expert-dashboard",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 27335,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T06:36:03.907Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-patient-c-d2a38-ent-search-and-view-profile-expert-dashboard\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-patient-c-d2a38-ent-search-and-view-profile-expert-dashboard\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4553ddd9e742f1787949-cdb89c945d2a4032af02",
+              "file": "Expert-Dashboard/patient-create-and-view.spec.js",
+              "line": 5,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "CCOP\\ai-assistant-panel.spec.js",
+      "file": "CCOP/ai-assistant-panel.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "AI panel — Graph tab: knowledge graph, zoom controls, node properties, legends",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ccop",
+              "projectName": "ccop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 34367,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "✅ Switched to Completed tab\n"
+                    },
+                    {
+                      "text": "✅ Clicked View Clinical Note\n"
+                    },
+                    {
+                      "text": "✅ Note page loaded — Actions button visible\n"
+                    },
+                    {
+                      "text": "🔄 Opening floating panel — attempt 1/3\n"
+                    },
+                    {
+                      "text": "✅ Clicked at position (1390, 230) for floating button\n"
+                    },
+                    {
+                      "text": "✅ Disclaimer dialog detected\n"
+                    },
+                    {
+                      "text": "✅ Clicked I Understand button\n"
+                    },
+                    {
+                      "text": "✅ AI Assistant panel opened\n"
+                    },
+                    {
+                      "text": "✅ Clicked Graph tab\n"
+                    },
+                    {
+                      "text": "✅ Knowledge graph canvas is visible\n"
+                    },
+                    {
+                      "text": "✅ Node Properties dropdown is visible\n"
+                    },
+                    {
+                      "text": "✅ Reset button is visible\n"
+                    },
+                    {
+                      "text": "✅ Legends bar is visible\n"
+                    },
+                    {
+                      "text": "  ✅ Legend: User\n"
+                    },
+                    {
+                      "text": "  ✅ Legend: Timeline\n"
+                    },
+                    {
+                      "text": "  ✅ Legend: Gene\n"
+                    },
+                    {
+                      "text": "  ✅ Legend: Medicine\n"
+                    },
+                    {
+                      "text": "  ✅ Legend: Disease\n"
+                    },
+                    {
+                      "text": "  ✅ Legend: Diagnostics\n"
+                    },
+                    {
+                      "text": "  ✅ Legend: Nutrient\n"
+                    },
+                    {
+                      "text": "  ✅ Legend: Brand\n"
+                    },
+                    {
+                      "text": "⚠ ISSUE: Graph only shows User node — no clinical information (medicines, diseases, diagnostics) displayed\n"
+                    },
+                    {
+                      "text": "✅ Clicked Node Properties dropdown\n"
+                    },
+                    {
+                      "text": "✅ Clicked Reset to restore default view\n"
+                    },
+                    {
+                      "text": "✅ Closed AI Assistant panel\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-04-06T06:36:37.741Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-ai-assistant-panel-AI-6337d-ols-node-properties-legends-ccop\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-ai-assistant-panel-AI-6337d-ols-node-properties-legends-ccop\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f60a71b365b1473d495e-38773f04c55628f17677",
+          "file": "CCOP/ai-assistant-panel.spec.js",
+          "line": 7,
+          "column": 5
+        },
+        {
+          "title": "AI panel — Assistant tab: associations, medication & comorbidity sub-tabs",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ccop",
+              "projectName": "ccop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 37548,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "✅ Switched to Completed tab\n"
+                    },
+                    {
+                      "text": "✅ Clicked View Clinical Note\n"
+                    },
+                    {
+                      "text": "✅ Note page loaded — Actions button visible\n"
+                    },
+                    {
+                      "text": "🔄 Opening floating panel — attempt 1/3\n"
+                    },
+                    {
+                      "text": "✅ Clicked at position (1390, 230) for floating button\n"
+                    },
+                    {
+                      "text": "✅ Disclaimer dialog detected\n"
+                    },
+                    {
+                      "text": "✅ Clicked I Understand button\n"
+                    },
+                    {
+                      "text": "✅ AI Assistant panel opened\n"
+                    },
+                    {
+                      "text": "✅ Clicked Assistant tab\n"
+                    },
+                    {
+                      "text": "✅ Associations sub-tab is visible\n"
+                    },
+                    {
+                      "text": "✅ Medication Associations sub-tab is visible\n"
+                    },
+                    {
+                      "text": "✅ Comorbidity Associations sub-tab is visible\n"
+                    },
+                    {
+                      "text": "✅ No Alerts message displayed (default state)\n"
+                    },
+                    {
+                      "text": "✅ Clicked Medication Associations sub-tab\n"
+                    },
+                    {
+                      "text": "✅ Medication Associations — empty state verified\n"
+                    },
+                    {
+                      "text": "✅ Clicked Comorbidity Associations sub-tab\n"
+                    },
+                    {
+                      "text": "✅ Comorbidity Associations — empty state verified\n"
+                    },
+                    {
+                      "text": "✅ Switched back to Associations sub-tab\n"
+                    },
+                    {
+                      "text": "✅ Closed AI Assistant panel\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-04-06T06:37:12.608Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-ai-assistant-panel-AI-59ffe-cation-comorbidity-sub-tabs-ccop\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-ai-assistant-panel-AI-59ffe-cation-comorbidity-sub-tabs-ccop\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f60a71b365b1473d495e-6c2f64cfd53c9138645d",
+          "file": "CCOP/ai-assistant-panel.spec.js",
+          "line": 16,
+          "column": 5
+        },
+        {
+          "title": "AI panel — asksam tab: chat input, send message, disclaimer",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ccop",
+              "projectName": "ccop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 44647,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "✅ Switched to Completed tab\n"
+                    },
+                    {
+                      "text": "✅ Clicked View Clinical Note\n"
+                    },
+                    {
+                      "text": "✅ Note page loaded — Actions button visible\n"
+                    },
+                    {
+                      "text": "🔄 Opening floating panel — attempt 1/3\n"
+                    },
+                    {
+                      "text": "✅ Clicked at position (1390, 230) for floating button\n"
+                    },
+                    {
+                      "text": "✅ Disclaimer dialog detected\n"
+                    },
+                    {
+                      "text": "✅ Clicked I Understand button\n"
+                    },
+                    {
+                      "text": "✅ AI Assistant panel opened\n"
+                    },
+                    {
+                      "text": "✅ Clicked asksam tab\n"
+                    },
+                    {
+                      "text": "✅ asksam welcome heading is visible\n"
+                    },
+                    {
+                      "text": "✅ 'Save the clinical note' instruction is visible\n"
+                    },
+                    {
+                      "text": "✅ Chat input 'asksam Anything...' is visible\n"
+                    },
+                    {
+                      "text": "✅ Attachment (clip) icon is visible\n"
+                    },
+                    {
+                      "text": "✅ Disclaimer link is visible\n"
+                    },
+                    {
+                      "text": "✅ Typed question in chat input\n"
+                    },
+                    {
+                      "text": "✅ Clicked send button\n"
+                    },
+                    {
+                      "text": "✅ Chat response received from AI\n"
+                    },
+                    {
+                      "text": "✅ Clicked Disclaimer\n"
+                    },
+                    {
+                      "text": "✅ Disclaimer dialog detected\n"
+                    },
+                    {
+                      "text": "✅ Clicked I Understand button\n"
+                    },
+                    {
+                      "text": "✅ Closed AI Assistant panel\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-04-06T06:37:50.180Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-ai-assistant-panel-AI-35e70-put-send-message-disclaimer-ccop\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-ai-assistant-panel-AI-35e70-put-send-message-disclaimer-ccop\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f60a71b365b1473d495e-97f0105c179f34eb9522",
+          "file": "CCOP/ai-assistant-panel.spec.js",
+          "line": 25,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "CCOP\\ccop-helpcenter-ticket.spec.js",
+      "file": "CCOP/ccop-helpcenter-ticket.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "CCOP | Help Center | Raise, Reply & Resolve Ticket",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ccop",
+              "projectName": "ccop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 17551,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-04-06T06:38:34.880Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-ccop-helpcenter-ticke-ca6c6--Raise-Reply-Resolve-Ticket-ccop\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-ccop-helpcenter-ticke-ca6c6--Raise-Reply-Resolve-Ticket-ccop\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8efe653ed97453e0f0b4-d379ae6916a2812215f9",
+          "file": "CCOP/ccop-helpcenter-ticket.spec.js",
+          "line": 4,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "CCOP\\clinical-note.spec.js",
+      "file": "CCOP/clinical-note.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Create clinical note with document upload & transcription",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ccop",
+              "projectName": "ccop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 74518,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "🔍 Searching patient: Yamini Singh 191\n"
+                    },
+                    {
+                      "text": "✅ Selected patient (search): Yamini Singh 191\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-04-06T06:38:52.480Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-clinical-note-Create--c7789-cument-upload-transcription-ccop\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-clinical-note-Create--c7789-cument-upload-transcription-ccop\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "392b96315b2758d1d11d-8b04b74971d1ab464179",
+          "file": "CCOP/clinical-note.spec.js",
+          "line": 5,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "CCOP\\create-patient-clinical-note.spec.js",
+      "file": "CCOP/create-patient-clinical-note.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "CCOP | Create new patient & clinical note (dynamic)",
+          "file": "CCOP/create-patient-clinical-note.spec.js",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Create patient + upload + submit",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ccop",
+                  "projectName": "ccop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 90870,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "✅ Created patient: {\n  firstName: \u001b[32m'Test'\u001b[39m,\n  lastName: \u001b[32m'user-608388'\u001b[39m,\n  email: \u001b[32m'testuser-608388@tmail.com'\u001b[39m\n}\n"
+                        },
+                        {
+                          "text": "⏳ Waiting for transcription / disclaimer / submit…\n"
+                        },
+                        {
+                          "text": "✅ Disclaimer accepted\n"
+                        },
+                        {
+                          "text": "✅ Clinical note submitted\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T06:40:07.059Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-create-patient-clinic-64e5d-reate-patient-upload-submit-ccop\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-create-patient-clinic-64e5d-reate-patient-upload-submit-ccop\\video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5bb882c2a7770132e694-e68b6ef83868b7b42a52",
+              "file": "CCOP/create-patient-clinical-note.spec.js",
+              "line": 5,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "CCOP\\letter-template.spec.js",
+      "file": "CCOP/letter-template.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Open letter template from Actions dropdown, select type and verify preview",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ccop",
+              "projectName": "ccop",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 131201,
+                  "error": {
+                    "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Completed' })\u001b[22m\n",
+                    "stack": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Completed' })\u001b[22m\n\n    at LetterTemplatePage.openExistingPatientNote (C:\\Users\\Asus\\Documents\\UWC\\playwrite\\pages\\letter-template.page.js:37:26)\n    at C:\\Users\\Asus\\Documents\\UWC\\playwrite\\tests\\CCOP\\letter-template.spec.js:21:3",
+                    "location": {
+                      "file": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\pages\\letter-template.page.js",
+                      "column": 26,
+                      "line": 37
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39m..\\pages\\letter-template.page.js:37\n\n\u001b[0m \u001b[90m 35 |\u001b[39m       \u001b[90m// Tab 2: Completed — look for \"View Clinical Note\"\u001b[39m\n \u001b[90m 36 |\u001b[39m       \u001b[36mconst\u001b[39m completedTab \u001b[33m=\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mgetByRole(\u001b[32m\"button\"\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m\"Completed\"\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 37 |\u001b[39m       \u001b[36mawait\u001b[39m completedTab\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 38 |\u001b[39m       console\u001b[33m.\u001b[39mlog(\u001b[32m\"✅ Switched to Completed tab\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 39 |\u001b[39m       \u001b[36mawait\u001b[39m waitForSkeletonsClear()\u001b[33m;\u001b[39m\n \u001b[90m 40 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\pages\\letter-template.page.js",
+                        "column": 26,
+                        "line": 37
+                      },
+                      "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Completed' })\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\pages\\letter-template.page.js:37\n\n\u001b[0m \u001b[90m 35 |\u001b[39m       \u001b[90m// Tab 2: Completed — look for \"View Clinical Note\"\u001b[39m\n \u001b[90m 36 |\u001b[39m       \u001b[36mconst\u001b[39m completedTab \u001b[33m=\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mgetByRole(\u001b[32m\"button\"\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m\"Completed\"\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 37 |\u001b[39m       \u001b[36mawait\u001b[39m completedTab\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 38 |\u001b[39m       console\u001b[33m.\u001b[39mlog(\u001b[32m\"✅ Switched to Completed tab\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 39 |\u001b[39m       \u001b[36mawait\u001b[39m waitForSkeletonsClear()\u001b[33m;\u001b[39m\n \u001b[90m 40 |\u001b[39m\u001b[0m\n\u001b[2m    at LetterTemplatePage.openExistingPatientNote (C:\\Users\\Asus\\Documents\\UWC\\playwrite\\pages\\letter-template.page.js:37:26)\u001b[22m\n\u001b[2m    at C:\\Users\\Asus\\Documents\\UWC\\playwrite\\tests\\CCOP\\letter-template.spec.js:21:3\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-04-06T06:41:38.003Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-letter-template-Open--55b94-ect-type-and-verify-preview-ccop\\test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-letter-template-Open--55b94-ect-type-and-verify-preview-ccop\\video.webm"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-letter-template-Open--55b94-ect-type-and-verify-preview-ccop\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-letter-template-Open--55b94-ect-type-and-verify-preview-ccop\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\pages\\letter-template.page.js",
+                    "column": 26,
+                    "line": 37
+                  }
+                },
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 34381,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "✅ Switched to Completed tab\n"
+                    },
+                    {
+                      "text": "✅ Switched to All tab\n"
+                    },
+                    {
+                      "text": "✅ Clicked patient note button (All tab)\n"
+                    },
+                    {
+                      "text": "✅ Note page loaded — Actions button visible\n"
+                    },
+                    {
+                      "text": "✅ Letter Templates page loaded\n"
+                    },
+                    {
+                      "text": "✅ Selected letter type: Referral Letter\n"
+                    },
+                    {
+                      "text": "✅ Template loaded — Letter Preview visible\n"
+                    },
+                    {
+                      "text": "✅ Template Name: Referral Letter\n"
+                    },
+                    {
+                      "text": "✅ Available Fields section is visible\n"
+                    },
+                    {
+                      "text": "✅ Letter Preview section is visible\n"
+                    },
+                    {
+                      "text": "✅ Download Template button is visible\n"
+                    },
+                    {
+                      "text": "✅ Update Template button is visible\n"
+                    },
+                    {
+                      "text": "✅ Clicked Download Template\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-04-06T06:43:57.385Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-letter-template-Open--55b94-ect-type-and-verify-preview-ccop-retry1\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-letter-template-Open--55b94-ect-type-and-verify-preview-ccop-retry1\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "flaky"
+            }
+          ],
+          "id": "5364fc6acfa9e0f0a48c-aac1a1dbb04d1873021d",
+          "file": "CCOP/letter-template.spec.js",
+          "line": 15,
+          "column": 5
+        },
+        {
+          "title": "Create a new letter template from Actions dropdown",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "ccop",
+              "projectName": "ccop",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 53081,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "✅ Switched to Completed tab\n"
+                    },
+                    {
+                      "text": "✅ Switched to All tab\n"
+                    },
+                    {
+                      "text": "✅ Clicked patient note button (All tab)\n"
+                    },
+                    {
+                      "text": "✅ Note page loaded — Actions button visible\n"
+                    },
+                    {
+                      "text": "✅ Letter Templates page loaded\n"
+                    },
+                    {
+                      "text": "✅ Clicked + Create Template\n"
+                    },
+                    {
+                      "text": "✅ Create Letter Template form loaded\n"
+                    },
+                    {
+                      "text": "✅ Filled Template Name: Test Template 882163\n"
+                    },
+                    {
+                      "text": "✅ Filled Letter Body\n"
+                    },
+                    {
+                      "text": "✅ Clinical Content section already expanded\n"
+                    },
+                    {
+                      "text": "✅ Expanded Clinical Notes dropdown\n"
+                    },
+                    {
+                      "text": "✅ Added field: Chief Complaint (CC)\n"
+                    },
+                    {
+                      "text": "✅ Added field: History of Present Illness (HPI)\n"
+                    },
+                    {
+                      "text": "✅ Clicked Save Template\n"
+                    },
+                    {
+                      "text": "✅ Template save confirmed\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-04-06T06:44:32.354Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-letter-template-Creat-6b938-plate-from-Actions-dropdown-ccop\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-letter-template-Creat-6b938-plate-from-Actions-dropdown-ccop\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5364fc6acfa9e0f0a48c-5ae0f052fd92c2a96cbf",
+          "file": "CCOP/letter-template.spec.js",
+          "line": 36,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "CCOP\\ccop-clinician-signup.spec.js",
+      "file": "CCOP/ccop-clinician-signup.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "CCOP | Clinician signup full flow (recorded)",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "location": {
+                    "file": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\tests\\CCOP\\ccop-clinician-signup.spec.js",
+                    "line": 4,
+                    "column": 6
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "ccop-signup",
+              "projectName": "ccop-signup",
+              "results": [
+                {
+                  "workerIndex": -1,
+                  "parallelIndex": -1,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-04-06T06:30:28.250Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\tests\\CCOP\\ccop-clinician-signup.spec.js",
+                        "line": 4,
+                        "column": 6
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "fd85497f8d9cf13bb6bf-dd00fc721cc534ab958b",
+          "file": "CCOP/ccop-clinician-signup.spec.js",
+          "line": 4,
+          "column": 6
         }
       ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-03-02T09:48:53.770Z",
-    "duration": 73981.982,
-    "expected": 1,
-    "skipped": 0,
+    "startTime": "2026-04-06T06:30:10.862Z",
+    "duration": 916398.6290000001,
+    "expected": 16,
+    "skipped": 1,
     "unexpected": 0,
-    "flaky": 0
+    "flaky": 1
   }
 }

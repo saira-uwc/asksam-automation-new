@@ -16,6 +16,9 @@ test.describe('CCOP | Create new patient & clinical note (dynamic)', () => {
     /* ===== UPLOAD + TRANSCRIBE ===== */
     await patient.uploadAndTranscribe();
 
+    /* ===== VERIFY TABS HAVE DATA ===== */
+    await patient.verifyClinicalTabsHaveData();
+
     /* ===== SUBMIT NOTE ===== */
     await patient.submitClinicalNote();
   });

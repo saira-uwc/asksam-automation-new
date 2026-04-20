@@ -9,7 +9,7 @@ export class ExpertDashboardPage {
   async gotoDashboard() {
     await this.page.goto('https://dashboard.asksam.com.au/expert/dashboard');
     await this.page
-      .getByText('Upcoming Appointments')
+      .getByRole('heading', { name: 'Upcoming Appointments' })
       .waitFor({ timeout: 30000 });
   }
 

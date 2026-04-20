@@ -3,12 +3,6 @@ dotenv.config();
 
 import { defineConfig } from "@playwright/test";
 
-console.log("Loaded ENV in config:", {
-  sheet: process.env.SHEET_ID,
-  folder: process.env.DRIVE_FOLDER_ID,
-  tab: process.env.SHEET_TAB
-});
-
 export default defineConfig({
   testDir: "./tests",
 
@@ -22,7 +16,6 @@ export default defineConfig({
     ["html", { outputFolder: "reports/html-report", open: "never" }],
     ["json", { outputFile: "reports/json-report/results.json" }],
     ["allure-playwright", { resultsDir: "reports/allure-results" }],
-    ["./reporters/sheet-reporter.js"],
     ["./reporters/google-sheets-reporter.js"],
     ["./helpers/failure-reporter.js"]
   ],
@@ -63,6 +56,18 @@ export default defineConfig({
     {
       name: 'ccop-signup',
       testMatch: /CCOP\/ccop-clinician-signup\.spec\.js/,
+      use: {
+        // Route signup test through AU proxy if AU_PROXY_SERVER is set
+        // (Stripe "Try for Free" is geo-restricted to AU IPs).
+        // If not set, the test gracefully skips the Stripe portion.
+        ...(process.env.AU_PROXY_SERVER && {
+          proxy: {
+            server: process.env.AU_PROXY_SERVER,
+            username: process.env.AU_PROXY_USERNAME || undefined,
+            password: process.env.AU_PROXY_PASSWORD || undefined,
+          },
+        }),
+      },
     },
   ],
 });

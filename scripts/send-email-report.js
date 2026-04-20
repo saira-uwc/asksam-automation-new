@@ -46,6 +46,14 @@ function main() {
 
   const data = JSON.parse(fs.readFileSync(LATEST_PATH, 'utf8'));
 
+  // Only send email if there are failed tests (or timeouts)
+  const failCount = (data.summary?.failed || 0) + (data.summary?.timedOut || 0);
+  if (failCount === 0) {
+    console.log(`\n✅ All tests passed (${data.summary?.passed || 0}/${data.summary?.total || 0}) — skipping email notification\n`);
+    return;
+  }
+  console.log(`\n📧 ${failCount} test(s) failed — sending email report`);
+
   let todayRuns = 1;
   if (fs.existsSync(HISTORY_PATH)) {
     try {
@@ -61,6 +69,14 @@ function main() {
   const subject = buildSubject(data);
   const body = buildEmailHTML(data);
   sendEmail(RECIPIENTS, subject, body);
+}
+
+function formatDuration(ms) {
+  if (ms < 1000) return ms + 'ms';
+  if (ms < 60000) return (ms / 1000).toFixed(1) + 's';
+  const m = Math.floor(ms / 60000);
+  const s = Math.round((ms % 60000) / 1000);
+  return m + 'm ' + s + 's';
 }
 
 function buildSubject(data) {
@@ -111,7 +127,7 @@ function buildEmailHTML(data) {
   // Build failed tests section
   let failedSection = '';
   if (failCount > 0 && data.tests) {
-    const failedTests = data.tests.filter(t => t.status !== 'passed');
+    const failedTests = data.tests.filter(t => t.status === 'failed' || t.status === 'timedOut');
     const failedRows = failedTests.map(t => `
       <tr>
         <td style="padding:8px 14px;border-bottom:1px solid #f0f0f0;font-size:13px;color:#333">${t.title}</td>
@@ -134,6 +150,49 @@ function buildEmailHTML(data) {
           <tbody>${failedRows}</tbody>
         </table>
       </div>`;
+  }
+
+  // Build all test case rows
+  function buildTestCaseRows(d) {
+    if (!d.tests || d.tests.length === 0) return '';
+    const activeTests = d.tests.filter(t => t.status !== 'skipped' && t.title !== 'authenticate');
+    const rows = activeTests.map((t, i) => {
+      const isPassed = t.status === 'passed';
+      const statusBg = isPassed ? '#f0fdf4' : '#fef2f2';
+      const statusColor = isPassed ? '#22c55e' : '#ef4444';
+      const statusIcon = isPassed ? '✅' : '❌';
+      const statusText = isPassed ? 'PASSED' : 'FAILED';
+      const dur = formatDuration(t.durationMs);
+      return `
+        <tr style="background:${i % 2 === 0 ? '#fff' : '#fafafa'}">
+          <td style="padding:10px 14px;border-bottom:1px solid #f0f0f0;font-size:13px;color:#333">${i + 1}</td>
+          <td style="padding:10px 14px;border-bottom:1px solid #f0f0f0;font-size:13px;color:#333">${t.title}</td>
+          <td style="padding:10px 14px;border-bottom:1px solid #f0f0f0;font-size:12px;color:#666">${t.moduleLabel}</td>
+          <td style="padding:10px 14px;border-bottom:1px solid #f0f0f0;text-align:center">
+            <span style="display:inline-block;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600;background:${statusBg};color:${statusColor}">${statusIcon} ${statusText}</span>
+          </td>
+          <td style="padding:10px 14px;border-bottom:1px solid #f0f0f0;font-size:12px;color:#666;text-align:center">${dur}</td>
+        </tr>`;
+    }).join('');
+
+    return `
+      <tr>
+        <td style="padding:24px 40px 0">
+          <p style="font-size:14px;font-weight:600;color:#333;margin:0 0 10px">🧪 Test Case Results</p>
+          <table style="width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;border:1px solid #e5e7eb">
+            <thead>
+              <tr style="background:#f9fafb">
+                <th style="padding:10px 14px;text-align:left;font-size:12px;color:#666;font-weight:600;width:30px">#</th>
+                <th style="padding:10px 14px;text-align:left;font-size:12px;color:#666;font-weight:600">Test Name</th>
+                <th style="padding:10px 14px;text-align:left;font-size:12px;color:#666;font-weight:600">Module</th>
+                <th style="padding:10px 14px;text-align:center;font-size:12px;color:#666;font-weight:600">Status</th>
+                <th style="padding:10px 14px;text-align:center;font-size:12px;color:#666;font-weight:600">Duration</th>
+              </tr>
+            </thead>
+            <tbody>${rows}</tbody>
+          </table>
+        </td>
+      </tr>`;
   }
 
   // Action buttons
@@ -219,6 +278,8 @@ function buildEmailHTML(data) {
   </tr>
 
   ${failedSection}
+
+  ${buildTestCaseRows(data)}
 
   <!-- Action Buttons -->
   <tr>

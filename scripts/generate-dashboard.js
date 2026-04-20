@@ -24,6 +24,7 @@ const CSV_ALL = path.join(ROOT, 'docs', 'exports', 'all-runs-summary.csv');
 const ARTIFACTS_DIR = path.join(ROOT, 'docs', 'artifacts');
 const RESULTS_PATH = path.join(ROOT, 'docs', 'test-results.json');
 const MAX_HISTORY = 100;
+const HISTORY_RETENTION_DAYS = 15;
 
 // Module name mapping
 const MODULE_MAP = {
@@ -123,7 +124,8 @@ function main() {
   const skipped = tests.filter(t => t.status === 'skipped').length;
   const timedOut = tests.filter(t => t.status === 'timedOut').length;
   const total = tests.length;
-  const passRate = total > 0 ? Math.round((passed / total) * 100) : 0;
+  const activeTotal = total - skipped;
+  const passRate = activeTotal > 0 ? Math.round((passed / activeTotal) * 100) : 0;
 
   // Compute per-module stats
   const modules = {};
@@ -202,6 +204,11 @@ function main() {
   };
 
   history.unshift(runSummary);
+
+  // Retention: keep all runs from the last HISTORY_RETENTION_DAYS days,
+  // plus a hard cap of MAX_HISTORY total entries
+  const cutoff = Date.now() - HISTORY_RETENTION_DAYS * 24 * 60 * 60 * 1000;
+  history = history.filter(r => new Date(r.startedAt).getTime() >= cutoff);
   if (history.length > MAX_HISTORY) history = history.slice(0, MAX_HISTORY);
 
   fs.mkdirSync(path.dirname(HISTORY_PATH), { recursive: true });
@@ -242,19 +249,25 @@ function updateLegacyDashboard(tests, startedAt) {
   }
 
   const passedCount = tests.filter(t => t.status === 'passed').length;
-  const failedCount = tests.filter(t => t.status !== 'passed').length;
+  const failedCount = tests.filter(t => t.status === 'failed' || t.status === 'timedOut').length;
   const today = new Date(startedAt).toISOString().split('T')[0];
 
-  const newRun = { date: today, passed: passedCount, failed: failedCount, total: tests.length };
+  const activeTests = tests.filter(t => t.status !== 'skipped');
+  const newRun = { date: today, passed: passedCount, failed: failedCount, total: activeTests.length };
   const todayIdx = existingData.runs.findIndex(r => r.date === today);
   if (todayIdx >= 0) {
     existingData.runs[todayIdx] = newRun;
   } else {
     existingData.runs.unshift(newRun);
   }
-  existingData.runs = existingData.runs.slice(0, 10);
+  // Keep last 15 days of daily aggregated runs
+  const legacyCutoff = Date.now() - HISTORY_RETENTION_DAYS * 24 * 60 * 60 * 1000;
+  existingData.runs = existingData.runs.filter(r => {
+    const d = new Date(r.date).getTime();
+    return !isNaN(d) && d >= legacyCutoff;
+  });
 
-  existingData.tests = tests.map((t, i) => ({
+  existingData.tests = tests.filter(t => t.status !== 'skipped').map((t, i) => ({
     id: i + 1,
     module: t.module,
     name: t.title,

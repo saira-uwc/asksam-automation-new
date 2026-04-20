@@ -42,7 +42,15 @@ export class PatientPage {
     await this.page.getByRole('button', { name: 'Choose File' }).setInputFiles(filePath);
 
     await this.page.getByRole('button', { name: 'Transcribe All' }).click();
-    await this.page.getByRole('button', { name: 'Send Transcription' }).click();
+
+    // Wait for Send Transcription to appear and be enabled
+    const sendBtn = this.page.getByRole('button', { name: 'Send Transcription' });
+    await sendBtn.waitFor({ state: 'visible', timeout: 120000 });
+    await this.page.waitForFunction(
+      () => !document.querySelector('#notetaker_send_transcription')?.disabled,
+      { timeout: 30000 }
+    ).catch(() => {});
+    await sendBtn.click();
 
     console.log('⏳ Waiting for transcription / disclaimer / submit…');
 
@@ -66,6 +74,58 @@ export class PatientPage {
       console.log('✅ Disclaimer accepted');
     } else {
       console.log('ℹ️ Disclaimer not shown, continuing');
+    }
+  }
+
+  async verifyClinicalTabsHaveData() {
+    const tabs = ['Clinical Advice', 'Clinical Examination', 'Follow-Up Note', 'Case History'];
+    const perTabWait = 90000; // 90 seconds per tab
+    const failedTabs = [];
+
+    for (const tabName of tabs) {
+      const tab = this.page.getByRole('tab', { name: tabName });
+      if (!(await tab.isVisible().catch(() => false))) {
+        console.log(`⚠ ${tabName} tab not found — skipping`);
+        continue;
+      }
+
+      await tab.click();
+      await this.page.waitForTimeout(1500);
+
+      // Wait up to 90s for this tab to have meaningful content
+      const startTime = Date.now();
+      let fieldCount = 0;
+      while (Date.now() - startTime < perTabWait) {
+        const editables = await this.page.locator('[contenteditable="true"]').allTextContents();
+        const meaningful = editables.filter(t => {
+          const trimmed = t.trim();
+          return trimmed.length > 5 && !trimmed.includes('No information');
+        });
+        if (meaningful.length > 0) {
+          fieldCount = meaningful.length;
+          break;
+        }
+        await this.page.waitForTimeout(3000);
+      }
+
+      if (fieldCount > 0) {
+        console.log(`✅ ${tabName}: ${fieldCount} fields with data`);
+      } else {
+        console.log(`❌ ${tabName}: NO DATA after 90s`);
+        failedTabs.push(tabName);
+      }
+    }
+
+    if (failedTabs.length > 0) {
+      throw new Error(
+        `Clinical note tabs have no data after 90s wait: ${failedTabs.join(', ')} — transcription incomplete`
+      );
+    }
+
+    const firstTab = this.page.getByRole('tab', { name: 'Clinical Advice' });
+    if (await firstTab.isVisible().catch(() => false)) {
+      await firstTab.click();
+      await this.page.waitForTimeout(1000);
     }
   }
 

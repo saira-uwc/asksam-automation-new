@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -r \"View\" /c/Users/Asus/Documents/UWC/playwrite/pages/*.page.js)",
+      "Bash(grep -B 2 -A 5 \"getByRole.*button.*View\" /c/Users/Asus/Documents/UWC/playwrite/pages/*.page.js)",
+      "Bash(find . -type f -name *.config.ts -o -name *.config.js -o -name playwright.config.*)",
+      "Bash(grep -r \"storageState\\\\|loginAsClinician\\\\|authenticate\" c:UsersAsusDocumentsUWCplaywritetests --include=*.js)"
+    ]
+  }
+}
