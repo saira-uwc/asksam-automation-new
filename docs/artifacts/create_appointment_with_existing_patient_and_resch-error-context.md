@@ -1,0 +1,161 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - link [ref=e8] [cursor=pointer]:
+          - /url: https://www.asksam.com.au/
+        - generic [ref=e9]:
+          - link [ref=e10] [cursor=pointer]:
+            - /url: /expert/appointments
+            - img [ref=e11]
+          - link [ref=e13] [cursor=pointer]:
+            - /url: /expert/chat
+            - img [ref=e14]
+          - link [ref=e16] [cursor=pointer]:
+            - /url: /expert/notifications
+            - img [ref=e17]
+          - button [ref=e20] [cursor=pointer]:
+            - img [ref=e23]
+    - generic [ref=e26]:
+      - list [ref=e28]:
+        - link [ref=e29] [cursor=pointer]:
+          - /url: /expert/dashboard
+          - img [ref=e31]
+          - generic [ref=e34]: Dashboard
+        - link [ref=e35] [cursor=pointer]:
+          - /url: /expert/appointments
+          - img [ref=e37]
+          - generic [ref=e40]: Appointments
+        - button [ref=e41] [cursor=pointer]:
+          - img [ref=e43]
+          - generic [ref=e46]: Copilot
+          - img [ref=e47]
+        - link [ref=e49] [cursor=pointer]:
+          - /url: /expert/sessionmanagement
+          - img [ref=e51]
+          - generic [ref=e54]: Session Management
+        - link [ref=e55] [cursor=pointer]:
+          - /url: /expert/patients
+          - img [ref=e57]
+          - generic [ref=e60]: Patients
+        - link [ref=e61] [cursor=pointer]:
+          - /url: /expert/chat
+          - img [ref=e63]
+          - generic [ref=e66]: Chat
+        - link [ref=e67] [cursor=pointer]:
+          - /url: /expert/notifications
+          - img [ref=e69]
+          - generic [ref=e72]: Notifications
+        - link [ref=e73] [cursor=pointer]:
+          - /url: /expert/help-center
+          - img [ref=e75]
+          - generic [ref=e78]: Help Center
+        - link [ref=e79] [cursor=pointer]:
+          - /url: /expert/payouts
+          - img [ref=e81]
+          - generic [ref=e84]: Payouts
+        - link [ref=e85] [cursor=pointer]:
+          - /url: /expert/settings
+          - img [ref=e87]
+          - generic [ref=e90]: Settings
+      - generic [ref=e92]:
+        - generic [ref=e93]:
+          - button [ref=e94] [cursor=pointer]:
+            - img [ref=e95]
+          - heading [level=5] [ref=e97]: Appointment Details
+        - generic [ref=e98]:
+          - generic [ref=e102]:
+            - generic [ref=e103]:
+              - img [ref=e105]
+              - generic [ref=e107]:
+                - generic [ref=e109]: Follow up Consult
+                - heading [level=6] [ref=e110]: Testtt The Sairaa
+                - paragraph [ref=e111]: "Patient ID: 644781"
+            - separator [ref=e112]
+            - generic [ref=e113]:
+              - heading [level=6] [ref=e114]: Contact Information
+              - generic [ref=e115]:
+                - generic [ref=e117]:
+                  - img [ref=e118]
+                  - paragraph [ref=e120]: +91 7569316675
+                - generic [ref=e122]:
+                  - img [ref=e123]
+                  - paragraph [ref=e125]: Australia
+            - button [ref=e127] [cursor=pointer]:
+              - img [ref=e129]
+              - text: View Details
+          - generic [ref=e134]:
+            - generic [ref=e135]:
+              - heading [level=6] [ref=e136]: Appointment Details
+              - paragraph [ref=e137]: Upcoming
+            - generic [ref=e138]:
+              - generic [ref=e140]:
+                - img [ref=e141]
+                - paragraph [ref=e143]: 21 Apr 2026
+              - generic [ref=e145]:
+                - img [ref=e146]
+                - paragraph [ref=e149]: 08:30 AM(Australia/Sydney)
+              - paragraph [ref=e151]: "Duration: 30 Minutes"
+              - paragraph [ref=e153]: "Mode: Video Call"
+            - separator [ref=e154]
+            - generic [ref=e155]:
+              - heading [level=6] [ref=e156]: Expert Information
+              - paragraph [ref=e157]: Dr Anthony Smith
+              - generic [ref=e159]: Natural Medicine
+            - generic [ref=e161]:
+              - button [ref=e162] [cursor=pointer]:
+                - img [ref=e164]
+                - text: Reschedule
+              - button [ref=e167] [cursor=pointer]:
+                - img [ref=e169]
+                - text: Cancel
+          - generic [ref=e174]:
+            - generic [ref=e175]:
+              - heading [level=6] [ref=e176]: Comments
+              - button [ref=e177] [cursor=pointer]:
+                - img [ref=e179]
+                - text: Refresh
+            - generic [ref=e181]:
+              - heading [level=6] [ref=e182]: Add Note or Comment
+              - generic [ref=e183]:
+                - generic [ref=e185]:
+                  - textbox [ref=e186]:
+                    - /placeholder: Type your note or comment here...
+                  - group
+                - button [disabled]:
+                  - generic:
+                    - img
+                  - text: Send
+            - separator [ref=e187]
+            - generic [ref=e188]:
+              - heading [level=6] [ref=e189]: Previous Notes & Comments
+              - paragraph [ref=e191]: No notes or comments yet. Add the first one above!
+  - dialog "Reschedule Appointment" [ref=e194]:
+    - heading "Reschedule Appointment" [level=2] [ref=e195]
+    - generic [ref=e196]:
+      - generic [ref=e198]:
+        - heading "Testtt The Sairaa" [level=6] [ref=e199]
+        - generic [ref=e200]: 21 Apr 2026 | 08:30 AM | Follow up Consult
+      - generic [ref=e201]:
+        - heading "Reschedule to" [level=4] [ref=e202]
+        - generic [ref=e203]:
+          - generic [ref=e204]: To date
+          - generic [ref=e205]:
+            - textbox "To date" [ref=e206]:
+              - /placeholder: DD/MM/YYYY
+              - text: 21/04/2026
+            - button "Choose date, selected date is Apr 21, 2026" [ref=e208] [cursor=pointer]:
+              - img [ref=e209]
+            - group:
+              - generic: To date
+      - generic [ref=e211]:
+        - generic [ref=e212]:
+          - paragraph [ref=e213]: Predefined Slots
+          - checkbox "controlled" [ref=e216] [cursor=pointer]
+          - paragraph [ref=e219]: Custom Time
+        - paragraph [ref=e222] [cursor=pointer]: 08:00 AM
+      - button "Confirm and Reschedule" [disabled]
+```
