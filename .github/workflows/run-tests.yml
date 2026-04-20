@@ -92,49 +92,6 @@ jobs:
             git pull --rebase origin main || git rebase --abort
           done
 
-      - name: Push dashboard to GitHub Pages repo
-        if: always()
-        continue-on-error: true
-        run: |
-          git clone https://x-access-token:${{ secrets.DASHBOARD_PAT }}@github.com/saira-uwc/asksam-playwright-reports.git /tmp/dashboard-repo
-
-          # Sync all dashboard files (HTML, JSON data, history, artifacts, exports)
-          cp docs/index.html /tmp/dashboard-repo/index.html
-          cp docs/.nojekyll /tmp/dashboard-repo/.nojekyll 2>/dev/null || true
-          cp docs/test-results.json /tmp/dashboard-repo/test-results.json
-
-          # Sync data, exports, and artifacts directories
-          mkdir -p /tmp/dashboard-repo/data /tmp/dashboard-repo/history /tmp/dashboard-repo/exports /tmp/dashboard-repo/artifacts
-          cp -r docs/data/* /tmp/dashboard-repo/data/ 2>/dev/null || true
-          cp -r docs/exports/* /tmp/dashboard-repo/exports/ 2>/dev/null || true
-          cp -r docs/artifacts/* /tmp/dashboard-repo/artifacts/ 2>/dev/null || true
-
-          # Merge history: combine Pages repo history with new run (deduplicate by id, keep last 15 days)
-          node -e "
-            const fs = require('fs');
-            const DAYS = 15;
-            const cutoff = Date.now() - DAYS * 24 * 60 * 60 * 1000;
-            const newRuns = JSON.parse(fs.readFileSync('docs/history/runs.json', 'utf8') || '[]');
-            const existing = fs.existsSync('/tmp/dashboard-repo/history/runs.json')
-              ? JSON.parse(fs.readFileSync('/tmp/dashboard-repo/history/runs.json', 'utf8') || '[]')
-              : [];
-            const merged = new Map();
-            for (const r of [...existing, ...newRuns]) {
-              if (r.id && new Date(r.startedAt).getTime() >= cutoff) merged.set(r.id, r);
-            }
-            const result = Array.from(merged.values())
-              .sort((a, b) => new Date(b.startedAt) - new Date(a.startedAt));
-            fs.writeFileSync('/tmp/dashboard-repo/history/runs.json', JSON.stringify(result, null, 2));
-            console.log('History merged: ' + result.length + ' runs (last ' + DAYS + ' days)');
-          "
-
-          cd /tmp/dashboard-repo
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git config user.name "github-actions[bot]"
-          git add -A
-          git diff --staged --quiet || git commit -m "Update dashboard — $(date -u '+%Y-%m-%d %H:%M UTC') [skip ci]"
-          git push
-
       - name: Send email report
         if: always() && (github.event.action == 'run-tests' || github.event.inputs.send_email == 'true')
         run: node scripts/send-email-report.js
