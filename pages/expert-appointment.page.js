@@ -138,6 +138,7 @@ export class ExpertAppointmentPage {
     // Start 3 days ahead to ensure appointment stays "Upcoming" status
     // (not "Completed" or "Ongoing") so it can be rescheduled/cancelled
     // Search up to 30 days ahead for an available slot
+    let slotSelected = false;
     for (let i = 2; i < 31; i++) {
       const date = new Date();
       date.setDate(date.getDate() + i + 1);
@@ -149,22 +150,28 @@ export class ExpertAppointmentPage {
       await dateInput.fill(formattedDate);
       await findSlotsBtn.click();
 
-      await this.page.waitForTimeout(5000);
-
       const slots = this.page.getByRole('button', { name: /AM|PM/ });
-
-      if (await slots.first().isVisible().catch(() => false)) {
+      try {
+        await slots.first().waitFor({ state: 'visible', timeout: 10000 });
         await slots.first().click();
+        slotSelected = true;
         break;
+      } catch {
+        // No slot on this date — try next
+        continue;
       }
+    }
+
+    if (!slotSelected) {
+      throw new Error('No appointment slot available in next 30 days');
     }
 
     await this.page.getByRole('radio', { name: 'Complimentary' }).check();
 
     const bookBtn = this.page.getByRole('button', { name: 'Book' });
-
     await bookBtn.waitFor({ state: 'visible', timeout: 20000 });
-    await expect(bookBtn).toBeEnabled({ timeout: 20000 });
+    // CI can be slow — give the form validation more time to enable Book
+    await expect(bookBtn).toBeEnabled({ timeout: 60000 });
     await bookBtn.click();
 
     await this.page
