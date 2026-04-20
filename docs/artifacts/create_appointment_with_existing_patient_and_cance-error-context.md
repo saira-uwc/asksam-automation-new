@@ -1,251 +1,413 @@
 # Page snapshot
 
 ```yaml
-- generic [ref=e2]:
-  - banner [ref=e3]:
-    - generic [ref=e5]:
-      - link [ref=e8] [cursor=pointer]:
-        - /url: https://www.asksam.com.au/
-      - generic [ref=e9]:
-        - link "appointments" [ref=e10] [cursor=pointer]:
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - link [ref=e8] [cursor=pointer]:
+          - /url: https://www.asksam.com.au/
+        - generic [ref=e9]:
+          - link "appointments" [ref=e10] [cursor=pointer]:
+            - /url: /expert/appointments
+            - img [ref=e11]
+          - link "chat" [ref=e13] [cursor=pointer]:
+            - /url: /expert/chat
+            - img [ref=e14]
+          - link "notifications" [ref=e16] [cursor=pointer]:
+            - /url: /expert/notifications
+            - img [ref=e17]
+          - button "Open user menu" [ref=e20] [cursor=pointer]:
+            - img "Anthony Smith's logo" [ref=e23]
+    - generic [ref=e26]:
+      - list [ref=e28]:
+        - link "Dashboard" [ref=e29] [cursor=pointer]:
+          - /url: /expert/dashboard
+          - img [ref=e31]
+          - generic [ref=e34]: Dashboard
+        - link "Appointments" [ref=e35] [cursor=pointer]:
           - /url: /expert/appointments
-          - img [ref=e11]
-        - link "chat" [ref=e13] [cursor=pointer]:
+          - img [ref=e37]
+          - generic [ref=e40]: Appointments
+        - button "Copilot" [ref=e41] [cursor=pointer]:
+          - img [ref=e43]
+          - generic [ref=e46]: Copilot
+          - img [ref=e47]
+        - link "Session Management" [ref=e49] [cursor=pointer]:
+          - /url: /expert/sessionmanagement
+          - img [ref=e51]
+          - generic [ref=e54]: Session Management
+        - link "Patients" [ref=e55] [cursor=pointer]:
+          - /url: /expert/patients
+          - img [ref=e57]
+          - generic [ref=e60]: Patients
+        - link "Chat" [ref=e61] [cursor=pointer]:
           - /url: /expert/chat
-          - img [ref=e14]
-        - link "notifications" [ref=e16] [cursor=pointer]:
+          - img [ref=e63]
+          - generic [ref=e66]: Chat
+        - link "Notifications" [ref=e67] [cursor=pointer]:
           - /url: /expert/notifications
-          - img [ref=e17]
-        - button "Open user menu" [ref=e20] [cursor=pointer]:
-          - img "Anthony Smith's logo" [ref=e23]
-  - generic [ref=e26]:
-    - list [ref=e28]:
-      - link "Dashboard" [ref=e29] [cursor=pointer]:
-        - /url: /expert/dashboard
-        - img [ref=e31]
-        - generic [ref=e34]: Dashboard
-      - link "Appointments" [ref=e35] [cursor=pointer]:
-        - /url: /expert/appointments
-        - img [ref=e37]
-        - generic [ref=e40]: Appointments
-      - link "Session Management" [ref=e41] [cursor=pointer]:
-        - /url: /expert/sessionmanagement
-        - img [ref=e43]
-        - generic [ref=e46]: Session Management
-      - link "Patients" [ref=e47] [cursor=pointer]:
-        - /url: /expert/patients
-        - img [ref=e49]
-        - generic [ref=e52]: Patients
-      - link "Chat" [ref=e53] [cursor=pointer]:
-        - /url: /expert/chat
-        - img [ref=e55]
-        - generic [ref=e58]: Chat
-      - link "Notifications" [ref=e59] [cursor=pointer]:
-        - /url: /expert/notifications
-        - img [ref=e61]
-        - generic [ref=e64]: Notifications
-      - link "Help Center" [ref=e65] [cursor=pointer]:
-        - /url: /expert/help-center
-        - img [ref=e67]
-        - generic [ref=e70]: Help Center
-      - link "Payouts" [ref=e71] [cursor=pointer]:
-        - /url: /expert/payouts
-        - img [ref=e73]
-        - generic [ref=e76]: Payouts
-      - link "Settings" [ref=e77] [cursor=pointer]:
-        - /url: /expert/settings
-        - img [ref=e79]
-        - generic [ref=e82]: Settings
-    - generic [ref=e85]:
-      - generic [ref=e86]:
-        - generic [ref=e88]:
-          - heading "Upcoming Appointments" [level=6] [ref=e90]
-          - paragraph [ref=e93]: No Upcoming appointments
-        - generic [ref=e95]:
-          - generic [ref=e96]:
+          - img [ref=e69]
+          - generic [ref=e72]: Notifications
+        - link "Help Center" [ref=e73] [cursor=pointer]:
+          - /url: /expert/help-center
+          - img [ref=e75]
+          - generic [ref=e78]: Help Center
+        - link "Payouts" [ref=e79] [cursor=pointer]:
+          - /url: /expert/payouts
+          - img [ref=e81]
+          - generic [ref=e84]: Payouts
+        - link "Settings" [ref=e85] [cursor=pointer]:
+          - /url: /expert/settings
+          - img [ref=e87]
+          - generic [ref=e90]: Settings
+      - generic [ref=e92]:
+        - generic [ref=e93]:
+          - generic [ref=e94]:
+            - heading "Appointments" [level=2] [ref=e96]
             - generic [ref=e97]:
-              - heading "Notifications" [level=6] [ref=e98]
-              - link "View All" [ref=e99] [cursor=pointer]:
-                - /url: /expert/notifications
-                - paragraph [ref=e100]: View All
-                - img [ref=e101]
-            - generic [ref=e103]:
-              - generic [ref=e104] [cursor=pointer]: Appointments
-              - generic [ref=e105] [cursor=pointer]: Review
-          - generic [ref=e107]:
-            - generic [ref=e108]:
-              - img [ref=e112]
-              - generic [ref=e114]:
-                - paragraph [ref=e116]: Testt The Sairaa Booked an appointment
-                - generic [ref=e117]:
-                  - paragraph [ref=e118]: Wed 09:30 AM
-                  - generic [ref=e119]: "|"
-                  - paragraph [ref=e120]: Old Client
-                  - generic [ref=e121]: "|"
-                  - paragraph [ref=e122]: Video Session
-                - button "Patient Profile" [ref=e124] [cursor=pointer]
-            - generic [ref=e125]:
-              - img [ref=e129]
-              - generic [ref=e131]:
-                - paragraph [ref=e133]: Testt The Sairaa Booked an appointment
-                - generic [ref=e134]:
-                  - paragraph [ref=e135]: Wed 09:00 AM
-                  - generic [ref=e136]: "|"
-                  - paragraph [ref=e137]: Old Client
-                  - generic [ref=e138]: "|"
-                  - paragraph [ref=e139]: Video Session
-                - button "Patient Profile" [ref=e141] [cursor=pointer]
-            - generic [ref=e142]:
-              - img [ref=e146]
-              - generic [ref=e148]:
-                - paragraph [ref=e150]: Testt The Sairaa Booked an appointment
-                - generic [ref=e151]:
-                  - paragraph [ref=e152]: Wed 08:30 AM
-                  - generic [ref=e153]: "|"
-                  - paragraph [ref=e154]: Old Client
-                  - generic [ref=e155]: "|"
-                  - paragraph [ref=e156]: Video Session
-                - button "Patient Profile" [ref=e158] [cursor=pointer]
-            - generic [ref=e159]:
-              - img [ref=e163]
-              - generic [ref=e165]:
-                - paragraph [ref=e167]: Testt The Sairaa Booked an appointment
-                - generic [ref=e168]:
-                  - paragraph [ref=e169]: Wed 08:00 AM
-                  - generic [ref=e170]: "|"
-                  - paragraph [ref=e171]: Old Client
-                  - generic [ref=e172]: "|"
-                  - paragraph [ref=e173]: Video Session
-                - button "Patient Profile" [ref=e175] [cursor=pointer]
-            - generic [ref=e176]:
-              - img [ref=e180]
-              - generic [ref=e182]:
-                - paragraph [ref=e184]: Testt The Sairaa Booked an appointment
-                - generic [ref=e185]:
-                  - paragraph [ref=e186]: Wed 02:30 AM
-                  - generic [ref=e187]: "|"
-                  - paragraph [ref=e188]: Old Client
-                  - generic [ref=e189]: "|"
-                  - paragraph [ref=e190]: Video Session
-                - button "Patient Profile" [ref=e192] [cursor=pointer]
-      - generic [ref=e193]:
-        - generic [ref=e195]:
-          - generic [ref=e196]:
-            - heading "Inbox" [level=6] [ref=e197]
-            - link "View All" [ref=e198] [cursor=pointer]:
-              - /url: /expert/chat
-              - paragraph [ref=e199]: View All
-              - img [ref=e200]
-          - generic [ref=e202]:
-            - generic [ref=e205]:
-              - heading "CountryA7 T" [level=6] [ref=e207]
-              - paragraph [ref=e208]: hey
-            - generic [ref=e211]:
-              - heading "Sumit Khanna" [level=6] [ref=e213]
-              - paragraph [ref=e214]: hello
-            - generic [ref=e217]:
-              - heading "Testtt The Sairaa" [level=6] [ref=e219]
-              - paragraph [ref=e220]: Hi
-            - generic [ref=e223]:
-              - heading "Yamini 130" [level=6] [ref=e225]
-              - paragraph [ref=e226]: Hello
-        - generic [ref=e228]:
-          - generic [ref=e229]:
-            - heading "Calendar" [level=6] [ref=e230]
-            - generic [ref=e231]: April
-          - generic [ref=e232]:
-            - generic [ref=e234]:
-              - button "Mon 20" [ref=e235] [cursor=pointer]:
-                - generic [ref=e236]: Mon
-                - paragraph [ref=e237]: "20"
-              - button "Tue 21" [ref=e238] [cursor=pointer]:
-                - generic [ref=e239]: Tue
-                - paragraph [ref=e240]: "21"
-              - button "Wed 22" [ref=e241] [cursor=pointer]:
-                - generic [ref=e242]: Wed
-                - paragraph [ref=e243]: "22"
-              - button "Thu 23" [ref=e244] [cursor=pointer]:
-                - generic [ref=e245]: Thu
-                - paragraph [ref=e246]: "23"
-              - button "Fri 24" [ref=e247] [cursor=pointer]:
-                - generic [ref=e248]: Fri
-                - paragraph [ref=e249]: "24"
-              - button "Sat 25" [ref=e250] [cursor=pointer]:
-                - generic [ref=e251]: Sat
-                - paragraph [ref=e252]: "25"
-              - button "Sun 26" [ref=e253] [cursor=pointer]:
-                - generic [ref=e254]: Sun
-                - paragraph [ref=e255]: "26"
-            - paragraph [ref=e256]: You have 10 appointments on 20 Apr 2026
-            - generic [ref=e257]:
+              - button "Upcoming appointments tab" [pressed] [ref=e98] [cursor=pointer]: Upcoming
+              - button "Past appointments tab" [ref=e99] [cursor=pointer]: Past
+            - generic [ref=e100]:
+              - button "Switch to calendar view" [ref=e101] [cursor=pointer]:
+                - img [ref=e102]
+                - text: View Calendar
+              - button "Book new appointment" [ref=e104] [cursor=pointer]:
+                - img [ref=e105]
+                - text: Book Appointment
+          - generic [ref=e108]:
+            - generic [ref=e111]:
+              - generic [ref=e112]:
+                - img [ref=e113]
+                - heading "Filters" [level=6] [ref=e115]
+              - button [ref=e116] [cursor=pointer]:
+                - img [ref=e117]
+            - generic "Search appointments input" [ref=e120]:
+              - generic [ref=e121]:
+                - img [ref=e123]
+                - textbox "Search appointments..." [ref=e125]
+                - group
+        - generic [ref=e127]:
+          - generic [ref=e128]:
+            - generic [ref=e130]:
+              - generic [ref=e132]:
+                - button "More Options" [ref=e134] [cursor=pointer]:
+                  - img [ref=e135]
+                - generic [ref=e137]:
+                  - img [ref=e139]
+                  - generic [ref=e141]:
+                    - generic [ref=e142]:
+                      - generic [ref=e143]: Follow up Consult
+                      - generic [ref=e144]: Natural Medicine
+                    - heading "test user-945248" [level=6] [ref=e145]
+                    - 'heading "Appointment With : Dr Anthony Smith" [level=6] [ref=e146]'
+                    - 'heading "Created By : Anthony Smith" [level=6] [ref=e147]'
+                    - generic [ref=e148]:
+                      - generic "Appointment Status" [ref=e149]:
+                        - generic [ref=e151]: Appt
+                        - generic [ref=e152]: Completed
+                      - generic "Session Status" [ref=e153]:
+                        - generic [ref=e155]: Sess
+                        - generic [ref=e156]: Not Marked
+                - separator [ref=e157]
+                - generic [ref=e158]:
+                  - generic [ref=e159]:
+                    - img [ref=e160]
+                    - paragraph [ref=e162]: 20 Apr 2026
+                  - generic [ref=e163]:
+                    - img [ref=e164]
+                    - paragraph [ref=e166]: 04:00 PM
+              - generic [ref=e168]:
+                - link "Join Now" [ref=e169] [cursor=pointer]:
+                  - /url: https://meet.google.com/rmm-xcys-iyc
+                  - text: Join Now
+                - button "View Details" [ref=e170] [cursor=pointer]: View Details
+            - generic [ref=e172]:
+              - generic [ref=e174]:
+                - button "More Options" [ref=e176] [cursor=pointer]:
+                  - img [ref=e177]
+                - generic [ref=e179]:
+                  - img [ref=e181]
+                  - generic [ref=e183]:
+                    - generic [ref=e184]:
+                      - generic [ref=e185]: Follow up Consult
+                      - generic [ref=e186]: Natural Medicine
+                    - heading "Testtt The Sairaa" [level=6] [ref=e187]
+                    - 'heading "Appointment With : Dr Anthony Smith" [level=6] [ref=e188]'
+                    - 'heading "Created By : Anthony Smith" [level=6] [ref=e189]'
+                    - generic [ref=e190]:
+                      - generic "Appointment Status" [ref=e191]:
+                        - generic [ref=e193]: Appt
+                        - generic [ref=e194]: Completed
+                      - generic "Session Status" [ref=e195]:
+                        - generic [ref=e197]: Sess
+                        - generic [ref=e198]: Not Marked
+                - separator [ref=e199]
+                - generic [ref=e200]:
+                  - generic [ref=e201]:
+                    - img [ref=e202]
+                    - paragraph [ref=e204]: 20 Apr 2026
+                  - generic [ref=e205]:
+                    - img [ref=e206]
+                    - paragraph [ref=e208]: 04:30 PM
+              - generic [ref=e210]:
+                - link "Join Now" [ref=e211] [cursor=pointer]:
+                  - /url: https://meet.google.com/nek-djxp-rvj
+                  - text: Join Now
+                - button "View Details" [ref=e212] [cursor=pointer]: View Details
+            - generic [ref=e214]:
+              - generic [ref=e216]:
+                - button "More Options" [ref=e218] [cursor=pointer]:
+                  - img [ref=e219]
+                - generic [ref=e221]:
+                  - img [ref=e223]
+                  - generic [ref=e225]:
+                    - generic [ref=e226]:
+                      - generic [ref=e227]: Follow up Consult
+                      - generic [ref=e228]: Natural Medicine
+                    - heading "Testtt The Sairaa" [level=6] [ref=e229]
+                    - 'heading "Appointment With : Dr Anthony Smith" [level=6] [ref=e230]'
+                    - 'heading "Created By : Anthony Smith" [level=6] [ref=e231]'
+                    - generic [ref=e232]:
+                      - generic "Appointment Status" [ref=e233]:
+                        - generic [ref=e235]: Appt
+                        - generic [ref=e236]: Completed
+                      - generic "Session Status" [ref=e237]:
+                        - generic [ref=e239]: Sess
+                        - generic [ref=e240]: Not Marked
+                - separator [ref=e241]
+                - generic [ref=e242]:
+                  - generic [ref=e243]:
+                    - img [ref=e244]
+                    - paragraph [ref=e246]: 20 Apr 2026
+                  - generic [ref=e247]:
+                    - img [ref=e248]
+                    - paragraph [ref=e250]: 05:00 PM
+              - generic [ref=e252]:
+                - link "Join Now" [ref=e253] [cursor=pointer]:
+                  - /url: https://meet.google.com/fxf-dpqi-tzo
+                  - text: Join Now
+                - button "View Details" [ref=e254] [cursor=pointer]: View Details
+            - generic [ref=e256]:
               - generic [ref=e258]:
-                - img [ref=e259]
-                - generic [ref=e260]:
-                  - heading "Testtt The Sairaa" [level=6] [ref=e261]
-                  - generic [ref=e262]:
-                    - img [ref=e263]
-                    - text: Completed
-              - generic [ref=e265]:
-                - img [ref=e266]
-                - generic [ref=e267]:
-                  - heading "Testtt The Sairaa" [level=6] [ref=e268]
-                  - generic [ref=e269]:
-                    - img [ref=e270]
-                    - text: Completed
-              - generic [ref=e272]:
-                - img [ref=e273]
-                - generic [ref=e274]:
-                  - heading "Testtt The Sairaa" [level=6] [ref=e275]
-                  - generic [ref=e276]:
-                    - img [ref=e277]
-                    - text: Completed
-              - generic [ref=e279]:
-                - img [ref=e280]
-                - generic [ref=e281]:
-                  - heading "Testtt The Sairaa" [level=6] [ref=e282]
-                  - generic [ref=e283]:
-                    - img [ref=e284]
-                    - text: Completed
-              - generic [ref=e286]:
-                - img [ref=e287]
-                - generic [ref=e288]:
-                  - heading "test user-837473" [level=6] [ref=e289]
-                  - generic [ref=e290]:
-                    - img [ref=e291]
-                    - text: Completed
-              - generic [ref=e293]:
-                - img [ref=e294]
-                - generic [ref=e295]:
-                  - heading "Testtt The Sairaa" [level=6] [ref=e296]
-                  - generic [ref=e297]:
-                    - img [ref=e298]
-                    - text: Completed
+                - button "More Options" [ref=e260] [cursor=pointer]:
+                  - img [ref=e261]
+                - generic [ref=e263]:
+                  - img [ref=e265]
+                  - generic [ref=e267]:
+                    - generic [ref=e268]:
+                      - generic [ref=e269]: Follow up Consult
+                      - generic [ref=e270]: Natural Medicine
+                    - heading "Testtt The Sairaa" [level=6] [ref=e271]
+                    - 'heading "Appointment With : Dr Anthony Smith" [level=6] [ref=e272]'
+                    - 'heading "Created By : Anthony Smith" [level=6] [ref=e273]'
+                    - generic [ref=e274]:
+                      - generic "Appointment Status" [ref=e275]:
+                        - generic [ref=e277]: Appt
+                        - generic [ref=e278]: Completed
+                      - generic "Session Status" [ref=e279]:
+                        - generic [ref=e281]: Sess
+                        - generic [ref=e282]: Not Marked
+                - separator [ref=e283]
+                - generic [ref=e284]:
+                  - generic [ref=e285]:
+                    - img [ref=e286]
+                    - paragraph [ref=e288]: 20 Apr 2026
+                  - generic [ref=e289]:
+                    - img [ref=e290]
+                    - paragraph [ref=e292]: 05:30 PM
+              - generic [ref=e294]:
+                - link "Join Now" [ref=e295] [cursor=pointer]:
+                  - /url: https://meet.google.com/srz-yfnr-ojf
+                  - text: Join Now
+                - button "View Details" [ref=e296] [cursor=pointer]: View Details
+            - generic [ref=e298]:
               - generic [ref=e300]:
-                - img [ref=e301]
-                - generic [ref=e302]:
-                  - heading "Testtt The Sairaa" [level=6] [ref=e303]
-                  - generic [ref=e304]:
-                    - img [ref=e305]
-                    - text: Completed
-              - generic [ref=e307]:
-                - img [ref=e308]
-                - generic [ref=e309]:
-                  - heading "Testtt The Sairaa" [level=6] [ref=e310]
-                  - generic [ref=e311]:
-                    - img [ref=e312]
-                    - text: Completed
-              - generic [ref=e314]:
-                - img [ref=e315]
-                - generic [ref=e316]:
-                  - heading "Testtt The Sairaa" [level=6] [ref=e317]
-                  - generic [ref=e318]:
-                    - img [ref=e319]
-                    - text: Completed
-              - generic [ref=e321]:
-                - img [ref=e322]
-                - generic [ref=e323]:
-                  - heading "test user-945248" [level=6] [ref=e324]
-                  - generic [ref=e325]:
-                    - img [ref=e326]
-                    - text: Completed
+                - button "More Options" [ref=e302] [cursor=pointer]:
+                  - img [ref=e303]
+                - generic [ref=e305]:
+                  - img [ref=e307]
+                  - generic [ref=e309]:
+                    - generic [ref=e310]:
+                      - generic [ref=e311]: Follow up Consult
+                      - generic [ref=e312]: Natural Medicine
+                    - heading "Testtt The Sairaa" [level=6] [ref=e313]
+                    - 'heading "Appointment With : Dr Anthony Smith" [level=6] [ref=e314]'
+                    - 'heading "Created By : Anthony Smith" [level=6] [ref=e315]'
+                    - generic [ref=e316]:
+                      - generic "Appointment Status" [ref=e317]:
+                        - generic [ref=e319]: Appt
+                        - generic [ref=e320]: Completed
+                      - generic "Session Status" [ref=e321]:
+                        - generic [ref=e323]: Sess
+                        - generic [ref=e324]: Completed
+                - separator [ref=e325]
+                - generic [ref=e326]:
+                  - generic [ref=e327]:
+                    - img [ref=e328]
+                    - paragraph [ref=e330]: 20 Apr 2026
+                  - generic [ref=e331]:
+                    - img [ref=e332]
+                    - paragraph [ref=e334]: 06:00 PM
+              - generic [ref=e336]:
+                - link "Join Now" [ref=e337] [cursor=pointer]:
+                  - /url: https://meet.google.com/svm-xwpv-ums
+                  - text: Join Now
+                - button "View Details" [ref=e338] [cursor=pointer]: View Details
+            - generic [ref=e340]:
+              - generic [ref=e342]:
+                - button "More Options" [ref=e344] [cursor=pointer]:
+                  - img [ref=e345]
+                - generic [ref=e347]:
+                  - img [ref=e349]
+                  - generic [ref=e351]:
+                    - generic [ref=e352]:
+                      - generic [ref=e353]: Follow up Consult
+                      - generic [ref=e354]: Natural Medicine
+                    - heading "test user-837473" [level=6] [ref=e355]
+                    - 'heading "Appointment With : Dr Anthony Smith" [level=6] [ref=e356]'
+                    - 'heading "Created By : Anthony Smith" [level=6] [ref=e357]'
+                    - generic [ref=e358]:
+                      - generic "Appointment Status" [ref=e359]:
+                        - generic [ref=e361]: Appt
+                        - generic [ref=e362]: Completed
+                      - generic "Session Status" [ref=e363]:
+                        - generic [ref=e365]: Sess
+                        - generic [ref=e366]: Not Marked
+                - separator [ref=e367]
+                - generic [ref=e368]:
+                  - generic [ref=e369]:
+                    - img [ref=e370]
+                    - paragraph [ref=e372]: 20 Apr 2026
+                  - generic [ref=e373]:
+                    - img [ref=e374]
+                    - paragraph [ref=e376]: 06:30 PM
+              - generic [ref=e378]:
+                - link "Join Now" [ref=e379] [cursor=pointer]:
+                  - /url: https://meet.google.com/esu-eyjv-csi
+                  - text: Join Now
+                - button "View Details" [ref=e380] [cursor=pointer]: View Details
+            - generic [ref=e382]:
+              - generic [ref=e384]:
+                - button "More Options" [ref=e386] [cursor=pointer]:
+                  - img [ref=e387]
+                - generic [ref=e389]:
+                  - img [ref=e391]
+                  - generic [ref=e393]:
+                    - generic [ref=e394]:
+                      - generic [ref=e395]: Follow up Consult
+                      - generic [ref=e396]: Natural Medicine
+                    - heading "Testtt The Sairaa" [level=6] [ref=e397]
+                    - 'heading "Appointment With : Dr Anthony Smith" [level=6] [ref=e398]'
+                    - 'heading "Created By : Anthony Smith" [level=6] [ref=e399]'
+                    - generic [ref=e400]:
+                      - generic "Appointment Status" [ref=e401]:
+                        - generic [ref=e403]: Appt
+                        - generic [ref=e404]: Completed
+                      - generic "Session Status" [ref=e405]:
+                        - generic [ref=e407]: Sess
+                        - generic [ref=e408]: Not Marked
+                - separator [ref=e409]
+                - generic [ref=e410]:
+                  - generic [ref=e411]:
+                    - img [ref=e412]
+                    - paragraph [ref=e414]: 20 Apr 2026
+                  - generic [ref=e415]:
+                    - img [ref=e416]
+                    - paragraph [ref=e418]: 07:00 PM
+              - generic [ref=e420]:
+                - link "Join Now" [ref=e421] [cursor=pointer]:
+                  - /url: https://meet.google.com/hke-bxip-bnz
+                  - text: Join Now
+                - button "View Details" [ref=e422] [cursor=pointer]: View Details
+            - generic [ref=e424]:
+              - generic [ref=e426]:
+                - button "More Options" [ref=e428] [cursor=pointer]:
+                  - img [ref=e429]
+                - generic [ref=e431]:
+                  - img [ref=e433]
+                  - generic [ref=e435]:
+                    - generic [ref=e436]:
+                      - generic [ref=e437]: Follow up Consult
+                      - generic [ref=e438]: Natural Medicine
+                    - heading "Testtt The Sairaa" [level=6] [ref=e439]
+                    - 'heading "Appointment With : Dr Anthony Smith" [level=6] [ref=e440]'
+                    - 'heading "Created By : Anthony Smith" [level=6] [ref=e441]'
+                    - generic [ref=e442]:
+                      - generic "Appointment Status" [ref=e443]:
+                        - generic [ref=e445]: Appt
+                        - generic [ref=e446]: Completed
+                      - generic "Session Status" [ref=e447]:
+                        - generic [ref=e449]: Sess
+                        - generic [ref=e450]: Not Marked
+                - separator [ref=e451]
+                - generic [ref=e452]:
+                  - generic [ref=e453]:
+                    - img [ref=e454]
+                    - paragraph [ref=e456]: 20 Apr 2026
+                  - generic [ref=e457]:
+                    - img [ref=e458]
+                    - paragraph [ref=e460]: 07:30 PM
+              - generic [ref=e462]:
+                - link "Join Now" [ref=e463] [cursor=pointer]:
+                  - /url: https://meet.google.com/dvt-iiux-ttv
+                  - text: Join Now
+                - button "View Details" [ref=e464] [cursor=pointer]: View Details
+            - generic [ref=e466]:
+              - generic [ref=e468]:
+                - button "More Options" [ref=e470] [cursor=pointer]:
+                  - img [ref=e471]
+                - generic [ref=e473]:
+                  - img [ref=e475]
+                  - generic [ref=e477]:
+                    - generic [ref=e478]:
+                      - generic [ref=e479]: Follow up Consult
+                      - generic [ref=e480]: Natural Medicine
+                    - heading "Testtt The Sairaa" [level=6] [ref=e481]
+                    - 'heading "Appointment With : Dr Anthony Smith" [level=6] [ref=e482]'
+                    - 'heading "Created By : Anthony Smith" [level=6] [ref=e483]'
+                    - generic [ref=e484]:
+                      - generic "Appointment Status" [ref=e485]:
+                        - generic [ref=e487]: Appt
+                        - generic [ref=e488]: Completed
+                      - generic "Session Status" [ref=e489]:
+                        - generic [ref=e491]: Sess
+                        - generic [ref=e492]: Not Marked
+                - separator [ref=e493]
+                - generic [ref=e494]:
+                  - generic [ref=e495]:
+                    - img [ref=e496]
+                    - paragraph [ref=e498]: 20 Apr 2026
+                  - generic [ref=e499]:
+                    - img [ref=e500]
+                    - paragraph [ref=e502]: 08:00 PM
+              - generic [ref=e504]:
+                - link "Join Now" [ref=e505] [cursor=pointer]:
+                  - /url: https://meet.google.com/ips-dvia-gzb
+                  - text: Join Now
+                - button "View Details" [ref=e506] [cursor=pointer]: View Details
+          - navigation "pagination navigation" [ref=e508]:
+            - list [ref=e509]:
+              - listitem [ref=e510]:
+                - button "Go to previous page" [disabled]:
+                  - img
+              - listitem [ref=e511]:
+                - button "page 1" [ref=e512] [cursor=pointer]: "1"
+              - listitem [ref=e513]:
+                - button "Go to page 2" [ref=e514] [cursor=pointer]: "2"
+              - listitem [ref=e515]:
+                - button "Go to page 3" [ref=e516] [cursor=pointer]: "3"
+              - listitem [ref=e517]:
+                - button "Go to page 4" [ref=e518] [cursor=pointer]: "4"
+              - listitem [ref=e519]:
+                - button "Go to page 5" [ref=e520] [cursor=pointer]: "5"
+              - listitem [ref=e521]:
+                - generic [ref=e522]: …
+              - listitem [ref=e523]:
+                - button "Go to page 32" [ref=e524] [cursor=pointer]: "32"
+              - listitem [ref=e525]:
+                - button "Go to next page" [ref=e526] [cursor=pointer]:
+                  - img [ref=e527]
+  - tooltip "View Details" [ref=e529]:
+    - generic [ref=e530]: View Details
 ```
