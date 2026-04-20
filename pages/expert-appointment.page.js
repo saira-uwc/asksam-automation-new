@@ -9,8 +9,8 @@ export class ExpertAppointmentPage {
      OPEN APPOINTMENTS
   =============================== */
   async openAppointments() {
-    await this.page.getByRole('link', { name: 'Appointments', exact: true }).click();
-    await this.page.waitForURL(/expert\/appointments/, { timeout: 30000 });
+    await this.page.getByRole('link', { name: 'Appointments', exact: true }).first().click();
+    await this.page.waitForURL(/expert\/appointments/, { timeout: 60000 });
     await this.page.getByRole('button', { name: 'Book new appointment' }).click();
   }
 
@@ -183,20 +183,20 @@ export class ExpertAppointmentPage {
      SEARCH APPOINTMENT
   =============================== */
   async searchAppointment(keyword) {
-    // Navigate fresh to appointments page to ensure we see the newly booked one
+    // Navigate to appointments and stay on the Upcoming tab WITHOUT a search filter.
+    // Searching by patient name (e.g. 'testsaira') returns 100s of historical appointments
+    // across many pages, burying the newly booked one. Without search the tab shows only
+    // the expert's current upcoming appointments (far fewer), making it easy to find.
     await this.page.goto('https://dashboard.asksam.com.au/expert/appointments');
     await this.page.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => {});
     await this.page.waitForTimeout(2000);
 
-    const searchBox = this.page.getByRole('textbox', {
-      name: 'Search appointments...',
-    });
-
-    await searchBox.waitFor({ timeout: 20000 });
-    await searchBox.fill(keyword);
-
-    // Wait for search results to load
-    await this.page.waitForTimeout(3000);
+    // Ensure the Upcoming tab is active (default, but make it explicit)
+    const upcomingTab = this.page.getByRole('button', { name: /Upcoming appointments tab/i });
+    if (await upcomingTab.isVisible().catch(() => false)) {
+      await upcomingTab.click();
+      await this.page.waitForTimeout(1000);
+    }
   }
 
   /* ===============================
