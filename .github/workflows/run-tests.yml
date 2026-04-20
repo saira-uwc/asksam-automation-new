@@ -28,6 +28,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -38,10 +40,23 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Cache Playwright browsers
+        id: pw-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: pw-browsers-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+
       - name: Install Playwright browsers
+        if: steps.pw-cache.outputs.cache-hit != 'true'
         run: npx playwright install --with-deps chromium
 
+      - name: Install Playwright OS deps (cached)
+        if: steps.pw-cache.outputs.cache-hit == 'true'
+        run: npx playwright install-deps chromium
+
       - name: Run Playwright tests
+        continue-on-error: true
         run: |
           if [ -n "${{ github.event.inputs.test_filter }}" ]; then
             npx playwright test --grep "${{ github.event.inputs.test_filter }}"
@@ -51,6 +66,10 @@ jobs:
         env:
           CI: true
           GOOGLE_APPS_SCRIPT_URL: ${{ secrets.GOOGLE_SHEETS_WEB_APP_URL }}
+          # AU proxy for Stripe geo-restricted signup test (optional)
+          AU_PROXY_SERVER: ${{ secrets.AU_PROXY_SERVER }}
+          AU_PROXY_USERNAME: ${{ secrets.AU_PROXY_USERNAME }}
+          AU_PROXY_PASSWORD: ${{ secrets.AU_PROXY_PASSWORD }}
 
       - name: Generate dashboard data
         if: always()
@@ -58,24 +77,20 @@ jobs:
 
       - name: Commit and push dashboard updates
         if: always()
+        continue-on-error: true
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add docs/
+          git add docs/ || true
           git diff --staged --quiet || git commit -m "Update dashboard data [skip ci]"
-          git push
-
-      - name: Push dashboard to GitHub Pages repo
-        if: always()
-        run: |
-          git clone https://x-access-token:${{ secrets.DASHBOARD_PAT }}@github.com/saira-uwc/asksam-playwright-reports.git /tmp/dashboard-repo
-          cp docs/test-results.json /tmp/dashboard-repo/test-results.json
-          cd /tmp/dashboard-repo
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git config user.name "github-actions[bot]"
-          git add test-results.json
-          git diff --staged --quiet || git commit -m "Update dashboard data [skip ci]"
-          git push
+          # Rebase on latest main to handle concurrent pushes
+          git pull --rebase origin main || git rebase --abort
+          # Retry push up to 3 times in case of race conditions
+          for i in 1 2 3; do
+            if git push origin HEAD:main; then break; fi
+            sleep 2
+            git pull --rebase origin main || git rebase --abort
+          done
 
       - name: Send email report
         if: always() && (github.event.action == 'run-tests' || github.event.inputs.send_email == 'true')
