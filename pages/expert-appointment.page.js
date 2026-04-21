@@ -134,35 +134,58 @@ export class ExpertAppointmentPage {
   async bookAppointment() {
     const dateInput = this.page.getByRole('textbox', { name: 'Appointment Date' });
     const findSlotsBtn = this.page.getByRole('button', { name: 'Find Slots' });
+    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
-    // Start 3 days ahead to ensure appointment stays "Upcoming" status
-    // (not "Completed" or "Ongoing") so it can be rescheduled/cancelled
-    // Search up to 30 days ahead for an available slot
     let slotSelected = false;
     let bookedDateDisplay = null;
-    for (let i = 2; i < 31; i++) {
-      const date = new Date();
-      date.setDate(date.getDate() + i + 1);
 
-      const formattedDate = `${String(date.getMonth() + 1).padStart(2, '0')}/${String(
-        date.getDate()
-      ).padStart(2, '0')}/${date.getFullYear()}`;
+    // Fast path: the booking modal shows "Next Available Slot: DD/MM/YYYY at HH:MM AM/PM".
+    // Parse it and jump straight to that date — saves ~140s of failed slot probing.
+    try {
+      const nextSlotPanel = this.page.getByText(/Next Available Slot/i).locator('..');
+      await nextSlotPanel.waitFor({ state: 'visible', timeout: 8000 });
+      const panelText = (await nextSlotPanel.textContent()) || '';
+      const m = panelText.match(/(\d{2})\/(\d{2})\/(\d{4})/);
+      if (m) {
+        const [, dd, mm, yyyy] = m;
+        // Date input expects MM/DD/YYYY; "Next Available Slot" displays DD/MM/YYYY
+        await dateInput.fill(`${mm}/${dd}/${yyyy}`);
+        await findSlotsBtn.click();
 
-      await dateInput.fill(formattedDate);
-      await findSlotsBtn.click();
-
-      const slots = this.page.getByRole('button', { name: /AM|PM/ });
-      try {
-        await slots.first().waitFor({ state: 'visible', timeout: 10000 });
-        // Capture the booked date in UI display format ("23 Apr 2026") for later lookup
-        const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-        bookedDateDisplay = `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
+        const slots = this.page.getByRole('button', { name: /AM|PM/ });
+        await slots.first().waitFor({ state: 'visible', timeout: 15000 });
+        bookedDateDisplay = `${parseInt(dd, 10)} ${months[parseInt(mm, 10) - 1]} ${yyyy}`;
         await slots.first().click();
         slotSelected = true;
-        break;
-      } catch {
-        // No slot on this date — try next
-        continue;
+        console.log(`✅ Used Next Available Slot: ${bookedDateDisplay}`);
+      }
+    } catch {
+      // Fall through to manual iteration below
+    }
+
+    // Fallback: iterate dates if Next Available Slot wasn't visible/parseable
+    if (!slotSelected) {
+      for (let i = 2; i < 31; i++) {
+        const date = new Date();
+        date.setDate(date.getDate() + i + 1);
+
+        const formattedDate = `${String(date.getMonth() + 1).padStart(2, '0')}/${String(
+          date.getDate()
+        ).padStart(2, '0')}/${date.getFullYear()}`;
+
+        await dateInput.fill(formattedDate);
+        await findSlotsBtn.click();
+
+        const slots = this.page.getByRole('button', { name: /AM|PM/ });
+        try {
+          await slots.first().waitFor({ state: 'visible', timeout: 10000 });
+          bookedDateDisplay = `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
+          await slots.first().click();
+          slotSelected = true;
+          break;
+        } catch {
+          continue;
+        }
       }
     }
 
@@ -196,28 +219,60 @@ export class ExpertAppointmentPage {
      SEARCH APPOINTMENT
   =============================== */
   async searchAppointment(keyword) {
-    // Navigate to appointments and stay on the Upcoming tab WITHOUT a search filter.
-    // Searching by patient name (e.g. 'testsaira') returns 100s of historical appointments
-    // across many pages, burying the newly booked one. Without search the tab shows only
-    // the expert's current upcoming appointments (far fewer), making it easy to find.
+    // Navigate to appointments and apply the "Appointment Status = Upcoming" filter.
+    // The expert account has 300+ historical appointments (mostly Completed); without
+    // filtering, finding a non-completed card requires paging through 30+ pages and
+    // exceeds the 180s test timeout. With the filter, only Upcoming cards remain
+    // and the first one is immediately actionable.
     await this.page.goto('https://dashboard.asksam.com.au/expert/appointments', {
       waitUntil: 'domcontentloaded',
       timeout: 60000,
     });
     await this.page.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => {});
 
-    // Ensure the Upcoming tab is active (default, but make it explicit)
-    const upcomingTab = this.page.getByRole('button', { name: /Upcoming appointments tab/i });
-    if (await upcomingTab.isVisible().catch(() => false)) {
-      await upcomingTab.click();
-      await this.page.waitForLoadState('networkidle', { timeout: 15000 }).catch(() => {});
-    }
+    await this._applyFutureDateFilter().catch((e) => {
+      console.log(`⚠ Filter not applied (${e.message}) — falling back to unfiltered list`);
+    });
 
-    // Explicitly wait for at least one appointment card or the empty state to render
+    // Wait for either filtered cards or empty state to render
     await Promise.race([
-      this.page.locator('.MuiCard-root').first().waitFor({ state: 'visible', timeout: 30000 }),
-      this.page.getByText(/No.*appointments?/i).first().waitFor({ state: 'visible', timeout: 30000 }),
+      this.page.locator('.MuiCard-root').first().waitFor({ state: 'visible', timeout: 20000 }),
+      this.page.getByText(/No.*appointments?/i).first().waitFor({ state: 'visible', timeout: 20000 }),
     ]).catch(() => {});
+  }
+
+  /* ===============================
+     APPLY "From Date = tomorrow" FILTER
+     ---
+     Appointment Status filter only offers All / Completed / Cancelled — there's
+     no "Upcoming" option. Instead we filter by From Date = tomorrow, which
+     excludes all of today's appointments (mostly Completed since their times
+     have passed) leaving only genuinely future, actionable appointments.
+  =============================== */
+  async _applyFutureDateFilter() {
+    // Expand the filters panel (collapsed by default)
+    const filtersHeading = this.page.getByRole('heading', { name: 'Filters', level: 6 });
+    await filtersHeading.waitFor({ state: 'visible', timeout: 15000 });
+    const filtersToggle = filtersHeading.locator('xpath=ancestor::*[2]').getByRole('button').first();
+    await filtersToggle.click();
+
+    // The "From Date" label has a textbox sibling — fill with tomorrow's date (DD/MM/YYYY)
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const fromDateStr = `${String(tomorrow.getDate()).padStart(2, '0')}/${String(tomorrow.getMonth() + 1).padStart(2, '0')}/${tomorrow.getFullYear()}`;
+
+    const fromDateLabel = this.page.getByText('From Date', { exact: true });
+    await fromDateLabel.waitFor({ state: 'visible', timeout: 10000 });
+    const fromDateInput = fromDateLabel.locator('xpath=following::input[1]');
+    await fromDateInput.fill(fromDateStr);
+
+    // Click Apply Filters
+    const applyBtn = this.page.getByRole('button', { name: 'Apply Filters' });
+    await applyBtn.waitFor({ state: 'visible', timeout: 10000 });
+    await applyBtn.click();
+
+    await this.page.waitForLoadState('networkidle', { timeout: 15000 }).catch(() => {});
+    console.log(`✅ Applied From Date filter (${fromDateStr}) — excludes today's completed appointments`);
   }
 
   /* ===============================
