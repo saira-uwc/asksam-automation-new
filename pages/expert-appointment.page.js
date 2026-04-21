@@ -139,6 +139,7 @@ export class ExpertAppointmentPage {
     // (not "Completed" or "Ongoing") so it can be rescheduled/cancelled
     // Search up to 30 days ahead for an available slot
     let slotSelected = false;
+    let bookedDateDisplay = null;
     for (let i = 2; i < 31; i++) {
       const date = new Date();
       date.setDate(date.getDate() + i + 1);
@@ -153,6 +154,9 @@ export class ExpertAppointmentPage {
       const slots = this.page.getByRole('button', { name: /AM|PM/ });
       try {
         await slots.first().waitFor({ state: 'visible', timeout: 10000 });
+        // Capture the booked date in UI display format ("23 Apr 2026") for later lookup
+        const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        bookedDateDisplay = `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
         await slots.first().click();
         slotSelected = true;
         break;
@@ -177,6 +181,15 @@ export class ExpertAppointmentPage {
     await this.page
       .getByText(/Appointment Booked/i)
       .waitFor({ timeout: 60000 });
+
+    // Wait for the booking modal to close so subsequent navigations aren't racing it
+    await this.page.locator('[role="presentation"]').filter({
+      has: this.page.getByText('Book Appointment'),
+    }).waitFor({ state: 'hidden', timeout: 30000 }).catch(() => {});
+
+    // Store for openFirstAppointment / openAndCancelNonCancelledAppointment to target
+    this.lastBookedDateDisplay = bookedDateDisplay;
+    console.log(`✅ Booked appointment for ${bookedDateDisplay}`);
   }
 
   /* ===============================
@@ -187,41 +200,63 @@ export class ExpertAppointmentPage {
     // Searching by patient name (e.g. 'testsaira') returns 100s of historical appointments
     // across many pages, burying the newly booked one. Without search the tab shows only
     // the expert's current upcoming appointments (far fewer), making it easy to find.
-    await this.page.goto('https://dashboard.asksam.com.au/expert/appointments');
+    await this.page.goto('https://dashboard.asksam.com.au/expert/appointments', {
+      waitUntil: 'domcontentloaded',
+      timeout: 60000,
+    });
     await this.page.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => {});
-    await this.page.waitForTimeout(2000);
 
     // Ensure the Upcoming tab is active (default, but make it explicit)
     const upcomingTab = this.page.getByRole('button', { name: /Upcoming appointments tab/i });
     if (await upcomingTab.isVisible().catch(() => false)) {
       await upcomingTab.click();
-      await this.page.waitForTimeout(1000);
+      await this.page.waitForLoadState('networkidle', { timeout: 15000 }).catch(() => {});
     }
+
+    // Explicitly wait for at least one appointment card or the empty state to render
+    await Promise.race([
+      this.page.locator('.MuiCard-root').first().waitFor({ state: 'visible', timeout: 30000 }),
+      this.page.getByText(/No.*appointments?/i).first().waitFor({ state: 'visible', timeout: 30000 }),
+    ]).catch(() => {});
   }
 
   /* ===============================
      OPEN FIRST APPOINTMENT
   =============================== */
   async openFirstAppointment(pagesChecked = 0) {
-    // Wait for appointment cards to load fully
-    await this.page.waitForTimeout(3000);
-
-    const hasCards = await this.page.locator('.MuiCard-root').first().isVisible().catch(() => false);
-    if (!hasCards) {
-      // No cards visible — reload and retry once
+    // Wait for first appointment card to be visible (or fail fast)
+    const firstCard = this.page.locator('.MuiCard-root').first();
+    await firstCard.waitFor({ state: 'visible', timeout: 20000 }).catch(async () => {
       if (pagesChecked === 0) {
         await this.page.reload();
         await this.page.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => {});
-        await this.page.waitForTimeout(3000);
+        await firstCard.waitFor({ state: 'visible', timeout: 20000 });
+      } else {
+        throw new Error('No appointment cards visible on this page');
       }
-    }
-
-    await this.page.locator('.MuiCard-root').first().waitFor({ timeout: 30000 });
+    });
 
     const cards = this.page.locator('.MuiCard-root');
     const count = await cards.count();
+    const targetDate = this.lastBookedDateDisplay;
 
-    // First pass: prefer "Upcoming" appointments (just-booked ones)
+    // Pass 1: target the exact appointment we just booked (by date string)
+    if (targetDate) {
+      for (let i = 0; i < count; i++) {
+        const card = cards.nth(i);
+        const text = await card.textContent();
+        if (text?.includes(targetDate) && !text?.includes('Cancelled')) {
+          const viewBtn = card.getByRole('button', { name: /View Details/i });
+          if (await viewBtn.isVisible().catch(() => false)) {
+            console.log(`✅ Found booked appointment for ${targetDate} on page ${pagesChecked + 1}`);
+            await viewBtn.click();
+            return;
+          }
+        }
+      }
+    }
+
+    // Pass 2: any "Upcoming" status appointment
     for (let i = 0; i < count; i++) {
       const card = cards.nth(i);
       const text = await card.textContent();
@@ -234,12 +269,11 @@ export class ExpertAppointmentPage {
       }
     }
 
-    // Second pass: any non-cancelled/completed/ongoing
+    // Pass 3: any non-terminal status (not cancelled/completed/ongoing)
     for (let i = 0; i < count; i++) {
       const card = cards.nth(i);
       const text = await card.textContent();
       if (text?.includes('Cancelled') || text?.includes('Completed') || text?.includes('Ongoing')) continue;
-
       const viewBtn = card.getByRole('button', { name: /View Details/i });
       if (await viewBtn.isVisible().catch(() => false)) {
         await viewBtn.click();
@@ -247,17 +281,18 @@ export class ExpertAppointmentPage {
       }
     }
 
-    // Check next pages (up to 15 pages to handle accumulated test data)
-    if (pagesChecked < 15) {
+    // Paginate to next page (up to 30 pages — bounded by test timeout)
+    if (pagesChecked < 30) {
       const nextBtn = this.page.getByRole('button', { name: 'Go to next page' });
       if (await nextBtn.isVisible().catch(() => false) && !(await nextBtn.isDisabled().catch(() => true))) {
         await nextBtn.click();
-        await this.page.waitForTimeout(2000);
+        // Wait for the new page's cards to load (don't use a flat sleep)
+        await this.page.locator('.MuiCard-root').first().waitFor({ state: 'visible', timeout: 15000 }).catch(() => {});
         return this.openFirstAppointment(pagesChecked + 1);
       }
     }
 
-    throw new Error('No active (non-completed, non-cancelled) appointment found');
+    throw new Error(`No active appointment found after checking ${pagesChecked + 1} pages (target date: ${targetDate || 'any upcoming'})`);
   }
   async openReschedule() {
     // Wait for the appointment details panel to fully load
@@ -376,34 +411,29 @@ export class ExpertAppointmentPage {
    OPEN & CANCEL FIRST NON-CANCELLED APPOINTMENT
 =============================== */
 async openAndCancelNonCancelledAppointment(pagesChecked = 0) {
-  await this.page.waitForTimeout(3000);
+  const firstCard = this.page.locator('.MuiCard-root').first();
+  await firstCard.waitFor({ state: 'visible', timeout: 20000 }).catch(async () => {
+    if (pagesChecked === 0) {
+      await this.page.reload();
+      await this.page.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => {});
+      await firstCard.waitFor({ state: 'visible', timeout: 20000 });
+    } else {
+      throw new Error('No appointment cards visible on this page');
+    }
+  });
 
-  const hasCards = await this.page.locator('.MuiCard-root').first().isVisible().catch(() => false);
-  if (!hasCards && pagesChecked === 0) {
-    await this.page.reload();
-    await this.page.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => {});
-    await this.page.waitForTimeout(3000);
-  }
-
-  await this.page.locator('.MuiCard-root').first().waitFor({ timeout: 30000 });
   const cards = this.page.locator('.MuiCard-root');
   const count = await cards.count();
+  const targetDate = this.lastBookedDateDisplay;
 
-  if (count === 0) {
-    throw new Error('No appointment cards found');
-  }
-
-  // Helper to cancel a card
+  // Helper: open details panel and cancel
   const cancelCard = async (card) => {
     const viewDetailsBtn = card.getByRole('button', { name: /View Details/i });
-    await viewDetailsBtn.waitFor({ timeout: 15000 });
+    await viewDetailsBtn.waitFor({ state: 'visible', timeout: 15000 });
     await viewDetailsBtn.click();
 
-    // Wait for details panel to load
-    await this.page.waitForTimeout(2000);
-
     const cancelBtn = this.page.getByRole('button', { name: /^Cancel$/i });
-    await cancelBtn.waitFor({ state: 'visible', timeout: 15000 });
+    await cancelBtn.waitFor({ state: 'visible', timeout: 20000 });
     await cancelBtn.click();
 
     const confirmBtn = this.page.getByRole('button', { name: /Yes, Cancel it/i });
@@ -413,7 +443,20 @@ async openAndCancelNonCancelledAppointment(pagesChecked = 0) {
     await this.page.getByText(/Appointment cancelled/i).waitFor({ timeout: 30000 });
   };
 
-  // First pass: prefer "Upcoming" appointments
+  // Pass 1: target the exact appointment we just booked (by date string)
+  if (targetDate) {
+    for (let i = 0; i < count; i++) {
+      const card = cards.nth(i);
+      const text = await card.textContent();
+      if (text?.includes(targetDate) && !text?.includes('Cancelled')) {
+        console.log(`✅ Found booked appointment for ${targetDate} on page ${pagesChecked + 1}`);
+        await cancelCard(card);
+        return;
+      }
+    }
+  }
+
+  // Pass 2: any "Upcoming" appointment
   for (let i = 0; i < count; i++) {
     const card = cards.nth(i);
     const text = await card.textContent();
@@ -423,27 +466,26 @@ async openAndCancelNonCancelledAppointment(pagesChecked = 0) {
     }
   }
 
-  // Second pass: any non-cancelled/completed/ongoing
+  // Pass 3: any non-terminal status
   for (let i = 0; i < count; i++) {
     const card = cards.nth(i);
     const text = await card.textContent();
     if (text?.includes('Cancelled') || text?.includes('Completed') || text?.includes('Ongoing')) continue;
-
     await cancelCard(card);
     return;
   }
 
-  // Check next pages (up to 15 pages to handle accumulated test data)
-  if (pagesChecked < 15) {
+  // Paginate to next page (up to 30 pages — bounded by test timeout)
+  if (pagesChecked < 30) {
     const nextBtn = this.page.getByRole('button', { name: 'Go to next page' });
     if (await nextBtn.isVisible().catch(() => false) && !(await nextBtn.isDisabled().catch(() => true))) {
       await nextBtn.click();
-      await this.page.waitForTimeout(2000);
+      await this.page.locator('.MuiCard-root').first().waitFor({ state: 'visible', timeout: 15000 }).catch(() => {});
       return this.openAndCancelNonCancelledAppointment(pagesChecked + 1);
     }
   }
 
-  throw new Error('No non-cancelled appointment found to cancel');
+  throw new Error(`No non-cancelled appointment found after checking ${pagesChecked + 1} pages (target date: ${targetDate || 'any'})`);
 }
 
 /* ===============================
