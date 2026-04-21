@@ -1,0 +1,324 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e4]:
+      - button [ref=e11] [cursor=pointer]:
+        - img [ref=e14]
+    - generic [ref=e17]:
+      - generic [ref=e19]:
+        - link [ref=e20] [cursor=pointer]:
+          - /url: /clinical/home
+          - img [ref=e21]
+          - paragraph [ref=e23]: Home
+        - link [ref=e24] [cursor=pointer]:
+          - /url: /clinical/patients
+          - img [ref=e25]
+          - paragraph [ref=e27]: Patients
+        - link [ref=e28] [cursor=pointer]:
+          - /url: /clinical/expert-dashboard
+          - img [ref=e29]
+          - paragraph [ref=e31]: Appointment Dashboard
+        - link [ref=e32] [cursor=pointer]:
+          - /url: /clinical/help-center
+          - img [ref=e33]
+          - paragraph [ref=e35]: Help Center
+        - link [ref=e36] [cursor=pointer]:
+          - /url: /clinical/settings
+          - img [ref=e37]
+          - paragraph [ref=e39]: Settings
+        - link [ref=e40] [cursor=pointer]:
+          - /url: /clinical/admin
+          - img [ref=e41]
+          - paragraph [ref=e46]: Admin
+      - generic [ref=e47]:
+        - generic [ref=e48]:
+          - generic [ref=e50]:
+            - navigation [ref=e51]:
+              - list [ref=e52]:
+                - listitem [ref=e53]:
+                  - button [ref=e54]: Clinical Co-Pilot
+                - listitem [ref=e55]: /
+                - listitem [ref=e56]:
+                  - paragraph [ref=e57]: Yamini Singh 191
+            - generic [ref=e58]:
+              - button [ref=e59] [cursor=pointer]:
+                - text: Actions
+                - img [ref=e60]
+              - generic [ref=e62]:
+                - button [ref=e63] [cursor=pointer]:
+                  - img [ref=e64]
+                  - text: Save
+                - button [ref=e66] [cursor=pointer]:
+                  - text: Submit
+                  - img [ref=e67]
+          - generic [ref=e69]:
+            - generic [ref=e70]:
+              - generic [ref=e73]:
+                - generic [ref=e74]:
+                  - heading [level=4] [ref=e75]: Yamini Singh 191
+                  - paragraph [ref=e76]: female
+                - generic [ref=e77]:
+                  - generic [ref=e78]:
+                    - img [ref=e79]
+                    - paragraph [ref=e80]: 21st April 2026
+                  - generic [ref=e81]:
+                    - img [ref=e82]
+                    - paragraph [ref=e83]: ys191_aus@yopmail.com
+              - generic [ref=e85]:
+                - heading [level=6] [ref=e86]: Expert Details
+                - paragraph [ref=e87]: Anthony Smith
+                - generic [ref=e88]:
+                  - generic [ref=e89]:
+                    - img [ref=e90]
+                    - paragraph [ref=e92]: e.cliniciantestuser@asksam.com.au
+                  - generic [ref=e93]:
+                    - img [ref=e94]
+                    - paragraph [ref=e96]: "+61413801384"
+            - generic [ref=e98]:
+              - paragraph [ref=e99]: Summary
+              - button [ref=e100] [cursor=pointer]:
+                - img [ref=e101]
+                - text: Generate
+            - generic [ref=e104]:
+              - img [ref=e107] [cursor=pointer]
+              - img [ref=e110] [cursor=pointer]
+            - generic [ref=e117]:
+              - generic [ref=e119]:
+                - generic:
+                  - img
+                - tablist [ref=e122]:
+                  - tab [selected] [ref=e123] [cursor=pointer]: Clinical Advice
+                  - tab [ref=e124] [cursor=pointer]: Clinical Examination
+                  - tab [ref=e125] [cursor=pointer]: Follow-Up Note
+                  - tab [ref=e126] [cursor=pointer]: Case History
+                - generic:
+                  - img
+              - tabpanel [ref=e128]:
+                - generic [ref=e130]:
+                  - generic [ref=e132]:
+                    - generic [ref=e134]:
+                      - generic [ref=e135]:
+                        - generic [ref=e136]:
+                          - heading [level=6] [ref=e137]: Chief Complaint (CC)
+                          - img [ref=e138]
+                        - textbox [ref=e160]
+                      - group [ref=e166]:
+                        - button [ref=e167] [cursor=pointer]:
+                          - img [ref=e168]
+                        - button [ref=e170] [cursor=pointer]:
+                          - img [ref=e171]
+                        - button [ref=e173] [cursor=pointer]:
+                          - img [ref=e174]
+                        - button [ref=e176] [cursor=pointer]:
+                          - img [ref=e177]
+                    - generic [ref=e179]:
+                      - generic [ref=e181]:
+                        - generic [ref=e182]:
+                          - generic [ref=e183]:
+                            - heading [level=6] [ref=e184]: History of Present Illness (HPI)
+                            - img [ref=e185]
+                          - textbox [ref=e207]
+                        - group [ref=e213]:
+                          - button [ref=e214] [cursor=pointer]:
+                            - img [ref=e215]
+                          - button [ref=e217] [cursor=pointer]:
+                            - img [ref=e218]
+                          - button [ref=e220] [cursor=pointer]:
+                            - img [ref=e221]
+                          - button [ref=e223] [cursor=pointer]:
+                            - img [ref=e224]
+                      - generic [ref=e227]:
+                        - generic [ref=e228]:
+                          - generic [ref=e229]:
+                            - heading [level=6] [ref=e230]: Session Summary
+                            - img [ref=e231]
+                          - textbox [ref=e253]
+                        - group [ref=e259]:
+                          - button [ref=e260] [cursor=pointer]:
+                            - img [ref=e261]
+                          - button [ref=e263] [cursor=pointer]:
+                            - img [ref=e264]
+                          - button [ref=e266] [cursor=pointer]:
+                            - img [ref=e267]
+                          - button [ref=e269] [cursor=pointer]:
+                            - img [ref=e270]
+                    - generic [ref=e272]:
+                      - generic [ref=e274]:
+                        - generic [ref=e275]:
+                          - generic [ref=e276]:
+                            - heading [level=6] [ref=e277]: Advice
+                            - img [ref=e278]
+                          - textbox [ref=e300]
+                        - group [ref=e306]:
+                          - button [ref=e307] [cursor=pointer]:
+                            - img [ref=e308]
+                          - button [ref=e310] [cursor=pointer]:
+                            - img [ref=e311]
+                          - button [ref=e313] [cursor=pointer]:
+                            - img [ref=e314]
+                          - button [ref=e316] [cursor=pointer]:
+                            - img [ref=e317]
+                      - generic [ref=e320]:
+                        - generic [ref=e321]:
+                          - generic [ref=e322]:
+                            - heading [level=6] [ref=e323]: Future Treatment Plan
+                            - img [ref=e324]
+                          - textbox [ref=e346]
+                        - group [ref=e352]:
+                          - button [ref=e353] [cursor=pointer]:
+                            - img [ref=e354]
+                          - button [ref=e356] [cursor=pointer]:
+                            - img [ref=e357]
+                          - button [ref=e359] [cursor=pointer]:
+                            - img [ref=e360]
+                          - button [ref=e362] [cursor=pointer]:
+                            - img [ref=e363]
+                    - generic [ref=e365]:
+                      - generic [ref=e366]:
+                        - heading [level=6] [ref=e367]: Medications to be Prescribed
+                        - img [ref=e368]
+                      - button [ref=e372] [cursor=pointer]:
+                        - img [ref=e374]
+                        - text: Add New Medicine
+                    - generic [ref=e376]:
+                      - generic [ref=e378]:
+                        - heading [level=6] [ref=e379]: Lab Test
+                        - img [ref=e380]
+                      - button [ref=e384] [cursor=pointer]:
+                        - img [ref=e386]
+                        - text: Add Lab Test
+                  - generic [ref=e388]:
+                    - generic [ref=e390]:
+                      - generic [ref=e391]:
+                        - generic [ref=e392]:
+                          - heading [level=6] [ref=e393]: Recommend Expert
+                          - img [ref=e394]
+                        - button [ref=e397] [cursor=pointer]:
+                          - img [ref=e399]
+                          - text: History
+                      - generic [ref=e401]:
+                        - generic [ref=e402]:
+                          - generic: Type of expert
+                          - generic [ref=e403]:
+                            - combobox [ref=e404] [cursor=pointer]
+                            - textbox
+                            - img
+                            - group:
+                              - generic: Type of expert
+                        - generic [ref=e405]:
+                          - button [disabled]:
+                            - generic:
+                              - img
+                            - text: Add
+                    - generic [ref=e407]:
+                      - generic [ref=e408]:
+                        - generic [ref=e409]:
+                          - heading [level=6] [ref=e410]: Recommend Program
+                          - img [ref=e411]
+                        - button [ref=e414] [cursor=pointer]:
+                          - img [ref=e416]
+                          - text: History
+                      - generic [ref=e418]:
+                        - generic [ref=e419]:
+                          - generic: Type of Program
+                          - generic [ref=e420]:
+                            - combobox [ref=e421] [cursor=pointer]
+                            - textbox
+                            - img
+                            - group:
+                              - generic: Type of Program
+                        - generic [ref=e423]:
+                          - button [disabled]:
+                            - generic:
+                              - img
+                            - text: Add
+                    - generic [ref=e424]:
+                      - generic [ref=e425]:
+                        - generic [ref=e426]:
+                          - heading [level=6] [ref=e427]: Recommend Assessment
+                          - img [ref=e428]
+                        - button [ref=e431] [cursor=pointer]:
+                          - img [ref=e433]
+                          - text: History
+                      - button [ref=e437] [cursor=pointer]:
+                        - img [ref=e439]
+                        - text: Add
+                    - generic [ref=e441]:
+                      - generic [ref=e442]:
+                        - generic [ref=e443]:
+                          - heading [level=6] [ref=e444]: Recommend Content
+                          - img [ref=e445]
+                        - button [ref=e448] [cursor=pointer]:
+                          - img [ref=e450]
+                          - text: History
+                      - generic [ref=e452]:
+                        - generic [ref=e453]:
+                          - generic: Type of Content
+                          - generic [ref=e454]:
+                            - combobox [ref=e455] [cursor=pointer]
+                            - textbox
+                            - img
+                            - group:
+                              - generic: Type of Content
+                        - generic [ref=e456]:
+                          - button [disabled]:
+                            - generic:
+                              - img
+                            - text: Add
+        - contentinfo [ref=e458]:
+          - paragraph [ref=e460]: asksam does not provide medical advice, diagnosis, or treatment recommendations. Output must be reviewed by a qualified clinician. asksam is not designed to replace clinical reasoning or provide medical decision guidance.
+  - dialog [ref=e463]:
+    - generic [ref=e464]:
+      - generic [ref=e465]:
+        - generic [ref=e466]:
+          - generic:
+            - img
+          - tablist [ref=e469]:
+            - tab "Graph" [ref=e470] [cursor=pointer]: Graph
+            - tab "Assistant" [ref=e471] [cursor=pointer]: Assistant
+            - tab "asksam" [selected] [ref=e472] [cursor=pointer]: asksam
+          - generic:
+            - img
+        - generic [ref=e474]:
+          - button "Disclaimer" [ref=e475] [cursor=pointer]:
+            - img [ref=e477]
+            - text: Disclaimer
+          - button "close" [ref=e479] [cursor=pointer]:
+            - img [ref=e480]
+      - tabpanel [ref=e483]:
+        - generic [ref=e485]:
+          - generic [ref=e486]:
+            - generic [ref=e487]:
+              - img "stella" [ref=e489]
+              - generic [ref=e490]:
+                - heading "asksam - Your AI powered clinical assistant" [level=6] [ref=e491]
+                - paragraph [ref=e492]: Welcome to asksam! With detailed patient histories readily available, I'm here to support your clinical decisions and help you deliver the highest quality of care. Please save the clinical note to help me get a comprehensive understanding of the case.
+            - generic [ref=e493]:
+              - paragraph [ref=e496]: What is the patient's chief complaint?
+              - generic [ref=e498]: 1:22 PM
+            - generic [ref=e501]:
+              - img "stella" [ref=e503]
+              - generic [ref=e504]:
+                - generic [ref=e505]:
+                  - heading "asksam - Your Clinical Co-Pilot" [level=6] [ref=e506]
+                  - generic [ref=e508]: I don't see any information about the patient's chief complaint in the provided data. Could you please provide more information about the patient, including their chief complaint, medical history, and any relevant test results or medications they are currently taking? This will allow me to provide a more accurate and helpful response.
+                  - generic [ref=e510] [cursor=pointer]:
+                    - img [ref=e511]
+                    - generic [ref=e514]: 5 Sources Referenced
+                    - button [ref=e515]:
+                      - img [ref=e516]
+                  - button [ref=e519] [cursor=pointer]:
+                    - img [ref=e520]
+                - text: 1:22 PM
+          - generic [ref=e523]:
+            - button "menu" [ref=e525] [cursor=pointer]:
+              - img [ref=e526]
+            - separator [ref=e528]
+            - textbox "asksam Anything..." [ref=e529]
+            - button [ref=e531] [cursor=pointer]:
+              - img [ref=e533]
+            - button [ref=e535] [cursor=pointer]:
+              - img [ref=e536]
+```
