@@ -299,7 +299,7 @@
                     - generic [ref=e399]:
                       - generic "Appointment Status" [ref=e400]:
                         - generic [ref=e402]: Appt
-                        - generic [ref=e403]: Ongoing
+                        - generic [ref=e403]: Completed
                       - generic "Session Status" [ref=e404]:
                         - generic [ref=e406]: Sess
                         - generic [ref=e407]: Not Marked
@@ -332,7 +332,7 @@
                     - generic [ref=e441]:
                       - generic "Appointment Status" [ref=e442]:
                         - generic [ref=e444]: Appt
-                        - generic [ref=e445]: Upcoming
+                        - generic [ref=e445]: Completed
                       - generic "Session Status" [ref=e446]:
                         - generic [ref=e448]: Sess
                         - generic [ref=e449]: Not Marked
@@ -365,7 +365,7 @@
                     - generic [ref=e483]:
                       - generic "Appointment Status" [ref=e484]:
                         - generic [ref=e486]: Appt
-                        - generic [ref=e487]: Upcoming
+                        - generic [ref=e487]: Completed
                       - generic "Session Status" [ref=e488]:
                         - generic [ref=e490]: Sess
                         - generic [ref=e491]: Not Marked
@@ -400,7 +400,7 @@
               - listitem [ref=e520]:
                 - generic [ref=e521]: …
               - listitem [ref=e522]:
-                - button "Go to page 35" [ref=e523] [cursor=pointer]: "35"
+                - button "Go to page 36" [ref=e523] [cursor=pointer]: "36"
               - listitem [ref=e524]:
                 - button "Go to next page" [ref=e525] [cursor=pointer]:
                   - img [ref=e526]
