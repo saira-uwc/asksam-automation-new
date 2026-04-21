@@ -400,7 +400,7 @@
               - listitem [ref=e520]:
                 - generic [ref=e521]: …
               - listitem [ref=e522]:
-                - button "Go to page 36" [ref=e523] [cursor=pointer]: "36"
+                - button "Go to page 37" [ref=e523] [cursor=pointer]: "37"
               - listitem [ref=e524]:
                 - button "Go to next page" [ref=e525] [cursor=pointer]:
                   - img [ref=e526]
