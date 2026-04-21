@@ -218,7 +218,7 @@
     - button [ref=e307] [cursor=pointer]:
       - img [ref=e309]
       - text: Create New Patient Profile
-  - dialog "Voice and Document Transcriptions Upload Send Transcription" [ref=e313]:
+  - dialog [ref=e313]:
     - generic [ref=e314]:
       - generic [ref=e315]: Voice and Document Transcriptions
       - generic [ref=e316]:
