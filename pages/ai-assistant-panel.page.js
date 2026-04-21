@@ -474,7 +474,9 @@ export class AIAssistantPanelPage {
     }
 
     // 6. Verify Disclaimer link in header
-    const disclaimer = this.panel.getByText("Disclaimer");
+    // Use exact:true — after the AI chat reply renders, the response text can
+    // contain the word "Disclaimer" and break strict-mode with a second match.
+    const disclaimer = this.panel.getByText("Disclaimer", { exact: true }).first();
     await disclaimer.waitFor({ state: "visible", timeout: 5000 });
     console.log("✅ Disclaimer link is visible");
 

@@ -28,11 +28,13 @@ export class DashboardPage {
 
     // modal container (important for scrolling)
     const modal = this.page.getByRole('dialog');
-
-    // search input (CORRECT placeholder)
-    const searchBox = modal.getByPlaceholder('Search by name or email...');
-
     await modal.waitFor({ state: 'visible', timeout: 20000 });
+
+    // Search input — use role-based lookup to tolerate placeholder copy changes.
+    // Placeholder has been "Search by name or email..." and later
+    // "Search by name, or enter full email..." — the Search Patient dialog has
+    // only one textbox so role is the stable locator.
+    const searchBox = modal.getByRole('textbox').first();
 
     for (const name of patients) {
       console.log(`🔍 Searching patient: ${name}`);
