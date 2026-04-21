@@ -1,30 +1,30 @@
 {
-  "id": "04a435aa-e936-44e9-84c5-0b44acf7f662",
-  "startedAt": "2026-04-21T04:49:50.474Z",
-  "durationMs": 1855532.877,
+  "id": "64306caa-864e-431e-98b7-5e1583b5f2ed",
+  "startedAt": "2026-04-06T06:30:10.862Z",
+  "durationMs": 916398.6290000001,
   "summary": {
-    "total": 19,
+    "total": 18,
     "passed": 17,
     "failed": 0,
-    "skipped": 0,
-    "timedOut": 2
+    "skipped": 1,
+    "timedOut": 0
   },
-  "passRate": 89,
+  "passRate": 100,
   "modules": {
     "Expert-Dashboard": {
       "label": "Expert Dashboard",
       "total": 9,
-      "passed": 7,
+      "passed": 9,
       "failed": 0,
       "skipped": 0,
-      "timedOut": 2
+      "timedOut": 0
     },
     "CCOP": {
       "label": "CCOP",
-      "total": 10,
-      "passed": 10,
+      "total": 9,
+      "passed": 8,
       "failed": 0,
-      "skipped": 0,
+      "skipped": 1,
       "timedOut": 0
     }
   },
@@ -32,19 +32,19 @@
     {
       "title": "authenticate",
       "status": "passed",
-      "durationMs": 7753,
+      "durationMs": 14348,
       "file": "Expert-Dashboard/auth.setup.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
+          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-auth.setup.js-authenticate-auth-setup\\test-finished-1.png",
           "contentType": "image/png"
         },
         {
           "name": "video",
-          "path": "video.webm",
+          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-auth.setup.js-authenticate-auth-setup\\video.webm",
           "contentType": "video/webm"
         }
       ],
@@ -53,19 +53,19 @@
     {
       "title": "Expert Dashboard | Appointment booking (dynamic slots)",
       "status": "passed",
-      "durationMs": 159726,
+      "durationMs": 27307,
       "file": "Expert-Dashboard/appointment-booking.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
+          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-appointme-1ba22-ment-booking-dynamic-slots--expert-dashboard\\test-finished-1.png",
           "contentType": "image/png"
         },
         {
           "name": "video",
-          "path": "video.webm",
+          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-appointme-1ba22-ment-booking-dynamic-slots--expert-dashboard\\video.webm",
           "contentType": "video/webm"
         }
       ],
@@ -73,55 +73,41 @@
     },
     {
       "title": "create appointment with existing patient and reschedule",
-      "status": "timedOut",
-      "durationMs": 181743,
+      "status": "passed",
+      "durationMs": 93553,
       "file": "Expert-Dashboard/appointment-create-and-reschedule.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-failed-1.png",
-          "contentType": "image/png",
-          "webPath": "./artifacts/create_appointment_with_existing_patient_and_resch-screenshot.png"
+          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-appointme-5c574-ting-patient-and-reschedule-expert-dashboard\\test-finished-1.png",
+          "contentType": "image/png"
         },
         {
           "name": "video",
-          "path": "video.webm",
-          "contentType": "video/webm",
-          "webPath": "./artifacts/create_appointment_with_existing_patient_and_resch-video.webm"
-        },
-        {
-          "name": "error-context",
-          "path": "error-context.md",
-          "contentType": "text/markdown",
-          "webPath": "./artifacts/create_appointment_with_existing_patient_and_resch-error-context.md"
-        },
-        {
-          "name": "trace",
-          "path": "trace.zip",
-          "contentType": "application/zip",
-          "webPath": "./artifacts/create_appointment_with_existing_patient_and_resch-trace.zip"
+          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-appointme-5c574-ting-patient-and-reschedule-expert-dashboard\\video.webm",
+          "contentType": "video/webm"
         }
       ],
-      "error": "\u001b[31mTest timeout of 180000ms exceeded.\u001b[39m\nError: page.waitForTimeout: Target page, context or browser has been closed\n\n   at ../pages/expert-appointment.page.js:192\n\n  190 |     await this.page.goto('https://dashboard.asksam.com.au/expert/appointments');\n  191 |     await this.page.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => {});\n> 192 |     await this.page.waitForTimeout(2000);\n      |                     ^\n  193 |\n  194 |     // Ensure the Upcoming tab is active (default"
+      "error": ""
     },
     {
       "title": "create appointment and manage session lifecycle",
       "status": "passed",
-      "durationMs": 163184,
+      "durationMs": 35065,
       "file": "Expert-Dashboard/appointment-session-management.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
+          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-appointme-bcc4c-nd-manage-session-lifecycle-expert-dashboard\\test-finished-1.png",
           "contentType": "image/png"
         },
         {
           "name": "video",
-          "path": "video.webm",
+          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-appointme-bcc4c-nd-manage-session-lifecycle-expert-dashboard\\video.webm",
           "contentType": "video/webm"
         }
       ],
@@ -129,55 +115,41 @@
     },
     {
       "title": "create appointment with existing patient and cancel non-cancelled one",
-      "status": "timedOut",
-      "durationMs": 181609,
+      "status": "passed",
+      "durationMs": 69750,
       "file": "Expert-Dashboard/appointment-z-cancel.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-failed-1.png",
-          "contentType": "image/png",
-          "webPath": "./artifacts/create_appointment_with_existing_patient_and_cance-screenshot.png"
+          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-appointme-f1505-nd-cancel-non-cancelled-one-expert-dashboard\\test-finished-1.png",
+          "contentType": "image/png"
         },
         {
           "name": "video",
-          "path": "video.webm",
-          "contentType": "video/webm",
-          "webPath": "./artifacts/create_appointment_with_existing_patient_and_cance-video.webm"
-        },
-        {
-          "name": "error-context",
-          "path": "error-context.md",
-          "contentType": "text/markdown",
-          "webPath": "./artifacts/create_appointment_with_existing_patient_and_cance-error-context.md"
-        },
-        {
-          "name": "trace",
-          "path": "trace.zip",
-          "contentType": "application/zip",
-          "webPath": "./artifacts/create_appointment_with_existing_patient_and_cance-trace.zip"
+          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-appointme-f1505-nd-cancel-non-cancelled-one-expert-dashboard\\video.webm",
+          "contentType": "video/webm"
         }
       ],
-      "error": "\u001b[31mTest timeout of 180000ms exceeded.\u001b[39m\nError: page.waitForTimeout: Target page, context or browser has been closed\n\n   at ../pages/expert-appointment.page.js:192\n\n  190 |     await this.page.goto('https://dashboard.asksam.com.au/expert/appointments');\n  191 |     await this.page.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => {});\n> 192 |     await this.page.waitForTimeout(2000);\n      |                     ^\n  193 |\n  194 |     // Ensure the Upcoming tab is active (default"
+      "error": ""
     },
     {
       "title": "Expert Dashboard | Create patient & book appointment",
       "status": "passed",
-      "durationMs": 171296,
+      "durationMs": 46927,
       "file": "Expert-Dashboard/expert-appointment-create-with-new-patient.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
+          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-expert-ap-dd629-te-patient-book-appointment-expert-dashboard\\test-finished-1.png",
           "contentType": "image/png"
         },
         {
           "name": "video",
-          "path": "video.webm",
+          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-expert-ap-dd629-te-patient-book-appointment-expert-dashboard\\video.webm",
           "contentType": "video/webm"
         }
       ],
@@ -186,19 +158,19 @@
     {
       "title": "Expert Dashboard | Navigation flow validation",
       "status": "passed",
-      "durationMs": 8893,
+      "durationMs": 44253,
       "file": "Expert-Dashboard/expert-dashboard-navigation.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
+          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-expert-da-bfe2c--Navigation-flow-validation-expert-dashboard\\test-finished-1.png",
           "contentType": "image/png"
         },
         {
           "name": "video",
-          "path": "video.webm",
+          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-expert-da-bfe2c--Navigation-flow-validation-expert-dashboard\\video.webm",
           "contentType": "video/webm"
         }
       ],
@@ -207,19 +179,19 @@
     {
       "title": "Expert Dashboard | Help Center raise & reply ticket",
       "status": "passed",
-      "durationMs": 8731,
+      "durationMs": 15290,
       "file": "Expert-Dashboard/expert-helpcenter-ticket.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
+          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-expert-he-63b9d-p-Center-raise-reply-ticket-expert-dashboard\\test-finished-1.png",
           "contentType": "image/png"
         },
         {
           "name": "video",
-          "path": "video.webm",
+          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-expert-he-63b9d-p-Center-raise-reply-ticket-expert-dashboard\\video.webm",
           "contentType": "video/webm"
         }
       ],
@@ -228,19 +200,19 @@
     {
       "title": "create unique patient, search and view profile",
       "status": "passed",
-      "durationMs": 24910,
+      "durationMs": 27335,
       "file": "Expert-Dashboard/patient-create-and-view.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
+          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-patient-c-d2a38-ent-search-and-view-profile-expert-dashboard\\test-finished-1.png",
           "contentType": "image/png"
         },
         {
           "name": "video",
-          "path": "video.webm",
+          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\Expert-Dashboard-patient-c-d2a38-ent-search-and-view-profile-expert-dashboard\\video.webm",
           "contentType": "video/webm"
         }
       ],
@@ -249,19 +221,19 @@
     {
       "title": "AI panel — Graph tab: knowledge graph, zoom controls, node properties, legends",
       "status": "passed",
-      "durationMs": 39803,
+      "durationMs": 34367,
       "file": "CCOP/ai-assistant-panel.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
+          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-ai-assistant-panel-AI-6337d-ols-node-properties-legends-ccop\\test-finished-1.png",
           "contentType": "image/png"
         },
         {
           "name": "video",
-          "path": "video.webm",
+          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-ai-assistant-panel-AI-6337d-ols-node-properties-legends-ccop\\video.webm",
           "contentType": "video/webm"
         }
       ],
@@ -270,19 +242,19 @@
     {
       "title": "AI panel — Assistant tab: associations, medication & comorbidity sub-tabs",
       "status": "passed",
-      "durationMs": 39846,
+      "durationMs": 37548,
       "file": "CCOP/ai-assistant-panel.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
+          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-ai-assistant-panel-AI-59ffe-cation-comorbidity-sub-tabs-ccop\\test-finished-1.png",
           "contentType": "image/png"
         },
         {
           "name": "video",
-          "path": "video.webm",
+          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-ai-assistant-panel-AI-59ffe-cation-comorbidity-sub-tabs-ccop\\video.webm",
           "contentType": "video/webm"
         }
       ],
@@ -291,19 +263,19 @@
     {
       "title": "AI panel — asksam tab: chat input, send message, disclaimer",
       "status": "passed",
-      "durationMs": 75005,
+      "durationMs": 44647,
       "file": "CCOP/ai-assistant-panel.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
+          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-ai-assistant-panel-AI-35e70-put-send-message-disclaimer-ccop\\test-finished-1.png",
           "contentType": "image/png"
         },
         {
           "name": "video",
-          "path": "video.webm",
+          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-ai-assistant-panel-AI-35e70-put-send-message-disclaimer-ccop\\video.webm",
           "contentType": "video/webm"
         }
       ],
@@ -312,19 +284,19 @@
     {
       "title": "CCOP | Help Center | Raise, Reply & Resolve Ticket",
       "status": "passed",
-      "durationMs": 10254,
+      "durationMs": 17551,
       "file": "CCOP/ccop-helpcenter-ticket.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
+          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-ccop-helpcenter-ticke-ca6c6--Raise-Reply-Resolve-Ticket-ccop\\test-finished-1.png",
           "contentType": "image/png"
         },
         {
           "name": "video",
-          "path": "video.webm",
+          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-ccop-helpcenter-ticke-ca6c6--Raise-Reply-Resolve-Ticket-ccop\\video.webm",
           "contentType": "video/webm"
         }
       ],
@@ -333,19 +305,19 @@
     {
       "title": "Create clinical note with document upload & transcription",
       "status": "passed",
-      "durationMs": 52270,
+      "durationMs": 74518,
       "file": "CCOP/clinical-note.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
+          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-clinical-note-Create--c7789-cument-upload-transcription-ccop\\test-finished-1.png",
           "contentType": "image/png"
         },
         {
           "name": "video",
-          "path": "video.webm",
+          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-clinical-note-Create--c7789-cument-upload-transcription-ccop\\video.webm",
           "contentType": "video/webm"
         }
       ],
@@ -354,19 +326,19 @@
     {
       "title": "Create patient + upload + submit",
       "status": "passed",
-      "durationMs": 62592,
+      "durationMs": 90870,
       "file": "CCOP/create-patient-clinical-note.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
+          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-create-patient-clinic-64e5d-reate-patient-upload-submit-ccop\\test-finished-1.png",
           "contentType": "image/png"
         },
         {
           "name": "video",
-          "path": "video.webm",
+          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-create-patient-clinic-64e5d-reate-patient-upload-submit-ccop\\video.webm",
           "contentType": "video/webm"
         }
       ],
@@ -375,19 +347,19 @@
     {
       "title": "Open letter template from Actions dropdown, select type and verify preview",
       "status": "passed",
-      "durationMs": 24500,
+      "durationMs": 34381,
       "file": "CCOP/letter-template.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
+          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-letter-template-Open--55b94-ect-type-and-verify-preview-ccop-retry1\\test-finished-1.png",
           "contentType": "image/png"
         },
         {
           "name": "video",
-          "path": "video.webm",
+          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-letter-template-Open--55b94-ect-type-and-verify-preview-ccop-retry1\\video.webm",
           "contentType": "video/webm"
         }
       ],
@@ -396,40 +368,19 @@
     {
       "title": "Create a new letter template from Actions dropdown",
       "status": "passed",
-      "durationMs": 33393,
+      "durationMs": 53081,
       "file": "CCOP/letter-template.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
+          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-letter-template-Creat-6b938-plate-from-Actions-dropdown-ccop\\test-finished-1.png",
           "contentType": "image/png"
         },
         {
           "name": "video",
-          "path": "video.webm",
-          "contentType": "video/webm"
-        }
-      ],
-      "error": ""
-    },
-    {
-      "title": "Create clinical note with voice transcription",
-      "status": "passed",
-      "durationMs": 28633,
-      "file": "CCOP/voice-transcription.spec.js",
-      "module": "CCOP",
-      "moduleLabel": "CCOP",
-      "attachments": [
-        {
-          "name": "screenshot",
-          "path": "test-finished-1.png",
-          "contentType": "image/png"
-        },
-        {
-          "name": "video",
-          "path": "video.webm",
+          "path": "C:\\Users\\Asus\\Documents\\UWC\\playwrite\\test-results\\CCOP-letter-template-Creat-6b938-plate-from-Actions-dropdown-ccop\\video.webm",
           "contentType": "video/webm"
         }
       ],
@@ -437,33 +388,12 @@
     },
     {
       "title": "CCOP | Clinician signup full flow (recorded)",
-      "status": "passed",
-      "durationMs": 141860,
+      "status": "skipped",
+      "durationMs": 0,
       "file": "CCOP/ccop-clinician-signup.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
-      "attachments": [
-        {
-          "name": "screenshot",
-          "path": "test-finished-1.png",
-          "contentType": "image/png"
-        },
-        {
-          "name": "screenshot",
-          "path": "test-finished-2.png",
-          "contentType": "image/png"
-        },
-        {
-          "name": "video",
-          "path": "video-1.webm",
-          "contentType": "video/webm"
-        },
-        {
-          "name": "video",
-          "path": "video.webm",
-          "contentType": "video/webm"
-        }
-      ],
+      "attachments": [],
       "error": ""
     }
   ]
