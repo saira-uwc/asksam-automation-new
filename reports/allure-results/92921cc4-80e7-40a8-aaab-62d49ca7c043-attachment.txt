@@ -1,8 +1,0 @@
-✅ Created patient: {
-  firstName: 'Test',
-  lastName: 'user-922058',
-  email: 'testuser-922058@tmail.com'
-}
-⏳ Waiting for transcription / disclaimer / submit…
-✅ Disclaimer accepted
-✅ Clinical note submitted

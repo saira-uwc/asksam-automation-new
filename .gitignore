@@ -8,6 +8,10 @@ out/
 coverage/
 test-results/
 playwright-report/
+reports/json-report/
+reports/html-report/
+reports/allure-results/
+reports/allure-report/
 
 # Env and secrets
 .env

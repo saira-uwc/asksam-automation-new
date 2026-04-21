@@ -241,9 +241,13 @@
     ]).then(([latest, history]) => {
         latestData = latest;
         historyData = history || [];
+        // Prefer the most recent history entry over latest.json — latest.json
+        // can lag behind if a CI run wrote stale data.
+        const mostRecent = (historyData[0] && (!latest || new Date(historyData[0].startedAt) > new Date(latest.startedAt)))
+            ? historyData[0] : latest;
         if (latestData) {
             renderCurrentRun(latestData);
-            document.getElementById('lastRunLabel').textContent = 'Last run: ' + formatDate(latestData.startedAt);
+            document.getElementById('lastRunLabel').textContent = 'Last run: ' + formatDate((mostRecent || latestData).startedAt);
             document.getElementById('runCountLabel').textContent = 'Total Runs: ' + historyData.length;
         } else {
             document.getElementById('currentTab').innerHTML = '<div class="empty-state"><h3>No Data Yet</h3><p>Run your tests first: <code>npx playwright test</code></p></div>';
@@ -442,7 +446,7 @@
                             <div class="run-id">Run ${r.id.substring(0, 8)}</div>
                             <div class="meta">
                                 <span class="pill pill-pass">${r.summary.passed} passed</span>
-                                ${r.summary.failed > 0 ? `<span class="pill pill-fail">${r.summary.failed} failed</span>` : ''}
+                                ${(r.summary.failed + (r.summary.timedOut || 0)) > 0 ? `<span class="pill pill-fail">${r.summary.failed + (r.summary.timedOut || 0)} failed</span>` : ''}
                                 <span style="color:${r.passRate >= 80 ? 'var(--pass)' : 'var(--warn)'}; font-size:13px; font-weight:600">${r.passRate}%</span>
                             </div>
                         </div>
@@ -529,7 +533,7 @@
                         <div class="time">${formatTime(r.startedAt)}</div>
                         <div class="meta">
                             <span class="pill pill-pass">${r.summary.passed} passed</span>
-                            ${r.summary.failed > 0 ? `<span class="pill pill-fail">${r.summary.failed} failed</span>` : ''}
+                            ${(r.summary.failed + (r.summary.timedOut || 0)) > 0 ? `<span class="pill pill-fail">${r.summary.failed + (r.summary.timedOut || 0)} failed</span>` : ''}
                             <span style="color:${r.passRate >= 80 ? 'var(--pass)' : 'var(--warn)'}; font-size:13px; font-weight:600">${r.passRate}%</span>
                         </div>
                     </div>
