@@ -1,21 +1,21 @@
 {
-  "id": "c2e341e5-130a-420e-bb15-0cfa13aa4e82",
-  "startedAt": "2026-04-23T22:57:22.891Z",
-  "durationMs": 779178.363,
+  "id": "a6fa0f9f-cba6-4f22-8819-83ce2ca350b9",
+  "startedAt": "2026-04-24T02:57:19.720Z",
+  "durationMs": 891836.174,
   "summary": {
     "total": 19,
-    "passed": 19,
-    "failed": 0,
+    "passed": 18,
+    "failed": 1,
     "skipped": 0,
     "timedOut": 0
   },
-  "passRate": 100,
+  "passRate": 95,
   "modules": {
     "Expert-Dashboard": {
       "label": "Expert Dashboard",
       "total": 9,
-      "passed": 9,
-      "failed": 0,
+      "passed": 8,
+      "failed": 1,
       "skipped": 0,
       "timedOut": 0
     },
@@ -32,7 +32,7 @@
     {
       "title": "authenticate",
       "status": "passed",
-      "durationMs": 7141,
+      "durationMs": 9544,
       "file": "Expert-Dashboard/auth.setup.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -53,7 +53,7 @@
     {
       "title": "Expert Dashboard | Appointment booking (dynamic slots)",
       "status": "passed",
-      "durationMs": 18241,
+      "durationMs": 17510,
       "file": "Expert-Dashboard/appointment-booking.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -74,7 +74,7 @@
     {
       "title": "create appointment with existing patient and reschedule",
       "status": "passed",
-      "durationMs": 63660,
+      "durationMs": 63409,
       "file": "Expert-Dashboard/appointment-create-and-reschedule.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -95,7 +95,7 @@
     {
       "title": "create appointment and manage session lifecycle",
       "status": "passed",
-      "durationMs": 18573,
+      "durationMs": 18313,
       "file": "Expert-Dashboard/appointment-session-management.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -116,7 +116,7 @@
     {
       "title": "create appointment with existing patient and cancel non-cancelled one",
       "status": "passed",
-      "durationMs": 60617,
+      "durationMs": 59807,
       "file": "Expert-Dashboard/appointment-z-cancel.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -137,7 +137,7 @@
     {
       "title": "Expert Dashboard | Create patient & book appointment",
       "status": "passed",
-      "durationMs": 39231,
+      "durationMs": 29653,
       "file": "Expert-Dashboard/expert-appointment-create-with-new-patient.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -158,7 +158,7 @@
     {
       "title": "Expert Dashboard | Navigation flow validation",
       "status": "passed",
-      "durationMs": 8700,
+      "durationMs": 8160,
       "file": "Expert-Dashboard/expert-dashboard-navigation.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -179,7 +179,7 @@
     {
       "title": "Expert Dashboard | Help Center raise & reply ticket",
       "status": "passed",
-      "durationMs": 9354,
+      "durationMs": 9829,
       "file": "Expert-Dashboard/expert-helpcenter-ticket.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -199,29 +199,43 @@
     },
     {
       "title": "create unique patient, search and view profile",
-      "status": "passed",
-      "durationMs": 29635,
+      "status": "failed",
+      "durationMs": 34187,
       "file": "Expert-Dashboard/patient-create-and-view.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
-          "contentType": "image/png"
+          "path": "test-failed-1.png",
+          "contentType": "image/png",
+          "webPath": "./artifacts/create_unique_patient__search_and_view_profile-screenshot.png"
         },
         {
           "name": "video",
           "path": "video.webm",
-          "contentType": "video/webm"
+          "contentType": "video/webm",
+          "webPath": "./artifacts/create_unique_patient__search_and_view_profile-video.webm"
+        },
+        {
+          "name": "error-context",
+          "path": "error-context.md",
+          "contentType": "text/markdown",
+          "webPath": "./artifacts/create_unique_patient__search_and_view_profile-error-context.md"
+        },
+        {
+          "name": "trace",
+          "path": "trace.zip",
+          "contentType": "application/zip",
+          "webPath": "./artifacts/create_unique_patient__search_and_view_profile-trace.zip"
         }
       ],
-      "error": ""
+      "error": "TimeoutError: locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText(/Patient registered|Patient created|successfully/i) to be visible\u001b[22m\n\n\n   at ../pages/expert-appointment.page.js:676\n\n  674 |   await this.page\n  675 |     .getByText(/Patient registered|Patient created|successfully/i)\n> 676 |     .waitFor({ timeout: 30000 });\n      |      ^\n  677 |\n  678 |   return patient;\n  679 | }\n    at ExpertAppointmentPage.createPatientFromPatientsModule (/home/runner/work/a"
     },
     {
       "title": "AI panel — Graph tab: knowledge graph, zoom controls, node properties, legends",
       "status": "passed",
-      "durationMs": 41499,
+      "durationMs": 41087,
       "file": "CCOP/ai-assistant-panel.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -242,7 +256,7 @@
     {
       "title": "AI panel — Assistant tab: associations, medication & comorbidity sub-tabs",
       "status": "passed",
-      "durationMs": 40616,
+      "durationMs": 39288,
       "file": "CCOP/ai-assistant-panel.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -263,7 +277,7 @@
     {
       "title": "AI panel — asksam tab: chat input, send message, disclaimer",
       "status": "passed",
-      "durationMs": 75600,
+      "durationMs": 75764,
       "file": "CCOP/ai-assistant-panel.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -284,7 +298,7 @@
     {
       "title": "CCOP | Help Center | Raise, Reply & Resolve Ticket",
       "status": "passed",
-      "durationMs": 8590,
+      "durationMs": 8706,
       "file": "CCOP/ccop-helpcenter-ticket.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -305,7 +319,7 @@
     {
       "title": "Create clinical note with document upload & transcription",
       "status": "passed",
-      "durationMs": 57477,
+      "durationMs": 54003,
       "file": "CCOP/clinical-note.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -326,7 +340,7 @@
     {
       "title": "Create patient + upload + submit",
       "status": "passed",
-      "durationMs": 68751,
+      "durationMs": 69200,
       "file": "CCOP/create-patient-clinical-note.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -347,7 +361,7 @@
     {
       "title": "Open letter template from Actions dropdown, select type and verify preview",
       "status": "passed",
-      "durationMs": 26747,
+      "durationMs": 27041,
       "file": "CCOP/letter-template.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -368,7 +382,7 @@
     {
       "title": "Create a new letter template from Actions dropdown",
       "status": "passed",
-      "durationMs": 33467,
+      "durationMs": 34388,
       "file": "CCOP/letter-template.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -389,7 +403,7 @@
     {
       "title": "Create clinical note with voice transcription",
       "status": "passed",
-      "durationMs": 21618,
+      "durationMs": 20855,
       "file": "CCOP/voice-transcription.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -410,7 +424,7 @@
     {
       "title": "CCOP | Clinician signup full flow (recorded)",
       "status": "passed",
-      "durationMs": 143803,
+      "durationMs": 144114,
       "file": "CCOP/ccop-clinician-signup.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -427,12 +441,12 @@
         },
         {
           "name": "video",
-          "path": "video-1.webm",
+          "path": "video.webm",
           "contentType": "video/webm"
         },
         {
           "name": "video",
-          "path": "video.webm",
+          "path": "video-1.webm",
           "contentType": "video/webm"
         }
       ],
