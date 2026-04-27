@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-27T09:30:04.339Z",
+  "lastUpdated": "2026-04-27T11:32:29.289Z",
   "runs": [
     {
       "date": "2026-04-27",
@@ -56,7 +56,7 @@
       "module": "Expert-Dashboard",
       "name": "authenticate",
       "status": "passed",
-      "duration": "8.3s",
+      "duration": "8.1s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -66,7 +66,7 @@
       "module": "Expert-Dashboard",
       "name": "Expert Dashboard | Appointment booking (dynamic slots)",
       "status": "passed",
-      "duration": "18.7s",
+      "duration": "18.4s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -86,7 +86,7 @@
       "module": "Expert-Dashboard",
       "name": "create appointment and manage session lifecycle",
       "status": "passed",
-      "duration": "19.4s",
+      "duration": "19.5s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -106,7 +106,7 @@
       "module": "Expert-Dashboard",
       "name": "Expert Dashboard | Create patient & book appointment",
       "status": "passed",
-      "duration": "34.1s",
+      "duration": "39.3s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -116,7 +116,7 @@
       "module": "Expert-Dashboard",
       "name": "Expert Dashboard | Navigation flow validation",
       "status": "passed",
-      "duration": "9.6s",
+      "duration": "8.6s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -126,7 +126,7 @@
       "module": "Expert-Dashboard",
       "name": "Expert Dashboard | Help Center raise & reply ticket",
       "status": "passed",
-      "duration": "9.2s",
+      "duration": "9.0s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -136,7 +136,7 @@
       "module": "Expert-Dashboard",
       "name": "create unique patient, search and view profile",
       "status": "passed",
-      "duration": "25.1s",
+      "duration": "26.5s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -146,7 +146,7 @@
       "module": "CCOP",
       "name": "AI panel — Graph tab: knowledge graph, zoom controls, node properties, legends",
       "status": "passed",
-      "duration": "40.6s",
+      "duration": "41.2s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -156,7 +156,7 @@
       "module": "CCOP",
       "name": "AI panel — Assistant tab: associations, medication & comorbidity sub-tabs",
       "status": "passed",
-      "duration": "42.9s",
+      "duration": "41.8s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -176,7 +176,7 @@
       "module": "CCOP",
       "name": "CCOP | Help Center | Raise, Reply & Resolve Ticket",
       "status": "passed",
-      "duration": "12.3s",
+      "duration": "9.2s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -186,7 +186,7 @@
       "module": "CCOP",
       "name": "Create clinical note with document upload & transcription",
       "status": "passed",
-      "duration": "52.1s",
+      "duration": "53.3s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -196,7 +196,7 @@
       "module": "CCOP",
       "name": "Create patient + upload + submit",
       "status": "passed",
-      "duration": "1m 10s",
+      "duration": "1m 11s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -206,7 +206,7 @@
       "module": "CCOP",
       "name": "Open letter template from Actions dropdown, select type and verify preview",
       "status": "passed",
-      "duration": "27.7s",
+      "duration": "35.9s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -216,7 +216,7 @@
       "module": "CCOP",
       "name": "Create a new letter template from Actions dropdown",
       "status": "passed",
-      "duration": "34.9s",
+      "duration": "34.3s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -226,7 +226,7 @@
       "module": "CCOP",
       "name": "Create clinical note with voice transcription",
       "status": "passed",
-      "duration": "21.1s",
+      "duration": "21.8s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -236,7 +236,7 @@
       "module": "CCOP",
       "name": "CCOP | Clinician signup full flow (recorded)",
       "status": "passed",
-      "duration": "1m 10s",
+      "duration": "1m 21s",
       "screenshot": "",
       "video": "",
       "trace": ""
