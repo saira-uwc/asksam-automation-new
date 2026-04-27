@@ -1,10 +1,10 @@
 {
-  "lastUpdated": "2026-04-27T15:29:28.766Z",
+  "lastUpdated": "2026-04-27T17:49:25.330Z",
   "runs": [
     {
       "date": "2026-04-27",
-      "passed": 19,
-      "failed": 0,
+      "passed": 3,
+      "failed": 16,
       "total": 19
     },
     {
@@ -56,7 +56,7 @@
       "module": "Expert-Dashboard",
       "name": "authenticate",
       "status": "passed",
-      "duration": "9.8s",
+      "duration": "1m 45s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -65,148 +65,148 @@
       "id": 2,
       "module": "Expert-Dashboard",
       "name": "Expert Dashboard | Appointment booking (dynamic slots)",
-      "status": "passed",
-      "duration": "17.9s",
-      "screenshot": "",
-      "video": "",
-      "trace": ""
+      "status": "failed",
+      "duration": "34.4s",
+      "screenshot": "./artifacts/expert_dashboard___appointment_booking__dynamic_sl-screenshot.png",
+      "video": "./artifacts/expert_dashboard___appointment_booking__dynamic_sl-video.webm",
+      "trace": "./artifacts/expert_dashboard___appointment_booking__dynamic_sl-trace.zip"
     },
     {
       "id": 3,
       "module": "Expert-Dashboard",
       "name": "create appointment with existing patient and reschedule",
-      "status": "passed",
-      "duration": "1m 8s",
-      "screenshot": "",
-      "video": "",
-      "trace": ""
+      "status": "failed",
+      "duration": "34.4s",
+      "screenshot": "./artifacts/create_appointment_with_existing_patient_and_resch-screenshot.png",
+      "video": "./artifacts/create_appointment_with_existing_patient_and_resch-video.webm",
+      "trace": "./artifacts/create_appointment_with_existing_patient_and_resch-trace.zip"
     },
     {
       "id": 4,
       "module": "Expert-Dashboard",
       "name": "create appointment and manage session lifecycle",
-      "status": "passed",
-      "duration": "24.4s",
-      "screenshot": "",
-      "video": "",
-      "trace": ""
+      "status": "failed",
+      "duration": "34.4s",
+      "screenshot": "./artifacts/create_appointment_and_manage_session_lifecycle-screenshot.png",
+      "video": "./artifacts/create_appointment_and_manage_session_lifecycle-video.webm",
+      "trace": "./artifacts/create_appointment_and_manage_session_lifecycle-trace.zip"
     },
     {
       "id": 5,
       "module": "Expert-Dashboard",
       "name": "create appointment with existing patient and cancel non-cancelled one",
-      "status": "passed",
-      "duration": "1m 0s",
-      "screenshot": "",
-      "video": "",
-      "trace": ""
+      "status": "failed",
+      "duration": "34.3s",
+      "screenshot": "./artifacts/create_appointment_with_existing_patient_and_cance-screenshot.png",
+      "video": "./artifacts/create_appointment_with_existing_patient_and_cance-video.webm",
+      "trace": "./artifacts/create_appointment_with_existing_patient_and_cance-trace.zip"
     },
     {
       "id": 6,
       "module": "Expert-Dashboard",
       "name": "Expert Dashboard | Create patient & book appointment",
-      "status": "passed",
-      "duration": "31.2s",
-      "screenshot": "",
-      "video": "",
-      "trace": ""
+      "status": "failed",
+      "duration": "34.1s",
+      "screenshot": "./artifacts/expert_dashboard___create_patient___book_appointme-screenshot.png",
+      "video": "./artifacts/expert_dashboard___create_patient___book_appointme-video.webm",
+      "trace": "./artifacts/expert_dashboard___create_patient___book_appointme-trace.zip"
     },
     {
       "id": 7,
       "module": "Expert-Dashboard",
       "name": "Expert Dashboard | Navigation flow validation",
-      "status": "passed",
-      "duration": "7.9s",
-      "screenshot": "",
-      "video": "",
-      "trace": ""
+      "status": "failed",
+      "duration": "44.1s",
+      "screenshot": "./artifacts/expert_dashboard___navigation_flow_validation-screenshot.png",
+      "video": "./artifacts/expert_dashboard___navigation_flow_validation-video.webm",
+      "trace": "./artifacts/expert_dashboard___navigation_flow_validation-trace.zip"
     },
     {
       "id": 8,
       "module": "Expert-Dashboard",
       "name": "Expert Dashboard | Help Center raise & reply ticket",
-      "status": "passed",
-      "duration": "8.6s",
-      "screenshot": "",
-      "video": "",
-      "trace": ""
+      "status": "failed",
+      "duration": "55.5s",
+      "screenshot": "./artifacts/expert_dashboard___help_center_raise___reply_ticke-screenshot.png",
+      "video": "./artifacts/expert_dashboard___help_center_raise___reply_ticke-video.webm",
+      "trace": "./artifacts/expert_dashboard___help_center_raise___reply_ticke-trace.zip"
     },
     {
       "id": 9,
       "module": "Expert-Dashboard",
       "name": "create unique patient, search and view profile",
-      "status": "passed",
-      "duration": "24.6s",
-      "screenshot": "",
-      "video": "",
-      "trace": ""
+      "status": "failed",
+      "duration": "34.2s",
+      "screenshot": "./artifacts/create_unique_patient__search_and_view_profile-screenshot.png",
+      "video": "./artifacts/create_unique_patient__search_and_view_profile-video.webm",
+      "trace": "./artifacts/create_unique_patient__search_and_view_profile-trace.zip"
     },
     {
       "id": 10,
       "module": "CCOP",
       "name": "AI panel — Graph tab: knowledge graph, zoom controls, node properties, legends",
-      "status": "passed",
-      "duration": "45.8s",
-      "screenshot": "",
-      "video": "",
-      "trace": ""
+      "status": "failed",
+      "duration": "1m 9s",
+      "screenshot": "./artifacts/ai_panel___graph_tab__knowledge_graph__zoom_contro-screenshot.png",
+      "video": "./artifacts/ai_panel___graph_tab__knowledge_graph__zoom_contro-video.webm",
+      "trace": "./artifacts/ai_panel___graph_tab__knowledge_graph__zoom_contro-trace.zip"
     },
     {
       "id": 11,
       "module": "CCOP",
       "name": "AI panel — Assistant tab: associations, medication & comorbidity sub-tabs",
-      "status": "passed",
-      "duration": "41.5s",
-      "screenshot": "",
-      "video": "",
-      "trace": ""
+      "status": "failed",
+      "duration": "1m 9s",
+      "screenshot": "./artifacts/ai_panel___assistant_tab__associations__medication-screenshot.png",
+      "video": "./artifacts/ai_panel___assistant_tab__associations__medication-video.webm",
+      "trace": "./artifacts/ai_panel___assistant_tab__associations__medication-trace.zip"
     },
     {
       "id": 12,
       "module": "CCOP",
       "name": "AI panel — asksam tab: chat input, send message, disclaimer",
-      "status": "passed",
-      "duration": "1m 15s",
-      "screenshot": "",
-      "video": "",
-      "trace": ""
+      "status": "failed",
+      "duration": "1m 9s",
+      "screenshot": "./artifacts/ai_panel___asksam_tab__chat_input__send_message__d-screenshot.png",
+      "video": "./artifacts/ai_panel___asksam_tab__chat_input__send_message__d-video.webm",
+      "trace": "./artifacts/ai_panel___asksam_tab__chat_input__send_message__d-trace.zip"
     },
     {
       "id": 13,
       "module": "CCOP",
       "name": "CCOP | Help Center | Raise, Reply & Resolve Ticket",
-      "status": "passed",
-      "duration": "8.9s",
-      "screenshot": "",
-      "video": "",
-      "trace": ""
+      "status": "failed",
+      "duration": "32.4s",
+      "screenshot": "./artifacts/ccop___help_center___raise__reply___resolve_ticket-screenshot.png",
+      "video": "./artifacts/ccop___help_center___raise__reply___resolve_ticket-video.webm",
+      "trace": "./artifacts/ccop___help_center___raise__reply___resolve_ticket-trace.zip"
     },
     {
       "id": 14,
       "module": "CCOP",
       "name": "Create clinical note with document upload & transcription",
-      "status": "passed",
-      "duration": "53.0s",
-      "screenshot": "",
-      "video": "",
-      "trace": ""
+      "status": "failed",
+      "duration": "21.8s",
+      "screenshot": "./artifacts/create_clinical_note_with_document_upload___transc-screenshot.png",
+      "video": "./artifacts/create_clinical_note_with_document_upload___transc-video.webm",
+      "trace": "./artifacts/create_clinical_note_with_document_upload___transc-trace.zip"
     },
     {
       "id": 15,
       "module": "CCOP",
       "name": "Create patient + upload + submit",
-      "status": "passed",
-      "duration": "1m 8s",
-      "screenshot": "",
-      "video": "",
-      "trace": ""
+      "status": "failed",
+      "duration": "32.4s",
+      "screenshot": "./artifacts/create_patient___upload___submit-screenshot.png",
+      "video": "./artifacts/create_patient___upload___submit-video.webm",
+      "trace": "./artifacts/create_patient___upload___submit-trace.zip"
     },
     {
       "id": 16,
       "module": "CCOP",
       "name": "Open letter template from Actions dropdown, select type and verify preview",
       "status": "passed",
-      "duration": "25.1s",
+      "duration": "30.1s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -215,28 +215,28 @@
       "id": 17,
       "module": "CCOP",
       "name": "Create a new letter template from Actions dropdown",
-      "status": "passed",
-      "duration": "32.1s",
-      "screenshot": "",
-      "video": "",
-      "trace": ""
+      "status": "failed",
+      "duration": "2m 6s",
+      "screenshot": "./artifacts/create_a_new_letter_template_from_actions_dropdown-screenshot.png",
+      "video": "./artifacts/create_a_new_letter_template_from_actions_dropdown-video.webm",
+      "trace": "./artifacts/create_a_new_letter_template_from_actions_dropdown-trace.zip"
     },
     {
       "id": 18,
       "module": "CCOP",
       "name": "Create clinical note with voice transcription",
-      "status": "passed",
-      "duration": "20.9s",
-      "screenshot": "",
-      "video": "",
-      "trace": ""
+      "status": "failed",
+      "duration": "21.8s",
+      "screenshot": "./artifacts/create_clinical_note_with_voice_transcription-screenshot.png",
+      "video": "./artifacts/create_clinical_note_with_voice_transcription-video.webm",
+      "trace": "./artifacts/create_clinical_note_with_voice_transcription-trace.zip"
     },
     {
       "id": 19,
       "module": "CCOP",
       "name": "CCOP | Clinician signup full flow (recorded)",
       "status": "passed",
-      "duration": "26.5s",
+      "duration": "1m 26s",
       "screenshot": "",
       "video": "",
       "trace": ""
