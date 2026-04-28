@@ -1,4 +1,4 @@
-import { test } from '@playwright/test';
+import { test } from '../../helpers/forensics-fixture';
 import { DashboardPage } from '../../pages/dashboard.page';
 import path from 'path';
 

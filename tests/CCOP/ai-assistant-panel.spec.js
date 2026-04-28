@@ -1,4 +1,4 @@
-import { test } from "@playwright/test";
+import { test } from '../../helpers/forensics-fixture';
 import { AIAssistantPanelPage } from "../../pages/ai-assistant-panel.page";
 
 // Use wider viewport so floating buttons are fully visible

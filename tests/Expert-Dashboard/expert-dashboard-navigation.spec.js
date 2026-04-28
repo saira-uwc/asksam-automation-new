@@ -1,4 +1,4 @@
-import { test } from '@playwright/test';
+import { test } from '../../helpers/forensics-fixture';
 import { ExpertDashboardPage } from '../../pages/expert-dashboard.page.js';
 
 test('Expert Dashboard | Navigation flow validation', async ({ page }) => {

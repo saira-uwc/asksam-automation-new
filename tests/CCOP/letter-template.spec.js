@@ -1,4 +1,4 @@
-import { test } from "@playwright/test";
+import { test } from '../../helpers/forensics-fixture';
 import { LetterTemplatePage } from "../../pages/letter-template.page";
 import { LoginPage } from "../../pages/login.page";
 

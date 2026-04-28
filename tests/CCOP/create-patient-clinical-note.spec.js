@@ -1,4 +1,4 @@
-import { test } from '@playwright/test';
+import { test } from '../../helpers/forensics-fixture';
 import { PatientPage } from '../../pages/patient.page.js';
 
 test.describe('CCOP | Create new patient & clinical note (dynamic)', () => {

@@ -1,4 +1,4 @@
-import { test } from '@playwright/test';
+import { test } from '../../helpers/forensics-fixture';
 import { CCOPClinicianSignupPage } from '../../pages/ccop-clinician-signup.page';
 
 test('CCOP | Clinician signup full flow (recorded)', async ({ page }) => {

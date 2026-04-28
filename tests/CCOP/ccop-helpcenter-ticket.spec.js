@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from '../../helpers/forensics-fixture';
 import { CCOPHelpCenterPage } from '../../pages/ccop-help-center.page.js';
 
 test('CCOP | Help Center | Raise, Reply & Resolve Ticket', async ({ page }) => {

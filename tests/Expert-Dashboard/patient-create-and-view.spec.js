@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from '../../helpers/forensics-fixture';
 import { ExpertAppointmentPage } from '../../pages/expert-appointment.page.js';
 
 test.describe('Expert Dashboard | Create Patient & View Profile', () => {

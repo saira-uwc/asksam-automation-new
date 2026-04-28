@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from '../../helpers/forensics-fixture';
 import { HelpCenterPage } from '../../pages/help-center.page.js';
 
 test(
