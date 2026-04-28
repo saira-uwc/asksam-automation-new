@@ -1,29 +1,29 @@
 {
-  "id": "baabaa0f-284a-4be8-8d28-55d274e255fe",
-  "startedAt": "2026-04-28T01:18:22.634Z",
-  "durationMs": 1006496.824,
+  "id": "d637fab3-2be4-4d0b-9398-22fd571a962d",
+  "startedAt": "2026-04-28T03:18:23.007Z",
+  "durationMs": 1694587.9000000001,
   "summary": {
     "total": 19,
-    "passed": 18,
-    "failed": 1,
+    "passed": 2,
+    "failed": 17,
     "skipped": 0,
     "timedOut": 0
   },
-  "passRate": 95,
+  "passRate": 11,
   "modules": {
     "Expert-Dashboard": {
       "label": "Expert Dashboard",
       "total": 9,
-      "passed": 9,
-      "failed": 0,
+      "passed": 1,
+      "failed": 8,
       "skipped": 0,
       "timedOut": 0
     },
     "CCOP": {
       "label": "CCOP",
       "total": 10,
-      "passed": 9,
-      "failed": 1,
+      "passed": 1,
+      "failed": 9,
       "skipped": 0,
       "timedOut": 0
     }
@@ -32,7 +32,7 @@
     {
       "title": "authenticate",
       "status": "passed",
-      "durationMs": 7273,
+      "durationMs": 97253,
       "file": "Expert-Dashboard/auth.setup.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -52,302 +52,498 @@
     },
     {
       "title": "Expert Dashboard | Appointment booking (dynamic slots)",
-      "status": "passed",
-      "durationMs": 18845,
+      "status": "failed",
+      "durationMs": 18702,
       "file": "Expert-Dashboard/appointment-booking.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
-          "contentType": "image/png"
+          "path": "test-failed-1.png",
+          "contentType": "image/png",
+          "webPath": "./artifacts/expert_dashboard___appointment_booking__dynamic_sl-screenshot.png"
         },
         {
           "name": "video",
           "path": "video.webm",
-          "contentType": "video/webm"
+          "contentType": "video/webm",
+          "webPath": "./artifacts/expert_dashboard___appointment_booking__dynamic_sl-video.webm"
+        },
+        {
+          "name": "error-context",
+          "path": "error-context.md",
+          "contentType": "text/markdown",
+          "webPath": "./artifacts/expert_dashboard___appointment_booking__dynamic_sl-error-context.md"
+        },
+        {
+          "name": "trace",
+          "path": "trace.zip",
+          "contentType": "application/zip",
+          "webPath": "./artifacts/expert_dashboard___appointment_booking__dynamic_sl-trace.zip"
         }
       ],
-      "error": ""
+      "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/expert\\/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://accounts.asksam.com.au/sign-in?redirect_url=https%3A%2F%2Fdashboard.asksam.com.au%2Fexpert%2Fdashboard\"\u001b[39m\nTimeout: 15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 15000ms\u001b[22m\n\u001b[2m    4 × unexpected value \"https://accounts.asksam.com.au/sign-in#/?redirect_url=https%3A%2F%2Fdashboard.asksam.com.au%2Fex"
     },
     {
       "title": "create appointment with existing patient and reschedule",
-      "status": "passed",
-      "durationMs": 64635,
+      "status": "failed",
+      "durationMs": 33612,
       "file": "Expert-Dashboard/appointment-create-and-reschedule.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
-          "contentType": "image/png"
+          "path": "test-failed-1.png",
+          "contentType": "image/png",
+          "webPath": "./artifacts/create_appointment_with_existing_patient_and_resch-screenshot.png"
         },
         {
           "name": "video",
           "path": "video.webm",
-          "contentType": "video/webm"
+          "contentType": "video/webm",
+          "webPath": "./artifacts/create_appointment_with_existing_patient_and_resch-video.webm"
+        },
+        {
+          "name": "error-context",
+          "path": "error-context.md",
+          "contentType": "text/markdown",
+          "webPath": "./artifacts/create_appointment_with_existing_patient_and_resch-error-context.md"
+        },
+        {
+          "name": "trace",
+          "path": "trace.zip",
+          "contentType": "application/zip",
+          "webPath": "./artifacts/create_appointment_with_existing_patient_and_resch-trace.zip"
         }
       ],
-      "error": ""
+      "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'Appointments', exact: true }).first()\u001b[22m\n\u001b[2m    - waiting for\" https://accounts.asksam.com.au/sign-in\" navigation to finish...\u001b[22m\n\u001b[2m    - navigated to \"https://accounts.asksam.com.au/sign-in#/?redirect_url=https%3A%2F%2Fdashboard.asksam.com.au%2Fexpert%2Fdashboard\"\u001b[22m\n\n\n   at ../pages/expert-appointment.page.js:12\n\n  10 |   =============================== */\n  11 |   async ope"
     },
     {
       "title": "create appointment and manage session lifecycle",
-      "status": "passed",
-      "durationMs": 19939,
+      "status": "failed",
+      "durationMs": 18563,
       "file": "Expert-Dashboard/appointment-session-management.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
-          "contentType": "image/png"
+          "path": "test-failed-1.png",
+          "contentType": "image/png",
+          "webPath": "./artifacts/create_appointment_and_manage_session_lifecycle-screenshot.png"
         },
         {
           "name": "video",
           "path": "video.webm",
-          "contentType": "video/webm"
+          "contentType": "video/webm",
+          "webPath": "./artifacts/create_appointment_and_manage_session_lifecycle-video.webm"
+        },
+        {
+          "name": "error-context",
+          "path": "error-context.md",
+          "contentType": "text/markdown",
+          "webPath": "./artifacts/create_appointment_and_manage_session_lifecycle-error-context.md"
+        },
+        {
+          "name": "trace",
+          "path": "trace.zip",
+          "contentType": "application/zip",
+          "webPath": "./artifacts/create_appointment_and_manage_session_lifecycle-trace.zip"
         }
       ],
-      "error": ""
+      "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/expert\\/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://accounts.asksam.com.au/sign-in?redirect_url=https%3A%2F%2Fdashboard.asksam.com.au%2Fexpert%2Fdashboard\"\u001b[39m\nTimeout: 15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 15000ms\u001b[22m\n\u001b[2m    4 × unexpected value \"https://accounts.asksam.com.au/sign-in#/?redirect_url=https%3A%2F%2Fdashboard.asksam.com.au%2Fex"
     },
     {
       "title": "create appointment with existing patient and cancel non-cancelled one",
-      "status": "passed",
-      "durationMs": 61394,
+      "status": "failed",
+      "durationMs": 18521,
       "file": "Expert-Dashboard/appointment-z-cancel.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
-          "contentType": "image/png"
+          "path": "test-failed-1.png",
+          "contentType": "image/png",
+          "webPath": "./artifacts/create_appointment_with_existing_patient_and_cance-screenshot.png"
         },
         {
           "name": "video",
           "path": "video.webm",
-          "contentType": "video/webm"
+          "contentType": "video/webm",
+          "webPath": "./artifacts/create_appointment_with_existing_patient_and_cance-video.webm"
+        },
+        {
+          "name": "error-context",
+          "path": "error-context.md",
+          "contentType": "text/markdown",
+          "webPath": "./artifacts/create_appointment_with_existing_patient_and_cance-error-context.md"
+        },
+        {
+          "name": "trace",
+          "path": "trace.zip",
+          "contentType": "application/zip",
+          "webPath": "./artifacts/create_appointment_with_existing_patient_and_cance-trace.zip"
         }
       ],
-      "error": ""
+      "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/expert\\/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://accounts.asksam.com.au/sign-in?redirect_url=https%3A%2F%2Fdashboard.asksam.com.au%2Fexpert%2Fdashboard\"\u001b[39m\nTimeout: 15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 15000ms\u001b[22m\n\u001b[2m    4 × unexpected value \"https://accounts.asksam.com.au/sign-in#/?redirect_url=https%3A%2F%2Fdashboard.asksam.com.au%2Fex"
     },
     {
       "title": "Expert Dashboard | Create patient & book appointment",
-      "status": "passed",
-      "durationMs": 47318,
+      "status": "failed",
+      "durationMs": 33688,
       "file": "Expert-Dashboard/expert-appointment-create-with-new-patient.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
-          "contentType": "image/png"
+          "path": "test-failed-1.png",
+          "contentType": "image/png",
+          "webPath": "./artifacts/expert_dashboard___create_patient___book_appointme-screenshot.png"
         },
         {
           "name": "video",
           "path": "video.webm",
-          "contentType": "video/webm"
+          "contentType": "video/webm",
+          "webPath": "./artifacts/expert_dashboard___create_patient___book_appointme-video.webm"
+        },
+        {
+          "name": "error-context",
+          "path": "error-context.md",
+          "contentType": "text/markdown",
+          "webPath": "./artifacts/expert_dashboard___create_patient___book_appointme-error-context.md"
+        },
+        {
+          "name": "trace",
+          "path": "trace.zip",
+          "contentType": "application/zip",
+          "webPath": "./artifacts/expert_dashboard___create_patient___book_appointme-trace.zip"
         }
       ],
-      "error": ""
+      "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'Appointments', exact: true }).first()\u001b[22m\n\u001b[2m    - waiting for\" https://accounts.asksam.com.au/sign-in\" navigation to finish...\u001b[22m\n\u001b[2m    - navigated to \"https://accounts.asksam.com.au/sign-in#/?redirect_url=https%3A%2F%2Fdashboard.asksam.com.au%2Fexpert%2Fdashboard\"\u001b[22m\n\n\n   at ../pages/expert-appointment.page.js:12\n\n  10 |   =============================== */\n  11 |   async ope"
     },
     {
       "title": "Expert Dashboard | Navigation flow validation",
-      "status": "passed",
-      "durationMs": 9438,
+      "status": "failed",
+      "durationMs": 33483,
       "file": "Expert-Dashboard/expert-dashboard-navigation.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
-          "contentType": "image/png"
+          "path": "test-failed-1.png",
+          "contentType": "image/png",
+          "webPath": "./artifacts/expert_dashboard___navigation_flow_validation-screenshot.png"
         },
         {
           "name": "video",
           "path": "video.webm",
-          "contentType": "video/webm"
+          "contentType": "video/webm",
+          "webPath": "./artifacts/expert_dashboard___navigation_flow_validation-video.webm"
+        },
+        {
+          "name": "error-context",
+          "path": "error-context.md",
+          "contentType": "text/markdown",
+          "webPath": "./artifacts/expert_dashboard___navigation_flow_validation-error-context.md"
+        },
+        {
+          "name": "trace",
+          "path": "trace.zip",
+          "contentType": "application/zip",
+          "webPath": "./artifacts/expert_dashboard___navigation_flow_validation-trace.zip"
         }
       ],
-      "error": ""
+      "error": "TimeoutError: locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('heading', { name: 'Upcoming Appointments' }) to be visible\u001b[22m\n\n\n   at ../pages/expert-dashboard.page.js:13\n\n  11 |     await this.page\n  12 |       .getByRole('heading', { name: 'Upcoming Appointments' })\n> 13 |       .waitFor({ timeout: 30000 });\n     |        ^\n  14 |   }\n  15 |\n  16 |   /* ===============================\n    at ExpertDashboardPage.gotoDashboard (/home/runner/work/asksam-automat"
     },
     {
       "title": "Expert Dashboard | Help Center raise & reply ticket",
-      "status": "passed",
-      "durationMs": 9690,
+      "status": "failed",
+      "durationMs": 54802,
       "file": "Expert-Dashboard/expert-helpcenter-ticket.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
-          "contentType": "image/png"
+          "path": "test-failed-1.png",
+          "contentType": "image/png",
+          "webPath": "./artifacts/expert_dashboard___help_center_raise___reply_ticke-screenshot.png"
         },
         {
           "name": "video",
           "path": "video.webm",
-          "contentType": "video/webm"
+          "contentType": "video/webm",
+          "webPath": "./artifacts/expert_dashboard___help_center_raise___reply_ticke-video.webm"
+        },
+        {
+          "name": "error-context",
+          "path": "error-context.md",
+          "contentType": "text/markdown",
+          "webPath": "./artifacts/expert_dashboard___help_center_raise___reply_ticke-error-context.md"
+        },
+        {
+          "name": "trace",
+          "path": "trace.zip",
+          "contentType": "application/zip",
+          "webPath": "./artifacts/expert_dashboard___help_center_raise___reply_ticke-trace.zip"
         }
       ],
-      "error": ""
+      "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'Help Center' })\u001b[22m\n\n\n   at ../pages/help-center.page.js:10\n\n   8 |\n   9 |   async openHelpCenter() {\n> 10 |     await this.page.getByRole('link', { name: 'Help Center' }).click();\n     |                                                                ^\n  11 |   }\n  12 |\n  13 |   async raiseTicket({ subject, message, fileName }) {\n    at HelpCenterPage.openHelpCenter (/home/runner/work"
     },
     {
       "title": "create unique patient, search and view profile",
-      "status": "passed",
-      "durationMs": 26287,
+      "status": "failed",
+      "durationMs": 18617,
       "file": "Expert-Dashboard/patient-create-and-view.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
-          "contentType": "image/png"
+          "path": "test-failed-1.png",
+          "contentType": "image/png",
+          "webPath": "./artifacts/create_unique_patient__search_and_view_profile-screenshot.png"
         },
         {
           "name": "video",
           "path": "video.webm",
-          "contentType": "video/webm"
+          "contentType": "video/webm",
+          "webPath": "./artifacts/create_unique_patient__search_and_view_profile-video.webm"
+        },
+        {
+          "name": "error-context",
+          "path": "error-context.md",
+          "contentType": "text/markdown",
+          "webPath": "./artifacts/create_unique_patient__search_and_view_profile-error-context.md"
+        },
+        {
+          "name": "trace",
+          "path": "trace.zip",
+          "contentType": "application/zip",
+          "webPath": "./artifacts/create_unique_patient__search_and_view_profile-trace.zip"
         }
       ],
-      "error": ""
+      "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/expert\\/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://accounts.asksam.com.au/sign-in?redirect_url=https%3A%2F%2Fdashboard.asksam.com.au%2Fexpert%2Fdashboard\"\u001b[39m\nTimeout: 15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 15000ms\u001b[22m\n\u001b[2m    4 × unexpected value \"https://accounts.asksam.com.au/sign-in#/?redirect_url=https%3A%2F%2Fdashboard.asksam.com.au%2Fex"
     },
     {
       "title": "AI panel — Graph tab: knowledge graph, zoom controls, node properties, legends",
-      "status": "passed",
-      "durationMs": 41542,
+      "status": "failed",
+      "durationMs": 68040,
       "file": "CCOP/ai-assistant-panel.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
-          "contentType": "image/png"
+          "path": "test-failed-1.png",
+          "contentType": "image/png",
+          "webPath": "./artifacts/ai_panel___graph_tab__knowledge_graph__zoom_contro-screenshot.png"
         },
         {
           "name": "video",
           "path": "video.webm",
-          "contentType": "video/webm"
+          "contentType": "video/webm",
+          "webPath": "./artifacts/ai_panel___graph_tab__knowledge_graph__zoom_contro-video.webm"
+        },
+        {
+          "name": "error-context",
+          "path": "error-context.md",
+          "contentType": "text/markdown",
+          "webPath": "./artifacts/ai_panel___graph_tab__knowledge_graph__zoom_contro-error-context.md"
+        },
+        {
+          "name": "trace",
+          "path": "trace.zip",
+          "contentType": "application/zip",
+          "webPath": "./artifacts/ai_panel___graph_tab__knowledge_graph__zoom_contro-trace.zip"
         }
       ],
-      "error": ""
+      "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Completed' })\u001b[22m\n\n\n   at ../pages/ai-assistant-panel.page.js:30\n\n  28 |           console.log(\"✅ Clicked Edit Draft\");\n  29 |         } else {\n> 30 |           await this.page.getByRole(\"button\", { name: \"Completed\" }).click();\n     |                                                                      ^\n  31 |           console.log(\"✅ Switched to Completed tab\");\n  32 |\n  33 |    "
     },
     {
       "title": "AI panel — Assistant tab: associations, medication & comorbidity sub-tabs",
-      "status": "passed",
-      "durationMs": 42772,
+      "status": "failed",
+      "durationMs": 68960,
       "file": "CCOP/ai-assistant-panel.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
-          "contentType": "image/png"
+          "path": "test-failed-1.png",
+          "contentType": "image/png",
+          "webPath": "./artifacts/ai_panel___assistant_tab__associations__medication-screenshot.png"
         },
         {
           "name": "video",
           "path": "video.webm",
-          "contentType": "video/webm"
+          "contentType": "video/webm",
+          "webPath": "./artifacts/ai_panel___assistant_tab__associations__medication-video.webm"
+        },
+        {
+          "name": "error-context",
+          "path": "error-context.md",
+          "contentType": "text/markdown",
+          "webPath": "./artifacts/ai_panel___assistant_tab__associations__medication-error-context.md"
+        },
+        {
+          "name": "trace",
+          "path": "trace.zip",
+          "contentType": "application/zip",
+          "webPath": "./artifacts/ai_panel___assistant_tab__associations__medication-trace.zip"
         }
       ],
-      "error": ""
+      "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Completed' })\u001b[22m\n\n\n   at ../pages/ai-assistant-panel.page.js:30\n\n  28 |           console.log(\"✅ Clicked Edit Draft\");\n  29 |         } else {\n> 30 |           await this.page.getByRole(\"button\", { name: \"Completed\" }).click();\n     |                                                                      ^\n  31 |           console.log(\"✅ Switched to Completed tab\");\n  32 |\n  33 |    "
     },
     {
       "title": "AI panel — asksam tab: chat input, send message, disclaimer",
-      "status": "passed",
-      "durationMs": 75379,
+      "status": "failed",
+      "durationMs": 69343,
       "file": "CCOP/ai-assistant-panel.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
-          "contentType": "image/png"
+          "path": "test-failed-1.png",
+          "contentType": "image/png",
+          "webPath": "./artifacts/ai_panel___asksam_tab__chat_input__send_message__d-screenshot.png"
         },
         {
           "name": "video",
           "path": "video.webm",
-          "contentType": "video/webm"
+          "contentType": "video/webm",
+          "webPath": "./artifacts/ai_panel___asksam_tab__chat_input__send_message__d-video.webm"
+        },
+        {
+          "name": "error-context",
+          "path": "error-context.md",
+          "contentType": "text/markdown",
+          "webPath": "./artifacts/ai_panel___asksam_tab__chat_input__send_message__d-error-context.md"
+        },
+        {
+          "name": "trace",
+          "path": "trace.zip",
+          "contentType": "application/zip",
+          "webPath": "./artifacts/ai_panel___asksam_tab__chat_input__send_message__d-trace.zip"
         }
       ],
-      "error": ""
+      "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Completed' })\u001b[22m\n\n\n   at ../pages/ai-assistant-panel.page.js:30\n\n  28 |           console.log(\"✅ Clicked Edit Draft\");\n  29 |         } else {\n> 30 |           await this.page.getByRole(\"button\", { name: \"Completed\" }).click();\n     |                                                                      ^\n  31 |           console.log(\"✅ Switched to Completed tab\");\n  32 |\n  33 |    "
     },
     {
       "title": "CCOP | Help Center | Raise, Reply & Resolve Ticket",
-      "status": "passed",
-      "durationMs": 8769,
+      "status": "failed",
+      "durationMs": 32403,
       "file": "CCOP/ccop-helpcenter-ticket.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
-          "contentType": "image/png"
+          "path": "test-failed-1.png",
+          "contentType": "image/png",
+          "webPath": "./artifacts/ccop___help_center___raise__reply___resolve_ticket-screenshot.png"
         },
         {
           "name": "video",
           "path": "video.webm",
-          "contentType": "video/webm"
+          "contentType": "video/webm",
+          "webPath": "./artifacts/ccop___help_center___raise__reply___resolve_ticket-video.webm"
+        },
+        {
+          "name": "error-context",
+          "path": "error-context.md",
+          "contentType": "text/markdown",
+          "webPath": "./artifacts/ccop___help_center___raise__reply___resolve_ticket-error-context.md"
+        },
+        {
+          "name": "trace",
+          "path": "trace.zip",
+          "contentType": "application/zip",
+          "webPath": "./artifacts/ccop___help_center___raise__reply___resolve_ticket-trace.zip"
         }
       ],
-      "error": ""
+      "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'Help Center' })\u001b[22m\n\n\n   at ../pages/ccop-help-center.page.js:10\n\n   8 |   /* ===== OPEN HELP CENTER ===== */\n   9 |   async openHelpCenter() {\n> 10 |     await this.page.getByRole('link', { name: 'Help Center' }).click();\n     |                                                                ^\n  11 |   }\n  12 |\n  13 |   /* ===== RAISE TICKET ===== */\n    at CCOPHelpCenterPage.openHelp"
     },
     {
       "title": "Create clinical note with document upload & transcription",
-      "status": "passed",
-      "durationMs": 52794,
+      "status": "failed",
+      "durationMs": 21800,
       "file": "CCOP/clinical-note.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
-          "contentType": "image/png"
+          "path": "test-failed-1.png",
+          "contentType": "image/png",
+          "webPath": "./artifacts/create_clinical_note_with_document_upload___transc-screenshot.png"
         },
         {
           "name": "video",
           "path": "video.webm",
-          "contentType": "video/webm"
+          "contentType": "video/webm",
+          "webPath": "./artifacts/create_clinical_note_with_document_upload___transc-video.webm"
+        },
+        {
+          "name": "error-context",
+          "path": "error-context.md",
+          "contentType": "text/markdown",
+          "webPath": "./artifacts/create_clinical_note_with_document_upload___transc-error-context.md"
+        },
+        {
+          "name": "trace",
+          "path": "trace.zip",
+          "contentType": "application/zip",
+          "webPath": "./artifacts/create_clinical_note_with_document_upload___transc-trace.zip"
         }
       ],
-      "error": ""
+      "error": "TimeoutError: locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Create Clinical Note' }) to be visible\u001b[22m\n\n\n   at ../pages/dashboard.page.js:12\n\n  10 |     await this.page\n  11 |       .getByRole('button', { name: 'Create Clinical Note' })\n> 12 |       .waitFor({ state: 'visible', timeout: 20000 });\n     |        ^\n  13 |\n  14 |     await this.page\n  15 |       .getByRole('button', { name: 'Create Clinical Note' })\n    at DashboardPage.clickC"
     },
     {
       "title": "Create patient + upload + submit",
-      "status": "passed",
-      "durationMs": 70246,
+      "status": "failed",
+      "durationMs": 32266,
       "file": "CCOP/create-patient-clinical-note.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
-          "contentType": "image/png"
+          "path": "test-failed-1.png",
+          "contentType": "image/png",
+          "webPath": "./artifacts/create_patient___upload___submit-screenshot.png"
         },
         {
           "name": "video",
           "path": "video.webm",
-          "contentType": "video/webm"
+          "contentType": "video/webm",
+          "webPath": "./artifacts/create_patient___upload___submit-video.webm"
+        },
+        {
+          "name": "error-context",
+          "path": "error-context.md",
+          "contentType": "text/markdown",
+          "webPath": "./artifacts/create_patient___upload___submit-error-context.md"
+        },
+        {
+          "name": "trace",
+          "path": "trace.zip",
+          "contentType": "application/zip",
+          "webPath": "./artifacts/create_patient___upload___submit-trace.zip"
         }
       ],
-      "error": ""
+      "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Create Clinical Note' })\u001b[22m\n\n\n   at ../pages/patient.page.js:16\n\n  14 |     this.email = `testuser-${id}@tmail.com`;\n  15 |\n> 16 |     await this.page.getByRole('button', { name: 'Create Clinical Note' }).click();\n     |                                                                           ^\n  17 |     await this.page.getByRole('button', { name: 'Create New Patient Profile' })."
     },
     {
       "title": "Open letter template from Actions dropdown, select type and verify preview",
       "status": "passed",
-      "durationMs": 27468,
+      "durationMs": 29224,
       "file": "CCOP/letter-template.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -368,7 +564,7 @@
     {
       "title": "Create a new letter template from Actions dropdown",
       "status": "failed",
-      "durationMs": 125253,
+      "durationMs": 125864,
       "file": "CCOP/letter-template.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -402,55 +598,73 @@
     },
     {
       "title": "Create clinical note with voice transcription",
-      "status": "passed",
-      "durationMs": 22098,
+      "status": "failed",
+      "durationMs": 21902,
       "file": "CCOP/voice-transcription.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
-          "contentType": "image/png"
+          "path": "test-failed-1.png",
+          "contentType": "image/png",
+          "webPath": "./artifacts/create_clinical_note_with_voice_transcription-screenshot.png"
         },
         {
           "name": "video",
           "path": "video.webm",
-          "contentType": "video/webm"
+          "contentType": "video/webm",
+          "webPath": "./artifacts/create_clinical_note_with_voice_transcription-video.webm"
+        },
+        {
+          "name": "error-context",
+          "path": "error-context.md",
+          "contentType": "text/markdown",
+          "webPath": "./artifacts/create_clinical_note_with_voice_transcription-error-context.md"
+        },
+        {
+          "name": "trace",
+          "path": "trace.zip",
+          "contentType": "application/zip",
+          "webPath": "./artifacts/create_clinical_note_with_voice_transcription-trace.zip"
         }
       ],
-      "error": ""
+      "error": "TimeoutError: locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Create Clinical Note' }) to be visible\u001b[22m\n\n\n   at ../pages/dashboard.page.js:12\n\n  10 |     await this.page\n  11 |       .getByRole('button', { name: 'Create Clinical Note' })\n> 12 |       .waitFor({ state: 'visible', timeout: 20000 });\n     |        ^\n  13 |\n  14 |     await this.page\n  15 |       .getByRole('button', { name: 'Create Clinical Note' })\n    at DashboardPage.clickC"
     },
     {
       "title": "CCOP | Clinician signup full flow (recorded)",
-      "status": "passed",
-      "durationMs": 143485,
+      "status": "failed",
+      "durationMs": 67142,
       "file": "CCOP/ccop-clinician-signup.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
-          "contentType": "image/png"
-        },
-        {
-          "name": "screenshot",
-          "path": "test-finished-2.png",
-          "contentType": "image/png"
-        },
-        {
-          "name": "video",
-          "path": "video-1.webm",
-          "contentType": "video/webm"
+          "path": "test-failed-1.png",
+          "contentType": "image/png",
+          "webPath": "./artifacts/ccop___clinician_signup_full_flow__recorded_-screenshot.png"
         },
         {
           "name": "video",
           "path": "video.webm",
-          "contentType": "video/webm"
+          "contentType": "video/webm",
+          "webPath": "./artifacts/ccop___clinician_signup_full_flow__recorded_-video.webm"
+        },
+        {
+          "name": "error-context",
+          "path": "error-context.md",
+          "contentType": "text/markdown",
+          "webPath": "./artifacts/ccop___clinician_signup_full_flow__recorded_-error-context.md"
+        },
+        {
+          "name": "trace",
+          "path": "trace.zip",
+          "contentType": "application/zip",
+          "webPath": "./artifacts/ccop___clinician_signup_full_flow__recorded_-trace.zip"
         }
       ],
-      "error": ""
+      "error": "Error: Try for Free button not visible after 3 attempts\n\n   at ../pages/ccop-clinician-signup.page.js:68\n\n  66 |         if (attempt === 3) {\n  67 |           await this.page.screenshot({ path: 'test-results/signup-plans-debug.png' });\n> 68 |           throw new Error('Try for Free button not visible after 3 attempts');\n     |                 ^\n  69 |         }\n  70 |         await this.page.waitForTimeout(3000);\n  71 |       }\n    at CCOPClinicianSignupPage.activateFreePlan (/home/runner/work/a"
     }
   ]
 }
