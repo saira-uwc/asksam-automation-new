@@ -1,0 +1,188 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - banner [ref=e4]:
+    - button "Open user menu" [ref=e11] [cursor=pointer]:
+      - img "Anthony Smith's logo" [ref=e14]
+  - generic [ref=e17]:
+    - generic [ref=e19]:
+      - link "Home" [ref=e20] [cursor=pointer]:
+        - /url: /clinical/home
+        - img [ref=e21]
+        - paragraph [ref=e23]: Home
+      - link "Patients" [ref=e24] [cursor=pointer]:
+        - /url: /clinical/patients
+        - img [ref=e25]
+        - paragraph [ref=e27]: Patients
+      - link "Appointment Dashboard" [ref=e28] [cursor=pointer]:
+        - /url: /clinical/expert-dashboard
+        - img [ref=e29]
+        - paragraph [ref=e31]: Appointment Dashboard
+      - link "Help Center" [ref=e32] [cursor=pointer]:
+        - /url: /clinical/help-center
+        - img [ref=e33]
+        - paragraph [ref=e35]: Help Center
+      - link "Settings" [ref=e36] [cursor=pointer]:
+        - /url: /clinical/settings
+        - img [ref=e37]
+        - paragraph [ref=e39]: Settings
+    - generic [ref=e40]:
+      - generic [ref=e41]:
+        - button "Clinical Assistant" [ref=e44]
+        - generic [ref=e45]:
+          - generic [ref=e46]:
+            - generic [ref=e48]:
+              - button "In Progress" [ref=e49] [cursor=pointer]: In Progress
+              - button "Completed" [ref=e50] [cursor=pointer]: Completed
+              - button "All" [ref=e51] [cursor=pointer]: All
+            - button "Create Clinical Note" [ref=e54] [cursor=pointer]:
+              - img [ref=e56]
+              - generic [ref=e58]: Create Clinical Note
+          - generic [ref=e59]:
+            - generic [ref=e61]:
+              - generic [ref=e64]:
+                - generic [ref=e65]:
+                  - generic [ref=e66]:
+                    - img [ref=e68]
+                    - generic [ref=e69]:
+                      - heading "Yamini Singh 243" [level=6] [ref=e70]
+                      - paragraph [ref=e71]: Follow-up
+                  - button "Delete" [ref=e72] [cursor=pointer]:
+                    - img [ref=e73]
+                - paragraph [ref=e77]:
+                  - text: "Consultation Date:"
+                  - generic [ref=e78]: 28 Apr, 26
+                - button "Edit Draft" [ref=e80] [cursor=pointer]:
+                  - img [ref=e82]
+                  - text: Edit Draft
+              - generic [ref=e86]:
+                - generic [ref=e87]:
+                  - generic [ref=e88]:
+                    - img [ref=e90]
+                    - generic [ref=e92]:
+                      - heading "Test user-433380" [level=6] [ref=e93]
+                      - paragraph [ref=e94]: New
+                  - button "Delete" [ref=e95] [cursor=pointer]:
+                    - img [ref=e96]
+                - paragraph [ref=e100]:
+                  - text: "Consultation Date:"
+                  - generic [ref=e101]: 28 Apr, 26
+                - button "Edit Draft" [ref=e103] [cursor=pointer]:
+                  - img [ref=e105]
+                  - text: Edit Draft
+              - generic [ref=e109]:
+                - generic [ref=e110]:
+                  - generic [ref=e111]:
+                    - img [ref=e113]
+                    - generic [ref=e115]:
+                      - heading "Test user-348512" [level=6] [ref=e116]
+                      - paragraph [ref=e117]: New
+                  - button "Delete" [ref=e118] [cursor=pointer]:
+                    - img [ref=e119]
+                - paragraph [ref=e123]:
+                  - text: "Consultation Date:"
+                  - generic [ref=e124]: 28 Apr, 26
+                - button "Edit Draft" [ref=e126] [cursor=pointer]:
+                  - img [ref=e128]
+                  - text: Edit Draft
+              - generic [ref=e132]:
+                - generic [ref=e133]:
+                  - generic [ref=e134]:
+                    - img [ref=e136]
+                    - generic [ref=e137]:
+                      - heading "Yamini Singh 243" [level=6] [ref=e138]
+                      - paragraph [ref=e139]: Follow-up
+                  - button "Delete" [ref=e140] [cursor=pointer]:
+                    - img [ref=e141]
+                - paragraph [ref=e145]:
+                  - text: "Consultation Date:"
+                  - generic [ref=e146]: 28 Apr, 26
+                - button "Edit Draft" [ref=e148] [cursor=pointer]:
+                  - img [ref=e150]
+                  - text: Edit Draft
+              - generic [ref=e154]:
+                - generic [ref=e155]:
+                  - generic [ref=e156]:
+                    - img [ref=e158]
+                    - generic [ref=e159]:
+                      - heading "Yamini Singh 243" [level=6] [ref=e160]
+                      - paragraph [ref=e161]: Follow-up
+                  - button "Delete" [ref=e162] [cursor=pointer]:
+                    - img [ref=e163]
+                - paragraph [ref=e167]:
+                  - text: "Consultation Date:"
+                  - generic [ref=e168]: 28 Apr, 26
+                - button "Edit Draft" [ref=e170] [cursor=pointer]:
+                  - img [ref=e172]
+                  - text: Edit Draft
+              - generic [ref=e176]:
+                - generic [ref=e177]:
+                  - generic [ref=e178]:
+                    - img [ref=e180]
+                    - generic [ref=e181]:
+                      - heading "Yamini Singh 191" [level=6] [ref=e182]
+                      - paragraph [ref=e183]: Follow-up
+                  - button "Delete" [ref=e184] [cursor=pointer]:
+                    - img [ref=e185]
+                - paragraph [ref=e189]:
+                  - text: "Consultation Date:"
+                  - generic [ref=e190]: 28 Apr, 26
+                - button "Edit Draft" [ref=e192] [cursor=pointer]:
+                  - img [ref=e194]
+                  - text: Edit Draft
+              - generic [ref=e198]:
+                - generic [ref=e199]:
+                  - generic [ref=e200]:
+                    - img [ref=e202]
+                    - generic [ref=e203]:
+                      - heading "Yamini Singh 243" [level=6] [ref=e204]
+                      - paragraph [ref=e205]: Follow-up
+                  - button "Delete" [ref=e206] [cursor=pointer]:
+                    - img [ref=e207]
+                - paragraph [ref=e211]:
+                  - text: "Consultation Date:"
+                  - generic [ref=e212]: 28 Apr, 26
+                - button "Edit Draft" [ref=e214] [cursor=pointer]:
+                  - img [ref=e216]
+                  - text: Edit Draft
+              - generic [ref=e220]:
+                - generic [ref=e221]:
+                  - generic [ref=e222]:
+                    - img [ref=e224]
+                    - generic [ref=e225]:
+                      - heading "Yamini Singh 243" [level=6] [ref=e226]
+                      - paragraph [ref=e227]: Follow-up
+                  - button "Delete" [ref=e228] [cursor=pointer]:
+                    - img [ref=e229]
+                - paragraph [ref=e233]:
+                  - text: "Consultation Date:"
+                  - generic [ref=e234]: 28 Apr, 26
+                - button "Edit Draft" [ref=e236] [cursor=pointer]:
+                  - img [ref=e238]
+                  - text: Edit Draft
+            - navigation "pagination navigation" [ref=e242]:
+              - list [ref=e243]:
+                - listitem [ref=e244]:
+                  - button "Go to previous page" [disabled]:
+                    - img
+                - listitem [ref=e245]:
+                  - button "page 1" [ref=e246] [cursor=pointer]: "1"
+                - listitem [ref=e247]:
+                  - button "Go to page 2" [ref=e248] [cursor=pointer]: "2"
+                - listitem [ref=e249]:
+                  - button "Go to page 3" [ref=e250] [cursor=pointer]: "3"
+                - listitem [ref=e251]:
+                  - button "Go to page 4" [ref=e252] [cursor=pointer]: "4"
+                - listitem [ref=e253]:
+                  - button "Go to page 5" [ref=e254] [cursor=pointer]: "5"
+                - listitem [ref=e255]:
+                  - generic [ref=e256]: …
+                - listitem [ref=e257]:
+                  - button "Go to page 90" [ref=e258] [cursor=pointer]: "90"
+                - listitem [ref=e259]:
+                  - button "Go to next page" [ref=e260] [cursor=pointer]:
+                    - img [ref=e261]
+      - contentinfo [ref=e263]:
+        - paragraph [ref=e265]: asksam does not provide medical advice, diagnosis, or treatment recommendations. Output must be reviewed by a qualified clinician. asksam is not designed to replace clinical reasoning or provide medical decision guidance.
+```
