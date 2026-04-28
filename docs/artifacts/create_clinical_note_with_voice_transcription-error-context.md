@@ -1,0 +1,242 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e4]:
+      - button [ref=e11] [cursor=pointer]:
+        - img [ref=e14]
+    - generic [ref=e17]:
+      - generic [ref=e19]:
+        - link [ref=e20] [cursor=pointer]:
+          - /url: /clinical/home
+          - img [ref=e21]
+          - paragraph [ref=e23]: Home
+        - link [ref=e24] [cursor=pointer]:
+          - /url: /clinical/patients
+          - img [ref=e25]
+          - paragraph [ref=e27]: Patients
+        - link [ref=e28] [cursor=pointer]:
+          - /url: /clinical/expert-dashboard
+          - img [ref=e29]
+          - paragraph [ref=e31]: Appointment Dashboard
+        - link [ref=e32] [cursor=pointer]:
+          - /url: /clinical/help-center
+          - img [ref=e33]
+          - paragraph [ref=e35]: Help Center
+        - link [ref=e36] [cursor=pointer]:
+          - /url: /clinical/settings
+          - img [ref=e37]
+          - paragraph [ref=e39]: Settings
+      - generic [ref=e40]:
+        - generic [ref=e41]:
+          - button [ref=e44]: Clinical Assistant
+          - generic [ref=e45]:
+            - generic [ref=e46]:
+              - generic [ref=e48]:
+                - button [ref=e49] [cursor=pointer]: In Progress
+                - button [ref=e50] [cursor=pointer]: Completed
+                - button [ref=e51] [cursor=pointer]: All
+              - button [ref=e54] [cursor=pointer]:
+                - img [ref=e56]
+                - generic [ref=e58]: Create Clinical Note
+            - generic [ref=e59]:
+              - generic [ref=e61]:
+                - generic [ref=e64]:
+                  - generic [ref=e65]:
+                    - generic [ref=e66]:
+                      - img [ref=e68]
+                      - generic [ref=e69]:
+                        - heading [level=6] [ref=e70]: Yamini Singh 191
+                        - paragraph [ref=e71]: Follow-up
+                    - button [ref=e72] [cursor=pointer]:
+                      - img [ref=e73]
+                  - paragraph [ref=e77]:
+                    - text: "Consultation Date:"
+                    - generic [ref=e78]: 28 Apr, 26
+                  - button [ref=e80] [cursor=pointer]:
+                    - img [ref=e82]
+                    - text: Edit Draft
+                - generic [ref=e86]:
+                  - generic [ref=e87]:
+                    - generic [ref=e88]:
+                      - img [ref=e90]
+                      - generic [ref=e91]:
+                        - heading [level=6] [ref=e92]: Yamini Singh 191
+                        - paragraph [ref=e93]: Follow-up
+                    - button [ref=e94] [cursor=pointer]:
+                      - img [ref=e95]
+                  - paragraph [ref=e99]:
+                    - text: "Consultation Date:"
+                    - generic [ref=e100]: 28 Apr, 26
+                  - button [ref=e102] [cursor=pointer]:
+                    - img [ref=e104]
+                    - text: Edit Draft
+                - generic [ref=e108]:
+                  - generic [ref=e109]:
+                    - generic [ref=e110]:
+                      - img [ref=e112]
+                      - generic [ref=e113]:
+                        - heading [level=6] [ref=e114]: Yamini Singh 191
+                        - paragraph [ref=e115]: Follow-up
+                    - button [ref=e116] [cursor=pointer]:
+                      - img [ref=e117]
+                  - paragraph [ref=e121]:
+                    - text: "Consultation Date:"
+                    - generic [ref=e122]: 28 Apr, 26
+                  - button [ref=e124] [cursor=pointer]:
+                    - img [ref=e126]
+                    - text: Edit Draft
+                - generic [ref=e130]:
+                  - generic [ref=e131]:
+                    - generic [ref=e132]:
+                      - img [ref=e134]
+                      - generic [ref=e136]:
+                        - heading [level=6] [ref=e137]: Yamini Singh 248
+                        - paragraph [ref=e138]: New
+                    - button [ref=e139] [cursor=pointer]:
+                      - img [ref=e140]
+                  - paragraph [ref=e144]:
+                    - text: "Consultation Date:"
+                    - generic [ref=e145]: 28 Apr, 26
+                  - button [ref=e147] [cursor=pointer]:
+                    - img [ref=e149]
+                    - text: Edit Draft
+                - generic [ref=e153]:
+                  - generic [ref=e154]:
+                    - generic [ref=e155]:
+                      - img [ref=e157]
+                      - generic [ref=e159]:
+                        - heading [level=6] [ref=e160]: Yamini Singh 247
+                        - paragraph [ref=e161]: Follow-up
+                    - button [ref=e162] [cursor=pointer]:
+                      - img [ref=e163]
+                  - paragraph [ref=e167]:
+                    - text: "Consultation Date:"
+                    - generic [ref=e168]: 28 Apr, 26
+                  - button [ref=e170] [cursor=pointer]:
+                    - img [ref=e172]
+                    - text: Edit Draft
+                - generic [ref=e176]:
+                  - generic [ref=e177]:
+                    - generic [ref=e178]:
+                      - img [ref=e180]
+                      - generic [ref=e182]:
+                        - heading [level=6] [ref=e183]: Yamini Singh 247
+                        - paragraph [ref=e184]: Follow-up
+                    - button [ref=e185] [cursor=pointer]:
+                      - img [ref=e186]
+                  - paragraph [ref=e190]:
+                    - text: "Consultation Date:"
+                    - generic [ref=e191]: 28 Apr, 26
+                  - button [ref=e193] [cursor=pointer]:
+                    - img [ref=e195]
+                    - text: Edit Draft
+                - generic [ref=e199]:
+                  - generic [ref=e200]:
+                    - generic [ref=e201]:
+                      - img [ref=e203]
+                      - generic [ref=e205]:
+                        - heading [level=6] [ref=e206]: Yamini Singh 247
+                        - paragraph [ref=e207]: New
+                    - button [ref=e208] [cursor=pointer]:
+                      - img [ref=e209]
+                  - paragraph [ref=e213]:
+                    - text: "Consultation Date:"
+                    - generic [ref=e214]: 28 Apr, 26
+                  - button [ref=e216] [cursor=pointer]:
+                    - img [ref=e218]
+                    - text: Edit Draft
+                - generic [ref=e222]:
+                  - generic [ref=e223]:
+                    - generic [ref=e224]:
+                      - img [ref=e226]
+                      - generic [ref=e228]:
+                        - heading [level=6] [ref=e229]: Yamini Pal Singh
+                        - paragraph [ref=e230]: Follow-up
+                    - button [ref=e231] [cursor=pointer]:
+                      - img [ref=e232]
+                  - generic [ref=e234]:
+                    - paragraph [ref=e236]:
+                      - text: "Consultation Date:"
+                      - generic [ref=e237]: 28 Apr, 26
+                    - paragraph [ref=e239]: "Mobile No: +61 345698736"
+                  - button [ref=e241] [cursor=pointer]:
+                    - img [ref=e243]
+                    - text: Edit Draft
+              - navigation [ref=e247]:
+                - list [ref=e248]:
+                  - listitem [ref=e249]:
+                    - button [disabled]:
+                      - img
+                  - listitem [ref=e250]:
+                    - button [ref=e251] [cursor=pointer]: "1"
+                  - listitem [ref=e252]:
+                    - button [ref=e253] [cursor=pointer]: "2"
+                  - listitem [ref=e254]:
+                    - button [ref=e255] [cursor=pointer]: "3"
+                  - listitem [ref=e256]:
+                    - button [ref=e257] [cursor=pointer]: "4"
+                  - listitem [ref=e258]:
+                    - button [ref=e259] [cursor=pointer]: "5"
+                  - listitem [ref=e260]:
+                    - generic [ref=e261]: …
+                  - listitem [ref=e262]:
+                    - button [ref=e263] [cursor=pointer]: "93"
+                  - listitem [ref=e264]:
+                    - button [ref=e265] [cursor=pointer]:
+                      - img [ref=e266]
+        - contentinfo [ref=e268]:
+          - paragraph [ref=e270]: asksam does not provide medical advice, diagnosis, or treatment recommendations. Output must be reviewed by a qualified clinician. asksam is not designed to replace clinical reasoning or provide medical decision guidance.
+  - dialog [ref=e274]:
+    - heading [level=2] [ref=e275]:
+      - heading [level=6] [ref=e276]: Search Patient
+      - button [ref=e277] [cursor=pointer]:
+        - img [ref=e278]
+    - generic [ref=e281]:
+      - img [ref=e282]
+      - textbox [ref=e285]:
+        - /placeholder: Search by name, or enter full email...
+        - text: Yamini Singh 191
+    - generic [ref=e288] [cursor=pointer]:
+      - generic [ref=e290]:
+        - paragraph [ref=e291]: Yamini Singh 191
+        - generic [ref=e292]:
+          - paragraph [ref=e293]:
+            - img [ref=e294]
+            - generic [ref=e296]: ys191_aus@yopmail.com
+          - img [ref=e298]
+      - img [ref=e301]
+    - button [ref=e304] [cursor=pointer]:
+      - img [ref=e306]
+      - text: Create New Patient Profile
+  - dialog "Voice and Document Transcriptions Upload Send Transcription" [ref=e310]:
+    - generic [ref=e311]:
+      - generic [ref=e312]: Voice and Document Transcriptions
+      - generic [ref=e313]:
+        - button "Upload" [ref=e314] [cursor=pointer]:
+          - img [ref=e315]
+          - text: Upload
+        - button "Send Transcription" [disabled]:
+          - img
+          - text: Send Transcription
+        - button [ref=e318] [cursor=pointer]:
+          - img [ref=e319]
+    - generic [ref=e321]:
+      - textbox "Start Typing..." [ref=e325]
+      - generic [ref=e328]:
+        - generic [ref=e330]:
+          - generic "Select Language for Speech Recognition" [ref=e331]:
+            - generic [ref=e332]:
+              - combobox [ref=e333] [cursor=pointer]:
+                - generic [ref=e334]:
+                  - img [ref=e335]
+                  - generic [ref=e337]: English
+              - textbox: en
+              - img
+              - group
+          - button "For best results, please use voice dictation in the selected language." [ref=e338] [cursor=pointer]:
+            - img [ref=e339]
+        - button [ref=e348] [cursor=pointer]:
+          - img [ref=e349]
+```
