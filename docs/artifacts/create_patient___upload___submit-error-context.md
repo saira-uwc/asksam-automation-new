@@ -1,260 +1,56 @@
 # Page snapshot
 
 ```yaml
-- generic [active] [ref=e1]:
-  - generic [ref=e2]:
-    - banner [ref=e4]:
-      - button [ref=e11] [cursor=pointer]:
-        - img [ref=e14]
-    - generic [ref=e17]:
-      - generic [ref=e19]:
-        - link [ref=e20] [cursor=pointer]:
-          - /url: /clinical/home
-          - img [ref=e21]
-          - paragraph [ref=e23]: Home
-        - link [ref=e24] [cursor=pointer]:
-          - /url: /clinical/patients
-          - img [ref=e25]
-          - paragraph [ref=e27]: Patients
-        - link [ref=e28] [cursor=pointer]:
-          - /url: /clinical/expert-dashboard
-          - img [ref=e29]
-          - paragraph [ref=e31]: Appointment Dashboard
-        - link [ref=e32] [cursor=pointer]:
-          - /url: /clinical/help-center
-          - img [ref=e33]
-          - paragraph [ref=e35]: Help Center
-        - link [ref=e36] [cursor=pointer]:
-          - /url: /clinical/settings
-          - img [ref=e37]
-          - paragraph [ref=e39]: Settings
-      - generic [ref=e40]:
-        - generic [ref=e41]:
-          - button [ref=e44]: Clinical Assistant
-          - generic [ref=e45]:
-            - generic [ref=e46]:
-              - generic [ref=e48]:
-                - button [ref=e49] [cursor=pointer]: In Progress
-                - button [ref=e50] [cursor=pointer]: Completed
-                - button [ref=e51] [cursor=pointer]: All
-              - button [ref=e54] [cursor=pointer]:
-                - img [ref=e56]
-                - generic [ref=e58]: Create Clinical Note
-            - generic [ref=e59]:
-              - generic [ref=e61]:
-                - generic [ref=e64]:
-                  - generic [ref=e65]:
-                    - generic [ref=e66]:
-                      - img [ref=e68]
-                      - generic [ref=e70]:
-                        - heading [level=6] [ref=e71]: Test user-433380
-                        - paragraph [ref=e72]: New
-                    - button [ref=e73] [cursor=pointer]:
-                      - img [ref=e74]
-                  - paragraph [ref=e78]:
-                    - text: "Consultation Date:"
-                    - generic [ref=e79]: 28 Apr, 26
-                  - button [ref=e81] [cursor=pointer]:
-                    - img [ref=e83]
-                    - text: Edit Draft
-                - generic [ref=e87]:
-                  - generic [ref=e88]:
-                    - generic [ref=e89]:
-                      - img [ref=e91]
-                      - generic [ref=e93]:
-                        - heading [level=6] [ref=e94]: Test user-348512
-                        - paragraph [ref=e95]: New
-                    - button [ref=e96] [cursor=pointer]:
-                      - img [ref=e97]
-                  - paragraph [ref=e101]:
-                    - text: "Consultation Date:"
-                    - generic [ref=e102]: 28 Apr, 26
-                  - button [ref=e104] [cursor=pointer]:
-                    - img [ref=e106]
-                    - text: Edit Draft
-                - generic [ref=e110]:
-                  - generic [ref=e111]:
-                    - generic [ref=e112]:
-                      - img [ref=e114]
-                      - generic [ref=e115]:
-                        - heading [level=6] [ref=e116]: Yamini Singh 243
-                        - paragraph [ref=e117]: Follow-up
-                    - button [ref=e118] [cursor=pointer]:
-                      - img [ref=e119]
-                  - paragraph [ref=e123]:
-                    - text: "Consultation Date:"
-                    - generic [ref=e124]: 28 Apr, 26
-                  - button [ref=e126] [cursor=pointer]:
-                    - img [ref=e128]
-                    - text: Edit Draft
-                - generic [ref=e132]:
-                  - generic [ref=e133]:
-                    - generic [ref=e134]:
-                      - img [ref=e136]
-                      - generic [ref=e137]:
-                        - heading [level=6] [ref=e138]: Yamini Singh 243
-                        - paragraph [ref=e139]: Follow-up
-                    - button [ref=e140] [cursor=pointer]:
-                      - img [ref=e141]
-                  - paragraph [ref=e145]:
-                    - text: "Consultation Date:"
-                    - generic [ref=e146]: 28 Apr, 26
-                  - button [ref=e148] [cursor=pointer]:
-                    - img [ref=e150]
-                    - text: Edit Draft
-                - generic [ref=e154]:
-                  - generic [ref=e155]:
-                    - generic [ref=e156]:
-                      - img [ref=e158]
-                      - generic [ref=e159]:
-                        - heading [level=6] [ref=e160]: Yamini Singh 191
-                        - paragraph [ref=e161]: Follow-up
-                    - button [ref=e162] [cursor=pointer]:
-                      - img [ref=e163]
-                  - paragraph [ref=e167]:
-                    - text: "Consultation Date:"
-                    - generic [ref=e168]: 28 Apr, 26
-                  - button [ref=e170] [cursor=pointer]:
-                    - img [ref=e172]
-                    - text: Edit Draft
-                - generic [ref=e176]:
-                  - generic [ref=e177]:
-                    - generic [ref=e178]:
-                      - img [ref=e180]
-                      - generic [ref=e181]:
-                        - heading [level=6] [ref=e182]: Yamini Singh 243
-                        - paragraph [ref=e183]: Follow-up
-                    - button [ref=e184] [cursor=pointer]:
-                      - img [ref=e185]
-                  - paragraph [ref=e189]:
-                    - text: "Consultation Date:"
-                    - generic [ref=e190]: 28 Apr, 26
-                  - button [ref=e192] [cursor=pointer]:
-                    - img [ref=e194]
-                    - text: Edit Draft
-                - generic [ref=e198]:
-                  - generic [ref=e199]:
-                    - generic [ref=e200]:
-                      - img [ref=e202]
-                      - generic [ref=e203]:
-                        - heading [level=6] [ref=e204]: Yamini Singh 243
-                        - paragraph [ref=e205]: Follow-up
-                    - button [ref=e206] [cursor=pointer]:
-                      - img [ref=e207]
-                  - paragraph [ref=e211]:
-                    - text: "Consultation Date:"
-                    - generic [ref=e212]: 28 Apr, 26
-                  - button [ref=e214] [cursor=pointer]:
-                    - img [ref=e216]
-                    - text: Edit Draft
-                - generic [ref=e220]:
-                  - generic [ref=e221]:
-                    - generic [ref=e222]:
-                      - img [ref=e224]
-                      - generic [ref=e225]:
-                        - heading [level=6] [ref=e226]: Yamini Singh 243
-                        - paragraph [ref=e227]: Follow-up
-                    - button [ref=e228] [cursor=pointer]:
-                      - img [ref=e229]
-                  - paragraph [ref=e233]:
-                    - text: "Consultation Date:"
-                    - generic [ref=e234]: 28 Apr, 26
-                  - button [ref=e236] [cursor=pointer]:
-                    - img [ref=e238]
-                    - text: Edit Draft
-              - navigation [ref=e242]:
-                - list [ref=e243]:
-                  - listitem [ref=e244]:
-                    - button [disabled]:
-                      - img
-                  - listitem [ref=e245]:
-                    - button [ref=e246] [cursor=pointer]: "1"
-                  - listitem [ref=e247]:
-                    - button [ref=e248] [cursor=pointer]: "2"
-                  - listitem [ref=e249]:
-                    - button [ref=e250] [cursor=pointer]: "3"
-                  - listitem [ref=e251]:
-                    - button [ref=e252] [cursor=pointer]: "4"
-                  - listitem [ref=e253]:
-                    - button [ref=e254] [cursor=pointer]: "5"
-                  - listitem [ref=e255]:
-                    - generic [ref=e256]: …
-                  - listitem [ref=e257]:
-                    - button [ref=e258] [cursor=pointer]: "89"
-                  - listitem [ref=e259]:
-                    - button [ref=e260] [cursor=pointer]:
-                      - img [ref=e261]
-        - contentinfo [ref=e263]:
-          - paragraph [ref=e265]: asksam does not provide medical advice, diagnosis, or treatment recommendations. Output must be reviewed by a qualified clinician. asksam is not designed to replace clinical reasoning or provide medical decision guidance.
-  - dialog [ref=e268]:
-    - generic [ref=e269]:
-      - generic [ref=e270]: Caution
-      - button [ref=e273] [cursor=pointer]:
-        - img [ref=e274]
-    - generic [ref=e277]:
-      - generic [ref=e278]:
-        - heading "Caution" [level=2] [ref=e280]:
-          - img [ref=e281]
-          - text: Caution
-        - paragraph [ref=e283]: "Please review the following important points before proceeding:"
-        - list [ref=e284]:
-          - listitem [ref=e285]:
-            - img [ref=e287]
-            - generic [ref=e290]: The Clinical Copilot is not intended to function as a medical device. Any output must be verified by a healthcare professional (HCP), and no direct diagnosis or prescription should be issued based solely on this output.
-          - listitem [ref=e291]:
-            - img [ref=e293]
-            - generic [ref=e296]: Only licensed psychiatrists, medical doctors, or healthcare providers with valid authority may prescribe medications.
-          - listitem [ref=e298]:
-            - paragraph [ref=e299]: •
-            - generic [ref=e301]: Non-medical professionals, including psychotherapists, counsellors, and psychologists, cannot prescribe medications, even if the Clinical Copilot suggests treatments.
-          - listitem [ref=e302]:
-            - img [ref=e304]
-            - generic [ref=e307]: "Due to the nature of large language models (LLMs) and generative AI, outputs may not always be reliable. Outputs may contain:"
-          - generic [ref=e308]:
-            - listitem [ref=e309]:
-              - paragraph [ref=e310]: •
-              - generic [ref=e312]: Incorrect information
-            - listitem [ref=e313]:
-              - paragraph [ref=e314]: •
-              - generic [ref=e316]: Biases or stereotypes
-            - listitem [ref=e317]:
-              - paragraph [ref=e318]: •
-              - generic [ref=e320]: Potentially harmful content
-          - listitem [ref=e321]:
-            - img [ref=e323]
-            - generic [ref=e326]: All summaries, answers, or recommendations are intended as drafts for review and should not be considered final.
-          - listitem [ref=e327]:
-            - img [ref=e329]
-            - generic [ref=e332]:
-              - text: If the Clinical Copilot detects content violating our policies, including the
-              - link "Generative AI Prohibited Use Policy" [ref=e333] [cursor=pointer]:
-                - /url: https://legal.asksam.com.au/ai-use-policy
-              - text: ":"
-          - generic [ref=e334]:
-            - listitem [ref=e335]:
-              - paragraph [ref=e336]: •
-              - generic [ref=e338]: It may not return a response.
-            - listitem [ref=e339]:
-              - paragraph [ref=e340]: •
-              - generic [ref=e342]: When responses are generated, users are responsible for verifying them and for any clinical outcomes.
-          - listitem [ref=e343]:
-            - img [ref=e345]
-            - generic [ref=e348]: For Q&A purposes, the Clinical Copilot is intended strictly as an educational tool for medical training or to reinforce the HCP's existing clinical knowledge.
-          - listitem [ref=e349]:
-            - img [ref=e351]
-            - generic [ref=e354]: "Output formatting may vary from the exact input prompt, so prompts should be designed to account for:"
-          - listitem [ref=e356]:
-            - paragraph [ref=e357]: •
-            - generic [ref=e359]: Potential deviations in format (e.g., dashes in field names or capitalization variations).
-          - listitem [ref=e360]:
-            - img [ref=e362]
-            - generic [ref=e365]:
-              - text: By using this tool, users acknowledge that they have read and understood the
-              - link "Disclaimer for asksam Clinical Copilot" [ref=e366] [cursor=pointer]:
-                - /url: https://legal.asksam.com.au/disclaimer-ccop
-              - text: .
-          - listitem [ref=e367]:
-            - img [ref=e369]
-            - generic [ref=e372]: The Clinical Copilot is not intended to be used as an electronic medical record (EMR) or similar system.
-      - button "I Understand and Accept the Cautions" [ref=e374] [cursor=pointer]: I Understand and Accept the Cautions
+- generic [ref=e2]:
+  - banner [ref=e4]:
+    - button "Open user menu" [ref=e11] [cursor=pointer]:
+      - img "Anthony Smith's logo" [ref=e14]
+  - generic [ref=e17]:
+    - generic [ref=e19]:
+      - link "Home" [ref=e20] [cursor=pointer]:
+        - /url: /clinical/home
+        - img [ref=e21]
+        - paragraph [ref=e23]: Home
+      - link "Patients" [ref=e24] [cursor=pointer]:
+        - /url: /clinical/patients
+        - img [ref=e25]
+        - paragraph [ref=e27]: Patients
+      - link "Appointment Dashboard" [ref=e28] [cursor=pointer]:
+        - /url: /clinical/expert-dashboard
+        - img [ref=e29]
+        - paragraph [ref=e31]: Appointment Dashboard
+      - link "Help Center" [ref=e32] [cursor=pointer]:
+        - /url: /clinical/help-center
+        - img [ref=e33]
+        - paragraph [ref=e35]: Help Center
+      - link "Settings" [ref=e36] [cursor=pointer]:
+        - /url: /clinical/settings
+        - img [ref=e37]
+        - paragraph [ref=e39]: Settings
+    - generic [ref=e40]:
+      - generic [ref=e41]:
+        - generic [ref=e43]:
+          - navigation "breadcrumb" [ref=e44]:
+            - list [ref=e45]:
+              - listitem [ref=e46]:
+                - button "Clinical Co-Pilot" [ref=e47]
+          - generic [ref=e48]:
+            - button "Actions" [ref=e49] [cursor=pointer]:
+              - text: Actions
+              - img [ref=e50]
+            - generic [ref=e52]:
+              - button "Save" [ref=e53] [cursor=pointer]:
+                - img [ref=e54]
+                - text: Save
+              - button "Submit" [ref=e56] [cursor=pointer]:
+                - text: Submit
+                - img [ref=e57]
+        - generic [ref=e59]:
+          - img "No worksheets" [ref=e60]
+          - paragraph [ref=e61]: Sorry, you don't have permission to view these details. If you believe this is an error, please contact support. We appreciate your understanding.
+          - generic [ref=e62]:
+            - button "Go to Clinical Co-Pilot" [ref=e63] [cursor=pointer]: Go to Clinical Co-Pilot
+            - button "Contact Support" [ref=e64] [cursor=pointer]: Contact Support
+      - contentinfo [ref=e65]:
+        - paragraph [ref=e67]: asksam does not provide medical advice, diagnosis, or treatment recommendations. Output must be reviewed by a qualified clinician. asksam is not designed to replace clinical reasoning or provide medical decision guidance.
 ```
