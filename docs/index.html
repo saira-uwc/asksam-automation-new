@@ -560,7 +560,10 @@
                 <div class="card stat-card"><div class="label">Pass Rate</div><div class="value" style="color:${run.passRate >= 80 ? 'var(--pass)' : 'var(--warn)'}">${run.passRate}%</div></div>
             </div>
         `;
-        if (isLatest && latestData.tests) {
+        // Prefer per-test details if available. latestData.tests has full attachments;
+        // historical runs in runs.json have lightweight tests (no attachments) — both work.
+        const testsForRun = (isLatest && latestData.tests) ? latestData.tests : (run.tests || null);
+        if (testsForRun) {
             const failCount = s.failed + (s.timedOut || 0);
             body += `
                 <div class="modal-filters">
@@ -569,8 +572,10 @@
                     <button class="btn" onclick="filterModal('passed',this)">Passed (${s.passed})</button>
                     <button class="btn" onclick="filterModal('failed',this)">Failed (${failCount})</button>
                 </div>
-                <div id="modalTests">${renderModalTests(latestData.tests, 'all')}</div>
+                <div id="modalTests">${renderModalTests(testsForRun, 'all')}</div>
             `;
+            // Cache for the filter buttons to read
+            modalRunData = { ...run, tests: testsForRun };
         } else {
             body += '<h3 style="margin:12px 0 8px;font-size:14px;color:var(--muted)">Module Breakdown</h3>';
             body += Object.entries(run.modules).map(([, m]) => `
@@ -654,7 +659,8 @@
         if (filter === 'passed') btn.classList.add('active-pass');
         else if (filter === 'failed') btn.classList.add('active-fail');
         else btn.classList.add('active');
-        document.getElementById('modalTests').innerHTML = renderModalTests(latestData.tests, filter);
+        const tests = (modalRunData && modalRunData.tests) || (latestData && latestData.tests) || [];
+        document.getElementById('modalTests').innerHTML = renderModalTests(tests, filter);
     }
 
     function closeModal() {

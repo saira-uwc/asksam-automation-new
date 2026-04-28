@@ -194,6 +194,17 @@ function main() {
     try { history = JSON.parse(fs.readFileSync(HISTORY_PATH, 'utf8')); } catch { history = []; }
   }
 
+  // Lightweight per-test entries for history (title/module/status/duration + truncated error).
+  // Skip attachments and full errors to keep runs.json small even with 100s of runs.
+  const lightweightTests = tests.map((t) => ({
+    title: t.title,
+    module: t.module,
+    moduleLabel: t.moduleLabel,
+    status: t.status,
+    durationMs: t.durationMs,
+    error: t.error ? t.error.substring(0, 300) : '',
+  }));
+
   const runSummary = {
     id: runId,
     startedAt,
@@ -201,6 +212,7 @@ function main() {
     summary: { total, passed, failed, skipped, timedOut },
     passRate,
     modules,
+    tests: lightweightTests,
   };
 
   history.unshift(runSummary);
