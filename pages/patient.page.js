@@ -13,8 +13,44 @@ export class PatientPage {
     this.lastName = `user-${id}`;
     this.email = `testuser-${id}@tmail.com`;
 
-    await this.page.getByRole('button', { name: 'Create Clinical Note' }).click();
-    await this.page.getByRole('button', { name: 'Create New Patient Profile' }).click();
+    // The button name varies by state:
+    //   - Empty state (no in-progress notes): "Create Your First Clinical Note"
+    //   - Normal state:                       "Create Clinical Note"
+    // The /clinical/home page can take 30-60s to render content under load.
+    // Wait up to 90s for the button to appear (covers slow API responses).
+    const createBtn = this.page.getByRole('button', {
+      name: /Create (Your First )?Clinical Note/i,
+    }).first();
+    await createBtn.waitFor({ state: 'visible', timeout: 90000 });
+    await createBtn.click();
+
+    // The Create button opens a "Search Patient" modal. The "Create New Patient
+    // Profile" button stays DISABLED until you search for the new patient's email
+    // and the system confirms no duplicate. Type the email (pressSequentially
+    // triggers React onChange properly — fill() can skip the debounced search),
+    // wait for the explicit "No patients found" message, then click.
+    const searchModal = this.page.getByRole('dialog');
+    await searchModal.waitFor({ state: 'visible', timeout: 30000 });
+    const searchBox = searchModal.getByRole('textbox').first();
+    await searchBox.click();
+    await searchBox.pressSequentially(this.email, { delay: 50 });
+    // Wait for the "No patients found" / "no match" copy to appear — that's the
+    // signal the search API has responded and the Create button has enabled.
+    await this.page.getByText(/No patients found|No match for that email/i)
+      .first()
+      .waitFor({ state: 'visible', timeout: 20000 })
+      .catch(() => {});
+    const createNewBtn = this.page.getByRole('button', { name: 'Create New Patient Profile' });
+    await createNewBtn.waitFor({ state: 'visible', timeout: 10000 });
+    // Belt-and-braces — also wait for the disabled attr to clear
+    await this.page.waitForFunction(
+      () => {
+        const btn = document.querySelector('#create_patient_btn');
+        return btn && !btn.disabled;
+      },
+      { timeout: 10000 }
+    ).catch(() => {});
+    await createNewBtn.click();
 
     await this.page.getByRole('textbox', { name: 'First Name' }).fill(this.firstName);
     await this.page.getByRole('textbox', { name: 'Last Name' }).fill(this.lastName);
@@ -65,15 +101,26 @@ export class PatientPage {
         .waitFor({ timeout: 120000 }),
     ]).catch(() => {});
 
+    // The flow shows TWO disclaimers in sequence (matches dashboard.page.js
+    // acceptDisclaimers). Previously we only dismissed the first, the second
+    // stayed open, and the page never navigated to the note detail view —
+    // submit then failed because there was no Submit button on /clinical/home.
     const disclaimerBtn = this.page.getByRole('button', {
       name: /I Understand and Accept/i,
     });
 
-    if (await disclaimerBtn.isVisible().catch(() => false)) {
-      await disclaimerBtn.click();
-      console.log('✅ Disclaimer accepted');
-    } else {
-      console.log('ℹ️ Disclaimer not shown, continuing');
+    for (let i = 1; i <= 2; i++) {
+      if (await disclaimerBtn.first().isVisible({ timeout: 10000 }).catch(() => false)) {
+        await disclaimerBtn.first().click();
+        console.log(`✅ Disclaimer ${i} accepted`);
+        await this.page.waitForTimeout(2000); // wait for next modal / navigation
+      } else if (i === 1) {
+        console.log('ℹ️ Disclaimer not shown, continuing');
+        break;
+      } else {
+        // Second disclaimer didn't appear — that's OK, some flows only have one
+        break;
+      }
     }
   }
 
@@ -125,8 +172,31 @@ export class PatientPage {
     }
 
     if (!foundAnyTab) {
+      const url = this.page.url();
+      // The app sometimes navigates to ?clinicalId=null with a "no permission"
+      // empty-state — meaning the backend transcription/note-creation call
+      // failed silently. Surface this as an APP-SIDE failure with clear context.
+      const hasPermissionError = await this.page
+        .getByText(/don.t have permission to view these details/i)
+        .isVisible({ timeout: 2000 })
+        .catch(() => false);
+      const isNullClinicalId = url.includes('clinicalId=null');
+
+      if (hasPermissionError || isNullClinicalId) {
+        throw new Error(
+          `APP-SIDE FAILURE: note creation backend call did not produce a valid clinicalId.\n` +
+          `URL at failure: ${url}\n` +
+          `App showed: "you don't have permission to view these details" (${hasPermissionError}).\n` +
+          `This means the upload/transcribe API succeeded but the resulting note ` +
+          `record was not created in the backend, or was created without owner ` +
+          `permissions. Forward the cookies.json + redirect-chain.txt + console.log ` +
+          `forensics artifacts to the dev team — the test code is correct, the API ` +
+          `response is the issue.`
+        );
+      }
+
       throw new Error(
-        `No clinical tabs found on the page (URL: ${this.page.url()}). ` +
+        `No clinical tabs found on the page (URL: ${url}). ` +
         `The note creation flow likely landed on the wrong page — check the disclaimer accept step.`
       );
     }
