@@ -13,7 +13,6 @@ export default class FailureReporter {
         screenshot: find("screenshot"),
         video: find("video"),
         trace: find("trace"),
-        har: find("network.har"),
         cookies: find("cookies.json"),
         clerkInfo: find("clerk-info.txt"),
         localStorage: find("localStorage.json"),
@@ -27,7 +26,6 @@ export default class FailureReporter {
       console.log("📸 Screenshot:    ", att.screenshot?.path || "(none)");
       console.log("🎥 Video:         ", att.video?.path || "(none)");
       console.log("📊 Trace:         ", att.trace?.path || "(none)");
-      console.log("🌐 HAR:           ", att.har?.path || "(none)");
       console.log("🍪 Cookies:       ", att.cookies?.path || "(none)");
       console.log("🔐 Clerk info:    ", att.clerkInfo?.path || "(none)");
       console.log("💾 localStorage:  ", att.localStorage?.path || "(none)");

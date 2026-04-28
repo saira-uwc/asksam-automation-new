@@ -11,52 +11,23 @@
  *   - clerk-info.txt        (Clerk session/user IDs extracted from cookies)
  *   - network-failures.txt  (failed responses during test, with status + URL)
  *
- * HAR recording is enabled at the playwright.config.js level (project-wide).
+ * Network log lives inside trace.zip (extract via:
+ *   npx playwright show-trace trace.zip
+ * — the Network tab is HAR-equivalent).
  *
  * Tests must `import { test, expect } from '../../helpers/forensics-fixture';`
  * instead of `from '@playwright/test'`. No other code changes required.
  */
 
 import { test as base, expect } from '@playwright/test';
-import path from 'path';
-import fs from 'fs';
 
 export { expect };
 
 export const test = base.extend({
-  // Override the context fixture to record HAR per-test. HAR is kept on
-  // failure (attached to test) and deleted on pass to save disk space.
-  context: async ({ browser }, use, testInfo) => {
-    const harDir = path.join(testInfo.project.outputDir, 'har');
-    fs.mkdirSync(harDir, { recursive: true });
-    const harPath = path.join(harDir, `${testInfo.testId}.har`);
-
-    const ctx = await browser.newContext({
-      ...testInfo.project.use,
-      recordHar: { path: harPath, mode: 'minimal', content: 'attach' },
-      // Re-load storage state from project config (since we're creating context manually)
-      storageState: testInfo.project.use?.storageState,
-    });
-
-    await use(ctx);
-    await ctx.close();
-
-    // After test — attach HAR if failed, otherwise delete
-    if (testInfo.status !== testInfo.expectedStatus) {
-      try {
-        if (fs.existsSync(harPath)) {
-          await testInfo.attach('network.har', {
-            path: harPath,
-            contentType: 'application/json',
-          });
-        }
-      } catch { /* ignore */ }
-    } else {
-      try { fs.unlinkSync(harPath); } catch { /* ignore */ }
-    }
-  },
-
   // Auto-fixture: runs for every test, captures forensic data on failure.
+  // We do NOT override the `context` fixture — doing so loses test-level
+  // `test.use({ storageState: ... })` overrides (e.g. letter-template tests
+  // that need a fresh anonymous context).
   page: async ({ page, context }, use, testInfo) => {
     const consoleMessages = [];
     const pageErrors = [];

@@ -81,6 +81,13 @@ export class PatientPage {
     const tabs = ['Clinical Advice', 'Clinical Examination', 'Follow-Up Note', 'Case History'];
     const perTabWait = 90000; // 90 seconds per tab
     const failedTabs = [];
+    let foundAnyTab = false;
+
+    // First — wait briefly for tabs to render (the note detail page can take
+    // a few seconds to mount after the disclaimer dismisses).
+    await this.page.getByRole('tab', { name: tabs[0] })
+      .waitFor({ state: 'visible', timeout: 30000 })
+      .catch(() => {});
 
     for (const tabName of tabs) {
       const tab = this.page.getByRole('tab', { name: tabName });
@@ -88,6 +95,7 @@ export class PatientPage {
         console.log(`⚠ ${tabName} tab not found — skipping`);
         continue;
       }
+      foundAnyTab = true;
 
       await tab.click();
       await this.page.waitForTimeout(1500);
@@ -116,6 +124,13 @@ export class PatientPage {
       }
     }
 
+    if (!foundAnyTab) {
+      throw new Error(
+        `No clinical tabs found on the page (URL: ${this.page.url()}). ` +
+        `The note creation flow likely landed on the wrong page — check the disclaimer accept step.`
+      );
+    }
+
     if (failedTabs.length > 0) {
       throw new Error(
         `Clinical note tabs have no data after 90s wait: ${failedTabs.join(', ')} — transcription incomplete`
@@ -130,9 +145,26 @@ export class PatientPage {
   }
 
   async submitClinicalNote() {
-    // ❌ NO waitForURL — UI doesn’t always navigate
-    await this.page.getByRole('button', { name: 'Submit' }).click();
-    await this.page.getByRole('button', { name: 'Submit' }).click();
+    // The Submit button often appears disabled while the note is still
+    // saving/transcribing in the background. Wait for it to become visible
+    // AND enabled before clicking — prevents 30s timeouts on the bare .click().
+    const submitBtn = this.page.getByRole('button', { name: 'Submit' });
+    await submitBtn.first().waitFor({ state: 'visible', timeout: 60000 });
+    // Wait until at least one Submit button is enabled
+    await this.page.waitForFunction(
+      () => Array.from(document.querySelectorAll('button')).some(
+        (b) => b.textContent?.trim() === 'Submit' && !b.disabled
+      ),
+      { timeout: 60000 }
+    ).catch(() => {});
+    await submitBtn.first().click();
+
+    // Second Submit is the confirm-dialog button; wait for it explicitly
+    // (a fresh element renders inside the dialog, so re-resolve)
+    await this.page.waitForTimeout(500);
+    const confirmBtn = this.page.getByRole('button', { name: 'Submit' });
+    await confirmBtn.last().waitFor({ state: 'visible', timeout: 30000 });
+    await confirmBtn.last().click();
 
     await this.page
       .getByText(/Your note has been submitted/i)
