@@ -210,7 +210,7 @@
     - button [ref=e304] [cursor=pointer]:
       - img [ref=e306]
       - text: Create New Patient Profile
-  - dialog "Voice and Document Transcriptions Upload Send Transcription" [ref=e310]:
+  - dialog [ref=e310]:
     - generic [ref=e311]:
       - generic [ref=e312]: Voice and Document Transcriptions
       - generic [ref=e313]:
@@ -224,19 +224,22 @@
           - img [ref=e319]
     - generic [ref=e321]:
       - textbox "Start Typing..." [ref=e325]
-      - generic [ref=e328]:
-        - generic [ref=e330]:
-          - generic "Select Language for Speech Recognition" [ref=e331]:
-            - generic [ref=e332]:
-              - combobox [ref=e333] [cursor=pointer]:
-                - generic [ref=e334]:
-                  - img [ref=e335]
-                  - generic [ref=e337]: English
-              - textbox: en
-              - img
-              - group
-          - button "For best results, please use voice dictation in the selected language." [ref=e338] [cursor=pointer]:
-            - img [ref=e339]
-        - button [ref=e348] [cursor=pointer]:
-          - img [ref=e349]
+      - generic [ref=e327]:
+        - generic [ref=e328]:
+          - generic [ref=e330]:
+            - generic "Select Language for Speech Recognition" [ref=e331]:
+              - generic [ref=e332]:
+                - combobox [ref=e333] [cursor=pointer]:
+                  - generic [ref=e334]:
+                    - img [ref=e335]
+                    - generic [ref=e337]: English
+                - textbox: en
+                - img
+                - group
+            - button "For best results, please use voice dictation in the selected language." [ref=e338] [cursor=pointer]:
+              - img [ref=e339]
+          - button [ref=e348] [cursor=pointer]:
+            - img [ref=e349]
+        - progressbar [ref=e354]:
+          - img [ref=e355]
 ```
