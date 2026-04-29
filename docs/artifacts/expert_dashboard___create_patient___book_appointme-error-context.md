@@ -112,10 +112,10 @@
                     - paragraph [ref=e154]: 29 Apr 2026
                   - generic [ref=e155]:
                     - img [ref=e156]
-                    - paragraph [ref=e158]: 07:30 PM
+                    - paragraph [ref=e158]: 09:30 PM
               - generic [ref=e160]:
                 - link [ref=e161] [cursor=pointer]:
-                  - /url: https://meet.google.com/yjx-bphd-yuj
+                  - /url: https://meet.google.com/abn-agot-myx
                   - text: Join Now
                 - button [ref=e162] [cursor=pointer]: View Details
             - generic [ref=e164]:
@@ -145,10 +145,10 @@
                     - paragraph [ref=e196]: 29 Apr 2026
                   - generic [ref=e197]:
                     - img [ref=e198]
-                    - paragraph [ref=e200]: 08:00 PM
+                    - paragraph [ref=e200]: 10:00 PM
               - generic [ref=e202]:
                 - link [ref=e203] [cursor=pointer]:
-                  - /url: https://meet.google.com/jkb-onpt-vox
+                  - /url: https://meet.google.com/pnv-vcfn-ufm
                   - text: Join Now
                 - button [ref=e204] [cursor=pointer]: View Details
             - generic [ref=e206]:
@@ -161,7 +161,7 @@
                     - generic [ref=e218]:
                       - generic [ref=e219]: Follow up Consult
                       - generic [ref=e220]: Natural Medicine
-                    - heading [level=6] [ref=e221]: test user-581135
+                    - heading [level=6] [ref=e221]: Testtt The Sairaa
                     - heading [level=6] [ref=e222]: "Appointment With : Dr Anthony Smith"
                     - heading [level=6] [ref=e223]: "Created By : Anthony Smith"
                     - generic [ref=e224]:
@@ -178,10 +178,10 @@
                     - paragraph [ref=e238]: 29 Apr 2026
                   - generic [ref=e239]:
                     - img [ref=e240]
-                    - paragraph [ref=e242]: 08:30 PM
+                    - paragraph [ref=e242]: 10:30 PM
               - generic [ref=e244]:
                 - link [ref=e245] [cursor=pointer]:
-                  - /url: https://meet.google.com/rmo-eyrj-mgw
+                  - /url: https://meet.google.com/oxu-kzfs-pmc
                   - text: Join Now
                 - button [ref=e246] [cursor=pointer]: View Details
             - generic [ref=e248]:
@@ -194,7 +194,7 @@
                     - generic [ref=e260]:
                       - generic [ref=e261]: Follow up Consult
                       - generic [ref=e262]: Natural Medicine
-                    - heading [level=6] [ref=e263]: Testtt The Sairaa
+                    - heading [level=6] [ref=e263]: test user-265967
                     - heading [level=6] [ref=e264]: "Appointment With : Dr Anthony Smith"
                     - heading [level=6] [ref=e265]: "Created By : Anthony Smith"
                     - generic [ref=e266]:
@@ -208,13 +208,13 @@
                 - generic [ref=e276]:
                   - generic [ref=e277]:
                     - img [ref=e278]
-                    - paragraph [ref=e280]: 29 Apr 2026
+                    - paragraph [ref=e280]: 30 Apr 2026
                   - generic [ref=e281]:
                     - img [ref=e282]
-                    - paragraph [ref=e284]: 09:00 PM
+                    - paragraph [ref=e284]: 01:00 AM
               - generic [ref=e286]:
                 - link [ref=e287] [cursor=pointer]:
-                  - /url: https://meet.google.com/nkv-fybn-vdm
+                  - /url: https://meet.google.com/wvh-dsbm-obe
                   - text: Join Now
                 - button [ref=e288] [cursor=pointer]: View Details
             - generic [ref=e290]:
@@ -241,13 +241,13 @@
                 - generic [ref=e318]:
                   - generic [ref=e319]:
                     - img [ref=e320]
-                    - paragraph [ref=e322]: 29 Apr 2026
+                    - paragraph [ref=e322]: 30 Apr 2026
                   - generic [ref=e323]:
                     - img [ref=e324]
-                    - paragraph [ref=e326]: 09:30 PM
+                    - paragraph [ref=e326]: 01:30 AM
               - generic [ref=e328]:
                 - link [ref=e329] [cursor=pointer]:
-                  - /url: https://meet.google.com/abn-agot-myx
+                  - /url: https://meet.google.com/gjb-eibu-kvg
                   - text: Join Now
                 - button [ref=e330] [cursor=pointer]: View Details
             - generic [ref=e332]:
@@ -274,13 +274,13 @@
                 - generic [ref=e360]:
                   - generic [ref=e361]:
                     - img [ref=e362]
-                    - paragraph [ref=e364]: 29 Apr 2026
+                    - paragraph [ref=e364]: 30 Apr 2026
                   - generic [ref=e365]:
                     - img [ref=e366]
-                    - paragraph [ref=e368]: 10:00 PM
+                    - paragraph [ref=e368]: 02:00 AM
               - generic [ref=e370]:
                 - link [ref=e371] [cursor=pointer]:
-                  - /url: https://meet.google.com/pnv-vcfn-ufm
+                  - /url: https://meet.google.com/ffr-oaoc-khh
                   - text: Join Now
                 - button [ref=e372] [cursor=pointer]: View Details
             - generic [ref=e374]:
@@ -307,13 +307,13 @@
                 - generic [ref=e402]:
                   - generic [ref=e403]:
                     - img [ref=e404]
-                    - paragraph [ref=e406]: 29 Apr 2026
+                    - paragraph [ref=e406]: 30 Apr 2026
                   - generic [ref=e407]:
                     - img [ref=e408]
-                    - paragraph [ref=e410]: 10:30 PM
+                    - paragraph [ref=e410]: 02:30 AM
               - generic [ref=e412]:
                 - link [ref=e413] [cursor=pointer]:
-                  - /url: https://meet.google.com/oxu-kzfs-pmc
+                  - /url: https://meet.google.com/ryc-rbyg-ogf
                   - text: Join Now
                 - button [ref=e414] [cursor=pointer]: View Details
             - generic [ref=e416]:
@@ -326,13 +326,13 @@
                     - generic [ref=e428]:
                       - generic [ref=e429]: Follow up Consult
                       - generic [ref=e430]: Natural Medicine
-                    - heading [level=6] [ref=e431]: test user-265967
+                    - heading [level=6] [ref=e431]: test user-386157
                     - heading [level=6] [ref=e432]: "Appointment With : Dr Anthony Smith"
                     - heading [level=6] [ref=e433]: "Created By : Anthony Smith"
                     - generic [ref=e434]:
                       - generic [ref=e435]:
                         - generic [ref=e437]: Appt
-                        - generic [ref=e438]: Completed
+                        - generic [ref=e438]: Upcoming
                       - generic [ref=e439]:
                         - generic [ref=e441]: Sess
                         - generic [ref=e442]: Not Marked
@@ -343,10 +343,10 @@
                     - paragraph [ref=e448]: 30 Apr 2026
                   - generic [ref=e449]:
                     - img [ref=e450]
-                    - paragraph [ref=e452]: 01:00 AM
+                    - paragraph [ref=e452]: 08:00 AM
               - generic [ref=e454]:
                 - link [ref=e455] [cursor=pointer]:
-                  - /url: https://meet.google.com/wvh-dsbm-obe
+                  - /url: https://meet.google.com/jjp-rdmd-szg
                   - text: Join Now
                 - button [ref=e456] [cursor=pointer]: View Details
             - generic [ref=e458]:
@@ -365,7 +365,7 @@
                     - generic [ref=e476]:
                       - generic [ref=e477]:
                         - generic [ref=e479]: Appt
-                        - generic [ref=e480]: Completed
+                        - generic [ref=e480]: Upcoming
                       - generic [ref=e481]:
                         - generic [ref=e483]: Sess
                         - generic [ref=e484]: Not Marked
@@ -376,10 +376,10 @@
                     - paragraph [ref=e490]: 30 Apr 2026
                   - generic [ref=e491]:
                     - img [ref=e492]
-                    - paragraph [ref=e494]: 01:30 AM
+                    - paragraph [ref=e494]: 08:30 AM
               - generic [ref=e496]:
                 - link [ref=e497] [cursor=pointer]:
-                  - /url: https://meet.google.com/gjb-eibu-kvg
+                  - /url: https://meet.google.com/nrj-etwt-qoa
                   - text: Join Now
                 - button [ref=e498] [cursor=pointer]: View Details
           - navigation [ref=e500]:
@@ -400,75 +400,133 @@
               - listitem [ref=e513]:
                 - generic [ref=e514]: …
               - listitem [ref=e515]:
-                - button [ref=e516] [cursor=pointer]: "67"
+                - button [ref=e516] [cursor=pointer]: "66"
               - listitem [ref=e517]:
                 - button [ref=e518] [cursor=pointer]:
                   - img [ref=e519]
-  - generic [active] [ref=e523]:
-    - heading "Book Appointment" [level=5] [ref=e524]
+  - generic [ref=e523]:
+    - heading [level=5] [ref=e524]: Book Appointment
     - generic [ref=e525]:
       - generic [ref=e528]:
-        - combobox "Search User" [ref=e529]: test user-422208
-        - button "Open" [ref=e531] [cursor=pointer]:
+        - combobox [ref=e529]
+        - button [ref=e531] [cursor=pointer]:
           - img [ref=e532]
         - group
       - button [ref=e534] [cursor=pointer]:
         - img [ref=e535]
     - generic [ref=e540]:
-      - combobox "Search Expert" [ref=e541]: Dr Anthony Smith
-      - button "Open" [ref=e543] [cursor=pointer]:
+      - combobox [ref=e541]
+      - button [ref=e543] [cursor=pointer]:
         - img [ref=e544]
       - group
     - generic [ref=e546]:
-      - heading "Select Category" [level=6] [ref=e547]
-      - generic [ref=e548]:
-        - button "Natural Medicine" [ref=e549] [cursor=pointer]: Natural Medicine
-        - button "Weight Management" [ref=e550] [cursor=pointer]: Weight Management
+      - heading [level=6] [ref=e547]: Slot Selection Type
+      - group [ref=e548]:
+        - button [pressed] [ref=e549] [cursor=pointer]: Regular Slots
+        - button [ref=e550] [cursor=pointer]: Custom Slot
     - generic [ref=e551]:
-      - heading "Appointment Type" [level=6] [ref=e552]
-      - generic [ref=e553]:
-        - button "Follow up Consult" [ref=e554] [cursor=pointer]: Follow up Consult
-        - button "Initial Consult" [ref=e555] [cursor=pointer]: Initial Consult
-    - generic [ref=e556]:
-      - heading "Next Available Slot" [level=6] [ref=e557]
-      - paragraph [ref=e559]: NaN/NaN/NaN at Invalid Date
-    - generic [ref=e560]:
-      - heading "Slot Selection Type" [level=6] [ref=e561]
-      - group [ref=e562]:
-        - button "Regular Slots" [pressed] [ref=e563] [cursor=pointer]: Regular Slots
-        - button "Custom Slot" [ref=e564] [cursor=pointer]: Custom Slot
-    - paragraph [ref=e566]:
-      - text: "Duration: 30 minutes"
-      - generic [ref=e567]: "• Price: $1"
-    - generic [ref=e568]:
-      - generic [ref=e569]:
-        - generic [ref=e570]: Appointment Date
-        - generic [ref=e571]:
-          - textbox "Appointment Date" [ref=e572]:
+      - generic [ref=e552]:
+        - generic [ref=e553]: Appointment Date
+        - generic [ref=e554]:
+          - textbox [ref=e555]:
             - /placeholder: MM/DD/YYYY
-            - text: 05/16/2026
-          - button "Choose date, selected date is May 16, 2026" [ref=e574] [cursor=pointer]:
-            - img [ref=e575]
+            - text: 04/29/2026
+          - button [ref=e557] [cursor=pointer]:
+            - img [ref=e558]
           - group:
             - generic: Appointment Date
-      - button "Find Slots" [ref=e577] [cursor=pointer]: Find Slots
-    - paragraph [ref=e580]: Click "Find Slots" to see available time slots
-    - radiogroup [ref=e582]:
-      - generic [ref=e583] [cursor=pointer]:
-        - generic [ref=e584]:
-          - radio "Complimentary" [ref=e585]
-          - img [ref=e587]
-        - generic [ref=e589]: Complimentary
-      - generic [ref=e590] [cursor=pointer]:
-        - generic [ref=e591]:
-          - radio "Online Payment" [ref=e592]
-          - img [ref=e594]
-        - generic [ref=e596]: Online Payment
-      - generic [ref=e597] [cursor=pointer]:
+      - button [disabled]: Find Slots
+    - paragraph [ref=e562]: Click "Find Slots" to see available time slots
+    - radiogroup [ref=e564]:
+      - generic [ref=e565] [cursor=pointer]:
+        - generic [ref=e566]:
+          - radio [ref=e567]
+          - img [ref=e569]
+        - generic [ref=e571]: Complimentary
+      - generic [ref=e572] [cursor=pointer]:
+        - generic [ref=e573]:
+          - radio [ref=e574]
+          - img [ref=e576]
+        - generic [ref=e578]: Online Payment
+      - generic [ref=e579] [cursor=pointer]:
+        - generic [ref=e580]:
+          - radio [ref=e581]
+          - img [ref=e583]
+        - generic [ref=e585]: Cash/Card
+    - generic [ref=e586]:
+      - button [disabled]: Book
+  - generic [active] [ref=e589]:
+    - heading "Create Patient" [level=6] [ref=e590]
+    - generic [ref=e591]:
+      - generic [ref=e592]:
+        - generic [ref=e593]:
+          - text: First Name
+          - generic [ref=e594]: "*"
+        - generic [ref=e595]:
+          - textbox "First Name" [disabled] [ref=e596]: test
+          - group:
+            - generic: First Name *
+      - generic [ref=e597]:
+        - generic: Middle Name
         - generic [ref=e598]:
-          - radio "Cash/Card" [ref=e599]
-          - img [ref=e601]
-        - generic [ref=e603]: Cash/Card
-    - generic [ref=e604]:
-      - button "Book" [disabled]
+          - textbox "Middle Name" [disabled] [ref=e599]
+          - group:
+            - generic: Middle Name
+      - generic [ref=e600]:
+        - generic [ref=e601]:
+          - text: Last Name
+          - generic [ref=e602]: "*"
+        - generic [ref=e603]:
+          - textbox "Last Name" [disabled] [ref=e604]: user-804058
+          - group:
+            - generic: Last Name *
+      - generic [ref=e605]:
+        - generic [ref=e606]: Email
+        - generic [ref=e607]:
+          - textbox "Email" [disabled] [ref=e608]: testuser804058@tmail.com
+          - group:
+            - generic: Email
+      - generic [ref=e609]:
+        - generic [ref=e610]:
+          - generic [ref=e611]: Country Code
+          - generic [ref=e612]:
+            - combobox "Country Code +61" [disabled] [ref=e613]: "+61"
+            - textbox [disabled]: "+61"
+            - img
+            - group:
+              - generic: Country Code
+        - generic [ref=e614]:
+          - generic: Phone Number
+          - generic [ref=e615]:
+            - textbox "Phone Number" [disabled] [ref=e616]
+            - group:
+              - generic: Phone Number
+      - generic [ref=e617]:
+        - generic [ref=e618]:
+          - text: Gender
+          - generic [ref=e619]: "*"
+        - generic [ref=e620]:
+          - combobox "Gender Male" [disabled] [ref=e621]: Male
+          - textbox [disabled]: male
+          - img
+          - group:
+            - generic: Gender *
+      - generic [ref=e622]:
+        - generic [ref=e623]:
+          - text: Date of Birth
+          - generic [ref=e624]: "*"
+        - generic [ref=e625]:
+          - textbox "Date of Birth" [disabled] [ref=e626]:
+            - /placeholder: DD/MM/YYYY
+            - text: 01/01/1995
+          - button "Choose date, selected date is Jan 1, 1995" [ref=e628] [cursor=pointer]:
+            - img [ref=e629]
+          - group:
+            - generic: Date of Birth *
+    - generic [ref=e631]:
+      - button "Creating..." [disabled]:
+        - generic:
+          - progressbar:
+            - img
+        - text: Creating...
 ```
