@@ -1,23 +1,23 @@
 {
-  "id": "7af0e012-bd7a-4bdf-a7a4-4663748b54c3",
-  "startedAt": "2026-04-29T17:18:38.293Z",
-  "durationMs": 2001273.408,
+  "id": "07966644-2336-4986-a688-ab29d42e9142",
+  "startedAt": "2026-04-29T19:18:17.864Z",
+  "durationMs": 2602174.3279999997,
   "summary": {
     "total": 19,
-    "passed": 15,
+    "passed": 14,
     "failed": 0,
     "skipped": 0,
-    "timedOut": 4
+    "timedOut": 5
   },
-  "passRate": 79,
+  "passRate": 74,
   "modules": {
     "Expert-Dashboard": {
       "label": "Expert Dashboard",
       "total": 9,
-      "passed": 5,
+      "passed": 4,
       "failed": 0,
       "skipped": 0,
-      "timedOut": 4
+      "timedOut": 5
     },
     "CCOP": {
       "label": "CCOP",
@@ -32,7 +32,7 @@
     {
       "title": "authenticate",
       "status": "passed",
-      "durationMs": 48721,
+      "durationMs": 52935,
       "file": "Expert-Dashboard/auth.setup.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -52,24 +52,68 @@
     },
     {
       "title": "Expert Dashboard | Appointment booking (dynamic slots)",
-      "status": "passed",
-      "durationMs": 130499,
+      "status": "timedOut",
+      "durationMs": 181308,
       "file": "Expert-Dashboard/appointment-booking.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
-          "contentType": "image/png"
+          "path": "test-failed-1.png",
+          "contentType": "image/png",
+          "webPath": "./artifacts/expert_dashboard___appointment_booking__dynamic_sl-screenshot.png"
+        },
+        {
+          "name": "cookies.json",
+          "path": "",
+          "contentType": "application/json"
+        },
+        {
+          "name": "clerk-info.txt",
+          "path": "",
+          "contentType": "text/plain"
+        },
+        {
+          "name": "localStorage.json",
+          "path": "",
+          "contentType": "application/json"
+        },
+        {
+          "name": "sessionStorage.json",
+          "path": "",
+          "contentType": "application/json"
+        },
+        {
+          "name": "console.log",
+          "path": "",
+          "contentType": "text/plain"
+        },
+        {
+          "name": "redirect-chain.txt",
+          "path": "",
+          "contentType": "text/plain"
         },
         {
           "name": "video",
           "path": "video.webm",
-          "contentType": "video/webm"
+          "contentType": "video/webm",
+          "webPath": "./artifacts/expert_dashboard___appointment_booking__dynamic_sl-video.webm"
+        },
+        {
+          "name": "error-context",
+          "path": "error-context.md",
+          "contentType": "text/markdown",
+          "webPath": "./artifacts/expert_dashboard___appointment_booking__dynamic_sl-error-context.md"
+        },
+        {
+          "name": "trace",
+          "path": "trace.zip",
+          "contentType": "application/zip",
+          "webPath": "./artifacts/expert_dashboard___appointment_booking__dynamic_sl-trace.zip"
         }
       ],
-      "error": ""
+      "error": "\u001b[31mTest timeout of 180000ms exceeded.\u001b[39m\nError: locator.fill: Target page, context or browser has been closed\n\n   at ../pages/expert-appointment.page.js:176\n\n  174 |         ).padStart(2, '0')}/${date.getFullYear()}`;\n  175 |\n> 176 |         await dateInput.fill(formattedDate);\n      |                         ^\n  177 |         await findSlotsBtn.click();\n  178 |\n  179 |         const slots = this.page.getByRole('button', { name: /AM|PM/ });\n    at ExpertAppointmentPage.bookAppointment (/home"
     },
     {
       "title": "create appointment with existing patient and reschedule",
@@ -116,11 +160,6 @@
           "contentType": "text/plain"
         },
         {
-          "name": "network-failures.txt",
-          "path": "",
-          "contentType": "text/plain"
-        },
-        {
           "name": "video",
           "path": "video.webm",
           "contentType": "video/webm",
@@ -139,12 +178,12 @@
           "webPath": "./artifacts/create_appointment_with_existing_patient_and_resch-trace.zip"
         }
       ],
-      "error": "\u001b[31mTest timeout of 180000ms exceeded.\u001b[39m\nError: page.reload: Target page, context or browser has been closed\n\n   at ../pages/expert-appointment.page.js:286\n\n  284 |     await firstCard.waitFor({ state: 'visible', timeout: 20000 }).catch(async () => {\n  285 |       if (pagesChecked === 0) {\n> 286 |         await this.page.reload();\n      |                         ^\n  287 |         await this.page.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => {});\n  288 |         await firstC"
+      "error": "\u001b[31mTest timeout of 180000ms exceeded.\u001b[39m\nError: locator.fill: Target page, context or browser has been closed\n\n   at ../pages/expert-appointment.page.js:176\n\n  174 |         ).padStart(2, '0')}/${date.getFullYear()}`;\n  175 |\n> 176 |         await dateInput.fill(formattedDate);\n      |                         ^\n  177 |         await findSlotsBtn.click();\n  178 |\n  179 |         const slots = this.page.getByRole('button', { name: /AM|PM/ });\n    at ExpertAppointmentPage.bookAppointment (/home"
     },
     {
       "title": "create appointment and manage session lifecycle",
       "status": "timedOut",
-      "durationMs": 181652,
+      "durationMs": 181336,
       "file": "Expert-Dashboard/appointment-session-management.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -204,12 +243,12 @@
           "webPath": "./artifacts/create_appointment_and_manage_session_lifecycle-trace.zip"
         }
       ],
-      "error": "\u001b[31mTest timeout of 180000ms exceeded.\u001b[39m\nError: locator.waitFor: Test timeout of 180000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button').filter({ hasText: /View/i }).first() to be visible\u001b[22m\n\n\n   at ../pages/expert-appointment.page.js:629\n\n  627 |     .first();\n  628 |\n> 629 |   await viewBtn.waitFor({ timeout: 15000 });\n      |                 ^\n  630 |   await viewBtn.click();\n  631 |\n  632 |   await this.page.getByRole('button', { name: 'close' }).click();\n    at ExpertAppoin"
+      "error": "\u001b[31mTest timeout of 180000ms exceeded.\u001b[39m\nError: locator.fill: Target page, context or browser has been closed\n\n   at ../pages/expert-appointment.page.js:176\n\n  174 |         ).padStart(2, '0')}/${date.getFullYear()}`;\n  175 |\n> 176 |         await dateInput.fill(formattedDate);\n      |                         ^\n  177 |         await findSlotsBtn.click();\n  178 |\n  179 |         const slots = this.page.getByRole('button', { name: /AM|PM/ });\n    at ExpertAppointmentPage.bookAppointment (/home"
     },
     {
       "title": "create appointment with existing patient and cancel non-cancelled one",
       "status": "timedOut",
-      "durationMs": 181266,
+      "durationMs": 181318,
       "file": "Expert-Dashboard/appointment-z-cancel.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -274,7 +313,7 @@
     {
       "title": "Expert Dashboard | Create patient & book appointment",
       "status": "timedOut",
-      "durationMs": 181840,
+      "durationMs": 181509,
       "file": "Expert-Dashboard/expert-appointment-create-with-new-patient.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -339,7 +378,7 @@
     {
       "title": "Expert Dashboard | Navigation flow validation",
       "status": "passed",
-      "durationMs": 9603,
+      "durationMs": 8629,
       "file": "Expert-Dashboard/expert-dashboard-navigation.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -360,7 +399,7 @@
     {
       "title": "Expert Dashboard | Help Center raise & reply ticket",
       "status": "passed",
-      "durationMs": 9926,
+      "durationMs": 9521,
       "file": "Expert-Dashboard/expert-helpcenter-ticket.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -381,7 +420,7 @@
     {
       "title": "create unique patient, search and view profile",
       "status": "passed",
-      "durationMs": 23243,
+      "durationMs": 26036,
       "file": "Expert-Dashboard/patient-create-and-view.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -402,7 +441,7 @@
     {
       "title": "AI panel — Graph tab: knowledge graph, zoom controls, node properties, legends",
       "status": "passed",
-      "durationMs": 42755,
+      "durationMs": 41357,
       "file": "CCOP/ai-assistant-panel.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -423,7 +462,7 @@
     {
       "title": "AI panel — Assistant tab: associations, medication & comorbidity sub-tabs",
       "status": "passed",
-      "durationMs": 39771,
+      "durationMs": 41294,
       "file": "CCOP/ai-assistant-panel.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -444,7 +483,7 @@
     {
       "title": "AI panel — asksam tab: chat input, send message, disclaimer",
       "status": "passed",
-      "durationMs": 75220,
+      "durationMs": 76230,
       "file": "CCOP/ai-assistant-panel.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -465,7 +504,7 @@
     {
       "title": "CCOP | Help Center | Raise, Reply & Resolve Ticket",
       "status": "passed",
-      "durationMs": 8589,
+      "durationMs": 10192,
       "file": "CCOP/ccop-helpcenter-ticket.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -486,7 +525,7 @@
     {
       "title": "Create clinical note with document upload & transcription",
       "status": "passed",
-      "durationMs": 66344,
+      "durationMs": 68728,
       "file": "CCOP/clinical-note.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -507,7 +546,7 @@
     {
       "title": "Create patient + upload + submit",
       "status": "passed",
-      "durationMs": 139394,
+      "durationMs": 129852,
       "file": "CCOP/create-patient-clinical-note.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -528,7 +567,7 @@
     {
       "title": "Open letter template from Actions dropdown, select type and verify preview",
       "status": "passed",
-      "durationMs": 27726,
+      "durationMs": 29414,
       "file": "CCOP/letter-template.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -549,7 +588,7 @@
     {
       "title": "Create a new letter template from Actions dropdown",
       "status": "passed",
-      "durationMs": 36202,
+      "durationMs": 35410,
       "file": "CCOP/letter-template.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -570,7 +609,7 @@
     {
       "title": "Create clinical note with voice transcription",
       "status": "passed",
-      "durationMs": 24034,
+      "durationMs": 19744,
       "file": "CCOP/voice-transcription.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -591,19 +630,19 @@
     {
       "title": "CCOP | Clinician signup full flow (recorded)",
       "status": "passed",
-      "durationMs": 84836,
+      "durationMs": 143467,
       "file": "CCOP/ccop-clinician-signup.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
+          "path": "test-finished-2.png",
           "contentType": "image/png"
         },
         {
           "name": "screenshot",
-          "path": "test-finished-2.png",
+          "path": "test-finished-1.png",
           "contentType": "image/png"
         },
         {
