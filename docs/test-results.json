@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-29T09:33:56.661Z",
+  "lastUpdated": "2026-04-29T11:33:12.706Z",
   "runs": [
     {
       "date": "2026-04-29",
@@ -68,7 +68,7 @@
       "module": "Expert-Dashboard",
       "name": "authenticate",
       "status": "passed",
-      "duration": "43.6s",
+      "duration": "46.7s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -78,7 +78,7 @@
       "module": "Expert-Dashboard",
       "name": "Expert Dashboard | Appointment booking (dynamic slots)",
       "status": "passed",
-      "duration": "18.1s",
+      "duration": "17.3s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -88,7 +88,7 @@
       "module": "Expert-Dashboard",
       "name": "create appointment with existing patient and reschedule",
       "status": "passed",
-      "duration": "1m 4s",
+      "duration": "1m 3s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -98,7 +98,7 @@
       "module": "Expert-Dashboard",
       "name": "create appointment and manage session lifecycle",
       "status": "passed",
-      "duration": "19.8s",
+      "duration": "18.5s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -118,7 +118,7 @@
       "module": "Expert-Dashboard",
       "name": "Expert Dashboard | Create patient & book appointment",
       "status": "passed",
-      "duration": "30.1s",
+      "duration": "30.3s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -128,7 +128,7 @@
       "module": "Expert-Dashboard",
       "name": "Expert Dashboard | Navigation flow validation",
       "status": "passed",
-      "duration": "8.6s",
+      "duration": "9.6s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -138,7 +138,7 @@
       "module": "Expert-Dashboard",
       "name": "Expert Dashboard | Help Center raise & reply ticket",
       "status": "passed",
-      "duration": "9.8s",
+      "duration": "11.4s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -148,7 +148,7 @@
       "module": "Expert-Dashboard",
       "name": "create unique patient, search and view profile",
       "status": "passed",
-      "duration": "23.0s",
+      "duration": "25.9s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -158,7 +158,7 @@
       "module": "CCOP",
       "name": "AI panel — Graph tab: knowledge graph, zoom controls, node properties, legends",
       "status": "passed",
-      "duration": "42.8s",
+      "duration": "42.1s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -168,7 +168,7 @@
       "module": "CCOP",
       "name": "AI panel — Assistant tab: associations, medication & comorbidity sub-tabs",
       "status": "passed",
-      "duration": "40.9s",
+      "duration": "40.8s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -198,7 +198,7 @@
       "module": "CCOP",
       "name": "Create clinical note with document upload & transcription",
       "status": "passed",
-      "duration": "1m 6s",
+      "duration": "1m 15s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -208,7 +208,7 @@
       "module": "CCOP",
       "name": "Create patient + upload + submit",
       "status": "passed",
-      "duration": "1m 57s",
+      "duration": "2m 18s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -218,7 +218,7 @@
       "module": "CCOP",
       "name": "Open letter template from Actions dropdown, select type and verify preview",
       "status": "passed",
-      "duration": "28.2s",
+      "duration": "26.9s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -228,7 +228,7 @@
       "module": "CCOP",
       "name": "Create a new letter template from Actions dropdown",
       "status": "passed",
-      "duration": "34.6s",
+      "duration": "35.5s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -238,7 +238,7 @@
       "module": "CCOP",
       "name": "Create clinical note with voice transcription",
       "status": "passed",
-      "duration": "18.9s",
+      "duration": "19.7s",
       "screenshot": "",
       "video": "",
       "trace": ""
