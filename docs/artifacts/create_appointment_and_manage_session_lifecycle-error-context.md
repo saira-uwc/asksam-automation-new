@@ -1,0 +1,95 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e5]:
+      - link [ref=e8] [cursor=pointer]:
+        - /url: https://www.asksam.com.au/
+      - generic [ref=e9]:
+        - link "appointments" [ref=e10] [cursor=pointer]:
+          - /url: /expert/appointments
+          - img [ref=e11]
+        - link "chat" [ref=e13] [cursor=pointer]:
+          - /url: /expert/chat
+          - img [ref=e14]
+        - link "notifications" [ref=e16] [cursor=pointer]:
+          - /url: /expert/notifications
+          - img [ref=e17]
+        - button "Open user menu" [ref=e20] [cursor=pointer]:
+          - img "Anthony Smith's logo" [ref=e23]
+  - generic [ref=e26]:
+    - list [ref=e28]:
+      - link "Dashboard" [ref=e29] [cursor=pointer]:
+        - /url: /expert/dashboard
+        - img [ref=e31]
+        - generic [ref=e34]: Dashboard
+      - link "Appointments" [ref=e35] [cursor=pointer]:
+        - /url: /expert/appointments
+        - img [ref=e37]
+        - generic [ref=e40]: Appointments
+      - link "Session Management" [ref=e41] [cursor=pointer]:
+        - /url: /expert/sessionmanagement
+        - img [ref=e43]
+        - generic [ref=e46]: Session Management
+      - link "Patients" [ref=e47] [cursor=pointer]:
+        - /url: /expert/patients
+        - img [ref=e49]
+        - generic [ref=e52]: Patients
+      - link "Chat" [ref=e53] [cursor=pointer]:
+        - /url: /expert/chat
+        - img [ref=e55]
+        - generic [ref=e58]: Chat
+      - link "Notifications" [ref=e59] [cursor=pointer]:
+        - /url: /expert/notifications
+        - img [ref=e61]
+        - generic [ref=e64]: Notifications
+      - link "Help Center" [ref=e65] [cursor=pointer]:
+        - /url: /expert/help-center
+        - img [ref=e67]
+        - generic [ref=e70]: Help Center
+      - link "Payouts" [ref=e71] [cursor=pointer]:
+        - /url: /expert/payouts
+        - img [ref=e73]
+        - generic [ref=e76]: Payouts
+      - link "Settings" [ref=e77] [cursor=pointer]:
+        - /url: /expert/settings
+        - img [ref=e79]
+        - generic [ref=e82]: Settings
+    - generic [ref=e84]:
+      - generic [ref=e85]:
+        - heading "Session Management" [level=5] [ref=e86]
+        - generic [ref=e87]:
+          - button "Unmarked" [ref=e88] [cursor=pointer]: Unmarked
+          - button "Completed" [ref=e89] [cursor=pointer]: Completed
+          - button "Not Completed" [active] [ref=e90] [cursor=pointer]: Not Completed
+      - generic [ref=e92]:
+        - generic [ref=e93]:
+          - generic [ref=e95]:
+            - img [ref=e96]
+            - paragraph [ref=e183]: No Sessions Found
+          - navigation:
+            - list
+        - navigation "pagination navigation" [ref=e185]:
+          - list [ref=e186]:
+            - listitem [ref=e187]:
+              - button "Go to previous page" [disabled]:
+                - img
+            - listitem [ref=e188]:
+              - button "page 1" [ref=e189] [cursor=pointer]: "1"
+            - listitem [ref=e190]:
+              - button "Go to page 2" [ref=e191] [cursor=pointer]: "2"
+            - listitem [ref=e192]:
+              - button "Go to page 3" [ref=e193] [cursor=pointer]: "3"
+            - listitem [ref=e194]:
+              - button "Go to page 4" [ref=e195] [cursor=pointer]: "4"
+            - listitem [ref=e196]:
+              - button "Go to page 5" [ref=e197] [cursor=pointer]: "5"
+            - listitem [ref=e198]:
+              - generic [ref=e199]: …
+            - listitem [ref=e200]:
+              - button "Go to page 23" [ref=e201] [cursor=pointer]: "23"
+            - listitem [ref=e202]:
+              - button "Go to next page" [ref=e203] [cursor=pointer]:
+                - img [ref=e204]
+```
