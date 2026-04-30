@@ -404,7 +404,7 @@
     - heading "Book Appointment" [level=5] [ref=e523]
     - generic [ref=e524]:
       - generic [ref=e527]:
-        - combobox "Search User" [ref=e528]: test user-470493
+        - combobox "Search User" [ref=e528]: test user-383688
         - button "Open" [ref=e530] [cursor=pointer]:
           - img [ref=e531]
         - group
@@ -442,8 +442,8 @@
         - generic [ref=e570]:
           - textbox "Appointment Date" [ref=e571]:
             - /placeholder: MM/DD/YYYY
-            - text: 05/17/2026
-          - button "Choose date, selected date is May 17, 2026" [ref=e573] [cursor=pointer]:
+            - text: 05/16/2026
+          - button "Choose date, selected date is May 16, 2026" [ref=e573] [cursor=pointer]:
             - img [ref=e574]
           - group:
             - generic: Appointment Date
