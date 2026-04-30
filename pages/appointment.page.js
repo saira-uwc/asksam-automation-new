@@ -28,7 +28,7 @@ export class AppointmentPage {
   }
 
   // 🔥 FINAL SOLID DATE + SLOT LOGIC
-  async findFirstAvailableSlot(maxDaysToTry = 30) {
+  async findFirstAvailableSlot(maxDaysToTry = 45) {
     const dateInput = this.page.getByRole('textbox', {
       name: 'Appointment Date'
     });

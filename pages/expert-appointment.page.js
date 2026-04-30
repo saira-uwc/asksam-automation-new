@@ -165,7 +165,7 @@ export class ExpertAppointmentPage {
 
     // Fallback: iterate dates if Next Available Slot wasn't visible/parseable
     if (!slotSelected) {
-      for (let i = 2; i < 31; i++) {
+      for (let i = 2; i < 45; i++) {
         const date = new Date();
         date.setDate(date.getDate() + i + 1);
 
@@ -190,7 +190,7 @@ export class ExpertAppointmentPage {
     }
 
     if (!slotSelected) {
-      throw new Error('No appointment slot available in next 30 days');
+      throw new Error('No appointment slot available in next 45 days');
     }
 
     await this.page.getByRole('radio', { name: 'Complimentary' }).check();
