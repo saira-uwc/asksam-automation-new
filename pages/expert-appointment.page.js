@@ -397,8 +397,8 @@ export class ExpertAppointmentPage {
     } catch {
       // Try different dates via the date input
       const dateInput = modal.locator('input[placeholder="DD/MM/YYYY"]');
-      // Search up to 30 days ahead for reschedule slot
-      for (let dayOffset = 2; dayOffset <= 31; dayOffset++) {
+      // Search up to 45 days ahead for reschedule slot
+      for (let dayOffset = 2; dayOffset <= 45; dayOffset++) {
         const d = new Date();
         d.setDate(d.getDate() + dayOffset);
         const formatted = `${String(d.getDate()).padStart(2, '0')}/${String(d.getMonth() + 1).padStart(2, '0')}/${d.getFullYear()}`;
