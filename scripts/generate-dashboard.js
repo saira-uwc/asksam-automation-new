@@ -6,7 +6,7 @@
  *
  * Reads:  reports/json-report/results.json
  * Writes: docs/data/latest.json
- *         docs/history/runs.json  (appends, keeps last 100)
+ *         docs/history/runs.json  (appends, keeps last 300)
  *         docs/exports/current-run.csv
  *         docs/exports/all-runs-summary.csv
  */
@@ -23,8 +23,8 @@ const CSV_CURRENT = path.join(ROOT, 'docs', 'exports', 'current-run.csv');
 const CSV_ALL = path.join(ROOT, 'docs', 'exports', 'all-runs-summary.csv');
 const ARTIFACTS_DIR = path.join(ROOT, 'docs', 'artifacts');
 const RESULTS_PATH = path.join(ROOT, 'docs', 'test-results.json');
-const MAX_HISTORY = 100;
-const HISTORY_RETENTION_DAYS = 15;
+const MAX_HISTORY = 300;
+const HISTORY_RETENTION_DAYS = 30;
 
 // Module name mapping
 const MODULE_MAP = {
@@ -272,7 +272,7 @@ function updateLegacyDashboard(tests, startedAt) {
   } else {
     existingData.runs.unshift(newRun);
   }
-  // Keep last 15 days of daily aggregated runs
+  // Keep last 30 days of daily aggregated runs
   const legacyCutoff = Date.now() - HISTORY_RETENTION_DAYS * 24 * 60 * 60 * 1000;
   existingData.runs = existingData.runs.filter(r => {
     const d = new Date(r.date).getTime();
