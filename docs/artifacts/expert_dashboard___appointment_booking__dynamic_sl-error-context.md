@@ -299,7 +299,7 @@
                     - generic [ref=e392]:
                       - generic [ref=e393]:
                         - generic [ref=e395]: Appt
-                        - generic [ref=e396]: Ongoing
+                        - generic [ref=e396]: Completed
                       - generic [ref=e397]:
                         - generic [ref=e399]: Sess
                         - generic [ref=e400]: Not Marked
@@ -332,7 +332,7 @@
                     - generic [ref=e434]:
                       - generic [ref=e435]:
                         - generic [ref=e437]: Appt
-                        - generic [ref=e438]: Upcoming
+                        - generic [ref=e438]: Completed
                       - generic [ref=e439]:
                         - generic [ref=e441]: Sess
                         - generic [ref=e442]: Not Marked
@@ -365,7 +365,7 @@
                     - generic [ref=e476]:
                       - generic [ref=e477]:
                         - generic [ref=e479]: Appt
-                        - generic [ref=e480]: Upcoming
+                        - generic [ref=e480]: Completed
                       - generic [ref=e481]:
                         - generic [ref=e483]: Sess
                         - generic [ref=e484]: Not Marked
@@ -446,8 +446,8 @@
         - generic [ref=e571]:
           - textbox "Appointment Date" [ref=e572]:
             - /placeholder: MM/DD/YYYY
-            - text: 05/18/2026
-          - button "Choose date, selected date is May 18, 2026" [ref=e574] [cursor=pointer]:
+            - text: 05/19/2026
+          - button "Choose date, selected date is May 19, 2026" [ref=e574] [cursor=pointer]:
             - img [ref=e575]
           - group:
             - generic: Appointment Date
