@@ -1,13 +1,13 @@
 {
-  "id": "5c129983-c713-4400-b2aa-b1e05e7939c8",
-  "startedAt": "2026-04-30T05:18:20.468Z",
-  "durationMs": 2533837.221,
+  "id": "eee12fb9-932c-45a0-99ad-d76b81173217",
+  "startedAt": "2026-04-30T07:18:33.535Z",
+  "durationMs": 2693603.239,
   "summary": {
     "total": 19,
     "passed": 14,
-    "failed": 0,
+    "failed": 1,
     "skipped": 0,
-    "timedOut": 5
+    "timedOut": 4
   },
   "passRate": 74,
   "modules": {
@@ -15,9 +15,9 @@
       "label": "Expert Dashboard",
       "total": 9,
       "passed": 4,
-      "failed": 0,
+      "failed": 1,
       "skipped": 0,
-      "timedOut": 5
+      "timedOut": 4
     },
     "CCOP": {
       "label": "CCOP",
@@ -32,7 +32,7 @@
     {
       "title": "authenticate",
       "status": "passed",
-      "durationMs": 47491,
+      "durationMs": 46401,
       "file": "Expert-Dashboard/auth.setup.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -53,7 +53,7 @@
     {
       "title": "Expert Dashboard | Appointment booking (dynamic slots)",
       "status": "timedOut",
-      "durationMs": 181353,
+      "durationMs": 181377,
       "file": "Expert-Dashboard/appointment-booking.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -118,7 +118,7 @@
     {
       "title": "create appointment with existing patient and reschedule",
       "status": "timedOut",
-      "durationMs": 181347,
+      "durationMs": 181534,
       "file": "Expert-Dashboard/appointment-create-and-reschedule.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -183,7 +183,7 @@
     {
       "title": "create appointment and manage session lifecycle",
       "status": "timedOut",
-      "durationMs": 181337,
+      "durationMs": 181688,
       "file": "Expert-Dashboard/appointment-session-management.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -248,7 +248,7 @@
     {
       "title": "create appointment with existing patient and cancel non-cancelled one",
       "status": "timedOut",
-      "durationMs": 181302,
+      "durationMs": 181356,
       "file": "Expert-Dashboard/appointment-z-cancel.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -312,8 +312,8 @@
     },
     {
       "title": "Expert Dashboard | Create patient & book appointment",
-      "status": "timedOut",
-      "durationMs": 181573,
+      "status": "failed",
+      "durationMs": 62893,
       "file": "Expert-Dashboard/expert-appointment-create-with-new-patient.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -373,12 +373,12 @@
           "webPath": "./artifacts/expert_dashboard___create_patient___book_appointme-trace.zip"
         }
       ],
-      "error": "\u001b[31mTest timeout of 180000ms exceeded.\u001b[39m\nError: locator.fill: Target page, context or browser has been closed\n\n   at ../pages/expert-appointment.page.js:176\n\n  174 |         ).padStart(2, '0')}/${date.getFullYear()}`;\n  175 |\n> 176 |         await dateInput.fill(formattedDate);\n      |                         ^\n  177 |         await findSlotsBtn.click();\n  178 |\n  179 |         const slots = this.page.getByRole('button', { name: /AM|PM/ });\n    at ExpertAppointmentPage.bookAppointment (/home"
+      "error": "TimeoutError: page.goto: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://dashboard.asksam.com.au/expert/dashboard\", waiting until \"load\"\u001b[22m\n\n\n   6 |\n   7 |   /* ===== GO TO EXPERT DASHBOARD (auth loaded via storageState) ===== */\n>  8 |   await page.goto('https://dashboard.asksam.com.au/expert/dashboard');\n     |              ^\n   9 |   await expect(page).toHaveURL(/expert\\/dashboard/);\n  10 |\n  11 |   /* ===== APPOINTMENTS FLOW ===== */\n    at /home/runner/work/asksam-autom"
     },
     {
       "title": "Expert Dashboard | Navigation flow validation",
       "status": "passed",
-      "durationMs": 10534,
+      "durationMs": 9960,
       "file": "Expert-Dashboard/expert-dashboard-navigation.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -399,7 +399,7 @@
     {
       "title": "Expert Dashboard | Help Center raise & reply ticket",
       "status": "passed",
-      "durationMs": 9116,
+      "durationMs": 9457,
       "file": "Expert-Dashboard/expert-helpcenter-ticket.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -420,7 +420,7 @@
     {
       "title": "create unique patient, search and view profile",
       "status": "passed",
-      "durationMs": 26194,
+      "durationMs": 23301,
       "file": "Expert-Dashboard/patient-create-and-view.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -441,7 +441,7 @@
     {
       "title": "AI panel — Graph tab: knowledge graph, zoom controls, node properties, legends",
       "status": "passed",
-      "durationMs": 44288,
+      "durationMs": 41876,
       "file": "CCOP/ai-assistant-panel.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -462,7 +462,7 @@
     {
       "title": "AI panel — Assistant tab: associations, medication & comorbidity sub-tabs",
       "status": "passed",
-      "durationMs": 43550,
+      "durationMs": 42104,
       "file": "CCOP/ai-assistant-panel.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -483,7 +483,7 @@
     {
       "title": "AI panel — asksam tab: chat input, send message, disclaimer",
       "status": "passed",
-      "durationMs": 76896,
+      "durationMs": 77187,
       "file": "CCOP/ai-assistant-panel.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -504,7 +504,7 @@
     {
       "title": "CCOP | Help Center | Raise, Reply & Resolve Ticket",
       "status": "passed",
-      "durationMs": 9693,
+      "durationMs": 9176,
       "file": "CCOP/ccop-helpcenter-ticket.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -525,7 +525,7 @@
     {
       "title": "Create clinical note with document upload & transcription",
       "status": "passed",
-      "durationMs": 69618,
+      "durationMs": 70841,
       "file": "CCOP/clinical-note.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -546,7 +546,7 @@
     {
       "title": "Create patient + upload + submit",
       "status": "passed",
-      "durationMs": 125052,
+      "durationMs": 112921,
       "file": "CCOP/create-patient-clinical-note.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -567,7 +567,7 @@
     {
       "title": "Open letter template from Actions dropdown, select type and verify preview",
       "status": "passed",
-      "durationMs": 29916,
+      "durationMs": 27927,
       "file": "CCOP/letter-template.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -588,7 +588,7 @@
     {
       "title": "Create a new letter template from Actions dropdown",
       "status": "passed",
-      "durationMs": 34597,
+      "durationMs": 34813,
       "file": "CCOP/letter-template.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -609,7 +609,7 @@
     {
       "title": "Create clinical note with voice transcription",
       "status": "passed",
-      "durationMs": 23357,
+      "durationMs": 21426,
       "file": "CCOP/voice-transcription.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -630,19 +630,19 @@
     {
       "title": "CCOP | Clinician signup full flow (recorded)",
       "status": "passed",
-      "durationMs": 142593,
+      "durationMs": 142335,
       "file": "CCOP/ccop-clinician-signup.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-finished-2.png",
+          "path": "test-finished-1.png",
           "contentType": "image/png"
         },
         {
           "name": "screenshot",
-          "path": "test-finished-1.png",
+          "path": "test-finished-2.png",
           "contentType": "image/png"
         },
         {
