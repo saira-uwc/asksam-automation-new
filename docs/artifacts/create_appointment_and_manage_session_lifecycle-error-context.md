@@ -332,7 +332,7 @@
                     - generic [ref=e434]:
                       - generic [ref=e435]:
                         - generic [ref=e437]: Appt
-                        - generic [ref=e438]: Ongoing
+                        - generic [ref=e438]: Completed
                       - generic [ref=e439]:
                         - generic [ref=e441]: Sess
                         - generic [ref=e442]: Not Marked
@@ -365,7 +365,7 @@
                     - generic [ref=e476]:
                       - generic [ref=e477]:
                         - generic [ref=e479]: Appt
-                        - generic [ref=e480]: Upcoming
+                        - generic [ref=e480]: Completed
                       - generic [ref=e481]:
                         - generic [ref=e483]: Sess
                         - generic [ref=e484]: Not Marked

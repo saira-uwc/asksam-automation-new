@@ -332,7 +332,7 @@
                     - generic [ref=e434]:
                       - generic [ref=e435]:
                         - generic [ref=e437]: Appt
-                        - generic [ref=e438]: Ongoing
+                        - generic [ref=e438]: Completed
                       - generic [ref=e439]:
                         - generic [ref=e441]: Sess
                         - generic [ref=e442]: Not Marked
@@ -365,7 +365,7 @@
                     - generic [ref=e476]:
                       - generic [ref=e477]:
                         - generic [ref=e479]: Appt
-                        - generic [ref=e480]: Upcoming
+                        - generic [ref=e480]: Completed
                       - generic [ref=e481]:
                         - generic [ref=e483]: Sess
                         - generic [ref=e484]: Not Marked
@@ -408,7 +408,7 @@
     - heading "Book Appointment" [level=5] [ref=e524]
     - generic [ref=e525]:
       - generic [ref=e528]:
-        - combobox "Search User" [ref=e529]: test user-775782
+        - combobox "Search User" [ref=e529]: test user-116780
         - button "Open" [ref=e531] [cursor=pointer]:
           - img [ref=e532]
         - group
@@ -446,8 +446,8 @@
         - generic [ref=e571]:
           - textbox "Appointment Date" [ref=e572]:
             - /placeholder: MM/DD/YYYY
-            - text: 05/18/2026
-          - button "Choose date, selected date is May 18, 2026" [ref=e574] [cursor=pointer]:
+            - text: 05/17/2026
+          - button "Choose date, selected date is May 17, 2026" [ref=e574] [cursor=pointer]:
             - img [ref=e575]
           - group:
             - generic: Appointment Date

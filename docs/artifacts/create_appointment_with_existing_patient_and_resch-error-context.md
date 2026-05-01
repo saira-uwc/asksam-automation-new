@@ -332,7 +332,7 @@
                     - generic [ref=e434]:
                       - generic [ref=e435]:
                         - generic [ref=e437]: Appt
-                        - generic [ref=e438]: Ongoing
+                        - generic [ref=e438]: Completed
                       - generic [ref=e439]:
                         - generic [ref=e441]: Sess
                         - generic [ref=e442]: Not Marked
@@ -365,7 +365,7 @@
                     - generic [ref=e476]:
                       - generic [ref=e477]:
                         - generic [ref=e479]: Appt
-                        - generic [ref=e480]: Upcoming
+                        - generic [ref=e480]: Completed
                       - generic [ref=e481]:
                         - generic [ref=e483]: Sess
                         - generic [ref=e484]: Not Marked
@@ -451,24 +451,29 @@
             - img [ref=e575]
           - group:
             - generic: Appointment Date
-      - button "Find Slots" [ref=e577] [cursor=pointer]: Find Slots
-    - paragraph [ref=e580]: Click "Find Slots" to see available time slots
-    - radiogroup [ref=e582]:
-      - generic [ref=e583] [cursor=pointer]:
-        - generic [ref=e584]:
-          - radio "Complimentary" [ref=e585]
-          - img [ref=e587]
-        - generic [ref=e589]: Complimentary
-      - generic [ref=e590] [cursor=pointer]:
-        - generic [ref=e591]:
-          - radio "Online Payment" [ref=e592]
-          - img [ref=e594]
-        - generic [ref=e596]: Online Payment
-      - generic [ref=e597] [cursor=pointer]:
-        - generic [ref=e598]:
-          - radio "Cash/Card" [ref=e599]
-          - img [ref=e601]
-        - generic [ref=e603]: Cash/Card
-    - generic [ref=e604]:
+      - button [disabled]:
+        - progressbar:
+          - img
+    - generic [ref=e578]:
+      - progressbar [ref=e579]:
+        - img [ref=e580]
+      - paragraph [ref=e582]: Fetching available slots...
+    - radiogroup [ref=e584]:
+      - generic [ref=e585] [cursor=pointer]:
+        - generic [ref=e586]:
+          - radio "Complimentary" [ref=e587]
+          - img [ref=e589]
+        - generic [ref=e591]: Complimentary
+      - generic [ref=e592] [cursor=pointer]:
+        - generic [ref=e593]:
+          - radio "Online Payment" [ref=e594]
+          - img [ref=e596]
+        - generic [ref=e598]: Online Payment
+      - generic [ref=e599] [cursor=pointer]:
+        - generic [ref=e600]:
+          - radio "Cash/Card" [ref=e601]
+          - img [ref=e603]
+        - generic [ref=e605]: Cash/Card
+    - generic [ref=e606]:
       - button "Book" [disabled]
 ```
