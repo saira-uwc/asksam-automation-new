@@ -101,7 +101,7 @@
                     - generic [ref=e140]:
                       - generic [ref=e141]:
                         - generic [ref=e143]: Appt
-                        - generic [ref=e144]: Upcoming
+                        - generic [ref=e144]: Completed
                       - generic [ref=e145]:
                         - generic [ref=e147]: Sess
                         - generic [ref=e148]: Not Marked
@@ -134,7 +134,7 @@
                     - generic [ref=e182]:
                       - generic [ref=e183]:
                         - generic [ref=e185]: Appt
-                        - generic [ref=e186]: Upcoming
+                        - generic [ref=e186]: Completed
                       - generic [ref=e187]:
                         - generic [ref=e189]: Sess
                         - generic [ref=e190]: Not Marked
@@ -167,7 +167,7 @@
                     - generic [ref=e224]:
                       - generic [ref=e225]:
                         - generic [ref=e227]: Appt
-                        - generic [ref=e228]: Upcoming
+                        - generic [ref=e228]: Completed
                       - generic [ref=e229]:
                         - generic [ref=e231]: Sess
                         - generic [ref=e232]: Not Marked
@@ -200,7 +200,7 @@
                     - generic [ref=e266]:
                       - generic [ref=e267]:
                         - generic [ref=e269]: Appt
-                        - generic [ref=e270]: Upcoming
+                        - generic [ref=e270]: Completed
                       - generic [ref=e271]:
                         - generic [ref=e273]: Sess
                         - generic [ref=e274]: Not Marked
@@ -233,7 +233,7 @@
                     - generic [ref=e308]:
                       - generic [ref=e309]:
                         - generic [ref=e311]: Appt
-                        - generic [ref=e312]: Upcoming
+                        - generic [ref=e312]: Completed
                       - generic [ref=e313]:
                         - generic [ref=e315]: Sess
                         - generic [ref=e316]: Not Marked
@@ -266,7 +266,7 @@
                     - generic [ref=e350]:
                       - generic [ref=e351]:
                         - generic [ref=e353]: Appt
-                        - generic [ref=e354]: Upcoming
+                        - generic [ref=e354]: Completed
                       - generic [ref=e355]:
                         - generic [ref=e357]: Sess
                         - generic [ref=e358]: Not Marked
@@ -299,7 +299,7 @@
                     - generic [ref=e392]:
                       - generic [ref=e393]:
                         - generic [ref=e395]: Appt
-                        - generic [ref=e396]: Upcoming
+                        - generic [ref=e396]: Completed
                       - generic [ref=e397]:
                         - generic [ref=e399]: Sess
                         - generic [ref=e400]: Not Marked
@@ -332,7 +332,7 @@
                     - generic [ref=e434]:
                       - generic [ref=e435]:
                         - generic [ref=e437]: Appt
-                        - generic [ref=e438]: Upcoming
+                        - generic [ref=e438]: Ongoing
                       - generic [ref=e439]:
                         - generic [ref=e441]: Sess
                         - generic [ref=e442]: Not Marked
@@ -446,8 +446,8 @@
         - generic [ref=e571]:
           - textbox "Appointment Date" [ref=e572]:
             - /placeholder: MM/DD/YYYY
-            - text: 05/18/2026
-          - button "Choose date, selected date is May 18, 2026" [ref=e574] [cursor=pointer]:
+            - text: 05/20/2026
+          - button "Choose date, selected date is May 20, 2026" [ref=e574] [cursor=pointer]:
             - img [ref=e575]
           - group:
             - generic: Appointment Date
