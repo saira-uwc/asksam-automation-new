@@ -1,5 +1,54 @@
 [
   {
+    "id": "a62e6078-1251-48fc-9ffb-89397f35486e",
+    "startedAt": "2026-05-06T01:22:14.991Z",
+    "durationMs": 433924.54500000004,
+    "summary": {
+      "total": 2,
+      "passed": 0,
+      "failed": 2,
+      "skipped": 0,
+      "timedOut": 0
+    },
+    "passRate": 0,
+    "modules": {
+      "Expert-Dashboard": {
+        "label": "Expert Dashboard",
+        "total": 1,
+        "passed": 0,
+        "failed": 1,
+        "skipped": 0,
+        "timedOut": 0
+      },
+      "CCOP": {
+        "label": "CCOP",
+        "total": 1,
+        "passed": 0,
+        "failed": 1,
+        "skipped": 0,
+        "timedOut": 0
+      }
+    },
+    "tests": [
+      {
+        "title": "authenticate",
+        "module": "Expert-Dashboard",
+        "moduleLabel": "Expert Dashboard",
+        "status": "failed",
+        "durationMs": 130842,
+        "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('link', { name: 'Appointments', exact: true }).first()\nExpected: visible\nTimeout: 30000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 30000ms\u001b[22m\n\u001b[2m  "
+      },
+      {
+        "title": "CCOP | Clinician signup full flow (recorded)",
+        "module": "CCOP",
+        "moduleLabel": "CCOP",
+        "status": "failed",
+        "durationMs": 66167,
+        "error": "Error: Try for Free button not visible after 3 attempts\n\n   at ../pages/ccop-clinician-signup.page.js:68\n\n  66 |         if (attempt === 3) {\n  67 |           await this.page.screenshot({ path: 'test-results/signup-plans-debug.png' });\n> 68 |           throw new Error('Try for Free button not visibl"
+      }
+    ]
+  },
+  {
     "id": "8e5e04dc-f02d-4757-b35f-6bc38a830e77",
     "startedAt": "2026-05-05T19:24:35.418Z",
     "durationMs": 970975.249,
