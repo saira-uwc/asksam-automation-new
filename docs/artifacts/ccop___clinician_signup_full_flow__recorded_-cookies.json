@@ -1,0 +1,214 @@
+[
+  {
+    "name": "cf_clearance",
+    "value": "Y6T9GMb9zPmLOoJZIohnHyyHueZ5ayxHPLsXGdKChVM-1778073817-1.2.1.1-e.Wd0odIb0LfR_cw0o9ed1m9kDBVQHPh5Euk8S.4w8_1Rw1w5sp6Go1r3PmhtMjtQnihtLjQdApJJvOu3f9vY1Cog5804dC_xEhZBFTJlvVxaEJGc9PzQEkVQhRwcaD52a4Ot_HWsdMVr35k0WGwFYaLBg79mstpRx11hiRTLoYvctcq61I9xl.H2SKYEZ2BTsOMsLV5vpVmlI2ICHQXoiX1w_5KQoCPZOaXHcQx9sgQRJPD5mgusKqi8IzmPNrs.JWqjFPDQNXdYM6d6.GnUK51bE.pxFUsh7miMtvnocZWMPKreWiBuftab_fjURLlUecI51TVcbsviKvbATDV0g",
+    "domain": ".asksam.com.au",
+    "path": "/",
+    "expires": 1809609817.994564,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None",
+    "partitionKey": "https://asksam.com.au",
+    "_crHasCrossSiteAncestor": false
+  },
+  {
+    "name": "_ga",
+    "value": "GA1.1.361040676.1778073818",
+    "domain": ".asksam.com.au",
+    "path": "/",
+    "expires": 1812633818.129521,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "CLID",
+    "value": "8afd9d78b69f405b9f21497b5aeea69d.20260506.20270506",
+    "domain": "www.clarity.ms",
+    "path": "/",
+    "expires": 1809609818.152015,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "_clck",
+    "value": "1u8pzf0%5E2%5Eg5t%5E0%5E2317",
+    "domain": ".asksam.com.au",
+    "path": "/",
+    "expires": 1809609818,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "MUID",
+    "value": "16837CC8716463713C0C6B9970AF6205",
+    "domain": ".bing.com",
+    "path": "/",
+    "expires": 1811769819.267121,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "MR",
+    "value": "0",
+    "domain": ".c.bing.com",
+    "path": "/",
+    "expires": 1778678619.267185,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "SRM_B",
+    "value": "16837CC8716463713C0C6B9970AF6205",
+    "domain": ".c.bing.com",
+    "path": "/",
+    "expires": 1811769819.267207,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "SM",
+    "value": "C",
+    "domain": ".c.clarity.ms",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "MUID",
+    "value": "16837CC8716463713C0C6B9970AF6205",
+    "domain": ".clarity.ms",
+    "path": "/",
+    "expires": 1811769818.272133,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "MR",
+    "value": "0",
+    "domain": ".c.clarity.ms",
+    "path": "/",
+    "expires": 1778678618.272209,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ANONCHK",
+    "value": "0",
+    "domain": ".c.clarity.ms",
+    "path": "/",
+    "expires": 1778074418.27223,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "_clsk",
+    "value": "195ocvh%5E1778073818392%5E1%5E1%5En.clarity.ms%2Fcollect",
+    "domain": ".asksam.com.au",
+    "path": "/",
+    "expires": 1778160218,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_cfuvid",
+    "value": "JzVfV314YBDEK_ub87OHWSPBqzwhVWZb8r.rlrFDCms-1778073821066-0.0.1.1-604800000",
+    "domain": ".clerk.asksam.com.au",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "__client",
+    "value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNsaWVudF8zREx1bFZPQ1RsdHV1UWxiMkNOZ1NXa0N0ek8iLCJyb3RhdGluZ190b2tlbiI6IjFoZzhwZWZyOWVnNmh6NnJnNTl6Z2U1c2ZvMHRpN25sbmg4NWFtZjcifQ.n2SEUJBxYWm3MWc3oj6cPzfreB-SSoqNn5RuTjQ5vSEJXoKcqCew2WqPpCMiQnJCd5S6OK07JsH2VHQ09Ieecf5_ZC884Nj3SLrZX2xVdy9_VLoUBJXtkK9_PTwIM8wmLb54_-pwW2lu6h-sIK8SQevCIYmogPshrc92BsFcQSyepL7PKR4XhHR5ZHgmQfMRb1AwAk7bGtnuIC9JUof1h0-RCAnB4IqxPWstWWtfZYlhI2I12_uCJoHSOIYfKigh8-y1r19pzkKFsYnfOD7u5osRPJls80VH3wAHjtIb9nfBCAh4e7wYSi3udRo3R2cFOtcwRki2kGSNJSH6cDsA8g",
+    "domain": ".clerk.asksam.com.au",
+    "path": "/",
+    "expires": 1812633825.441104,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "__client_uat",
+    "value": "1778073825",
+    "domain": ".asksam.com.au",
+    "path": "/",
+    "expires": 1812633852.15087,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "__client_uat_mJltbx6F",
+    "value": "1778073825",
+    "domain": ".asksam.com.au",
+    "path": "/",
+    "expires": 1812633852.151224,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "__cf_bm",
+    "value": "JwF1gj5OhajklUD2WeqIIRmhR_T3phlV.l5DB7Hs9b0-1778073825-1.0.1.1-FaeLm_AnR32WcoGN8SwgB5QPG1WI96dgCnqpH6.qnwUbPxt2R_xIKDeS_9DVuiDmtWsUlWFXzAy55af8nHL6jp1gl2Ro5D6IlRJMWjDOKVmmjLov9IEoozQ4TeipRTEl",
+    "domain": ".clerk.asksam.com.au",
+    "path": "/",
+    "expires": 1778075625.441309,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "clerk_active_context",
+    "value": "sess_3DLulvdC1DNMPua6kzACOcXJBBj:",
+    "domain": "copilot.asksam.com.au",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_ga_6R9WK18T5N",
+    "value": "GS2.1.s1778073818$o1$g1$t1778073852$j26$l0$h0",
+    "domain": ".asksam.com.au",
+    "path": "/",
+    "expires": 1812633852.007406,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "__session",
+    "value": "eyJhbGciOiJSUzI1NiIsImNhdCI6ImNsX0I3ZDRQRDExMUFBQSIsImtpZCI6Imluc18ydk9pZVpHanJhQXVKckJZMVhlRzI3cFJLUm4iLCJ0eXAiOiJKV1QifQ.eyJhenAiOiJodHRwczovL2NvcGlsb3QuYXNrc2FtLmNvbS5hdSIsImNyZWF0ZWRfYXQiOjE3NzgwNzM4MjUsImVtYWlsIjoidGVzdGF1dG91c2VyODE3NjM3K2NsZXJrX3Rlc3RAdG1haWwuY29tIiwiZXhwIjoxNzc4MDc0MTUyLCJleHRlcm5hbF9pZCI6bnVsbCwiZmlyc3RfbmFtZSI6InRlc3QiLCJmdmEiOlswLC0xXSwiaWF0IjoxNzc4MDczODUyLCJpbWFnZV91cmwiOiJodHRwczovL2ltZy5jbGVyay5jb20vZXlKMGVYQmxJam9pWkdWbVlYVnNkQ0lzSW1scFpDSTZJbWx1YzE4eWRrOXBaVnBIYW5KaFFYVktja0paTVZobFJ6STNjRkpMVW00aUxDSnlhV1FpT2lKMWMyVnlYek5FVEhWc2RsaHpiWEpvT0VsdWIwRkxVWFZKVDNsd1R6TmxSQ0lzSW1sdWFYUnBZV3h6SWpvaVZFRWlmUSIsImlzcyI6Imh0dHBzOi8vY2xlcmsuYXNrc2FtLmNvbS5hdSIsImp0aSI6IjM4NWNmZDlhZGNjMjAzNjIxN2FiIiwibGFzdF9uYW1lIjoiYXV0b3VzZXI4MTc2MzciLCJsYXN0X3NpZ25faW5fYXQiOjE3NzgwNzM4MjUsIm5iZiI6MTc3ODA3Mzg0MiwicGhvbmUiOm51bGwsInB1YmxpY19tZXRhZGF0YSI6e30sInNpZCI6InNlc3NfM0RMdWx2ZEMxRE5NUHVhNmt6QUNPY1hKQkJqIiwic3RzIjoiYWN0aXZlIiwic3ViIjoidXNlcl8zREx1bHZYc21yaDhJbm9BS1F1SU95cE8zZUQiLCJ1bnNhZmVfbWV0YWRhdGEiOnsiY291bnRyeSI6IlVuaXRlZCBTdGF0ZXMiLCJyb2xlIjpbImNvcGlsb3QiXSwidGltZVpvbmUiOiJBbWVyaWNhL0NoaWNhZ28ifSwidXBkYXRlZF9hdCI6MTc3ODA3MzgyNSwidXNlcl9pZCI6InVzZXJfM0RMdWx2WHNtcmg4SW5vQUtRdUlPeXBPM2VEIiwidiI6Mn0.u0u-hgxCmg0GXPUQ8GRWVTIjXH3msAYHNacOaQQxbniOtcGsz_UqJA54mWZcW3hkwqQk8s6idFp8sEC8Ws49biusyR7lx1T3e2iEaIMfYSGg2iAYqXHL0GysYQRqRtGBY80dG-HsxFFpZwpU1kbP_CI0pDsBKRpFloHv9uf9K0oj4ui4K10Jlxoppn5iQPsh0xVJMWaZAB_tg6hDv5jissbwpkjKb8AVvbg97Z_8BPSuz0phOcCEq8XkJKJ3lYWqh5QbH9uNqNE5nPVOJGARSvxcd2FmtvmcF58UMd_Q6JYsTvbVvtQkfGF9u776xWyJZCheU6HXZrXcBCouyVa0yg",
+    "domain": "copilot.asksam.com.au",
+    "path": "/",
+    "expires": 1809609857,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "__session_mJltbx6F",
+    "value": "eyJhbGciOiJSUzI1NiIsImNhdCI6ImNsX0I3ZDRQRDExMUFBQSIsImtpZCI6Imluc18ydk9pZVpHanJhQXVKckJZMVhlRzI3cFJLUm4iLCJ0eXAiOiJKV1QifQ.eyJhenAiOiJodHRwczovL2NvcGlsb3QuYXNrc2FtLmNvbS5hdSIsImNyZWF0ZWRfYXQiOjE3NzgwNzM4MjUsImVtYWlsIjoidGVzdGF1dG91c2VyODE3NjM3K2NsZXJrX3Rlc3RAdG1haWwuY29tIiwiZXhwIjoxNzc4MDc0MTUyLCJleHRlcm5hbF9pZCI6bnVsbCwiZmlyc3RfbmFtZSI6InRlc3QiLCJmdmEiOlswLC0xXSwiaWF0IjoxNzc4MDczODUyLCJpbWFnZV91cmwiOiJodHRwczovL2ltZy5jbGVyay5jb20vZXlKMGVYQmxJam9pWkdWbVlYVnNkQ0lzSW1scFpDSTZJbWx1YzE4eWRrOXBaVnBIYW5KaFFYVktja0paTVZobFJ6STNjRkpMVW00aUxDSnlhV1FpT2lKMWMyVnlYek5FVEhWc2RsaHpiWEpvT0VsdWIwRkxVWFZKVDNsd1R6TmxSQ0lzSW1sdWFYUnBZV3h6SWpvaVZFRWlmUSIsImlzcyI6Imh0dHBzOi8vY2xlcmsuYXNrc2FtLmNvbS5hdSIsImp0aSI6IjM4NWNmZDlhZGNjMjAzNjIxN2FiIiwibGFzdF9uYW1lIjoiYXV0b3VzZXI4MTc2MzciLCJsYXN0X3NpZ25faW5fYXQiOjE3NzgwNzM4MjUsIm5iZiI6MTc3ODA3Mzg0MiwicGhvbmUiOm51bGwsInB1YmxpY19tZXRhZGF0YSI6e30sInNpZCI6InNlc3NfM0RMdWx2ZEMxRE5NUHVhNmt6QUNPY1hKQkJqIiwic3RzIjoiYWN0aXZlIiwic3ViIjoidXNlcl8zREx1bHZYc21yaDhJbm9BS1F1SU95cE8zZUQiLCJ1bnNhZmVfbWV0YWRhdGEiOnsiY291bnRyeSI6IlVuaXRlZCBTdGF0ZXMiLCJyb2xlIjpbImNvcGlsb3QiXSwidGltZVpvbmUiOiJBbWVyaWNhL0NoaWNhZ28ifSwidXBkYXRlZF9hdCI6MTc3ODA3MzgyNSwidXNlcl9pZCI6InVzZXJfM0RMdWx2WHNtcmg4SW5vQUtRdUlPeXBPM2VEIiwidiI6Mn0.u0u-hgxCmg0GXPUQ8GRWVTIjXH3msAYHNacOaQQxbniOtcGsz_UqJA54mWZcW3hkwqQk8s6idFp8sEC8Ws49biusyR7lx1T3e2iEaIMfYSGg2iAYqXHL0GysYQRqRtGBY80dG-HsxFFpZwpU1kbP_CI0pDsBKRpFloHv9uf9K0oj4ui4K10Jlxoppn5iQPsh0xVJMWaZAB_tg6hDv5jissbwpkjKb8AVvbg97Z_8BPSuz0phOcCEq8XkJKJ3lYWqh5QbH9uNqNE5nPVOJGARSvxcd2FmtvmcF58UMd_Q6JYsTvbVvtQkfGF9u776xWyJZCheU6HXZrXcBCouyVa0yg",
+    "domain": "copilot.asksam.com.au",
+    "path": "/",
+    "expires": 1809609857,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Lax"
+  }
+]

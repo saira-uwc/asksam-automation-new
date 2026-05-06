@@ -1,0 +1,11 @@
+1. [2026-05-06T13:23:37.753Z] https://account.asksam.com.au/register
+2. [2026-05-06T13:23:37.869Z] https://account.asksam.com.au/register
+3. [2026-05-06T13:23:39.860Z] https://copilot.asksam.com.au/sign-up
+4. [2026-05-06T13:23:40.802Z] https://copilot.asksam.com.au/sign-up
+5. [2026-05-06T13:23:43.148Z] https://copilot.asksam.com.au/sign-up/verify-email-address
+6. [2026-05-06T13:23:43.221Z] https://copilot.asksam.com.au/sign-up/verify-email-address
+7. [2026-05-06T13:23:46.370Z] https://copilot.asksam.com.au/clinical/settings?view=Plans%20%26%20Billing
+8. [2026-05-06T13:23:46.436Z] https://copilot.asksam.com.au/clinical/settings?view=Plans%20%26%20Billing
+9. [2026-05-06T13:23:53.061Z] https://copilot.asksam.com.au/clinical/settings?view=Plans%20%26%20Billing
+10. [2026-05-06T13:24:02.528Z] https://copilot.asksam.com.au/clinical/settings?view=Plans%20%26%20Billing
+11. [2026-05-06T13:24:11.882Z] https://copilot.asksam.com.au/clinical/settings?view=Plans%20%26%20Billing

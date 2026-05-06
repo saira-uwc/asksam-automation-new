@@ -1,0 +1,25 @@
+Test: CCOP | Clinician signup full flow (recorded)
+Test file: /home/runner/work/asksam-automation-new/asksam-automation-new/tests/CCOP/ccop-clinician-signup.spec.js
+Failed at: 2026-05-06T13:24:18.363Z
+Page URL at failure: https://copilot.asksam.com.au/clinical/settings?view=Plans%20%26%20Billing
+
+--- Clerk session cookies ---
+__session present: true
+  domain=copilot.asksam.com.au path=/ sameSite=Lax secure=true httpOnly=false expires=2027-05-06T13:24:17.000Z
+__client_uat present: true
+  domain=.asksam.com.au value=1778073825
+
+--- All cookies on .asksam.com.au ---
+cf_clearance  domain=.asksam.com.au  sameSite=None  expires=2027-05-06T13:23:37.994Z
+_ga  domain=.asksam.com.au  sameSite=None  expires=2027-06-10T13:23:38.129Z
+_clck  domain=.asksam.com.au  sameSite=Lax  expires=2027-05-06T13:23:38.000Z
+_clsk  domain=.asksam.com.au  sameSite=Lax  expires=2026-05-07T13:23:38.000Z
+_cfuvid  domain=.clerk.asksam.com.au  sameSite=None  expires=session
+__client  domain=.clerk.asksam.com.au  sameSite=Lax  expires=2027-06-10T13:23:45.441Z
+__client_uat  domain=.asksam.com.au  sameSite=Lax  expires=2027-06-10T13:24:12.150Z
+__client_uat_mJltbx6F  domain=.asksam.com.au  sameSite=Lax  expires=2027-06-10T13:24:12.151Z
+__cf_bm  domain=.clerk.asksam.com.au  sameSite=None  expires=2026-05-06T13:53:45.441Z
+clerk_active_context  domain=copilot.asksam.com.au  sameSite=Lax  expires=session
+_ga_6R9WK18T5N  domain=.asksam.com.au  sameSite=Lax  expires=2027-06-10T13:24:12.007Z
+__session  domain=copilot.asksam.com.au  sameSite=Lax  expires=2027-05-06T13:24:17.000Z
+__session_mJltbx6F  domain=copilot.asksam.com.au  sameSite=Lax  expires=2027-05-06T13:24:17.000Z
