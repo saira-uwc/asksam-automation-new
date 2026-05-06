@@ -1,0 +1,22 @@
+Test: Open letter template from Actions dropdown, select type and verify preview
+Test file: /home/runner/work/asksam-automation-new/asksam-automation-new/tests/CCOP/letter-template.spec.js
+Failed at: 2026-05-06T05:52:39.980Z
+Page URL at failure: https://copilot.asksam.com.au/sign-in
+
+--- Clerk session cookies ---
+__session present: false
+  (missing — likely the cause of redirect-to-login failures)
+__client_uat present: true
+  domain=.asksam.com.au value=0
+
+--- All cookies on .asksam.com.au ---
+cf_clearance  domain=.asksam.com.au  sameSite=None  expires=2027-05-06T05:50:35.802Z
+_ga  domain=.asksam.com.au  sameSite=None  expires=2027-06-10T05:50:35.972Z
+_clck  domain=.asksam.com.au  sameSite=Lax  expires=2027-05-06T05:50:36.000Z
+_clsk  domain=.asksam.com.au  sameSite=Lax  expires=2026-05-07T05:50:36.000Z
+__client  domain=.clerk.asksam.com.au  sameSite=Lax  expires=2027-06-10T05:50:38.148Z
+__client_uat  domain=.asksam.com.au  sameSite=Lax  expires=2027-06-10T05:52:10.263Z
+__client_uat_mJltbx6F  domain=.asksam.com.au  sameSite=Lax  expires=2027-06-10T05:52:10.263Z
+__cf_bm  domain=.clerk.asksam.com.au  sameSite=None  expires=2026-05-06T06:20:38.148Z
+_cfuvid  domain=.clerk.asksam.com.au  sameSite=None  expires=session
+_ga_6R9WK18T5N  domain=.asksam.com.au  sameSite=Lax  expires=2027-06-10T05:52:11.273Z

@@ -1,0 +1,184 @@
+[
+  {
+    "name": "cf_clearance",
+    "value": "BM39aQtxY7UkUvVq63zVNv074onWU.CQUxyLCY4XCHI-1778046635-1.2.1.1-Sqs4xtqE5bXIdmoM58ZsD4azqBUh52dAqczp9VCB77DddiQixpSJTG2b7C.dE8BFxa9xNRC14N90kuaFYX3zvMwvzCVRe4ickygLoWO4z36PzEh.PhK81mmZIvL0RFNyc6lADCyjO3peJj.t8YtLoAyvwE6YVVDwsYQKOB_OADkKQc9ZvKH_A3LltiiXtToeivmF2akKjurUk5zph6m7Ftrr8.mE8XRj06fZnkl1xgLVf5K8CbzxW.BdNWkEsxFDniSxwi3MpjBichU.u.VhtfQt01u2ELIlepwlQhBblKqkJZiJ31poeBCZQS5MrIqZB3ARW9UJ7qkcTqVukzE3jg",
+    "domain": ".asksam.com.au",
+    "path": "/",
+    "expires": 1809582635.802117,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None",
+    "partitionKey": "https://asksam.com.au",
+    "_crHasCrossSiteAncestor": false
+  },
+  {
+    "name": "_ga",
+    "value": "GA1.1.1528860907.1778046636",
+    "domain": ".asksam.com.au",
+    "path": "/",
+    "expires": 1812606635.972508,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "CLID",
+    "value": "71f7e2303617448980809c75c9ac39e5.20260506.20270506",
+    "domain": "www.clarity.ms",
+    "path": "/",
+    "expires": 1809582636.123568,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "_clck",
+    "value": "9qhlmb%5E2%5Eg5t%5E0%5E2317",
+    "domain": ".asksam.com.au",
+    "path": "/",
+    "expires": 1809582636,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "MUID",
+    "value": "03D0BBA28B7B6D980F27ACF38A8E6C05",
+    "domain": ".bing.com",
+    "path": "/",
+    "expires": 1811742636.247637,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "MR",
+    "value": "0",
+    "domain": ".c.bing.com",
+    "path": "/",
+    "expires": 1778651436.247678,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "SRM_B",
+    "value": "03D0BBA28B7B6D980F27ACF38A8E6C05",
+    "domain": ".c.bing.com",
+    "path": "/",
+    "expires": 1811742636.2477,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "SM",
+    "value": "C",
+    "domain": ".c.clarity.ms",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "MUID",
+    "value": "03D0BBA28B7B6D980F27ACF38A8E6C05",
+    "domain": ".clarity.ms",
+    "path": "/",
+    "expires": 1811742636.290526,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "MR",
+    "value": "0",
+    "domain": ".c.clarity.ms",
+    "path": "/",
+    "expires": 1778651436.290572,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "ANONCHK",
+    "value": "0",
+    "domain": ".c.clarity.ms",
+    "path": "/",
+    "expires": 1778047236.290601,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "_clsk",
+    "value": "ls3oe6%5E1778046636438%5E1%5E1%5Ej.clarity.ms%2Fcollect",
+    "domain": ".asksam.com.au",
+    "path": "/",
+    "expires": 1778133036,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "__client",
+    "value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNsaWVudF8zREwxZk5YdWU1MnlqVW5ZQmZRSVhrSlVlYzMiLCJyb3RhdGluZ190b2tlbiI6InFlbGhubmpoZmo0OGY0NG1xaG4xYnkyNnpkem9oMnh2cmt2ZWQ5cGUifQ.JfVF7HgzR0y6Um42VuGn_LIi3J0Lxkw0ZdqEN0JilRVhnyS0LaOdnyr-yes8qdDypukg59iHjtc-7px98XMN4N9GOgYSxo__XYR8erClFQXdhJMeDKsLhW0XwuphrEicV7tyRBgMxMK8oJRU872kDkfuxoDHtlLZqFyHzwBr09JBi9EeBV4rFTBE46VEj3lrLnAyHKxTX2yO__CdTsXlMdtUumGJf4VSkbuzVFJ4AMT0hEl-mm7Tw6dAxf7zDhq-jZd1v9xJi8mJxbYTv84dDni_DOLuwsDtA8BbWd4yz81TuEIPyxR8TfiALiJTRtTs8rEITNx_QeiC-DCN8wUJHA",
+    "domain": ".clerk.asksam.com.au",
+    "path": "/",
+    "expires": 1812606638.148699,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "__client_uat",
+    "value": "0",
+    "domain": ".asksam.com.au",
+    "path": "/",
+    "expires": 1812606730.263719,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "__client_uat_mJltbx6F",
+    "value": "0",
+    "domain": ".asksam.com.au",
+    "path": "/",
+    "expires": 1812606730.263775,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "__cf_bm",
+    "value": "napjjRLQOdU.v81Kv0fB1pn3cGHXnYOtl1Vl20KJ1qc-1778046638-1.0.1.1-l7Zkxw40H75nHjgQe9_SlxtiWs77u1NwkkGQKBMBwfOqhwY_ZqqLAIfhHCozh2unqFWjfeyi3DloqPycVF7cG3x.nNyAcpCRTIBTBU2wzgE",
+    "domain": ".clerk.asksam.com.au",
+    "path": "/",
+    "expires": 1778048438.148801,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "_cfuvid",
+    "value": "GQDgw4hhQlueWDKl9.scpavjvfjMsjs3nJ3tk8Y3iAU-1778046638137-0.0.1.1-604800000",
+    "domain": ".clerk.asksam.com.au",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "_ga_6R9WK18T5N",
+    "value": "GS2.1.s1778046635$o1$g1$t1778046731$j58$l0$h0",
+    "domain": ".asksam.com.au",
+    "path": "/",
+    "expires": 1812606731.273532,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  }
+]
