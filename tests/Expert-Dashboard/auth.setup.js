@@ -1,4 +1,4 @@
-import { test as setup, expect } from '@playwright/test';
+import { test as setup, expect } from '../../helpers/forensics-fixture.js';
 import { LoginPage } from '../../pages/login.page.js';
 
 const authFile = 'tests/Expert-Dashboard/.auth/user.json';

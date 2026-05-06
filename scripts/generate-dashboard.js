@@ -62,6 +62,7 @@ function extractTests(suite, tests = []) {
             sourcePath: a.path || '',
             path: a.path ? path.basename(a.path) : '',
             contentType: a.contentType || '',
+            body: a.body || '',
           }));
 
           tests.push({
@@ -155,12 +156,20 @@ function main() {
     if (t.status === 'passed') continue;
     const slug = t.title.replace(/[^a-zA-Z0-9_-]/g, '_').substring(0, 50).toLowerCase();
     for (const a of t.attachments) {
-      if (!a.sourcePath || !fs.existsSync(a.sourcePath)) continue;
       const ext = path.extname(a.path) || '';
       const destName = `${slug}-${a.name}${ext}`;
       const destPath = path.join(ARTIFACTS_DIR, destName);
       try {
-        fs.copyFileSync(a.sourcePath, destPath);
+        if (a.sourcePath && fs.existsSync(a.sourcePath)) {
+          fs.copyFileSync(a.sourcePath, destPath);
+        } else if (a.body) {
+          // Forensics fixture attaches via { body }; Playwright's JSON reporter
+          // emits these as base64 strings. Decode and write so they're browsable
+          // alongside screenshots/traces.
+          fs.writeFileSync(destPath, Buffer.from(a.body, 'base64'));
+        } else {
+          continue;
+        }
         a.webPath = `./artifacts/${destName}`;
         artifactCount++;
       } catch { /* skip */ }
@@ -179,7 +188,7 @@ function main() {
     modules,
     tests: tests.map(({ retry, ...rest }) => ({
       ...rest,
-      attachments: rest.attachments.map(({ sourcePath, ...a }) => a),
+      attachments: rest.attachments.map(({ sourcePath, body, ...a }) => a),
     })),
   };
 
