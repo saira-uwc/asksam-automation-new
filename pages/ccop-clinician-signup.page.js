@@ -7,17 +7,33 @@ export class CCOPClinicianSignupPage {
   async signup(user) {
     // Navigate directly to the registration page
     await this.page.goto('https://account.asksam.com.au/register', { waitUntil: 'load' });
-  
+    await this.page.waitForLoadState('networkidle', { timeout: 20000 }).catch(() => {});
+
+      // Pace each transition — without these waits, the 9 actions below run in
+      // ~5s and Clerk's signup session can be created in a race state, then
+      // 410 Gone on attempt_verification because the session ID is invalid.
       await this.page.getByText('Clinician').click();
+      await this.page.waitForTimeout(800);
+
       await this.page.getByRole('button', { name: "Let's get started" }).click();
-  
+      await this.page.waitForTimeout(1200);
+
       await this.page.getByRole('textbox', { name: 'First name' }).fill(user.firstName);
+      await this.page.waitForTimeout(300);
       await this.page.getByRole('textbox', { name: 'Last name' }).fill(user.lastName);
+      await this.page.waitForTimeout(300);
       await this.page.getByRole('textbox', { name: 'Email address' }).fill(user.email);
-  
+      // Let React commit the email + finish any onChange validation before submit
+      await this.page.waitForTimeout(800);
+
       await this.page.getByRole('button', { name: 'Continue' }).click();
-  
+      // Critical: the next step (OTP) requires Clerk to have created the
+      // sign_up session server-side. Submitting OTP before that returns 410
+      // Gone — observed locally on 2026-05-06.
+      await this.page.waitForTimeout(2000);
+
       // OTP
+      await this.page.getByRole('textbox', { name: 'Enter verification code' }).waitFor({ state: 'visible', timeout: 30000 });
       await this.page.getByRole('textbox', { name: 'Enter verification code' }).fill('424242');
 
       // Wait for Clerk to finish auth and redirect
@@ -38,6 +54,22 @@ export class CCOPClinicianSignupPage {
       // Ensure auth is fully loaded
       await this.page.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => {});
       await this.page.waitForTimeout(3000);
+
+      // URL transitioning to /clinical isn't enough — Clerk can be mid-flight on
+      // session establishment. The __client_uat cookie's value is the actual
+      // signed-in signal: '0' = signed out, positive timestamp = signed in.
+      // Without this wait, the activateFreePlan() goto fires before the session
+      // attaches on copilot subdomain and bounces to /sign-in. Forensics from
+      // the 2026-05-06 run showed exactly this 3x in a row.
+      await this.page.waitForFunction(
+        () => {
+          const m = document.cookie.match(/__client_uat=([^;]+)/);
+          return m && m[1] !== '0';
+        },
+        { timeout: 60000 },
+      ).catch(() => {
+        console.log('⚠ Clerk session still pending (__client_uat=0) after 60s — Plans page goto may bounce.');
+      });
     }
   
     /* ================= FREE PLAN =================

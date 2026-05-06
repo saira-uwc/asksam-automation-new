@@ -10,7 +10,18 @@ export class LetterTemplatePage {
   ============================ */
   async openExistingPatientNote() {
     await this.page.goto("https://copilot.asksam.com.au/clinical/home");
-    await this.page.waitForURL("**/clinical/home");
+    await this.page.waitForURL(/clinical\/home|sign-in|login/, { timeout: 30000 });
+
+    // Defensive: if Clerk bounced us to sign-in despite login completing in
+    // beforeEach, fail with a clear root cause instead of the downstream
+    // "Completed tab not found" misleading error.
+    if (/sign-in|login/i.test(this.page.url())) {
+      throw new Error(
+        `Auth bounce: navigated to /clinical/home but ended up at ${this.page.url()}. ` +
+        `Clerk session was lost between login and this navigation. ` +
+        `Check forensics cookies.json + clerk-info.txt for __session presence.`,
+      );
+    }
 
     // Wait for page to fully load — wait until at least one patient card button appears
     // Try each tab: In Progress (Edit Draft) → Completed (View Clinical Note) → All
