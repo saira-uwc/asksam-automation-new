@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-15T01:37:46.861Z",
+  "lastUpdated": "2026-05-15T07:36:01.701Z",
   "runs": [
     {
       "date": "2026-05-15",
@@ -164,7 +164,7 @@
       "module": "Expert-Dashboard",
       "name": "authenticate",
       "status": "passed",
-      "duration": "53.5s",
+      "duration": "52.8s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -214,7 +214,7 @@
       "module": "Expert-Dashboard",
       "name": "Expert Dashboard | Create patient & book appointment",
       "status": "passed",
-      "duration": "30.9s",
+      "duration": "32.4s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -224,7 +224,7 @@
       "module": "Expert-Dashboard",
       "name": "Expert Dashboard | Navigation flow validation",
       "status": "passed",
-      "duration": "9.0s",
+      "duration": "9.4s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -234,7 +234,7 @@
       "module": "Expert-Dashboard",
       "name": "Expert Dashboard | Help Center raise & reply ticket",
       "status": "passed",
-      "duration": "8.7s",
+      "duration": "9.1s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -244,7 +244,7 @@
       "module": "Expert-Dashboard",
       "name": "create unique patient, search and view profile",
       "status": "passed",
-      "duration": "22.2s",
+      "duration": "22.5s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -254,7 +254,7 @@
       "module": "CCOP",
       "name": "AI panel — Graph tab: knowledge graph, zoom controls, node properties, legends",
       "status": "passed",
-      "duration": "42.5s",
+      "duration": "40.5s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -264,7 +264,7 @@
       "module": "CCOP",
       "name": "AI panel — Assistant tab: associations, medication & comorbidity sub-tabs",
       "status": "passed",
-      "duration": "42.1s",
+      "duration": "43.5s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -294,7 +294,7 @@
       "module": "CCOP",
       "name": "Create clinical note with document upload & transcription",
       "status": "passed",
-      "duration": "1m 8s",
+      "duration": "1m 6s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -304,7 +304,7 @@
       "module": "CCOP",
       "name": "Create patient + upload + submit",
       "status": "passed",
-      "duration": "2m 14s",
+      "duration": "1m 52s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -314,7 +314,7 @@
       "module": "CCOP",
       "name": "Open letter template from Actions dropdown, select type and verify preview",
       "status": "passed",
-      "duration": "33.3s",
+      "duration": "37.8s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -324,7 +324,7 @@
       "module": "CCOP",
       "name": "Create a new letter template from Actions dropdown",
       "status": "passed",
-      "duration": "41.0s",
+      "duration": "41.1s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -334,7 +334,7 @@
       "module": "CCOP",
       "name": "Create clinical note with voice transcription",
       "status": "passed",
-      "duration": "22.9s",
+      "duration": "21.2s",
       "screenshot": "",
       "video": "",
       "trace": ""
