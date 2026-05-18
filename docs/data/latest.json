@@ -1,7 +1,7 @@
 {
-  "id": "6f15586e-16d8-4681-afc9-e2d5e6c670b7",
-  "startedAt": "2026-05-18T13:22:07.372Z",
-  "durationMs": 1221680.702,
+  "id": "6a9e4eb6-2313-4a8e-b769-424ebccf6be3",
+  "startedAt": "2026-05-18T19:22:11.741Z",
+  "durationMs": 1230991.844,
   "summary": {
     "total": 19,
     "passed": 17,
@@ -32,7 +32,7 @@
     {
       "title": "authenticate",
       "status": "passed",
-      "durationMs": 52289,
+      "durationMs": 54827,
       "file": "Expert-Dashboard/auth.setup.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -53,7 +53,7 @@
     {
       "title": "Expert Dashboard | Appointment booking (dynamic slots)",
       "status": "passed",
-      "durationMs": 17367,
+      "durationMs": 17266,
       "file": "Expert-Dashboard/appointment-booking.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -73,9 +73,86 @@
     },
     {
       "title": "create appointment with existing patient and reschedule",
-      "status": "passed",
-      "durationMs": 63432,
+      "status": "failed",
+      "durationMs": 131076,
       "file": "Expert-Dashboard/appointment-create-and-reschedule.spec.js",
+      "module": "Expert-Dashboard",
+      "moduleLabel": "Expert Dashboard",
+      "attachments": [
+        {
+          "name": "screenshot",
+          "path": "test-failed-1.png",
+          "contentType": "image/png",
+          "webPath": "./artifacts/create_appointment_with_existing_patient_and_resch-screenshot.png"
+        },
+        {
+          "name": "cookies.json",
+          "path": "",
+          "contentType": "application/json",
+          "webPath": "./artifacts/create_appointment_with_existing_patient_and_resch-cookies.json"
+        },
+        {
+          "name": "clerk-info.txt",
+          "path": "",
+          "contentType": "text/plain",
+          "webPath": "./artifacts/create_appointment_with_existing_patient_and_resch-clerk-info.txt"
+        },
+        {
+          "name": "localStorage.json",
+          "path": "",
+          "contentType": "application/json",
+          "webPath": "./artifacts/create_appointment_with_existing_patient_and_resch-localStorage.json"
+        },
+        {
+          "name": "sessionStorage.json",
+          "path": "",
+          "contentType": "application/json",
+          "webPath": "./artifacts/create_appointment_with_existing_patient_and_resch-sessionStorage.json"
+        },
+        {
+          "name": "console.log",
+          "path": "",
+          "contentType": "text/plain",
+          "webPath": "./artifacts/create_appointment_with_existing_patient_and_resch-console.log"
+        },
+        {
+          "name": "redirect-chain.txt",
+          "path": "",
+          "contentType": "text/plain",
+          "webPath": "./artifacts/create_appointment_with_existing_patient_and_resch-redirect-chain.txt"
+        },
+        {
+          "name": "network-failures.txt",
+          "path": "",
+          "contentType": "text/plain",
+          "webPath": "./artifacts/create_appointment_with_existing_patient_and_resch-network-failures.txt"
+        },
+        {
+          "name": "video",
+          "path": "video.webm",
+          "contentType": "video/webm",
+          "webPath": "./artifacts/create_appointment_with_existing_patient_and_resch-video.webm"
+        },
+        {
+          "name": "error-context",
+          "path": "error-context.md",
+          "contentType": "text/markdown",
+          "webPath": "./artifacts/create_appointment_with_existing_patient_and_resch-error-context.md"
+        },
+        {
+          "name": "trace",
+          "path": "trace.zip",
+          "contentType": "application/zip",
+          "webPath": "./artifacts/create_appointment_with_existing_patient_and_resch-trace.zip"
+        }
+      ],
+      "error": "TimeoutError: locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.MuiCard-root').first() to be visible\u001b[22m\n\n\n   at ../pages/expert-appointment.page.js:288\n\n  286 |         await this.page.reload();\n  287 |         await this.page.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => {});\n> 288 |         await firstCard.waitFor({ state: 'visible', timeout: 20000 });\n      |                         ^\n  289 |       } else {\n  290 |         throw new Error('"
+    },
+    {
+      "title": "create appointment and manage session lifecycle",
+      "status": "passed",
+      "durationMs": 18398,
+      "file": "Expert-Dashboard/appointment-session-management.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
       "attachments": [
@@ -93,80 +170,9 @@
       "error": ""
     },
     {
-      "title": "create appointment and manage session lifecycle",
-      "status": "failed",
-      "durationMs": 43355,
-      "file": "Expert-Dashboard/appointment-session-management.spec.js",
-      "module": "Expert-Dashboard",
-      "moduleLabel": "Expert Dashboard",
-      "attachments": [
-        {
-          "name": "screenshot",
-          "path": "test-failed-1.png",
-          "contentType": "image/png",
-          "webPath": "./artifacts/create_appointment_and_manage_session_lifecycle-screenshot.png"
-        },
-        {
-          "name": "cookies.json",
-          "path": "",
-          "contentType": "application/json",
-          "webPath": "./artifacts/create_appointment_and_manage_session_lifecycle-cookies.json"
-        },
-        {
-          "name": "clerk-info.txt",
-          "path": "",
-          "contentType": "text/plain",
-          "webPath": "./artifacts/create_appointment_and_manage_session_lifecycle-clerk-info.txt"
-        },
-        {
-          "name": "localStorage.json",
-          "path": "",
-          "contentType": "application/json",
-          "webPath": "./artifacts/create_appointment_and_manage_session_lifecycle-localStorage.json"
-        },
-        {
-          "name": "sessionStorage.json",
-          "path": "",
-          "contentType": "application/json",
-          "webPath": "./artifacts/create_appointment_and_manage_session_lifecycle-sessionStorage.json"
-        },
-        {
-          "name": "console.log",
-          "path": "",
-          "contentType": "text/plain",
-          "webPath": "./artifacts/create_appointment_and_manage_session_lifecycle-console.log"
-        },
-        {
-          "name": "redirect-chain.txt",
-          "path": "",
-          "contentType": "text/plain",
-          "webPath": "./artifacts/create_appointment_and_manage_session_lifecycle-redirect-chain.txt"
-        },
-        {
-          "name": "video",
-          "path": "video.webm",
-          "contentType": "video/webm",
-          "webPath": "./artifacts/create_appointment_and_manage_session_lifecycle-video.webm"
-        },
-        {
-          "name": "error-context",
-          "path": "error-context.md",
-          "contentType": "text/markdown",
-          "webPath": "./artifacts/create_appointment_and_manage_session_lifecycle-error-context.md"
-        },
-        {
-          "name": "trace",
-          "path": "trace.zip",
-          "contentType": "application/zip",
-          "webPath": "./artifacts/create_appointment_and_manage_session_lifecycle-trace.zip"
-        }
-      ],
-      "error": "TimeoutError: locator.waitFor: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button').filter({ hasText: /View/i }).first() to be visible\u001b[22m\n\n\n   at ../pages/expert-appointment.page.js:629\n\n  627 |     .first();\n  628 |\n> 629 |   await viewBtn.waitFor({ timeout: 15000 });\n      |                 ^\n  630 |   await viewBtn.click();\n  631 |\n  632 |   await this.page.getByRole('button', { name: 'close' }).click();\n    at ExpertAppointmentPage.openAndCloseSessionDetails (/home/run"
-    },
-    {
       "title": "create appointment with existing patient and cancel non-cancelled one",
       "status": "failed",
-      "durationMs": 131710,
+      "durationMs": 131061,
       "file": "Expert-Dashboard/appointment-z-cancel.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -214,12 +220,6 @@
           "webPath": "./artifacts/create_appointment_with_existing_patient_and_cance-redirect-chain.txt"
         },
         {
-          "name": "network-failures.txt",
-          "path": "",
-          "contentType": "text/plain",
-          "webPath": "./artifacts/create_appointment_with_existing_patient_and_cance-network-failures.txt"
-        },
-        {
           "name": "video",
           "path": "video.webm",
           "contentType": "video/webm",
@@ -243,7 +243,7 @@
     {
       "title": "Expert Dashboard | Create patient & book appointment",
       "status": "passed",
-      "durationMs": 29211,
+      "durationMs": 30052,
       "file": "Expert-Dashboard/expert-appointment-create-with-new-patient.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -264,7 +264,7 @@
     {
       "title": "Expert Dashboard | Navigation flow validation",
       "status": "passed",
-      "durationMs": 9342,
+      "durationMs": 8900,
       "file": "Expert-Dashboard/expert-dashboard-navigation.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -285,7 +285,7 @@
     {
       "title": "Expert Dashboard | Help Center raise & reply ticket",
       "status": "passed",
-      "durationMs": 7910,
+      "durationMs": 9934,
       "file": "Expert-Dashboard/expert-helpcenter-ticket.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -306,7 +306,7 @@
     {
       "title": "create unique patient, search and view profile",
       "status": "passed",
-      "durationMs": 24534,
+      "durationMs": 23683,
       "file": "Expert-Dashboard/patient-create-and-view.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -327,7 +327,7 @@
     {
       "title": "AI panel — Graph tab: knowledge graph, zoom controls, node properties, legends",
       "status": "passed",
-      "durationMs": 41589,
+      "durationMs": 39755,
       "file": "CCOP/ai-assistant-panel.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -348,7 +348,7 @@
     {
       "title": "AI panel — Assistant tab: associations, medication & comorbidity sub-tabs",
       "status": "passed",
-      "durationMs": 41645,
+      "durationMs": 41254,
       "file": "CCOP/ai-assistant-panel.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -369,7 +369,7 @@
     {
       "title": "AI panel — asksam tab: chat input, send message, disclaimer",
       "status": "passed",
-      "durationMs": 76620,
+      "durationMs": 76122,
       "file": "CCOP/ai-assistant-panel.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -390,7 +390,7 @@
     {
       "title": "CCOP | Help Center | Raise, Reply & Resolve Ticket",
       "status": "passed",
-      "durationMs": 9265,
+      "durationMs": 9239,
       "file": "CCOP/ccop-helpcenter-ticket.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -411,7 +411,7 @@
     {
       "title": "Create clinical note with document upload & transcription",
       "status": "passed",
-      "durationMs": 68890,
+      "durationMs": 70831,
       "file": "CCOP/clinical-note.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -432,7 +432,7 @@
     {
       "title": "Create patient + upload + submit",
       "status": "passed",
-      "durationMs": 148515,
+      "durationMs": 124945,
       "file": "CCOP/create-patient-clinical-note.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -453,7 +453,7 @@
     {
       "title": "Open letter template from Actions dropdown, select type and verify preview",
       "status": "passed",
-      "durationMs": 35040,
+      "durationMs": 33248,
       "file": "CCOP/letter-template.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -474,7 +474,7 @@
     {
       "title": "Create a new letter template from Actions dropdown",
       "status": "passed",
-      "durationMs": 41543,
+      "durationMs": 43385,
       "file": "CCOP/letter-template.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -495,7 +495,7 @@
     {
       "title": "Create clinical note with voice transcription",
       "status": "passed",
-      "durationMs": 21169,
+      "durationMs": 21553,
       "file": "CCOP/voice-transcription.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -516,7 +516,7 @@
     {
       "title": "CCOP | Clinician signup full flow (recorded)",
       "status": "passed",
-      "durationMs": 152076,
+      "durationMs": 74911,
       "file": "CCOP/ccop-clinician-signup.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -533,12 +533,12 @@
         },
         {
           "name": "video",
-          "path": "video.webm",
+          "path": "video-1.webm",
           "contentType": "video/webm"
         },
         {
           "name": "video",
-          "path": "video-1.webm",
+          "path": "video.webm",
           "contentType": "video/webm"
         }
       ],

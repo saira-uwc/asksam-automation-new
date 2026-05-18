@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-18T13:42:35.182Z",
+  "lastUpdated": "2026-05-18T19:42:51.133Z",
   "runs": [
     {
       "date": "2026-05-18",
@@ -182,7 +182,7 @@
       "module": "Expert-Dashboard",
       "name": "authenticate",
       "status": "passed",
-      "duration": "52.3s",
+      "duration": "54.8s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -192,7 +192,7 @@
       "module": "Expert-Dashboard",
       "name": "Expert Dashboard | Appointment booking (dynamic slots)",
       "status": "passed",
-      "duration": "17.4s",
+      "duration": "17.3s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -201,28 +201,28 @@
       "id": 3,
       "module": "Expert-Dashboard",
       "name": "create appointment with existing patient and reschedule",
-      "status": "passed",
-      "duration": "1m 3s",
-      "screenshot": "",
-      "video": "",
-      "trace": ""
+      "status": "failed",
+      "duration": "2m 11s",
+      "screenshot": "./artifacts/create_appointment_with_existing_patient_and_resch-screenshot.png",
+      "video": "./artifacts/create_appointment_with_existing_patient_and_resch-video.webm",
+      "trace": "./artifacts/create_appointment_with_existing_patient_and_resch-trace.zip"
     },
     {
       "id": 4,
       "module": "Expert-Dashboard",
       "name": "create appointment and manage session lifecycle",
-      "status": "failed",
-      "duration": "43.4s",
-      "screenshot": "./artifacts/create_appointment_and_manage_session_lifecycle-screenshot.png",
-      "video": "./artifacts/create_appointment_and_manage_session_lifecycle-video.webm",
-      "trace": "./artifacts/create_appointment_and_manage_session_lifecycle-trace.zip"
+      "status": "passed",
+      "duration": "18.4s",
+      "screenshot": "",
+      "video": "",
+      "trace": ""
     },
     {
       "id": 5,
       "module": "Expert-Dashboard",
       "name": "create appointment with existing patient and cancel non-cancelled one",
       "status": "failed",
-      "duration": "2m 12s",
+      "duration": "2m 11s",
       "screenshot": "./artifacts/create_appointment_with_existing_patient_and_cance-screenshot.png",
       "video": "./artifacts/create_appointment_with_existing_patient_and_cance-video.webm",
       "trace": "./artifacts/create_appointment_with_existing_patient_and_cance-trace.zip"
@@ -232,7 +232,7 @@
       "module": "Expert-Dashboard",
       "name": "Expert Dashboard | Create patient & book appointment",
       "status": "passed",
-      "duration": "29.2s",
+      "duration": "30.1s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -242,7 +242,7 @@
       "module": "Expert-Dashboard",
       "name": "Expert Dashboard | Navigation flow validation",
       "status": "passed",
-      "duration": "9.3s",
+      "duration": "8.9s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -252,7 +252,7 @@
       "module": "Expert-Dashboard",
       "name": "Expert Dashboard | Help Center raise & reply ticket",
       "status": "passed",
-      "duration": "7.9s",
+      "duration": "9.9s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -262,7 +262,7 @@
       "module": "Expert-Dashboard",
       "name": "create unique patient, search and view profile",
       "status": "passed",
-      "duration": "24.5s",
+      "duration": "23.7s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -272,7 +272,7 @@
       "module": "CCOP",
       "name": "AI panel — Graph tab: knowledge graph, zoom controls, node properties, legends",
       "status": "passed",
-      "duration": "41.6s",
+      "duration": "39.8s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -282,7 +282,7 @@
       "module": "CCOP",
       "name": "AI panel — Assistant tab: associations, medication & comorbidity sub-tabs",
       "status": "passed",
-      "duration": "41.6s",
+      "duration": "41.3s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -292,7 +292,7 @@
       "module": "CCOP",
       "name": "AI panel — asksam tab: chat input, send message, disclaimer",
       "status": "passed",
-      "duration": "1m 17s",
+      "duration": "1m 16s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -302,7 +302,7 @@
       "module": "CCOP",
       "name": "CCOP | Help Center | Raise, Reply & Resolve Ticket",
       "status": "passed",
-      "duration": "9.3s",
+      "duration": "9.2s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -312,7 +312,7 @@
       "module": "CCOP",
       "name": "Create clinical note with document upload & transcription",
       "status": "passed",
-      "duration": "1m 9s",
+      "duration": "1m 11s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -322,7 +322,7 @@
       "module": "CCOP",
       "name": "Create patient + upload + submit",
       "status": "passed",
-      "duration": "2m 29s",
+      "duration": "2m 5s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -332,7 +332,7 @@
       "module": "CCOP",
       "name": "Open letter template from Actions dropdown, select type and verify preview",
       "status": "passed",
-      "duration": "35.0s",
+      "duration": "33.2s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -342,7 +342,7 @@
       "module": "CCOP",
       "name": "Create a new letter template from Actions dropdown",
       "status": "passed",
-      "duration": "41.5s",
+      "duration": "43.4s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -352,7 +352,7 @@
       "module": "CCOP",
       "name": "Create clinical note with voice transcription",
       "status": "passed",
-      "duration": "21.2s",
+      "duration": "21.6s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -362,7 +362,7 @@
       "module": "CCOP",
       "name": "CCOP | Clinician signup full flow (recorded)",
       "status": "passed",
-      "duration": "2m 32s",
+      "duration": "1m 15s",
       "screenshot": "",
       "video": "",
       "trace": ""
