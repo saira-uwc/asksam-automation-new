@@ -11,7 +11,9 @@ export class ExpertAppointmentPage {
   async openAppointments() {
     await this.page.getByRole('link', { name: 'Appointments', exact: true }).first().click();
     await this.page.waitForURL(/expert\/appointments/, { timeout: 60000 });
-    await this.page.getByRole('button', { name: 'Book new appointment' }).click();
+    await this.page
+      .getByRole('button', { name: /Book(.*)Appointment/i })
+      .click();
   }
 
   /* ===============================
@@ -219,7 +221,7 @@ export class ExpertAppointmentPage {
      SEARCH APPOINTMENT
   =============================== */
   async searchAppointment(keyword) {
-    // Navigate to appointments and apply the "Appointment Status = Upcoming" filter.
+    // Navigate to appointments and apply list filters (include testing=yes + from=tomorrow).
     // The expert account has 300+ historical appointments (mostly Completed); without
     // filtering, finding a non-completed card requires paging through 30+ pages and
     // exceeds the 180s test timeout. With the filter, only Upcoming cards remain
@@ -242,19 +244,50 @@ export class ExpertAppointmentPage {
   }
 
   /* ===============================
-     APPLY "From Date = tomorrow" FILTER
+     APPLY APPOINTMENTS LIST FILTERS (testing + From Date tomorrow)
      ---
      Appointment Status filter only offers All / Completed / Cancelled — there's
      no "Upcoming" option. Instead we filter by From Date = tomorrow, which
      excludes all of today's appointments (mostly Completed since their times
      have passed) leaving only genuinely future, actionable appointments.
+     ---
+     QA/test bookings are flagged as testing appointments — the list hides them
+     until "Include Testing Appointments" is set to Yes and filters are applied.
   =============================== */
+  async _setIncludeTestingAppointmentsYes() {
+    // The MUI select has no accessible name in the prod build; rely on expanded
+    // filters UI where this is the only combobox showing "No" (others default to "All").
+    const appearsYes = this.page.getByRole('combobox').filter({ hasText: /^Yes$/ });
+    if (await appearsYes.first().isVisible().catch(() => false)) {
+      console.log('ℹ Include Testing Appointments already Yes');
+      return;
+    }
+
+    const testingDropdown = this.page.getByRole('combobox').filter({ hasText: /^No$/ });
+    await testingDropdown.first().scrollIntoViewIfNeeded();
+    await testingDropdown.first().waitFor({ state: 'visible', timeout: 15000 });
+    await testingDropdown.first().click();
+
+    const yesOption = this.page.getByRole('option', { name: /^Yes$/i });
+    await yesOption.waitFor({ state: 'visible', timeout: 10000 });
+    await yesOption.click();
+  }
+
   async _applyFutureDateFilter() {
-    // Expand the filters panel (collapsed by default)
+    // Expand the filters panel (collapsed by default — avoid toggle if already open)
     const filtersHeading = this.page.getByRole('heading', { name: 'Filters', level: 6 });
     await filtersHeading.waitFor({ state: 'visible', timeout: 15000 });
     const filtersToggle = filtersHeading.locator('xpath=ancestor::*[2]').getByRole('button').first();
-    await filtersToggle.click();
+    const filtersPanelReady = await this.page
+      .getByText('From Date', { exact: true })
+      .isVisible()
+      .catch(() => false);
+    if (!filtersPanelReady) {
+      await filtersToggle.click();
+    }
+
+    // Required for QA/test-flagged bookings to appear in the grid
+    await this._setIncludeTestingAppointmentsYes();
 
     // The "From Date" label has a textbox sibling — fill with tomorrow's date (DD/MM/YYYY)
     const tomorrow = new Date();
@@ -272,7 +305,9 @@ export class ExpertAppointmentPage {
     await applyBtn.click();
 
     await this.page.waitForLoadState('networkidle', { timeout: 15000 }).catch(() => {});
-    console.log(`✅ Applied From Date filter (${fromDateStr}) — excludes today's completed appointments`);
+    console.log(
+      `✅ Applied appointments filters (include testing=yes, from=${fromDateStr}) — hides stale completed-from-today`
+    );
   }
 
   /* ===============================
@@ -285,6 +320,7 @@ export class ExpertAppointmentPage {
       if (pagesChecked === 0) {
         await this.page.reload();
         await this.page.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => {});
+        await this._applyFutureDateFilter().catch(() => {});
         await firstCard.waitFor({ state: 'visible', timeout: 20000 });
       } else {
         throw new Error('No appointment cards visible on this page');
@@ -471,6 +507,7 @@ async openAndCancelNonCancelledAppointment(pagesChecked = 0) {
     if (pagesChecked === 0) {
       await this.page.reload();
       await this.page.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => {});
+      await this._applyFutureDateFilter().catch(() => {});
       await firstCard.waitFor({ state: 'visible', timeout: 20000 });
     } else {
       throw new Error('No appointment cards visible on this page');
