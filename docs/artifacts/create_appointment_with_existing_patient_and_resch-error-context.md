@@ -1,0 +1,180 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e5]:
+      - link [ref=e8] [cursor=pointer]:
+        - /url: https://www.asksam.com.au/
+      - generic [ref=e9]:
+        - link "appointments" [ref=e10] [cursor=pointer]:
+          - /url: /expert/appointments
+          - img [ref=e11]
+        - link "chat" [ref=e13] [cursor=pointer]:
+          - /url: /expert/chat
+          - img [ref=e14]
+        - link "notifications" [ref=e16] [cursor=pointer]:
+          - /url: /expert/notifications
+          - img [ref=e17]
+        - button "Open user menu" [ref=e20] [cursor=pointer]:
+          - img "Anthony Smith's logo" [ref=e23]
+  - generic [ref=e26]:
+    - list [ref=e28]:
+      - link "Dashboard" [ref=e29] [cursor=pointer]:
+        - /url: /expert/dashboard
+        - img [ref=e31]
+        - generic [ref=e34]: Dashboard
+      - link "Appointments" [ref=e35] [cursor=pointer]:
+        - /url: /expert/appointments
+        - img [ref=e37]
+        - generic [ref=e40]: Appointments
+      - link "Session Management" [ref=e41] [cursor=pointer]:
+        - /url: /expert/sessionmanagement
+        - img [ref=e43]
+        - generic [ref=e46]: Session Management
+      - link "Patients" [ref=e47] [cursor=pointer]:
+        - /url: /expert/patients
+        - img [ref=e49]
+        - generic [ref=e52]: Patients
+      - link "Chat" [ref=e53] [cursor=pointer]:
+        - /url: /expert/chat
+        - img [ref=e55]
+        - generic [ref=e58]: Chat
+      - link "Notifications" [ref=e59] [cursor=pointer]:
+        - /url: /expert/notifications
+        - img [ref=e61]
+        - generic [ref=e64]: Notifications
+      - link "Help Center" [ref=e65] [cursor=pointer]:
+        - /url: /expert/help-center
+        - img [ref=e67]
+        - generic [ref=e70]: Help Center
+      - link "Payouts" [ref=e71] [cursor=pointer]:
+        - /url: /expert/payouts
+        - img [ref=e73]
+        - generic [ref=e76]: Payouts
+      - link "Settings" [ref=e77] [cursor=pointer]:
+        - /url: /expert/settings
+        - img [ref=e79]
+        - generic [ref=e82]: Settings
+    - generic [ref=e85]:
+      - generic [ref=e86]:
+        - generic [ref=e88]:
+          - heading "Upcoming Appointments" [level=6] [ref=e90]
+          - paragraph [ref=e93]: No Upcoming appointments
+        - generic [ref=e95]:
+          - generic [ref=e96]:
+            - generic [ref=e97]:
+              - heading "Notifications" [level=6] [ref=e98]
+              - link "View All" [ref=e99] [cursor=pointer]:
+                - /url: /expert/notifications
+                - paragraph [ref=e100]: View All
+                - img [ref=e101]
+            - generic [ref=e103]:
+              - generic [ref=e104] [cursor=pointer]: Appointments
+              - generic [ref=e105] [cursor=pointer]: Review
+          - generic [ref=e107]:
+            - generic [ref=e108]:
+              - img [ref=e112]
+              - generic [ref=e114]:
+                - paragraph [ref=e116]: Testt The Sairaa Booked an appointment
+                - generic [ref=e117]:
+                  - paragraph [ref=e118]: Tue 04:00 PM
+                  - generic [ref=e119]: "|"
+                  - paragraph [ref=e120]: Old Client
+                  - generic [ref=e121]: "|"
+                  - paragraph [ref=e122]: Video Session
+                - button "Patient Profile" [ref=e124] [cursor=pointer]
+            - generic [ref=e125]:
+              - img [ref=e129]
+              - generic [ref=e131]:
+                - paragraph [ref=e133]: test user-297888 Booked an appointment
+                - generic [ref=e134]:
+                  - paragraph [ref=e135]: Tue 03:30 PM
+                  - generic [ref=e136]: "|"
+                  - paragraph [ref=e137]: Old Client
+                  - generic [ref=e138]: "|"
+                  - paragraph [ref=e139]: Video Session
+                - button "Patient Profile" [ref=e141] [cursor=pointer]
+            - generic [ref=e142]:
+              - img [ref=e146]
+              - generic [ref=e148]:
+                - paragraph [ref=e150]: Testt The Sairaa Booked an appointment
+                - generic [ref=e151]:
+                  - paragraph [ref=e152]: Tue 03:00 PM
+                  - generic [ref=e153]: "|"
+                  - paragraph [ref=e154]: Old Client
+                  - generic [ref=e155]: "|"
+                  - paragraph [ref=e156]: Video Session
+                - button "Patient Profile" [ref=e158] [cursor=pointer]
+            - generic [ref=e159]:
+              - img [ref=e163]
+              - generic [ref=e165]:
+                - paragraph [ref=e167]: Testt The Sairaa Booked an appointment
+                - generic [ref=e168]:
+                  - paragraph [ref=e169]: Tue 02:30 PM
+                  - generic [ref=e170]: "|"
+                  - paragraph [ref=e171]: Old Client
+                  - generic [ref=e172]: "|"
+                  - paragraph [ref=e173]: Video Session
+                - button "Patient Profile" [ref=e175] [cursor=pointer]
+            - generic [ref=e176]:
+              - img [ref=e180]
+              - generic [ref=e182]:
+                - paragraph [ref=e184]: Testt The Sairaa Booked an appointment
+                - generic [ref=e185]:
+                  - paragraph [ref=e186]: Tue 02:00 PM
+                  - generic [ref=e187]: "|"
+                  - paragraph [ref=e188]: Old Client
+                  - generic [ref=e189]: "|"
+                  - paragraph [ref=e190]: Video Session
+                - button "Patient Profile" [ref=e192] [cursor=pointer]
+      - generic [ref=e193]:
+        - generic [ref=e195]:
+          - generic [ref=e196]:
+            - heading "Inbox" [level=6] [ref=e197]
+            - link "View All" [ref=e198] [cursor=pointer]:
+              - /url: /expert/chat
+              - paragraph [ref=e199]: View All
+              - img [ref=e200]
+          - generic [ref=e202]:
+            - generic [ref=e205]:
+              - heading "CountryA7 T" [level=6] [ref=e207]
+              - paragraph [ref=e208]: hey
+            - generic [ref=e211]:
+              - heading "Sumit Khanna" [level=6] [ref=e213]
+              - paragraph [ref=e214]: hello
+            - generic [ref=e217]:
+              - heading "Testtt The Sairaa" [level=6] [ref=e219]
+              - paragraph [ref=e220]: Hi
+            - generic [ref=e223]:
+              - heading "Yamini 130" [level=6] [ref=e225]
+              - paragraph [ref=e226]: Hello
+        - generic [ref=e228]:
+          - generic [ref=e229]:
+            - heading "Calendar" [level=6] [ref=e230]
+            - generic [ref=e231]: May
+          - generic [ref=e232]:
+            - generic [ref=e234]:
+              - button "Wed 20" [ref=e235] [cursor=pointer]:
+                - generic [ref=e236]: Wed
+                - paragraph [ref=e237]: "20"
+              - button "Thu 21" [ref=e238] [cursor=pointer]:
+                - generic [ref=e239]: Thu
+                - paragraph [ref=e240]: "21"
+              - button "Fri 22" [ref=e241] [cursor=pointer]:
+                - generic [ref=e242]: Fri
+                - paragraph [ref=e243]: "22"
+              - button "Sat 23" [ref=e244] [cursor=pointer]:
+                - generic [ref=e245]: Sat
+                - paragraph [ref=e246]: "23"
+              - button "Sun 24" [ref=e247] [cursor=pointer]:
+                - generic [ref=e248]: Sun
+                - paragraph [ref=e249]: "24"
+              - button "Mon 25" [ref=e250] [cursor=pointer]:
+                - generic [ref=e251]: Mon
+                - paragraph [ref=e252]: "25"
+              - button "Tue 26" [ref=e253] [cursor=pointer]:
+                - generic [ref=e254]: Tue
+                - paragraph [ref=e255]: "26"
+            - paragraph [ref=e256]: You have no appointments on 20 May 2026
+```
