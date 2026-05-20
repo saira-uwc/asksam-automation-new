@@ -1,36 +1,36 @@
 Test: create appointment with existing patient and reschedule
 Test file: /home/runner/work/asksam-automation-new/asksam-automation-new/tests/Expert-Dashboard/appointment-create-and-reschedule.spec.js
-Failed at: 2026-05-19T19:29:53.051Z
+Failed at: 2026-05-20T01:45:38.085Z
 Page URL at failure: https://dashboard.asksam.com.au/expert/appointments
 
 --- Clerk session cookies ---
 __session present: true
-  domain=copilot.asksam.com.au path=/ sameSite=Lax secure=true httpOnly=false expires=2027-05-19T19:23:28.000Z
+  domain=copilot.asksam.com.au path=/ sameSite=Lax secure=true httpOnly=false expires=2027-05-20T01:39:35.000Z
 __client_uat present: true
-  domain=.asksam.com.au value=1779218545
+  domain=.asksam.com.au value=1779241131
 
 --- All cookies on .asksam.com.au ---
-cf_clearance  domain=.asksam.com.au  sameSite=None  expires=2027-05-19T19:22:18.178Z
-_clck  domain=.asksam.com.au  sameSite=Lax  expires=2027-05-19T19:22:18.000Z
+cf_clearance  domain=.asksam.com.au  sameSite=None  expires=2027-05-20T01:38:44.903Z
+_clck  domain=.asksam.com.au  sameSite=Lax  expires=2027-05-20T01:38:45.000Z
 _cfuvid  domain=.clerk.asksam.com.au  sameSite=None  expires=session
-__cf_bm  domain=.clerk.asksam.com.au  sameSite=None  expires=2026-05-19T19:52:22.485Z
-__client  domain=.clerk.asksam.com.au  sameSite=Lax  expires=2027-06-23T19:22:25.703Z
-__client_uat  domain=.asksam.com.au  sameSite=Lax  expires=2027-06-23T19:29:03.155Z
-__client_uat_mJltbx6F  domain=.asksam.com.au  sameSite=Lax  expires=2027-06-23T19:29:03.155Z
+__cf_bm  domain=.clerk.asksam.com.au  sameSite=None  expires=2026-05-20T02:08:48.847Z
+__client  domain=.clerk.asksam.com.au  sameSite=Lax  expires=2027-06-24T01:38:52.047Z
+__client_uat  domain=.asksam.com.au  sameSite=Lax  expires=2027-06-24T01:44:48.161Z
+__client_uat_mJltbx6F  domain=.asksam.com.au  sameSite=Lax  expires=2027-06-24T01:44:48.161Z
 clerk_active_context  domain=copilot.asksam.com.au  sameSite=Lax  expires=session
-_gcl_au  domain=.asksam.com.au  sameSite=Lax  expires=2026-08-17T19:22:31.000Z
+_gcl_au  domain=.asksam.com.au  sameSite=Lax  expires=2026-08-18T01:38:57.000Z
 countryCode  domain=dashboard.asksam.com.au  sameSite=Lax  expires=session
-_gid  domain=.asksam.com.au  sameSite=Lax  expires=2026-05-20T19:29:02.000Z
-_pin_unauth  domain=.dashboard.asksam.com.au  sameSite=Lax  expires=2027-05-19T19:29:02.000Z
-_fbp  domain=.asksam.com.au  sameSite=Lax  expires=2026-08-17T19:29:02.000Z
+_gid  domain=.asksam.com.au  sameSite=Lax  expires=2026-05-21T01:44:47.000Z
+_pin_unauth  domain=.dashboard.asksam.com.au  sameSite=Lax  expires=2027-05-20T01:44:48.000Z
 clerk_active_context  domain=dashboard.asksam.com.au  sameSite=Lax  expires=session
-_ga_6R9WK18T5N  domain=.asksam.com.au  sameSite=Lax  expires=2027-06-23T19:23:03.143Z
-__session  domain=copilot.asksam.com.au  sameSite=Lax  expires=2027-05-19T19:23:28.000Z
-__session_mJltbx6F  domain=copilot.asksam.com.au  sameSite=Lax  expires=2027-05-19T19:23:28.000Z
-_clsk  domain=.asksam.com.au  sameSite=Lax  expires=2026-05-20T19:27:56.000Z
-_ga  domain=.asksam.com.au  sameSite=Lax  expires=2027-06-23T19:29:02.792Z
-_gat_UA-192817435-1  domain=.asksam.com.au  sameSite=Lax  expires=2026-05-19T19:30:02.000Z
-_ga_LXMYWW3N03  domain=.asksam.com.au  sameSite=Lax  expires=2027-06-23T19:29:02.838Z
-_ga_28HL9LHXGG  domain=.asksam.com.au  sameSite=Lax  expires=2027-06-23T19:29:02.974Z
-__session  domain=dashboard.asksam.com.au  sameSite=Lax  expires=2027-05-19T19:29:53.000Z
-__session_mJltbx6F  domain=dashboard.asksam.com.au  sameSite=Lax  expires=2027-05-19T19:29:53.000Z
+_fbp  domain=.asksam.com.au  sameSite=Lax  expires=2026-08-18T01:44:47.000Z
+_ga_6R9WK18T5N  domain=.asksam.com.au  sameSite=Lax  expires=2027-06-24T01:39:30.183Z
+__session  domain=copilot.asksam.com.au  sameSite=Lax  expires=2027-05-20T01:39:35.000Z
+__session_mJltbx6F  domain=copilot.asksam.com.au  sameSite=Lax  expires=2027-05-20T01:39:35.000Z
+_clsk  domain=.asksam.com.au  sameSite=Lax  expires=2026-05-21T01:43:42.000Z
+_ga  domain=.asksam.com.au  sameSite=Lax  expires=2027-06-24T01:44:47.809Z
+_gat_UA-192817435-1  domain=.asksam.com.au  sameSite=Lax  expires=2026-05-20T01:45:47.000Z
+_ga_LXMYWW3N03  domain=.asksam.com.au  sameSite=Lax  expires=2027-06-24T01:44:47.876Z
+_ga_28HL9LHXGG  domain=.asksam.com.au  sameSite=Lax  expires=2027-06-24T01:44:48.011Z
+__session  domain=dashboard.asksam.com.au  sameSite=Lax  expires=2027-05-20T01:45:38.000Z
+__session_mJltbx6F  domain=dashboard.asksam.com.au  sameSite=Lax  expires=2027-05-20T01:45:38.000Z
