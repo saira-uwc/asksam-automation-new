@@ -1,5 +1,190 @@
 [
   {
+    "id": "1aa4658c-b6b3-44f2-b1a9-5ce2ff475fc0",
+    "startedAt": "2026-05-22T07:21:57.997Z",
+    "durationMs": 845313.154,
+    "summary": {
+      "total": 19,
+      "passed": 19,
+      "failed": 0,
+      "skipped": 0,
+      "timedOut": 0
+    },
+    "passRate": 100,
+    "modules": {
+      "Expert-Dashboard": {
+        "label": "Expert Dashboard",
+        "total": 9,
+        "passed": 9,
+        "failed": 0,
+        "skipped": 0,
+        "timedOut": 0
+      },
+      "CCOP": {
+        "label": "CCOP",
+        "total": 10,
+        "passed": 10,
+        "failed": 0,
+        "skipped": 0,
+        "timedOut": 0
+      }
+    },
+    "tests": [
+      {
+        "title": "authenticate",
+        "module": "Expert-Dashboard",
+        "moduleLabel": "Expert Dashboard",
+        "status": "passed",
+        "durationMs": 52556,
+        "error": ""
+      },
+      {
+        "title": "Expert Dashboard | Appointment booking (dynamic slots)",
+        "module": "Expert-Dashboard",
+        "moduleLabel": "Expert Dashboard",
+        "status": "passed",
+        "durationMs": 17053,
+        "error": ""
+      },
+      {
+        "title": "create appointment with existing patient and reschedule",
+        "module": "Expert-Dashboard",
+        "moduleLabel": "Expert Dashboard",
+        "status": "passed",
+        "durationMs": 71810,
+        "error": ""
+      },
+      {
+        "title": "create appointment and manage session lifecycle",
+        "module": "Expert-Dashboard",
+        "moduleLabel": "Expert Dashboard",
+        "status": "passed",
+        "durationMs": 17926,
+        "error": ""
+      },
+      {
+        "title": "create appointment with existing patient and cancel non-cancelled one",
+        "module": "Expert-Dashboard",
+        "moduleLabel": "Expert Dashboard",
+        "status": "passed",
+        "durationMs": 68215,
+        "error": ""
+      },
+      {
+        "title": "Expert Dashboard | Create patient & book appointment",
+        "module": "Expert-Dashboard",
+        "moduleLabel": "Expert Dashboard",
+        "status": "passed",
+        "durationMs": 43172,
+        "error": ""
+      },
+      {
+        "title": "Expert Dashboard | Navigation flow validation",
+        "module": "Expert-Dashboard",
+        "moduleLabel": "Expert Dashboard",
+        "status": "passed",
+        "durationMs": 8924,
+        "error": ""
+      },
+      {
+        "title": "Expert Dashboard | Help Center raise & reply ticket",
+        "module": "Expert-Dashboard",
+        "moduleLabel": "Expert Dashboard",
+        "status": "passed",
+        "durationMs": 8806,
+        "error": ""
+      },
+      {
+        "title": "create unique patient, search and view profile",
+        "module": "Expert-Dashboard",
+        "moduleLabel": "Expert Dashboard",
+        "status": "passed",
+        "durationMs": 23369,
+        "error": ""
+      },
+      {
+        "title": "AI panel — Graph tab: knowledge graph, zoom controls, node properties, legends",
+        "module": "CCOP",
+        "moduleLabel": "CCOP",
+        "status": "passed",
+        "durationMs": 42690,
+        "error": ""
+      },
+      {
+        "title": "AI panel — Assistant tab: associations, medication & comorbidity sub-tabs",
+        "module": "CCOP",
+        "moduleLabel": "CCOP",
+        "status": "passed",
+        "durationMs": 43512,
+        "error": ""
+      },
+      {
+        "title": "AI panel — asksam tab: chat input, send message, disclaimer",
+        "module": "CCOP",
+        "moduleLabel": "CCOP",
+        "status": "passed",
+        "durationMs": 76415,
+        "error": ""
+      },
+      {
+        "title": "CCOP | Help Center | Raise, Reply & Resolve Ticket",
+        "module": "CCOP",
+        "moduleLabel": "CCOP",
+        "status": "passed",
+        "durationMs": 9140,
+        "error": ""
+      },
+      {
+        "title": "Create clinical note with document upload & transcription",
+        "module": "CCOP",
+        "moduleLabel": "CCOP",
+        "status": "passed",
+        "durationMs": 66825,
+        "error": ""
+      },
+      {
+        "title": "Create patient + upload + submit",
+        "module": "CCOP",
+        "moduleLabel": "CCOP",
+        "status": "passed",
+        "durationMs": 108494,
+        "error": ""
+      },
+      {
+        "title": "Open letter template from Actions dropdown, select type and verify preview",
+        "module": "CCOP",
+        "moduleLabel": "CCOP",
+        "status": "passed",
+        "durationMs": 36110,
+        "error": ""
+      },
+      {
+        "title": "Create a new letter template from Actions dropdown",
+        "module": "CCOP",
+        "moduleLabel": "CCOP",
+        "status": "passed",
+        "durationMs": 40091,
+        "error": ""
+      },
+      {
+        "title": "Create clinical note with voice transcription",
+        "module": "CCOP",
+        "moduleLabel": "CCOP",
+        "status": "passed",
+        "durationMs": 21068,
+        "error": ""
+      },
+      {
+        "title": "CCOP | Clinician signup full flow (recorded)",
+        "module": "CCOP",
+        "moduleLabel": "CCOP",
+        "status": "passed",
+        "durationMs": 84952,
+        "error": ""
+      }
+    ]
+  },
+  {
     "id": "312ccb8f-94f2-4752-83f5-fcd2744dd7ce",
     "startedAt": "2026-05-22T01:21:53.058Z",
     "durationMs": 911075.474,
@@ -22598,192 +22783,6 @@
     "id": "4697be83-60ec-4a0b-8feb-98f28192efdf",
     "startedAt": "2026-04-22T08:15:21.341Z",
     "durationMs": 653232.485,
-    "summary": {
-      "total": 19,
-      "passed": 19,
-      "failed": 0,
-      "skipped": 0,
-      "timedOut": 0
-    },
-    "passRate": 100,
-    "modules": {
-      "Expert-Dashboard": {
-        "label": "Expert Dashboard",
-        "total": 9,
-        "passed": 9,
-        "failed": 0,
-        "skipped": 0,
-        "timedOut": 0
-      },
-      "CCOP": {
-        "label": "CCOP",
-        "total": 10,
-        "passed": 10,
-        "failed": 0,
-        "skipped": 0,
-        "timedOut": 0
-      }
-    }
-  },
-  {
-    "id": "f9731a82-851d-466f-a14f-557a7dc6b9d3",
-    "startedAt": "2026-04-22T07:15:24.301Z",
-    "durationMs": 784779.1849999999,
-    "summary": {
-      "total": 19,
-      "passed": 19,
-      "failed": 0,
-      "skipped": 0,
-      "timedOut": 0
-    },
-    "passRate": 100,
-    "modules": {
-      "Expert-Dashboard": {
-        "label": "Expert Dashboard",
-        "total": 9,
-        "passed": 9,
-        "failed": 0,
-        "skipped": 0,
-        "timedOut": 0
-      },
-      "CCOP": {
-        "label": "CCOP",
-        "total": 10,
-        "passed": 10,
-        "failed": 0,
-        "skipped": 0,
-        "timedOut": 0
-      }
-    }
-  },
-  {
-    "id": "6030f4b2-e98f-4ec5-ad61-45383d4663bf",
-    "startedAt": "2026-04-22T06:15:25.296Z",
-    "durationMs": 827024.4670000001,
-    "summary": {
-      "total": 19,
-      "passed": 19,
-      "failed": 0,
-      "skipped": 0,
-      "timedOut": 0
-    },
-    "passRate": 100,
-    "modules": {
-      "Expert-Dashboard": {
-        "label": "Expert Dashboard",
-        "total": 9,
-        "passed": 9,
-        "failed": 0,
-        "skipped": 0,
-        "timedOut": 0
-      },
-      "CCOP": {
-        "label": "CCOP",
-        "total": 10,
-        "passed": 10,
-        "failed": 0,
-        "skipped": 0,
-        "timedOut": 0
-      }
-    }
-  },
-  {
-    "id": "17969938-821e-4bbc-af81-d82bec05ea3f",
-    "startedAt": "2026-04-22T05:15:28.573Z",
-    "durationMs": 1128728.74,
-    "summary": {
-      "total": 19,
-      "passed": 18,
-      "failed": 1,
-      "skipped": 0,
-      "timedOut": 0
-    },
-    "passRate": 95,
-    "modules": {
-      "Expert-Dashboard": {
-        "label": "Expert Dashboard",
-        "total": 9,
-        "passed": 9,
-        "failed": 0,
-        "skipped": 0,
-        "timedOut": 0
-      },
-      "CCOP": {
-        "label": "CCOP",
-        "total": 10,
-        "passed": 9,
-        "failed": 1,
-        "skipped": 0,
-        "timedOut": 0
-      }
-    }
-  },
-  {
-    "id": "76c93339-f0ab-435a-9c8a-9bf5e68a0cdb",
-    "startedAt": "2026-04-22T04:15:30.781Z",
-    "durationMs": 711767.997,
-    "summary": {
-      "total": 19,
-      "passed": 19,
-      "failed": 0,
-      "skipped": 0,
-      "timedOut": 0
-    },
-    "passRate": 100,
-    "modules": {
-      "Expert-Dashboard": {
-        "label": "Expert Dashboard",
-        "total": 9,
-        "passed": 9,
-        "failed": 0,
-        "skipped": 0,
-        "timedOut": 0
-      },
-      "CCOP": {
-        "label": "CCOP",
-        "total": 10,
-        "passed": 10,
-        "failed": 0,
-        "skipped": 0,
-        "timedOut": 0
-      }
-    }
-  },
-  {
-    "id": "457aab2d-19c4-405b-b728-0b2416db963a",
-    "startedAt": "2026-04-22T03:15:29.871Z",
-    "durationMs": 725191.7370000001,
-    "summary": {
-      "total": 19,
-      "passed": 19,
-      "failed": 0,
-      "skipped": 0,
-      "timedOut": 0
-    },
-    "passRate": 100,
-    "modules": {
-      "Expert-Dashboard": {
-        "label": "Expert Dashboard",
-        "total": 9,
-        "passed": 9,
-        "failed": 0,
-        "skipped": 0,
-        "timedOut": 0
-      },
-      "CCOP": {
-        "label": "CCOP",
-        "total": 10,
-        "passed": 10,
-        "failed": 0,
-        "skipped": 0,
-        "timedOut": 0
-      }
-    }
-  },
-  {
-    "id": "871ba2ce-9e48-4871-9558-1364a8e47ded",
-    "startedAt": "2026-04-22T02:15:28.938Z",
-    "durationMs": 782418.046,
     "summary": {
       "total": 19,
       "passed": 19,
