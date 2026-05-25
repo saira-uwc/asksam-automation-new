@@ -1,6 +1,12 @@
 {
-  "lastUpdated": "2026-05-24T19:39:09.404Z",
+  "lastUpdated": "2026-05-25T01:39:11.052Z",
   "runs": [
+    {
+      "date": "2026-05-25",
+      "passed": 19,
+      "failed": 0,
+      "total": 19
+    },
     {
       "date": "2026-05-24",
       "passed": 19,
@@ -174,12 +180,6 @@
       "passed": 19,
       "failed": 0,
       "total": 19
-    },
-    {
-      "date": "2026-04-25",
-      "passed": 19,
-      "failed": 0,
-      "total": 19
     }
   ],
   "tests": [
@@ -188,7 +188,7 @@
       "module": "Expert-Dashboard",
       "name": "authenticate",
       "status": "passed",
-      "duration": "52.2s",
+      "duration": "51.9s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -218,7 +218,7 @@
       "module": "Expert-Dashboard",
       "name": "create appointment and manage session lifecycle",
       "status": "passed",
-      "duration": "17.7s",
+      "duration": "17.2s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -228,7 +228,7 @@
       "module": "Expert-Dashboard",
       "name": "create appointment with existing patient and cancel non-cancelled one",
       "status": "passed",
-      "duration": "1m 7s",
+      "duration": "1m 8s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -238,7 +238,7 @@
       "module": "Expert-Dashboard",
       "name": "Expert Dashboard | Create patient & book appointment",
       "status": "passed",
-      "duration": "32.6s",
+      "duration": "30.6s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -258,7 +258,7 @@
       "module": "Expert-Dashboard",
       "name": "Expert Dashboard | Help Center raise & reply ticket",
       "status": "passed",
-      "duration": "8.1s",
+      "duration": "7.5s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -278,7 +278,7 @@
       "module": "CCOP",
       "name": "AI panel — Graph tab: knowledge graph, zoom controls, node properties, legends",
       "status": "passed",
-      "duration": "44.3s",
+      "duration": "43.8s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -298,7 +298,7 @@
       "module": "CCOP",
       "name": "AI panel — asksam tab: chat input, send message, disclaimer",
       "status": "passed",
-      "duration": "1m 18s",
+      "duration": "1m 17s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -308,7 +308,7 @@
       "module": "CCOP",
       "name": "CCOP | Help Center | Raise, Reply & Resolve Ticket",
       "status": "passed",
-      "duration": "8.4s",
+      "duration": "9.3s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -328,7 +328,7 @@
       "module": "CCOP",
       "name": "Create patient + upload + submit",
       "status": "passed",
-      "duration": "1m 59s",
+      "duration": "2m 9s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -338,7 +338,7 @@
       "module": "CCOP",
       "name": "Open letter template from Actions dropdown, select type and verify preview",
       "status": "passed",
-      "duration": "36.9s",
+      "duration": "33.0s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -358,7 +358,7 @@
       "module": "CCOP",
       "name": "Create clinical note with voice transcription",
       "status": "passed",
-      "duration": "21.5s",
+      "duration": "21.4s",
       "screenshot": "",
       "video": "",
       "trace": ""
