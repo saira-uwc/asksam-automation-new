@@ -1,0 +1,565 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e4]:
+      - button [ref=e11] [cursor=pointer]:
+        - img [ref=e14]
+    - generic [ref=e17]:
+      - generic [ref=e19]:
+        - link [ref=e20] [cursor=pointer]:
+          - /url: /clinical/home
+          - img [ref=e21]
+          - paragraph [ref=e23]: Home
+        - link [ref=e24] [cursor=pointer]:
+          - /url: /clinical/patients
+          - img [ref=e25]
+          - paragraph [ref=e27]: Patients
+        - link [ref=e28] [cursor=pointer]:
+          - /url: /clinical/expert-dashboard
+          - img [ref=e29]
+          - paragraph [ref=e31]: Appointment Dashboard
+        - link [ref=e32] [cursor=pointer]:
+          - /url: /clinical/help-center
+          - img [ref=e33]
+          - paragraph [ref=e35]: Help Center
+        - link [ref=e36] [cursor=pointer]:
+          - /url: /clinical/settings
+          - img [ref=e37]
+          - paragraph [ref=e39]: Settings
+        - link [ref=e40] [cursor=pointer]:
+          - /url: /clinical/admin
+          - img [ref=e41]
+          - paragraph [ref=e46]: Admin
+      - generic [ref=e47]:
+        - generic [ref=e48]:
+          - generic [ref=e50]:
+            - navigation [ref=e51]:
+              - list [ref=e52]:
+                - listitem [ref=e53]:
+                  - button [ref=e54]: Clinical Co-Pilot
+                - listitem [ref=e55]: /
+                - listitem [ref=e56]:
+                  - paragraph [ref=e57]: Test user-194205
+            - generic [ref=e58]:
+              - button [ref=e59] [cursor=pointer]:
+                - text: Actions
+                - img [ref=e60]
+              - generic [ref=e62]:
+                - button [ref=e63] [cursor=pointer]:
+                  - img [ref=e64]
+                  - text: Save
+                - button [ref=e66] [cursor=pointer]:
+                  - text: Submit
+                  - img [ref=e67]
+          - generic [ref=e69]:
+            - generic [ref=e70]:
+              - generic [ref=e73]:
+                - generic [ref=e74]:
+                  - heading [level=4] [ref=e75]: Test user-194205
+                  - paragraph [ref=e76]: Female
+                - generic [ref=e77]:
+                  - generic [ref=e78]:
+                    - img [ref=e79]
+                    - paragraph [ref=e80]: 26th May 2026
+                  - generic [ref=e81]:
+                    - img [ref=e82]
+                    - paragraph [ref=e83]: testuser-194205@tmail.com
+              - generic [ref=e85]:
+                - heading [level=6] [ref=e86]: Expert Details
+                - paragraph [ref=e87]: Anthony Smith
+                - generic [ref=e88]:
+                  - generic [ref=e89]:
+                    - img [ref=e90]
+                    - paragraph [ref=e92]: e.cliniciantestuser@asksam.com.au
+                  - generic [ref=e93]:
+                    - img [ref=e94]
+                    - paragraph [ref=e96]: "+61413801384"
+            - generic [ref=e97]:
+              - paragraph [ref=e99]: Summary
+              - generic [ref=e100]:
+                - textbox [ref=e120]:
+                  - list [ref=e122]:
+                    - listitem [ref=e123]:
+                      - generic [ref=e125]: "- Severe depression (F32.0),"
+                    - listitem [ref=e126]:
+                      - generic [ref=e128]: Opioid dependence (F11.2),
+                    - listitem [ref=e129]:
+                      - generic [ref=e131]: Anxiety (F40.0),
+                    - listitem [ref=e132]:
+                      - generic [ref=e134]: Chronic back pain (M54.5),
+                    - listitem [ref=e135]:
+                      - generic [ref=e137]: Reflux (K21.9),
+                    - listitem [ref=e138]:
+                      - generic [ref=e140]: Suicidal ideation (Z91.43),
+                    - listitem [ref=e141]:
+                      - generic [ref=e143]: Self-harm history (Y21.1),
+                    - listitem [ref=e144]:
+                      - generic [ref=e146]: Hepatitis C and HIV screening pending.
+                    - listitem [ref=e147]:
+                      - generic [ref=e149]: "Chronic Conditions: Major Depressive Episode (2015, F32.9), Manic Episode (2016, F30.9), Severe Depression (2020, F32.9), Opioid Dependence (F11.2, 2022), Opioid Withdrawal (F11.3, 2022), Cellulitis (L02.9, 2022), Back Pain (M54.9, Unknown Year), Anxiety (F41.9, Unknown Year), Depression (F32.9, 2020, 2026), Liver Cirrhosis (K70.3, Unknown Year), Schizophrenia (F20.9, Unknown Year)."
+                    - listitem [ref=e150]:
+                      - generic [ref=e152]: "Current Medications: Oxy (Oxycodone), Sertraline, Ibuprofen, Codeine, Diazepam Or Alprazolam, Lyrica (Pregabalin), Methadone, Buprenorphine Or Suboxone, Valium, Pregabalin (Lyrica), Naloxone, Benzodiazepines, Cannabis, Methamphetamine, Cocaine"
+                    - listitem [ref=e153]:
+                      - generic [ref=e155]: "Hospitalizations: Major Depressive Episode (2015), Severe Depression (2020), Suicide Attempt (2023)."
+                    - listitem [ref=e156]:
+                      - generic [ref=e158]: "Surgeries: No Information Available."
+                    - listitem [ref=e159]:
+                      - generic [ref=e161]: "Recent Tests: No Information Available."
+                    - listitem [ref=e162]:
+                      - generic [ref=e164]: "Psychiatric History: Major depressive episode (F32.0, 2015), Manic episode (F30.1, 2016), Severe depression (F32.0, 2020), Opioid dependence (F11.2, 2022), Opioid withdrawal (F11.3, 2022), No information available."
+                - group [ref=e166]:
+                  - button [ref=e167] [cursor=pointer]:
+                    - img [ref=e168]
+                  - button [ref=e170] [cursor=pointer]:
+                    - img [ref=e171]
+                  - button [ref=e173] [cursor=pointer]:
+                    - img [ref=e174]
+                  - button [ref=e176] [cursor=pointer]:
+                    - img [ref=e177]
+            - generic [ref=e180]:
+              - img [ref=e183] [cursor=pointer]
+              - img [ref=e186] [cursor=pointer]
+            - generic [ref=e193]:
+              - generic [ref=e195]:
+                - generic:
+                  - img
+                - tablist [ref=e198]:
+                  - tab [selected] [ref=e199] [cursor=pointer]: Clinical Advice
+                  - tab [ref=e200] [cursor=pointer]: Clinical Examination
+                  - tab [ref=e201] [cursor=pointer]: Follow-Up Note
+                  - tab [ref=e202] [cursor=pointer]: Case History
+                - generic:
+                  - img
+              - tabpanel [ref=e204]:
+                - generic [ref=e206]:
+                  - generic [ref=e208]:
+                    - generic [ref=e210]:
+                      - generic [ref=e211]:
+                        - generic [ref=e212]:
+                          - heading [level=6] [ref=e213]: Chief Complaint (CC)
+                          - img [ref=e214]
+                        - textbox [ref=e236]:
+                          - list [ref=e238]:
+                            - listitem [ref=e239]:
+                              - generic [ref=e241]: "Worsening depression and anxiety: Yamini has been experiencing severe symptoms of depression and anxiety, including pervasive feelings of hopelessness, frequent panic attacks, and a loss of appetite."
+                            - listitem [ref=e242]:
+                              - generic [ref=e244]: "Severe insomnia: Yamini is struggling with severe insomnia, which is affecting her overall well-being."
+                            - listitem [ref=e245]:
+                              - generic [ref=e247]: "Weight loss: Yamini has experienced weight loss due to her loss of appetite."
+                            - listitem [ref=e248]:
+                              - generic [ref=e250]: "Suicidal ideation: Although Yamini denies current suicidal ideation, her recent suicide attempt is a significant concern."
+                            - listitem [ref=e251]:
+                              - generic [ref=e253]: "Panic attacks: Yamini is experiencing frequent panic attacks, which are a symptom of her anxiety."
+                            - listitem [ref=e254]:
+                              - generic [ref=e256]: "Feelings of hopelessness and worthlessness: Yamini is struggling with feelings of hopelessness and worthlessness, which are common symptoms of depression."
+                      - generic [ref=e258]:
+                        - group [ref=e259]:
+                          - button [ref=e260] [cursor=pointer]:
+                            - img [ref=e261]
+                          - button [ref=e263] [cursor=pointer]:
+                            - img [ref=e264]
+                          - button [ref=e266] [cursor=pointer]:
+                            - img [ref=e267]
+                          - button [ref=e269] [cursor=pointer]:
+                            - img [ref=e270]
+                        - generic [ref=e272]:
+                          - paragraph [ref=e273]: Did we do a better job this time?
+                          - generic [ref=e274]:
+                            - button [ref=e275] [cursor=pointer]: Better
+                            - button [ref=e276] [cursor=pointer]: Worse
+                            - button [ref=e277] [cursor=pointer]: Same
+                    - generic [ref=e278]:
+                      - generic [ref=e280]:
+                        - generic [ref=e281]:
+                          - generic [ref=e282]:
+                            - heading [level=6] [ref=e283]: History of Present Illness (HPI)
+                            - img [ref=e284]
+                          - textbox [ref=e306]:
+                            - list [ref=e308]:
+                              - listitem [ref=e309]:
+                                - generic [ref=e311]: Severe depression following her brother's death, hospitalized for six weeks, treated with Fluoxetine (Prozac) and Olanzapine (Zyprexa), and received grief counseling.
+                              - listitem [ref=e312]:
+                                - generic [ref=e314]: "2016: Manic episode, hospitalized for three weeks, treated with Lithium and Valproate."
+                              - listitem [ref=e315]:
+                                - generic [ref=e317]: "2015: Major depressive episode triggered by her brother’s death anniversary, hospitalized for four weeks, received Electroconvulsive Therapy (ECT)."
+                              - listitem [ref=e318]:
+                                - generic [ref=e320]: Suicide attempt involving an overdose of prescribed medications, currently in her third week of hospitalization in a psychiatric unit.
+                              - listitem [ref=e321]:
+                                - generic [ref=e323]: "2020: Severe depression following her brother's death, hospitalized for six weeks, treated with Fluoxetine (Prozac) and Olanzapine (Zyprexa), and received grief counseling."
+                        - group [ref=e326]:
+                          - button [ref=e327] [cursor=pointer]:
+                            - img [ref=e328]
+                          - button [ref=e330] [cursor=pointer]:
+                            - img [ref=e331]
+                          - button [ref=e333] [cursor=pointer]:
+                            - img [ref=e334]
+                          - button [ref=e336] [cursor=pointer]:
+                            - img [ref=e337]
+                      - generic [ref=e340]:
+                        - generic [ref=e341]:
+                          - generic [ref=e342]:
+                            - heading [level=6] [ref=e343]: Session Summary
+                            - img [ref=e344]
+                          - textbox [ref=e366]:
+                            - generic [ref=e370]: The patient's current hospitalization is in its third week due to a suicide attempt involving an overdose of prescribed medications. The patient's health is stable, with no significant changes in vital signs. The patient's emotional state is described as depressed, with pervasive feelings of hopelessness, frequent panic attacks, and severe insomnia. Key discussions included the patient's treatment goals, such as stabilizing mood, reducing symptoms of depression and anxiety, improving sleep, and enhancing coping mechanisms. Advice and conclusions were not explicitly mentioned in the provided data.
+                        - generic [ref=e372]:
+                          - group [ref=e373]:
+                            - button [ref=e374] [cursor=pointer]:
+                              - img [ref=e375]
+                            - button [ref=e377] [cursor=pointer]:
+                              - img [ref=e378]
+                            - button [ref=e380] [cursor=pointer]:
+                              - img [ref=e381]
+                            - button [ref=e383] [cursor=pointer]:
+                              - img [ref=e384]
+                          - generic [ref=e386]:
+                            - paragraph [ref=e387]: Did we do a better job this time?
+                            - generic [ref=e388]:
+                              - button [ref=e389] [cursor=pointer]: Better
+                              - button [ref=e390] [cursor=pointer]: Worse
+                              - button [ref=e391] [cursor=pointer]: Same
+                    - generic [ref=e392]:
+                      - generic [ref=e394]:
+                        - generic [ref=e395]:
+                          - generic [ref=e396]:
+                            - heading [level=6] [ref=e397]: Advice
+                            - img [ref=e398]
+                          - textbox [ref=e420]:
+                            - list [ref=e422]:
+                              - listitem [ref=e423]:
+                                - generic [ref=e425]: Get tested for hepatitis C, HIV, and hepatitis B.
+                              - listitem [ref=e426]:
+                                - generic [ref=e428]: Consider alternative pain management for back pain.
+                              - listitem [ref=e429]:
+                                - generic [ref=e431]: Get opioid agonist treatment options such as buprenorphine or methadone.
+                              - listitem [ref=e432]:
+                                - generic [ref=e434]: Provide a urine drug screen today.
+                              - listitem [ref=e435]:
+                                - generic [ref=e437]: Do some baseline bloods.
+                              - listitem [ref=e438]:
+                                - generic [ref=e440]: Receive naloxone or arrange access today.
+                              - listitem [ref=e441]:
+                                - generic [ref=e443]: Follow-up within the next couple of days.
+                        - group [ref=e446]:
+                          - button [ref=e447] [cursor=pointer]:
+                            - img [ref=e448]
+                          - button [ref=e450] [cursor=pointer]:
+                            - img [ref=e451]
+                          - button [ref=e453] [cursor=pointer]:
+                            - img [ref=e454]
+                          - button [ref=e456] [cursor=pointer]:
+                            - img [ref=e457]
+                      - generic [ref=e460]:
+                        - generic [ref=e461]:
+                          - generic [ref=e462]:
+                            - heading [level=6] [ref=e463]: Future Treatment Plan
+                            - img [ref=e464]
+                          - textbox [ref=e486]:
+                            - list [ref=e488]:
+                              - listitem [ref=e489]:
+                                - generic [ref=e491]: "Medication Management:"
+                              - listitem [ref=e492]:
+                                - generic [ref=e494]: "Current medications to continue: Fluoxetine (Prozac), Sertraline (Zoloft), Lithium, Valproate, Olanzapine (Zyprexa), and Lorazepam (Ativan)."
+                              - listitem [ref=e495]:
+                                - generic [ref=e497]: Gradual tapering of oxy (oxycodone) under medical supervision.
+                              - listitem [ref=e498]:
+                                - generic [ref=e500]: "Opioid agonist treatment options: jhh"
+                              - listitem [ref=e501]:
+                                - generic [ref=e503]: Daily supervised dosing of buprenorphine.
+                              - listitem [ref=e504]:
+                                - generic [ref=e506]: Long-acting injectable buprenorphine.
+                              - listitem [ref=e507]:
+                                - generic [ref=e509]: Methadone with a different induction process.
+                              - listitem [ref=e510]:
+                                - generic [ref=e512]: Naloxone for overdose prevention.
+                              - listitem [ref=e513]:
+                                - generic [ref=e515]: "Psychotherapy:"
+                              - listitem [ref=e516]:
+                                - generic [ref=e518]: Intensive Cognitive Behavioural Therapy (CBT) and Mindfulness-Based Stress Reduction (MBSR).
+                              - listitem [ref=e519]:
+                                - generic [ref=e521]: Individual psychotherapy sessions to address feelings of hopelessness and worthlessness.
+                              - listitem [ref=e522]:
+                                - generic [ref=e524]: Group therapy sessions to improve social skills and coping mechanisms.
+                              - listitem [ref=e525]:
+                                - generic [ref=e527]: "Follow-ups:"
+                              - listitem [ref=e528]:
+                                - generic [ref=e530]: Regular follow-up appointments with the psychiatrist to monitor treatment progress and adjust the treatment plan as needed.
+                              - listitem [ref=e531]:
+                                - generic [ref=e533]: Regular check-ups with the primary care physician to monitor physical health and adjust medications as needed.
+                              - listitem [ref=e534]:
+                                - generic [ref=e536]: Follow-up sessions with the occupational therapist to monitor progress and adjust the treatment plan as needed.
+                              - listitem [ref=e537]:
+                                - generic [ref=e539]: Follow-up within the next couple of days to discuss the safest next step for treatment.
+                              - listitem [ref=e540]:
+                                - generic [ref=e542]: "Additional Recommendations:"
+                              - listitem [ref=e543]:
+                                - generic [ref=e545]: Develop a structured plan for reintegration into daily life, including work and social activities.
+                              - listitem [ref=e546]:
+                                - generic [ref=e548]: Encourage and support maintaining a balanced approach to work and self-care.
+                              - listitem [ref=e549]:
+                                - generic [ref=e551]: Hepatitis C and HIV screening, liver function, and blood tests.
+                              - listitem [ref=e552]:
+                                - generic [ref=e554]: Mental health support and a safety plan for days when things feel overwhelming.
+                        - generic [ref=e556]:
+                          - group [ref=e557]:
+                            - button [ref=e558] [cursor=pointer]:
+                              - img [ref=e559]
+                            - button [ref=e561] [cursor=pointer]:
+                              - img [ref=e562]
+                            - button [ref=e564] [cursor=pointer]:
+                              - img [ref=e565]
+                            - button [ref=e567] [cursor=pointer]:
+                              - img [ref=e568]
+                          - generic [ref=e570]:
+                            - paragraph [ref=e571]: Did we do a better job this time?
+                            - generic [ref=e572]:
+                              - button [ref=e573] [cursor=pointer]: Better
+                              - button [ref=e574] [cursor=pointer]: Worse
+                              - button [ref=e575] [cursor=pointer]: Same
+                    - generic [ref=e576]:
+                      - generic [ref=e577]:
+                        - heading [level=6] [ref=e578]: Medications to be Prescribed
+                        - img [ref=e579]
+                      - generic [ref=e582]:
+                        - table [ref=e584]:
+                          - rowgroup [ref=e585]:
+                            - row [ref=e586]:
+                              - columnheader [ref=e587]: Sl.No
+                              - columnheader [ref=e588]: Medication Details
+                              - columnheader [ref=e589]: Actions
+                          - rowgroup [ref=e590]:
+                            - row [ref=e591]:
+                              - cell [ref=e592]: "1"
+                              - cell [ref=e593]: Oxycodone 80-120 mg , to be Taken oral .
+                              - cell [ref=e594]:
+                                - generic [ref=e595]:
+                                  - button [ref=e596] [cursor=pointer]:
+                                    - img [ref=e597]
+                                  - button [ref=e599] [cursor=pointer]:
+                                    - img [ref=e600]
+                            - row [ref=e602]:
+                              - cell [ref=e603]: "2"
+                              - cell [ref=e604]: Heroin Injectable, to be Taken Intravenous As Needed (PRN). Using half a point or more on a usual day, started about three years ago after a back injury at work.
+                              - cell [ref=e605]:
+                                - generic [ref=e606]:
+                                  - button [ref=e607] [cursor=pointer]:
+                                    - img [ref=e608]
+                                  - button [ref=e610] [cursor=pointer]:
+                                    - img [ref=e611]
+                            - row [ref=e613]:
+                              - cell [ref=e614]: "3"
+                              - cell [ref=e615]: Sertraline , to be Taken .
+                              - cell [ref=e616]:
+                                - generic [ref=e617]:
+                                  - button [ref=e618] [cursor=pointer]:
+                                    - img [ref=e619]
+                                  - button [ref=e621] [cursor=pointer]:
+                                    - img [ref=e622]
+                            - row [ref=e624]:
+                              - cell [ref=e625]: "4"
+                              - cell [ref=e626]: Ibuprofen , to be Taken .
+                              - cell [ref=e627]:
+                                - generic [ref=e628]:
+                                  - button [ref=e629] [cursor=pointer]:
+                                    - img [ref=e630]
+                                  - button [ref=e632] [cursor=pointer]:
+                                    - img [ref=e633]
+                            - row [ref=e635]:
+                              - cell [ref=e636]: "5"
+                              - cell [ref=e637]: Codeine , to be Taken .
+                              - cell [ref=e638]:
+                                - generic [ref=e639]:
+                                  - button [ref=e640] [cursor=pointer]:
+                                    - img [ref=e641]
+                                  - button [ref=e643] [cursor=pointer]:
+                                    - img [ref=e644]
+                            - row [ref=e646]:
+                              - cell [ref=e647]: "6"
+                              - cell [ref=e648]: Diazepam , to be Taken . Using benzodiazepines a few times a week, usually when anxious or can't sleep, not prescribed at the moment.
+                              - cell [ref=e649]:
+                                - generic [ref=e650]:
+                                  - button [ref=e651] [cursor=pointer]:
+                                    - img [ref=e652]
+                                  - button [ref=e654] [cursor=pointer]:
+                                    - img [ref=e655]
+                            - row [ref=e657]:
+                              - cell [ref=e658]: "7"
+                              - cell [ref=e659]: Alprazolam , to be Taken . Used occasionally when anxious or can't sleep, not prescribed at the moment.
+                              - cell [ref=e660]:
+                                - generic [ref=e661]:
+                                  - button [ref=e662] [cursor=pointer]:
+                                    - img [ref=e663]
+                                  - button [ref=e665] [cursor=pointer]:
+                                    - img [ref=e666]
+                            - row [ref=e668]:
+                              - cell [ref=e669]: "8"
+                              - cell [ref=e670]: Buprenorphine , to be Taken .
+                              - cell [ref=e671]:
+                                - generic [ref=e672]:
+                                  - button [ref=e673] [cursor=pointer]:
+                                    - img [ref=e674]
+                                  - button [ref=e676] [cursor=pointer]:
+                                    - img [ref=e677]
+                            - row [ref=e679]:
+                              - cell [ref=e680]: "9"
+                              - cell [ref=e681]: Naloxone , to be Taken .
+                              - cell [ref=e682]:
+                                - generic [ref=e683]:
+                                  - button [ref=e684] [cursor=pointer]:
+                                    - img [ref=e685]
+                                  - button [ref=e687] [cursor=pointer]:
+                                    - img [ref=e688]
+                        - button [ref=e690] [cursor=pointer]:
+                          - img [ref=e692]
+                          - text: Add New Medicine
+                    - generic [ref=e694]:
+                      - generic [ref=e696]:
+                        - heading [level=6] [ref=e697]: Lab Test
+                        - img [ref=e698]
+                      - button [ref=e702] [cursor=pointer]:
+                        - img [ref=e704]
+                        - text: Add Lab Test
+                  - generic [ref=e706]:
+                    - generic [ref=e708]:
+                      - generic [ref=e709]:
+                        - generic [ref=e710]:
+                          - heading [level=6] [ref=e711]: Recommend Expert
+                          - img [ref=e712]
+                        - button [ref=e715] [cursor=pointer]:
+                          - img [ref=e717]
+                          - text: History
+                      - generic [ref=e719]:
+                        - generic [ref=e720]:
+                          - generic: Type of expert
+                          - generic [ref=e721]:
+                            - combobox [ref=e722] [cursor=pointer]
+                            - textbox
+                            - img
+                            - group:
+                              - generic: Type of expert
+                        - generic [ref=e723]:
+                          - button [disabled]:
+                            - generic:
+                              - img
+                            - text: Add
+                    - generic [ref=e725]:
+                      - generic [ref=e726]:
+                        - generic [ref=e727]:
+                          - heading [level=6] [ref=e728]: Recommend Program
+                          - img [ref=e729]
+                        - button [ref=e732] [cursor=pointer]:
+                          - img [ref=e734]
+                          - text: History
+                      - generic [ref=e736]:
+                        - generic [ref=e737]:
+                          - generic: Type of Program
+                          - generic [ref=e738]:
+                            - combobox [ref=e739] [cursor=pointer]
+                            - textbox
+                            - img
+                            - group:
+                              - generic: Type of Program
+                        - generic [ref=e741]:
+                          - button [disabled]:
+                            - generic:
+                              - img
+                            - text: Add
+                    - generic [ref=e742]:
+                      - generic [ref=e743]:
+                        - generic [ref=e744]:
+                          - heading [level=6] [ref=e745]: Recommend Assessment
+                          - img [ref=e746]
+                        - button [ref=e749] [cursor=pointer]:
+                          - img [ref=e751]
+                          - text: History
+                      - button [ref=e755] [cursor=pointer]:
+                        - img [ref=e757]
+                        - text: Add
+                    - generic [ref=e759]:
+                      - generic [ref=e760]:
+                        - generic [ref=e761]:
+                          - heading [level=6] [ref=e762]: Recommend Content
+                          - img [ref=e763]
+                        - button [ref=e766] [cursor=pointer]:
+                          - img [ref=e768]
+                          - text: History
+                      - generic [ref=e770]:
+                        - generic [ref=e771]:
+                          - generic: Type of Content
+                          - generic [ref=e772]:
+                            - combobox [ref=e773] [cursor=pointer]
+                            - textbox
+                            - img
+                            - group:
+                              - generic: Type of Content
+                        - generic [ref=e774]:
+                          - button [disabled]:
+                            - generic:
+                              - img
+                            - text: Add
+        - contentinfo [ref=e776]:
+          - paragraph [ref=e778]: asksam does not provide medical advice, diagnosis, or treatment recommendations. Output must be reviewed by a qualified clinician. asksam is not designed to replace clinical reasoning or provide medical decision guidance.
+  - dialog "Add Medication" [ref=e781]:
+    - heading "Add Medication" [level=2] [ref=e782]
+    - generic [ref=e784]:
+      - generic [ref=e786]:
+        - paragraph [ref=e787]: Medicine Name *
+        - generic [ref=e790]:
+          - combobox [ref=e791]: Oxycodone
+          - group
+      - generic [ref=e794]:
+        - paragraph [ref=e795]: Strength *
+        - generic [ref=e797]:
+          - textbox [ref=e798]: 80-120 mg
+          - group
+      - generic [ref=e800]:
+        - paragraph [ref=e801]: Dosage Form *
+        - generic [ref=e804]:
+          - combobox [ref=e805]
+          - group
+      - generic [ref=e808]:
+        - paragraph [ref=e809]: Quantity *
+        - generic [ref=e811]:
+          - textbox [ref=e812]
+          - group
+      - generic [ref=e814]:
+        - paragraph [ref=e815]: Route *
+        - generic [ref=e818]:
+          - combobox [ref=e819]: oral
+          - group
+      - generic [ref=e822]:
+        - paragraph [ref=e823]: Frequency *
+        - generic [ref=e826]:
+          - combobox [ref=e827]
+          - group
+      - generic [ref=e830]:
+        - paragraph [ref=e831]: Dispensation
+        - generic [ref=e833]:
+          - textbox [ref=e834]
+          - group
+      - generic [ref=e836]:
+        - paragraph [ref=e837]: Repeat(s) *
+        - generic [ref=e839]:
+          - textbox [ref=e840]
+          - group
+      - generic [ref=e842]:
+        - paragraph [ref=e843]: Instructions *
+        - generic [ref=e845]:
+          - textbox [ref=e846]
+          - group
+      - generic [ref=e848]:
+        - paragraph [ref=e849]: Start Date *
+        - generic [ref=e851]:
+          - textbox [ref=e852]
+          - group
+      - generic [ref=e854]:
+        - paragraph [ref=e855]: End Date *
+        - generic [ref=e857]:
+          - textbox [ref=e858]
+          - group
+    - generic [ref=e859]:
+      - button "Cancel" [ref=e860] [cursor=pointer]: Cancel
+      - button "Done" [disabled]
+```
