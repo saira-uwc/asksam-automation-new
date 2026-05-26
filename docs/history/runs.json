@@ -1,5 +1,190 @@
 [
   {
+    "id": "63ef85ac-5efe-4130-a4bb-e2560adc3de1",
+    "startedAt": "2026-05-26T01:21:55.470Z",
+    "durationMs": 905370.929,
+    "summary": {
+      "total": 19,
+      "passed": 19,
+      "failed": 0,
+      "skipped": 0,
+      "timedOut": 0
+    },
+    "passRate": 100,
+    "modules": {
+      "Expert-Dashboard": {
+        "label": "Expert Dashboard",
+        "total": 9,
+        "passed": 9,
+        "failed": 0,
+        "skipped": 0,
+        "timedOut": 0
+      },
+      "CCOP": {
+        "label": "CCOP",
+        "total": 10,
+        "passed": 10,
+        "failed": 0,
+        "skipped": 0,
+        "timedOut": 0
+      }
+    },
+    "tests": [
+      {
+        "title": "authenticate",
+        "module": "Expert-Dashboard",
+        "moduleLabel": "Expert Dashboard",
+        "status": "passed",
+        "durationMs": 51437,
+        "error": ""
+      },
+      {
+        "title": "Expert Dashboard | Appointment booking (dynamic slots)",
+        "module": "Expert-Dashboard",
+        "moduleLabel": "Expert Dashboard",
+        "status": "passed",
+        "durationMs": 16514,
+        "error": ""
+      },
+      {
+        "title": "create appointment with existing patient and reschedule",
+        "module": "Expert-Dashboard",
+        "moduleLabel": "Expert Dashboard",
+        "status": "passed",
+        "durationMs": 71226,
+        "error": ""
+      },
+      {
+        "title": "create appointment and manage session lifecycle",
+        "module": "Expert-Dashboard",
+        "moduleLabel": "Expert Dashboard",
+        "status": "passed",
+        "durationMs": 17310,
+        "error": ""
+      },
+      {
+        "title": "create appointment with existing patient and cancel non-cancelled one",
+        "module": "Expert-Dashboard",
+        "moduleLabel": "Expert Dashboard",
+        "status": "passed",
+        "durationMs": 67890,
+        "error": ""
+      },
+      {
+        "title": "Expert Dashboard | Create patient & book appointment",
+        "module": "Expert-Dashboard",
+        "moduleLabel": "Expert Dashboard",
+        "status": "passed",
+        "durationMs": 30342,
+        "error": ""
+      },
+      {
+        "title": "Expert Dashboard | Navigation flow validation",
+        "module": "Expert-Dashboard",
+        "moduleLabel": "Expert Dashboard",
+        "status": "passed",
+        "durationMs": 7934,
+        "error": ""
+      },
+      {
+        "title": "Expert Dashboard | Help Center raise & reply ticket",
+        "module": "Expert-Dashboard",
+        "moduleLabel": "Expert Dashboard",
+        "status": "passed",
+        "durationMs": 7765,
+        "error": ""
+      },
+      {
+        "title": "create unique patient, search and view profile",
+        "module": "Expert-Dashboard",
+        "moduleLabel": "Expert Dashboard",
+        "status": "passed",
+        "durationMs": 26510,
+        "error": ""
+      },
+      {
+        "title": "AI panel — Graph tab: knowledge graph, zoom controls, node properties, legends",
+        "module": "CCOP",
+        "moduleLabel": "CCOP",
+        "status": "passed",
+        "durationMs": 42790,
+        "error": ""
+      },
+      {
+        "title": "AI panel — Assistant tab: associations, medication & comorbidity sub-tabs",
+        "module": "CCOP",
+        "moduleLabel": "CCOP",
+        "status": "passed",
+        "durationMs": 40637,
+        "error": ""
+      },
+      {
+        "title": "AI panel — asksam tab: chat input, send message, disclaimer",
+        "module": "CCOP",
+        "moduleLabel": "CCOP",
+        "status": "passed",
+        "durationMs": 76269,
+        "error": ""
+      },
+      {
+        "title": "CCOP | Help Center | Raise, Reply & Resolve Ticket",
+        "module": "CCOP",
+        "moduleLabel": "CCOP",
+        "status": "passed",
+        "durationMs": 9084,
+        "error": ""
+      },
+      {
+        "title": "Create clinical note with document upload & transcription",
+        "module": "CCOP",
+        "moduleLabel": "CCOP",
+        "status": "passed",
+        "durationMs": 61831,
+        "error": ""
+      },
+      {
+        "title": "Create patient + upload + submit",
+        "module": "CCOP",
+        "moduleLabel": "CCOP",
+        "status": "passed",
+        "durationMs": 133598,
+        "error": ""
+      },
+      {
+        "title": "Open letter template from Actions dropdown, select type and verify preview",
+        "module": "CCOP",
+        "moduleLabel": "CCOP",
+        "status": "passed",
+        "durationMs": 32399,
+        "error": ""
+      },
+      {
+        "title": "Create a new letter template from Actions dropdown",
+        "module": "CCOP",
+        "moduleLabel": "CCOP",
+        "status": "passed",
+        "durationMs": 39749,
+        "error": ""
+      },
+      {
+        "title": "Create clinical note with voice transcription",
+        "module": "CCOP",
+        "moduleLabel": "CCOP",
+        "status": "passed",
+        "durationMs": 20341,
+        "error": ""
+      },
+      {
+        "title": "CCOP | Clinician signup full flow (recorded)",
+        "module": "CCOP",
+        "moduleLabel": "CCOP",
+        "status": "passed",
+        "durationMs": 147251,
+        "error": ""
+      }
+    ]
+  },
+  {
     "id": "8e093c55-7f1c-4c97-8d69-114945ad0113",
     "startedAt": "2026-05-25T19:22:01.837Z",
     "durationMs": 878687.9589999999,
@@ -24660,37 +24845,6 @@
     "id": "9d457304-f140-48fa-ad93-c7b92a4adf2d",
     "startedAt": "2026-04-26T02:57:16.861Z",
     "durationMs": 708534.3269999999,
-    "summary": {
-      "total": 19,
-      "passed": 19,
-      "failed": 0,
-      "skipped": 0,
-      "timedOut": 0
-    },
-    "passRate": 100,
-    "modules": {
-      "Expert-Dashboard": {
-        "label": "Expert Dashboard",
-        "total": 9,
-        "passed": 9,
-        "failed": 0,
-        "skipped": 0,
-        "timedOut": 0
-      },
-      "CCOP": {
-        "label": "CCOP",
-        "total": 10,
-        "passed": 10,
-        "failed": 0,
-        "skipped": 0,
-        "timedOut": 0
-      }
-    }
-  },
-  {
-    "id": "ceea3cb5-643f-43cf-b935-4b5df1a9a484",
-    "startedAt": "2026-04-25T22:57:15.705Z",
-    "durationMs": 881800.3620000001,
     "summary": {
       "total": 19,
       "passed": 19,
