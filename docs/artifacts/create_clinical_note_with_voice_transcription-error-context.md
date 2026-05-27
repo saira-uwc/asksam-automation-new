@@ -1,0 +1,263 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e4]:
+      - button [ref=e11] [cursor=pointer]:
+        - img [ref=e14]
+    - generic [ref=e17]:
+      - generic [ref=e19]:
+        - link [ref=e20] [cursor=pointer]:
+          - /url: /clinical/home
+          - img [ref=e21]
+          - paragraph [ref=e23]: Home
+        - link [ref=e24] [cursor=pointer]:
+          - /url: /clinical/patients
+          - img [ref=e25]
+          - paragraph [ref=e27]: Patients
+        - link [ref=e28] [cursor=pointer]:
+          - /url: /clinical/expert-dashboard
+          - img [ref=e29]
+          - paragraph [ref=e31]: Appointment Dashboard
+        - link [ref=e32] [cursor=pointer]:
+          - /url: /clinical/help-center
+          - img [ref=e33]
+          - paragraph [ref=e35]: Help Center
+        - link [ref=e36] [cursor=pointer]:
+          - /url: /clinical/settings
+          - img [ref=e37]
+          - paragraph [ref=e39]: Settings
+        - link [ref=e40] [cursor=pointer]:
+          - /url: /clinical/admin
+          - img [ref=e41]
+          - paragraph [ref=e46]: Admin
+      - generic [ref=e47]:
+        - generic [ref=e48]:
+          - button [ref=e51]: Clinical Assistant
+          - generic [ref=e52]:
+            - generic [ref=e53]:
+              - generic [ref=e55]:
+                - button [ref=e56] [cursor=pointer]: In Progress
+                - button [ref=e57] [cursor=pointer]: Completed
+                - button [ref=e58] [cursor=pointer]: All
+              - button [ref=e61] [cursor=pointer]:
+                - img [ref=e63]
+                - generic [ref=e65]: Create Clinical Note
+            - generic [ref=e66]:
+              - generic [ref=e68]:
+                - generic [ref=e71]:
+                  - generic [ref=e72]:
+                    - generic [ref=e73]:
+                      - img [ref=e75]
+                      - generic [ref=e76]:
+                        - heading [level=6] [ref=e77]: ravi rawat
+                        - paragraph [ref=e78]: Follow-up
+                    - button [ref=e79] [cursor=pointer]:
+                      - img [ref=e80]
+                  - generic [ref=e82]:
+                    - paragraph [ref=e84]:
+                      - text: "Consultation Date:"
+                      - generic [ref=e85]: 27 May, 26
+                    - paragraph [ref=e87]: "Mobile No: +61 421443885"
+                  - button [ref=e89] [cursor=pointer]:
+                    - img [ref=e91]
+                    - text: Edit Draft
+                - generic [ref=e95]:
+                  - generic [ref=e96]:
+                    - generic [ref=e97]:
+                      - img [ref=e99]
+                      - generic [ref=e100]:
+                        - heading [level=6] [ref=e101]: ravi rawat
+                        - paragraph [ref=e102]: Follow-up
+                    - button [ref=e103] [cursor=pointer]:
+                      - img [ref=e104]
+                  - generic [ref=e106]:
+                    - paragraph [ref=e108]:
+                      - text: "Consultation Date:"
+                      - generic [ref=e109]: 27 May, 26
+                    - paragraph [ref=e111]: "Mobile No: +61 421443885"
+                  - button [ref=e113] [cursor=pointer]:
+                    - img [ref=e115]
+                    - text: Edit Draft
+                - generic [ref=e119]:
+                  - generic [ref=e120]:
+                    - generic [ref=e121]:
+                      - img [ref=e123]
+                      - generic [ref=e124]:
+                        - heading [level=6] [ref=e125]: ravi rawat
+                        - paragraph [ref=e126]: Follow-up
+                    - button [ref=e127] [cursor=pointer]:
+                      - img [ref=e128]
+                  - generic [ref=e130]:
+                    - paragraph [ref=e132]:
+                      - text: "Consultation Date:"
+                      - generic [ref=e133]: 27 May, 26
+                    - paragraph [ref=e135]: "Mobile No: +61 421443885"
+                  - button [ref=e137] [cursor=pointer]:
+                    - img [ref=e139]
+                    - text: Edit Draft
+                - generic [ref=e143]:
+                  - generic [ref=e144]:
+                    - generic [ref=e145]:
+                      - img [ref=e147]
+                      - generic [ref=e148]:
+                        - heading [level=6] [ref=e149]: ravi rawat
+                        - paragraph [ref=e150]: Follow-up
+                    - button [ref=e151] [cursor=pointer]:
+                      - img [ref=e152]
+                  - generic [ref=e154]:
+                    - paragraph [ref=e156]:
+                      - text: "Consultation Date:"
+                      - generic [ref=e157]: 27 May, 26
+                    - paragraph [ref=e159]: "Mobile No: +61 421443885"
+                  - button [ref=e161] [cursor=pointer]:
+                    - img [ref=e163]
+                    - text: Edit Draft
+                - generic [ref=e167]:
+                  - generic [ref=e168]:
+                    - generic [ref=e169]:
+                      - img [ref=e171]
+                      - generic [ref=e172]:
+                        - heading [level=6] [ref=e173]: ravi rawat
+                        - paragraph [ref=e174]: Follow-up
+                    - button [ref=e175] [cursor=pointer]:
+                      - img [ref=e176]
+                  - generic [ref=e178]:
+                    - paragraph [ref=e180]:
+                      - text: "Consultation Date:"
+                      - generic [ref=e181]: 27 May, 26
+                    - paragraph [ref=e183]: "Mobile No: +61 421443885"
+                  - button [ref=e185] [cursor=pointer]:
+                    - img [ref=e187]
+                    - text: Edit Draft
+                - generic [ref=e191]:
+                  - generic [ref=e192]:
+                    - generic [ref=e193]:
+                      - img [ref=e195]
+                      - generic [ref=e196]:
+                        - heading [level=6] [ref=e197]: ravi rawat
+                        - paragraph [ref=e198]: Follow-up
+                    - button [ref=e199] [cursor=pointer]:
+                      - img [ref=e200]
+                  - generic [ref=e202]:
+                    - paragraph [ref=e204]:
+                      - text: "Consultation Date:"
+                      - generic [ref=e205]: 27 May, 26
+                    - paragraph [ref=e207]: "Mobile No: +61 421443885"
+                  - button [ref=e209] [cursor=pointer]:
+                    - img [ref=e211]
+                    - text: Edit Draft
+                - generic [ref=e215]:
+                  - generic [ref=e216]:
+                    - generic [ref=e217]:
+                      - img [ref=e219]
+                      - generic [ref=e220]:
+                        - heading [level=6] [ref=e221]: ravi rawat
+                        - paragraph [ref=e222]: Follow-up
+                    - button [ref=e223] [cursor=pointer]:
+                      - img [ref=e224]
+                  - generic [ref=e226]:
+                    - paragraph [ref=e228]:
+                      - text: "Consultation Date:"
+                      - generic [ref=e229]: 27 May, 26
+                    - paragraph [ref=e231]: "Mobile No: +61 421443885"
+                  - button [ref=e233] [cursor=pointer]:
+                    - img [ref=e235]
+                    - text: Edit Draft
+                - generic [ref=e239]:
+                  - generic [ref=e240]:
+                    - generic [ref=e241]:
+                      - img [ref=e243]
+                      - generic [ref=e244]:
+                        - heading [level=6] [ref=e245]: ravi rawat
+                        - paragraph [ref=e246]: Follow-up
+                    - button [ref=e247] [cursor=pointer]:
+                      - img [ref=e248]
+                  - generic [ref=e250]:
+                    - paragraph [ref=e252]:
+                      - text: "Consultation Date:"
+                      - generic [ref=e253]: 27 May, 26
+                    - paragraph [ref=e255]: "Mobile No: +61 421443885"
+                  - button [ref=e257] [cursor=pointer]:
+                    - img [ref=e259]
+                    - text: Edit Draft
+              - navigation [ref=e263]:
+                - list [ref=e264]:
+                  - listitem [ref=e265]:
+                    - button [disabled]:
+                      - img
+                  - listitem [ref=e266]:
+                    - button [ref=e267] [cursor=pointer]: "1"
+                  - listitem [ref=e268]:
+                    - button [ref=e269] [cursor=pointer]: "2"
+                  - listitem [ref=e270]:
+                    - button [ref=e271] [cursor=pointer]: "3"
+                  - listitem [ref=e272]:
+                    - button [ref=e273] [cursor=pointer]: "4"
+                  - listitem [ref=e274]:
+                    - button [ref=e275] [cursor=pointer]: "5"
+                  - listitem [ref=e276]:
+                    - generic [ref=e277]: …
+                  - listitem [ref=e278]:
+                    - button [ref=e279] [cursor=pointer]: "119"
+                  - listitem [ref=e280]:
+                    - button [ref=e281] [cursor=pointer]:
+                      - img [ref=e282]
+        - contentinfo [ref=e284]:
+          - paragraph [ref=e286]: asksam does not provide medical advice, diagnosis, or treatment recommendations. Output must be reviewed by a qualified clinician. asksam is not designed to replace clinical reasoning or provide medical decision guidance.
+  - dialog [ref=e290]:
+    - heading [level=2] [ref=e291]:
+      - heading [level=6] [ref=e292]: Search Patient
+      - button [ref=e293] [cursor=pointer]:
+        - img [ref=e294]
+    - generic [ref=e297]:
+      - img [ref=e298]
+      - textbox [ref=e301]:
+        - /placeholder: Search by name, or enter full email...
+        - text: Yamini Singh 191
+    - generic [ref=e304] [cursor=pointer]:
+      - generic [ref=e306]:
+        - paragraph [ref=e307]: Yamini Singh 191
+        - generic [ref=e308]:
+          - paragraph [ref=e309]:
+            - img [ref=e310]
+            - generic [ref=e312]: ys191_aus@yopmail.com
+          - img [ref=e314]
+      - img [ref=e317]
+    - button [ref=e320] [cursor=pointer]:
+      - img [ref=e322]
+      - text: Create New Patient Profile
+  - dialog [ref=e326]:
+    - generic [ref=e327]:
+      - generic [ref=e328]: Voice and Document Transcriptions
+      - generic [ref=e329]:
+        - button "Upload" [ref=e330] [cursor=pointer]:
+          - img [ref=e331]
+          - text: Upload
+        - button "Send Transcription" [disabled]:
+          - img
+          - text: Send Transcription
+        - button [ref=e334] [cursor=pointer]:
+          - img [ref=e335]
+    - generic [ref=e337]:
+      - textbox "Start Typing..." [ref=e341]
+      - generic [ref=e343]:
+        - generic [ref=e344]:
+          - generic [ref=e346]:
+            - generic "Select Language for Speech Recognition" [ref=e347]:
+              - generic [ref=e348]:
+                - combobox [ref=e349] [cursor=pointer]:
+                  - generic [ref=e350]:
+                    - img [ref=e351]
+                    - generic [ref=e353]: English
+                - textbox: en
+                - img
+                - group
+            - button "For best results, please use voice dictation in the selected language." [ref=e354] [cursor=pointer]:
+              - img [ref=e355]
+          - button [ref=e364] [cursor=pointer]:
+            - img [ref=e365]
+        - progressbar [ref=e370]:
+          - img [ref=e371]
+```
