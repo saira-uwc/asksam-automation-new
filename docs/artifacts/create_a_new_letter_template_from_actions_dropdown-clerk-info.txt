@@ -1,0 +1,25 @@
+Test: Create a new letter template from Actions dropdown
+Test file: /home/runner/work/asksam-automation-new/asksam-automation-new/tests/CCOP/letter-template.spec.js
+Failed at: 2026-06-01T07:43:48.684Z
+Page URL at failure: https://copilot.asksam.com.au/clinical/home
+
+--- Clerk session cookies ---
+__session present: true
+  domain=copilot.asksam.com.au path=/ sameSite=Lax secure=true httpOnly=false expires=2027-06-01T07:43:48.000Z
+__client_uat present: true
+  domain=.asksam.com.au value=1780299732
+
+--- All cookies on .asksam.com.au ---
+cf_clearance  domain=.asksam.com.au  sameSite=None  expires=2027-06-01T07:42:06.692Z
+_ga  domain=.asksam.com.au  sameSite=None  expires=2027-07-06T07:42:06.831Z
+_clck  domain=.asksam.com.au  sameSite=Lax  expires=2027-06-01T07:42:06.000Z
+_clsk  domain=.asksam.com.au  sameSite=Lax  expires=2026-06-02T07:42:07.000Z
+__cf_bm  domain=.clerk.asksam.com.au  sameSite=None  expires=2026-06-01T08:12:09.864Z
+_cfuvid  domain=.clerk.asksam.com.au  sameSite=None  expires=session
+__client  domain=.clerk.asksam.com.au  sameSite=Lax  expires=2027-07-06T07:42:12.683Z
+__client_uat  domain=.asksam.com.au  sameSite=Lax  expires=2027-07-06T07:42:17.734Z
+__client_uat_mJltbx6F  domain=.asksam.com.au  sameSite=Lax  expires=2027-07-06T07:42:17.734Z
+clerk_active_context  domain=copilot.asksam.com.au  sameSite=Lax  expires=session
+_ga_6R9WK18T5N  domain=.asksam.com.au  sameSite=Lax  expires=2027-07-06T07:42:17.607Z
+__session  domain=copilot.asksam.com.au  sameSite=Lax  expires=2027-06-01T07:43:48.000Z
+__session_mJltbx6F  domain=copilot.asksam.com.au  sameSite=Lax  expires=2027-06-01T07:43:48.000Z
