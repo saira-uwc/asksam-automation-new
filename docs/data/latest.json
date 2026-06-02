@@ -1,15 +1,15 @@
 {
-  "id": "dc312ed5-4bd1-4d18-b98b-51cb554c1645",
-  "startedAt": "2026-06-02T07:22:05.819Z",
-  "durationMs": 1130573.45,
+  "id": "572dde17-d3ab-4d37-bac9-ff72be9d9405",
+  "startedAt": "2026-06-02T13:22:04.997Z",
+  "durationMs": 906554.122,
   "summary": {
     "total": 19,
-    "passed": 17,
-    "failed": 2,
+    "passed": 19,
+    "failed": 0,
     "skipped": 0,
     "timedOut": 0
   },
-  "passRate": 89,
+  "passRate": 100,
   "modules": {
     "Expert-Dashboard": {
       "label": "Expert Dashboard",
@@ -22,8 +22,8 @@
     "CCOP": {
       "label": "CCOP",
       "total": 10,
-      "passed": 8,
-      "failed": 2,
+      "passed": 10,
+      "failed": 0,
       "skipped": 0,
       "timedOut": 0
     }
@@ -32,7 +32,7 @@
     {
       "title": "authenticate",
       "status": "passed",
-      "durationMs": 51758,
+      "durationMs": 50250,
       "file": "Expert-Dashboard/auth.setup.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -53,7 +53,7 @@
     {
       "title": "Expert Dashboard | Appointment booking (dynamic slots)",
       "status": "passed",
-      "durationMs": 17731,
+      "durationMs": 18809,
       "file": "Expert-Dashboard/appointment-booking.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -74,7 +74,7 @@
     {
       "title": "create appointment with existing patient and reschedule",
       "status": "passed",
-      "durationMs": 69191,
+      "durationMs": 63074,
       "file": "Expert-Dashboard/appointment-create-and-reschedule.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -95,7 +95,7 @@
     {
       "title": "create appointment and manage session lifecycle",
       "status": "passed",
-      "durationMs": 18785,
+      "durationMs": 19681,
       "file": "Expert-Dashboard/appointment-session-management.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -116,7 +116,7 @@
     {
       "title": "create appointment with existing patient and cancel non-cancelled one",
       "status": "passed",
-      "durationMs": 59814,
+      "durationMs": 59882,
       "file": "Expert-Dashboard/appointment-z-cancel.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -137,7 +137,7 @@
     {
       "title": "Expert Dashboard | Create patient & book appointment",
       "status": "passed",
-      "durationMs": 38167,
+      "durationMs": 28868,
       "file": "Expert-Dashboard/expert-appointment-create-with-new-patient.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -158,7 +158,7 @@
     {
       "title": "Expert Dashboard | Navigation flow validation",
       "status": "passed",
-      "durationMs": 9379,
+      "durationMs": 8608,
       "file": "Expert-Dashboard/expert-dashboard-navigation.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -179,7 +179,7 @@
     {
       "title": "Expert Dashboard | Help Center raise & reply ticket",
       "status": "passed",
-      "durationMs": 9662,
+      "durationMs": 7989,
       "file": "Expert-Dashboard/expert-helpcenter-ticket.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -200,7 +200,7 @@
     {
       "title": "create unique patient, search and view profile",
       "status": "passed",
-      "durationMs": 25230,
+      "durationMs": 27543,
       "file": "Expert-Dashboard/patient-create-and-view.spec.js",
       "module": "Expert-Dashboard",
       "moduleLabel": "Expert Dashboard",
@@ -220,79 +220,29 @@
     },
     {
       "title": "AI panel — Graph tab: knowledge graph, zoom controls, node properties, legends",
-      "status": "failed",
-      "durationMs": 58767,
+      "status": "passed",
+      "durationMs": 43121,
       "file": "CCOP/ai-assistant-panel.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-failed-1.png",
-          "contentType": "image/png",
-          "webPath": "./artifacts/ai_panel___graph_tab__knowledge_graph__zoom_contro-screenshot.png"
-        },
-        {
-          "name": "cookies.json",
-          "path": "",
-          "contentType": "application/json",
-          "webPath": "./artifacts/ai_panel___graph_tab__knowledge_graph__zoom_contro-cookies.json"
-        },
-        {
-          "name": "clerk-info.txt",
-          "path": "",
-          "contentType": "text/plain",
-          "webPath": "./artifacts/ai_panel___graph_tab__knowledge_graph__zoom_contro-clerk-info.txt"
-        },
-        {
-          "name": "localStorage.json",
-          "path": "",
-          "contentType": "application/json",
-          "webPath": "./artifacts/ai_panel___graph_tab__knowledge_graph__zoom_contro-localStorage.json"
-        },
-        {
-          "name": "sessionStorage.json",
-          "path": "",
-          "contentType": "application/json",
-          "webPath": "./artifacts/ai_panel___graph_tab__knowledge_graph__zoom_contro-sessionStorage.json"
-        },
-        {
-          "name": "console.log",
-          "path": "",
-          "contentType": "text/plain",
-          "webPath": "./artifacts/ai_panel___graph_tab__knowledge_graph__zoom_contro-console.log"
-        },
-        {
-          "name": "redirect-chain.txt",
-          "path": "",
-          "contentType": "text/plain",
-          "webPath": "./artifacts/ai_panel___graph_tab__knowledge_graph__zoom_contro-redirect-chain.txt"
+          "path": "test-finished-1.png",
+          "contentType": "image/png"
         },
         {
           "name": "video",
           "path": "video.webm",
-          "contentType": "video/webm",
-          "webPath": "./artifacts/ai_panel___graph_tab__knowledge_graph__zoom_contro-video.webm"
-        },
-        {
-          "name": "error-context",
-          "path": "error-context.md",
-          "contentType": "text/markdown",
-          "webPath": "./artifacts/ai_panel___graph_tab__knowledge_graph__zoom_contro-error-context.md"
-        },
-        {
-          "name": "trace",
-          "path": "trace.zip",
-          "contentType": "application/zip",
-          "webPath": "./artifacts/ai_panel___graph_tab__knowledge_graph__zoom_contro-trace.zip"
+          "contentType": "video/webm"
         }
       ],
-      "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button').nth(33)\u001b[22m\n\u001b[2m    - locator resolved to <button tabindex=\"0\" type=\"button\" class=\"MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-118afr0\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m     "
+      "error": ""
     },
     {
       "title": "AI panel — Assistant tab: associations, medication & comorbidity sub-tabs",
       "status": "passed",
-      "durationMs": 40977,
+      "durationMs": 42081,
       "file": "CCOP/ai-assistant-panel.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -313,7 +263,7 @@
     {
       "title": "AI panel — asksam tab: chat input, send message, disclaimer",
       "status": "passed",
-      "durationMs": 76038,
+      "durationMs": 85561,
       "file": "CCOP/ai-assistant-panel.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -334,7 +284,7 @@
     {
       "title": "CCOP | Help Center | Raise, Reply & Resolve Ticket",
       "status": "passed",
-      "durationMs": 9330,
+      "durationMs": 9508,
       "file": "CCOP/ccop-helpcenter-ticket.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -355,7 +305,7 @@
     {
       "title": "Create clinical note with document upload & transcription",
       "status": "passed",
-      "durationMs": 68216,
+      "durationMs": 62766,
       "file": "CCOP/clinical-note.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -376,7 +326,7 @@
     {
       "title": "Create patient + upload + submit",
       "status": "passed",
-      "durationMs": 122253,
+      "durationMs": 129886,
       "file": "CCOP/create-patient-clinical-note.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -397,7 +347,7 @@
     {
       "title": "Open letter template from Actions dropdown, select type and verify preview",
       "status": "passed",
-      "durationMs": 36706,
+      "durationMs": 35186,
       "file": "CCOP/letter-template.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -418,7 +368,7 @@
     {
       "title": "Create a new letter template from Actions dropdown",
       "status": "passed",
-      "durationMs": 41988,
+      "durationMs": 40090,
       "file": "CCOP/letter-template.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -438,85 +388,29 @@
     },
     {
       "title": "Create clinical note with voice transcription",
-      "status": "failed",
-      "durationMs": 79491,
+      "status": "passed",
+      "durationMs": 19539,
       "file": "CCOP/voice-transcription.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
       "attachments": [
         {
           "name": "screenshot",
-          "path": "test-failed-1.png",
-          "contentType": "image/png",
-          "webPath": "./artifacts/create_clinical_note_with_voice_transcription-screenshot.png"
-        },
-        {
-          "name": "cookies.json",
-          "path": "",
-          "contentType": "application/json",
-          "webPath": "./artifacts/create_clinical_note_with_voice_transcription-cookies.json"
-        },
-        {
-          "name": "clerk-info.txt",
-          "path": "",
-          "contentType": "text/plain",
-          "webPath": "./artifacts/create_clinical_note_with_voice_transcription-clerk-info.txt"
-        },
-        {
-          "name": "localStorage.json",
-          "path": "",
-          "contentType": "application/json",
-          "webPath": "./artifacts/create_clinical_note_with_voice_transcription-localStorage.json"
-        },
-        {
-          "name": "sessionStorage.json",
-          "path": "",
-          "contentType": "application/json",
-          "webPath": "./artifacts/create_clinical_note_with_voice_transcription-sessionStorage.json"
-        },
-        {
-          "name": "console.log",
-          "path": "",
-          "contentType": "text/plain",
-          "webPath": "./artifacts/create_clinical_note_with_voice_transcription-console.log"
-        },
-        {
-          "name": "redirect-chain.txt",
-          "path": "",
-          "contentType": "text/plain",
-          "webPath": "./artifacts/create_clinical_note_with_voice_transcription-redirect-chain.txt"
-        },
-        {
-          "name": "network-failures.txt",
-          "path": "",
-          "contentType": "text/plain",
-          "webPath": "./artifacts/create_clinical_note_with_voice_transcription-network-failures.txt"
+          "path": "test-finished-1.png",
+          "contentType": "image/png"
         },
         {
           "name": "video",
           "path": "video.webm",
-          "contentType": "video/webm",
-          "webPath": "./artifacts/create_clinical_note_with_voice_transcription-video.webm"
-        },
-        {
-          "name": "error-context",
-          "path": "error-context.md",
-          "contentType": "text/markdown",
-          "webPath": "./artifacts/create_clinical_note_with_voice_transcription-error-context.md"
-        },
-        {
-          "name": "trace",
-          "path": "trace.zip",
-          "contentType": "application/zip",
-          "webPath": "./artifacts/create_clinical_note_with_voice_transcription-trace.zip"
+          "contentType": "video/webm"
         }
       ],
-      "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Send Transcription' })\u001b[22m\n\u001b[2m    - locator resolved to <button disabled tabindex=\"-1\" type=\"button\" id=\"notetaker_send_transcription\" class=\"MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSi"
+      "error": ""
     },
     {
       "title": "CCOP | Clinician signup full flow (recorded)",
       "status": "passed",
-      "durationMs": 148410,
+      "durationMs": 149062,
       "file": "CCOP/ccop-clinician-signup.spec.js",
       "module": "CCOP",
       "moduleLabel": "CCOP",
@@ -533,12 +427,12 @@
         },
         {
           "name": "video",
-          "path": "video-1.webm",
+          "path": "video.webm",
           "contentType": "video/webm"
         },
         {
           "name": "video",
-          "path": "video.webm",
+          "path": "video-1.webm",
           "contentType": "video/webm"
         }
       ],
