@@ -1,0 +1,35 @@
+Test: Create patient + upload + submit
+Test file: /home/runner/work/asksam-automation-new/asksam-automation-new/tests/CCOP/create-patient-clinical-note.spec.js
+Failed at: 2026-06-08T19:39:36.221Z
+Page URL at failure: https://copilot.asksam.com.au/clinical/home?view=view&clinicalId=6a2719ae928ccdf4faddad94&noteType=New
+
+--- Clerk session cookies ---
+__session present: true
+  domain=dashboard.asksam.com.au path=/ sameSite=Lax secure=true httpOnly=false expires=2027-06-08T19:22:48.000Z
+__client_uat present: true
+  domain=.asksam.com.au value=1780946531
+
+--- All cookies on .asksam.com.au ---
+cf_clearance  domain=.asksam.com.au  sameSite=None  expires=2027-06-08T19:22:05.039Z
+_clck  domain=.asksam.com.au  sameSite=Lax  expires=2027-06-08T19:22:05.000Z
+_cfuvid  domain=.clerk.asksam.com.au  sameSite=None  expires=session
+__client  domain=.clerk.asksam.com.au  sameSite=Lax  expires=2027-07-13T19:22:11.335Z
+__client_uat  domain=.asksam.com.au  sameSite=Lax  expires=2027-07-13T19:36:36.927Z
+__client_uat_mJltbx6F  domain=.asksam.com.au  sameSite=Lax  expires=2027-07-13T19:36:36.927Z
+clerk_active_context  domain=copilot.asksam.com.au  sameSite=Lax  expires=session
+_gcl_au  domain=.asksam.com.au  sameSite=Lax  expires=2026-09-06T19:22:16.000Z
+countryCode  domain=dashboard.asksam.com.au  sameSite=Lax  expires=session
+_gid  domain=.asksam.com.au  sameSite=Lax  expires=2026-06-09T19:22:18.000Z
+_ga  domain=.asksam.com.au  sameSite=Lax  expires=2027-07-13T19:22:18.172Z
+_pin_unauth  domain=.dashboard.asksam.com.au  sameSite=Lax  expires=2027-06-08T19:22:18.000Z
+_clsk  domain=.asksam.com.au  sameSite=Lax  expires=2026-06-09T19:22:18.000Z
+clerk_active_context  domain=dashboard.asksam.com.au  sameSite=Lax  expires=session
+__session  domain=dashboard.asksam.com.au  sameSite=Lax  expires=2027-06-08T19:22:48.000Z
+__session_mJltbx6F  domain=dashboard.asksam.com.au  sameSite=Lax  expires=2027-06-08T19:22:48.000Z
+_fbp  domain=.asksam.com.au  sameSite=Lax  expires=2026-09-06T19:22:18.000Z
+_ga_28HL9LHXGG  domain=.asksam.com.au  sameSite=Lax  expires=2027-07-13T19:22:48.779Z
+_ga_LXMYWW3N03  domain=.asksam.com.au  sameSite=Lax  expires=2027-07-13T19:22:48.784Z
+__cf_bm  domain=.clerk.asksam.com.au  sameSite=None  expires=2026-06-08T20:07:28.066Z
+_ga_6R9WK18T5N  domain=.asksam.com.au  sameSite=Lax  expires=2027-07-13T19:38:30.431Z
+__session  domain=copilot.asksam.com.au  sameSite=Lax  expires=2027-06-08T19:39:33.000Z
+__session_mJltbx6F  domain=copilot.asksam.com.au  sameSite=Lax  expires=2027-06-08T19:39:33.000Z

@@ -1,1 +1,0 @@
-[2026-06-08T13:39:22.441Z] 400 POST https://cauth.unitedwecare.com/transcriptions/transcribe-from-url-v2
