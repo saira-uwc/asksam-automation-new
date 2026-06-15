@@ -1,0 +1,11 @@
+1. [2026-06-15T20:03:00.281Z] https://account.asksam.com.au/register
+2. [2026-06-15T20:03:00.381Z] https://account.asksam.com.au/register
+3. [2026-06-15T20:03:01.446Z] https://account.asksam.com.au/
+4. [2026-06-15T20:03:03.181Z] https://copilot.asksam.com.au/
+5. [2026-06-15T20:03:03.518Z] https://copilot.asksam.com.au/
+6. [2026-06-15T20:03:03.867Z] https://copilot.asksam.com.au/sign-in
+7. [2026-06-15T20:03:04.986Z] https://copilot.asksam.com.au/sign-in/factor-one
+8. [2026-06-15T20:03:05.045Z] https://copilot.asksam.com.au/sign-in/factor-one
+9. [2026-06-15T20:03:07.570Z] https://copilot.asksam.com.au/clinical/home
+10. [2026-06-15T20:03:07.607Z] https://copilot.asksam.com.au/clinical/home
+11. [2026-06-15T20:03:11.464Z] https://copilot.asksam.com.au/clinical/home
