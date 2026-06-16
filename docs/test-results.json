@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-16T14:06:16.450Z",
+  "lastUpdated": "2026-06-16T20:06:02.207Z",
   "runs": [
     {
       "date": "2026-06-16",
@@ -198,7 +198,7 @@
       "module": "Expert-Dashboard",
       "name": "Expert Dashboard | Appointment booking (dynamic slots)",
       "status": "passed",
-      "duration": "17.2s",
+      "duration": "17.0s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -208,7 +208,7 @@
       "module": "Expert-Dashboard",
       "name": "create appointment with existing patient and reschedule",
       "status": "passed",
-      "duration": "1m 4s",
+      "duration": "1m 8s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -218,7 +218,7 @@
       "module": "Expert-Dashboard",
       "name": "create appointment and manage session lifecycle",
       "status": "passed",
-      "duration": "18.7s",
+      "duration": "17.2s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -238,7 +238,7 @@
       "module": "Expert-Dashboard",
       "name": "Expert Dashboard | Create patient & book appointment",
       "status": "passed",
-      "duration": "46.2s",
+      "duration": "46.6s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -248,7 +248,7 @@
       "module": "Expert-Dashboard",
       "name": "Expert Dashboard | Navigation flow validation",
       "status": "passed",
-      "duration": "9.5s",
+      "duration": "8.7s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -258,7 +258,7 @@
       "module": "Expert-Dashboard",
       "name": "Expert Dashboard | Help Center raise & reply ticket",
       "status": "passed",
-      "duration": "9.2s",
+      "duration": "9.5s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -268,7 +268,7 @@
       "module": "Expert-Dashboard",
       "name": "create unique patient, search and view profile",
       "status": "passed",
-      "duration": "23.9s",
+      "duration": "23.6s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -278,7 +278,7 @@
       "module": "CCOP",
       "name": "AI panel — Graph tab: knowledge graph, zoom controls, node properties, legends",
       "status": "failed",
-      "duration": "4m 13s",
+      "duration": "4m 12s",
       "screenshot": "./artifacts/ai_panel___graph_tab__knowledge_graph__zoom_contro-screenshot.png",
       "video": "./artifacts/ai_panel___graph_tab__knowledge_graph__zoom_contro-video.webm",
       "trace": "./artifacts/ai_panel___graph_tab__knowledge_graph__zoom_contro-trace.zip"
@@ -308,7 +308,7 @@
       "module": "CCOP",
       "name": "CCOP | Help Center | Raise, Reply & Resolve Ticket",
       "status": "passed",
-      "duration": "9.8s",
+      "duration": "9.4s",
       "screenshot": "",
       "video": "",
       "trace": ""
@@ -328,7 +328,7 @@
       "module": "CCOP",
       "name": "Create patient + upload + submit",
       "status": "failed",
-      "duration": "1m 32s",
+      "duration": "1m 31s",
       "screenshot": "./artifacts/create_patient___upload___submit-screenshot.png",
       "video": "./artifacts/create_patient___upload___submit-video.webm",
       "trace": "./artifacts/create_patient___upload___submit-trace.zip"
@@ -338,7 +338,7 @@
       "module": "CCOP",
       "name": "Open letter template from Actions dropdown, select type and verify preview",
       "status": "failed",
-      "duration": "1m 49s",
+      "duration": "1m 44s",
       "screenshot": "./artifacts/open_letter_template_from_actions_dropdown__select-screenshot.png",
       "video": "./artifacts/open_letter_template_from_actions_dropdown__select-video.webm",
       "trace": "./artifacts/open_letter_template_from_actions_dropdown__select-trace.zip"
@@ -358,7 +358,7 @@
       "module": "CCOP",
       "name": "Create clinical note with voice transcription",
       "status": "failed",
-      "duration": "21.0s",
+      "duration": "20.9s",
       "screenshot": "./artifacts/create_clinical_note_with_voice_transcription-screenshot.png",
       "video": "./artifacts/create_clinical_note_with_voice_transcription-video.webm",
       "trace": "./artifacts/create_clinical_note_with_voice_transcription-trace.zip"
@@ -368,7 +368,7 @@
       "module": "CCOP",
       "name": "CCOP | Clinician signup full flow (recorded)",
       "status": "passed",
-      "duration": "43.7s",
+      "duration": "43.4s",
       "screenshot": "",
       "video": "",
       "trace": ""
