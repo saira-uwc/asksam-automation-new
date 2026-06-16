@@ -1,34 +1,34 @@
 Test: AI panel — Assistant tab: associations, medication & comorbidity sub-tabs
 Test file: /home/runner/work/asksam-automation-new/asksam-automation-new/tests/CCOP/ai-assistant-panel.spec.js
-Failed at: 2026-06-15T19:45:09.083Z
+Failed at: 2026-06-16T01:45:03.982Z
 Page URL at failure: https://copilot.asksam.com.au/clinical/home
 
 --- Clerk session cookies ---
 __session present: true
-  domain=dashboard.asksam.com.au path=/ sameSite=Lax secure=true httpOnly=false expires=2027-06-15T19:22:49.000Z
+  domain=dashboard.asksam.com.au path=/ sameSite=Lax secure=true httpOnly=false expires=2027-06-16T01:22:55.000Z
 __client_uat present: true
-  domain=.asksam.com.au value=1781551332
+  domain=.asksam.com.au value=1781572938
 
 --- All cookies on .asksam.com.au ---
-_clck  domain=.asksam.com.au  sameSite=Lax  expires=2027-06-15T19:22:07.000Z
+_clck  domain=.asksam.com.au  sameSite=Lax  expires=2027-06-16T01:22:12.000Z
 _cfuvid  domain=.clerk.asksam.com.au  sameSite=None  expires=session
-__client  domain=.clerk.asksam.com.au  sameSite=Lax  expires=2027-07-20T19:22:12.912Z
-__client_uat  domain=.asksam.com.au  sameSite=Lax  expires=2027-07-20T19:43:06.141Z
-__client_uat_mJltbx6F  domain=.asksam.com.au  sameSite=Lax  expires=2027-07-20T19:43:06.141Z
+__client  domain=.clerk.asksam.com.au  sameSite=Lax  expires=2027-07-21T01:22:18.719Z
+__client_uat  domain=.asksam.com.au  sameSite=Lax  expires=2027-07-21T01:43:00.958Z
+__client_uat_mJltbx6F  domain=.asksam.com.au  sameSite=Lax  expires=2027-07-21T01:43:00.958Z
 clerk_active_context  domain=copilot.asksam.com.au  sameSite=Lax  expires=session
-_gcl_au  domain=.asksam.com.au  sameSite=Lax  expires=2026-09-13T19:22:18.000Z
+_gcl_au  domain=.asksam.com.au  sameSite=Lax  expires=2026-09-14T01:22:23.000Z
 countryCode  domain=dashboard.asksam.com.au  sameSite=Lax  expires=session
-_gid  domain=.asksam.com.au  sameSite=Lax  expires=2026-06-16T19:22:19.000Z
-_pin_unauth  domain=.dashboard.asksam.com.au  sameSite=Lax  expires=2027-06-15T19:22:19.000Z
-_ga  domain=.asksam.com.au  sameSite=Lax  expires=2027-07-20T19:22:19.765Z
+_gid  domain=.asksam.com.au  sameSite=Lax  expires=2026-06-17T01:22:25.000Z
+_ga  domain=.asksam.com.au  sameSite=Lax  expires=2027-07-21T01:22:25.531Z
+_pin_unauth  domain=.dashboard.asksam.com.au  sameSite=Lax  expires=2027-06-16T01:22:25.000Z
+_fbp  domain=.asksam.com.au  sameSite=Lax  expires=2026-09-14T01:22:25.000Z
+_clsk  domain=.asksam.com.au  sameSite=Lax  expires=2026-06-17T01:22:25.000Z
 clerk_active_context  domain=dashboard.asksam.com.au  sameSite=Lax  expires=session
-__session  domain=dashboard.asksam.com.au  sameSite=Lax  expires=2027-06-15T19:22:49.000Z
-__session_mJltbx6F  domain=dashboard.asksam.com.au  sameSite=Lax  expires=2027-06-15T19:22:49.000Z
-_clsk  domain=.asksam.com.au  sameSite=Lax  expires=2026-06-16T19:22:19.000Z
-_fbp  domain=.asksam.com.au  sameSite=Lax  expires=2026-09-13T19:22:20.000Z
-_ga_28HL9LHXGG  domain=.asksam.com.au  sameSite=Lax  expires=2027-07-20T19:22:50.297Z
-_ga_LXMYWW3N03  domain=.asksam.com.au  sameSite=Lax  expires=2027-07-20T19:22:50.303Z
-__cf_bm  domain=.clerk.asksam.com.au  sameSite=None  expires=2026-06-15T20:10:59.845Z
-_ga_6R9WK18T5N  domain=.asksam.com.au  sameSite=Lax  expires=2027-07-20T19:43:05.936Z
-__session  domain=copilot.asksam.com.au  sameSite=Lax  expires=2027-06-15T19:45:08.000Z
-__session_mJltbx6F  domain=copilot.asksam.com.au  sameSite=Lax  expires=2027-06-15T19:45:08.000Z
+__session  domain=dashboard.asksam.com.au  sameSite=Lax  expires=2027-06-16T01:22:55.000Z
+__session_mJltbx6F  domain=dashboard.asksam.com.au  sameSite=Lax  expires=2027-06-16T01:22:55.000Z
+_ga_28HL9LHXGG  domain=.asksam.com.au  sameSite=Lax  expires=2027-07-21T01:22:55.968Z
+_ga_LXMYWW3N03  domain=.asksam.com.au  sameSite=Lax  expires=2027-07-21T01:22:55.975Z
+__cf_bm  domain=.clerk.asksam.com.au  sameSite=None  expires=2026-06-16T02:10:54.770Z
+_ga_6R9WK18T5N  domain=.asksam.com.au  sameSite=Lax  expires=2027-07-21T01:43:00.812Z
+__session  domain=copilot.asksam.com.au  sameSite=Lax  expires=2027-06-16T01:45:02.000Z
+__session_mJltbx6F  domain=copilot.asksam.com.au  sameSite=Lax  expires=2027-06-16T01:45:02.000Z
