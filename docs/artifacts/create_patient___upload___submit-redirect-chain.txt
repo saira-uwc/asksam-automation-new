@@ -1,0 +1,3 @@
+1. [2026-06-19T07:37:50.706Z] https://copilot.asksam.com.au/clinical/home
+2. [2026-06-19T07:37:50.937Z] https://copilot.asksam.com.au/clinical/home
+3. [2026-06-19T07:39:51.517Z] https://copilot.asksam.com.au/clinical/home?view=view&clinicalId=6a34f1d81bbe03949ee80a59&noteType=New
